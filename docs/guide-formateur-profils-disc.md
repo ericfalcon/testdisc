@@ -1,8 +1,28 @@
 # Guide formateur — les 13 profils DISC
 
-Référence rapide pour préparer une session : les 13 profils que peut renvoyer l'application (4 styles simples, 8 combinaisons des deux dimensions dominantes, et un profil équilibré), avec pour chacun l'essentiel à retenir. Ce document est fait pour le formateur — les stagiaires reçoivent leur propre profil, plus détaillé, en PDF à la fin du test.
+Référence rapide pour préparer une session : les 13 profils que peut renvoyer l'application (4 styles simples, 8 combinaisons des deux dimensions dominantes, et un profil équilibré), avec pour chacun l'essentiel à retenir. Ce document est fait pour le formateur — les stagiaires reçoivent leur propre profil, plus détaillé, en PDF à la fin du test. Aucune connaissance préalable du DISC n'est nécessaire pour l'utiliser : la section qui suit résume le modèle en deux minutes.
+
+## Comprendre le DISC en deux minutes
+
+Le DISC décrit des tendances de comportement observables — pas une personnalité figée, et encore moins un diagnostic. Il croise deux questions simples : la personne réagit-elle plutôt vite et activement, ou plutôt de façon posée et réfléchie ? Et est-elle plutôt tournée vers la tâche et le résultat, ou plutôt vers les personnes et la relation ? En croisant ces deux axes, on obtient quatre dimensions :
+
+- **D — Dominance** : rapide et tourné vers la tâche. Direct, orienté résultats, aime décider et avancer.
+- **I — Influence** : rapide et tourné vers la relation. Expressif, sociable, aime convaincre et fédérer.
+- **S — Stabilité** : posé et tourné vers la relation. Patient, coopératif, aime la constance et la confiance durable.
+- **C — Conformité** : posé et tourné vers la tâche. Méthodique, rigoureux, aime la précision et la vérification.
+
+Tout le monde a un peu des quatre dimensions, mais dans des proportions qui varient d'une personne à l'autre. Le test retient les deux dimensions les plus fortes de chaque stagiaire : sa dimension **dominante** (celle qui le décrit le mieux) et sa dimension **secondaire** (qui la nuance). C'est ce qui donne les 13 profils de ce guide : les 4 styles « purs » quand la dominante dépasse nettement la secondaire (D, I, S, C), les 8 combinaisons quand les deux se mélangent de façon plus équilibrée — l'ordre des lettres compte, DI (dominante D, nuancée par I) se lit différemment de ID (dominante I, nuancée par D) — et un profil « équilibré » quand aucune des quatre dimensions ne se détache vraiment.
+
+Deux autres indications accompagnent le profil dans le rapport remis au stagiaire :
+
+- **L'intensité** (situationnelle / modérée / marquée) dit à quel point le style se manifeste de façon constante, ou seulement selon le contexte.
+- **La confiance** (élevée / modérée / faible) dit si les réponses du stagiaire étaient cohérentes entre elles. Une confiance faible signifie que le profil est une hypothèse à vérifier avec la personne, pas un fait établi.
+
+Aucune dimension n'est meilleure qu'une autre : chacune a ses forces et son coût selon le contexte. L'intérêt de ce guide n'est pas de mettre un stagiaire dans une case, mais d'anticiper comment il aborde probablement son temps, ses priorités et ses décisions, pour adapter vos exemples et vos conseils pendant la session.
 
 Pour chaque profil : l'accroche, la description, les forces, les axes de progrès, et quatre points utiles pour une formation à la gestion du temps — le rapport au temps, la prise de décision, le rapport aux interruptions, et comment communiquer avec cette personne.
+
+**Un mot sur le « vous ».** Chaque fiche reprend telles quelles les phrases du rapport remis au stagiaire, qui s'adresse directement à lui — c'est pour cela qu'elles sont écrites à la deuxième personne (« vous êtes... », « vous décidez... »). En lisant une fiche, remplacez mentalement « vous » par « le stagiaire de ce profil » : ce n'est pas le formateur qui est visé, c'est la personne que ce profil décrit.
 
 ## Style Dominance (D)
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import functools
 import re
 from datetime import datetime
 from io import BytesIO
@@ -24,8 +25,10 @@ _MOIS_FR = {
 
 
 def _date_fr(dt: datetime) -> str:
-    """French date without relying on the server having a fr_FR locale installed."""
-    return f"Généré le {dt.day:02d} {_MOIS_FR[dt.month]} {dt.year}"
+    """French date and time, without relying on the server having a fr_FR
+    locale installed. The time matters here: a trainer collecting several
+    PDFs from the same session needs to tell apart a retake from the original."""
+    return f"Généré le {dt.day:02d} {_MOIS_FR[dt.month]} {dt.year} à {dt.hour:02d}:{dt.minute:02d}"
 from assessment.scoring.motivators import DRIVER_BLURBS
 from assessment.scoring.stress import MODE_BLURBS, MODE_LABELS
 
@@ -39,9 +42,10 @@ SIGNAL = colors.HexColor(ui.SIGNAL)
 
 
 class _Numbered(pdfcanvas.Canvas):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, nom_stagiaire: str = "", **kwargs):
         super().__init__(*args, **kwargs)
         self._saved = []
+        self._nom_stagiaire = nom_stagiaire
 
     def showPage(self):
         self._saved.append(dict(self.__dict__))
@@ -49,12 +53,16 @@ class _Numbered(pdfcanvas.Canvas):
 
     def save(self):
         total = len(self._saved)
+        # The name in the footer (not just the header) matters once several
+        # stagiaires' PDFs get printed and shuffled together: whichever page
+        # a trainer is holding still says whose profile it is.
+        label = f"Profil DISC — {self._nom_stagiaire}" if self._nom_stagiaire else "Profil DISC"
         for page in self._saved:
             self.__dict__.update(page)
             self.setFont("Helvetica", 7.5)
             self.setFillColor(SLATE)
             self.drawRightString(A4[0] - 18 * mm, 12 * mm, f"{self._pageNumber} / {total}")
-            self.drawString(18 * mm, 12 * mm, "Profil DISC")
+            self.drawString(18 * mm, 12 * mm, label)
             super().showPage()
         super().save()
 
@@ -85,18 +93,27 @@ def _clean(text: str) -> str:
     return re.sub(r"<(?!/?(b|i|br)\b)[^>]*>", "", text)
 
 
-def build_pdf(report: dict, results: dict) -> BytesIO:
+def build_pdf(report: dict, results: dict, identity: dict | None = None) -> BytesIO:
+    identity = identity or {}
+    nom_complet = f"{identity.get('prenom', '').strip()} {identity.get('nom', '').strip()}".strip()
+    session_nom = identity.get("session", "").strip()
+
     buffer = BytesIO()
     doc = SimpleDocTemplate(
         buffer, pagesize=A4,
         leftMargin=18 * mm, rightMargin=18 * mm, topMargin=16 * mm, bottomMargin=18 * mm,
-        title="Profil DISC",
+        title="Profil DISC" + (f" — {nom_complet}" if nom_complet else ""),
     )
     s = _styles()
     flow: list = []
 
     flow.append(Paragraph("PROFIL DISC", s["chan"]))
     flow.append(Paragraph("Mesuré, avec sa marge d'incertitude", s["h1"]))
+    if nom_complet:
+        identite_ligne = f"<b>{_clean(nom_complet)}</b>"
+        if session_nom:
+            identite_ligne += f" &middot; {_clean(session_nom)}"
+        flow.append(Paragraph(identite_ligne, s["body"]))
     flow.append(Paragraph(_date_fr(datetime.now()), s["muted"]))
     flow.append(HRFlowable(width="100%", color=RULE, spaceBefore=6, spaceAfter=10))
 
@@ -245,6 +262,6 @@ def build_pdf(report: dict, results: dict) -> BytesIO:
         "Les scores sont des estimations issues d'un test court et sont présentés avec leur erreur-type. "
         "Un écart plus petit que cette erreur ne constitue pas une conclusion fiable.", s["muted"]))
 
-    doc.build(flow, canvasmaker=_Numbered)
+    doc.build(flow, canvasmaker=functools.partial(_Numbered, nom_stagiaire=nom_complet))
     buffer.seek(0)
     return buffer

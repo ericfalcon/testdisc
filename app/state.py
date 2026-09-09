@@ -190,6 +190,7 @@ def export_payload() -> dict:
     return {
         "schema_version": SCHEMA_VERSION,
         "created": now,
+        "identity": dict(st.session_state["identity"]) if "identity" in st.session_state else {},
         "seed": st.session_state.seed,
         "modules": modules,
         "history": history,
@@ -230,6 +231,11 @@ def load_payload(payload: dict) -> str:
 
     st.session_state.seed = payload.get("seed") or st.session_state.seed
     st.session_state.history = payload.get("history", [])
+    if payload.get("identity"):
+        # Lets a resumed profile (or one loaded straight from a JSON file, which
+        # skips the identification form) keep the name attached to it, so the
+        # PDF and a future Sheet sync still know whose result this is.
+        st.session_state["identity"] = dict(payload["identity"])
     modules = payload.get("modules", {})
 
     flat: list[Item] = []

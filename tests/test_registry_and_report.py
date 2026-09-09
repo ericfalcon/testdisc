@@ -79,3 +79,17 @@ def test_pdf_builds_for_the_disc_module():
     assert data.startswith(b"%PDF"), "produced no PDF"
     assert data.rstrip().endswith(b"%%EOF"), "produced a truncated PDF"
     assert data.count(b"/Type /Page") >= 1, "produced no pages"
+
+
+def test_pdf_builds_with_identity_too():
+    """identity is optional (backward-compatible with the call above), but
+    must not break the build when a name and session are supplied — that's
+    the whole point of passing it through."""
+    from app.pdf import build_pdf
+
+    results, sources, answers = _run(["disc_natural"])
+    report = build_report(results, sources, answers)
+    identity = {"prenom": "Ada", "nom": "Lovelace", "session": "Gestion du temps — 12 novembre"}
+    data = build_pdf(report, results, identity).getvalue()
+    assert data.startswith(b"%PDF"), "produced no PDF"
+    assert data.rstrip().endswith(b"%%EOF"), "produced a truncated PDF"

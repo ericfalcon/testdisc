@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import html
 import json
+import re
+import unicodedata
+from datetime import datetime
 
 import streamlit as st
 
@@ -344,12 +347,33 @@ def _add_modules() -> None:
 
 def _pdf_bytes(report: dict, results: dict) -> bytes:
     """Rendering the PDF costs a matplotlib figure and a full document build, so
-    it is kept until the answers change rather than rebuilt on every rerun."""
-    signature = (tuple(sorted(results)), len(st.session_state.answers))
+    it is kept until the answers (or the identity printed on it) change,
+    rather than rebuilt on every rerun."""
+    identity = st.session_state.get("identity") or {}
+    signature = (tuple(sorted(results)), len(st.session_state.answers), tuple(sorted(identity.items())))
     cached = st.session_state.get("_pdf_cache")
     if cached is None or cached[0] != signature:
-        st.session_state["_pdf_cache"] = (signature, build_pdf(report, results).getvalue())
+        pdf_bytes = build_pdf(report, results, identity).getvalue()
+        st.session_state["_pdf_cache"] = (signature, pdf_bytes)
     return st.session_state["_pdf_cache"][1]
+
+
+def _slug(text: str) -> str:
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^a-zA-Z0-9]+", "-", text).strip("-").lower()
+
+
+def _export_filename(extension: str) -> str:
+    """profil-disc-prenom-nom-AAAA-MM-JJ.<ext> — so that when several
+    stagiaires' downloads land in the same folder (or the same trainer inbox),
+    the file itself says whose it is and from which day, without anyone having
+    to rename it by hand."""
+    identity = st.session_state.get("identity") or {}
+    name_slug = "-".join(
+        _slug(identity.get(part, "")) for part in ("prenom", "nom") if _slug(identity.get(part, ""))
+    )
+    base = "-".join(p for p in ["profil-disc", name_slug, datetime.now().strftime("%Y-%m-%d")] if p)
+    return f"{base}.{extension}"
 
 
 def _sync_to_trainer(report: dict, results: dict) -> None:
@@ -423,7 +447,7 @@ def render() -> None:
         st.download_button(
             "Télécharger le JSON",
             data=json.dumps(state.export_payload(), indent=2),
-            file_name="profil-disc.json",
+            file_name=_export_filename("json"),
             mime="application/json",
             use_container_width=True,
         )
@@ -431,7 +455,7 @@ def render() -> None:
         st.download_button(
             "Télécharger le PDF",
             data=_pdf_bytes(report, results),
-            file_name="rapport-disc.pdf",
+            file_name=_export_filename("pdf"),
             mime="application/pdf",
             use_container_width=True,
         )

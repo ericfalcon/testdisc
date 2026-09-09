@@ -190,6 +190,27 @@ def test_export_round_trips_through_import():
     assert before == after, "reloading a profile must reproduce the same scores"
 
 
+def test_export_includes_identity_and_it_survives_reload():
+    """Name, session and a timestamp travel with the JSON export, so a
+    trainer who only has the file (or a stagiaire resuming a profile later)
+    can still tell whose result it is and when it was produced."""
+    from app import state as app_state
+
+    app = _answer_everything(_started({"disc_natural": "standard"}), choice=2)
+    app.session_state["identity"] = {
+        "prenom": "Ada", "nom": "Lovelace", "session": "Gestion du temps — 12 novembre",
+    }
+    payload = json.loads(json.dumps(_with_state(app, app_state.export_payload)))
+    assert payload["identity"]["prenom"] == "Ada"
+    assert payload["identity"]["nom"] == "Lovelace"
+    assert "T" in payload["created"], "created must carry a time, not just a date"
+
+    fresh = _blank()
+    _with_state(fresh, app_state.init)
+    _with_state(fresh, lambda: app_state.load_payload(payload))
+    assert fresh.session_state["identity"]["nom"] == "Lovelace"
+
+
 def test_a_partial_run_resumes_where_it_stopped():
     from app import state as app_state
 
