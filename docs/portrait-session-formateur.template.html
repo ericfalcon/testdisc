@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portrait de session</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F8FA; --surface:#FFFFFF; --surface-2:#EEF1F4; --surface-3:#E4E9EE;
+    --ink:#0F2233; --slate:#46586B; --muted:#7C8CA0; --rule:#DCE3EA;
+    --accent:#1B6E8C; --accent-strong:#0E4A5F; --accent-wash:#E4F1F5;
+    --d:#C2453B; --i:#C98A16; --s:#2E8B5A; --c:#2C6FB5; --bal:#7C8CA0;
+    --d-wash:#F7E7E5; --i-wash:#F8EDD8; --s-wash:#E2EEE7; --c-wash:#E1E9F3; --bal-wash:#EDEFF2;
+    --flag:#B4471F; --flag-wash:#F7E6DD;
+    --shadow: 0 1px 2px rgba(15,34,51,.06), 0 8px 24px -12px rgba(15,34,51,.18);
+    --font-display:"Petrona", Georgia, "Times New Roman", serif;
+    --font-body:"Public Sans", -apple-system, "Segoe UI", sans-serif;
+    --font-mono:"IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1720; --surface:#16222E; --surface-2:#1D2C3A; --surface-3:#24384A;
+      --ink:#EAF1F6; --slate:#A9BAC9; --muted:#7E90A2; --rule:#28394A;
+      --accent:#4FB8DE; --accent-strong:#BFEAF7; --accent-wash:#173441;
+      --d:#D9695F; --i:#C18415; --s:#3FA170; --c:#5B93D6; --bal:#8CA0B4;
+      --d-wash:#2E1D1D; --i-wash:#2B2013; --s-wash:#17281F; --c-wash:#1B2635; --bal-wash:#212C36;
+      --flag:#E2704A; --flag-wash:#2E2018;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1720; --surface:#16222E; --surface-2:#1D2C3A; --surface-3:#24384A;
+    --ink:#EAF1F6; --slate:#A9BAC9; --muted:#7E90A2; --rule:#28394A;
+    --accent:#4FB8DE; --accent-strong:#BFEAF7; --accent-wash:#173441;
+    --d:#D9695F; --i:#C18415; --s:#3FA170; --c:#5B93D6; --bal:#8CA0B4;
+    --d-wash:#2E1D1D; --i-wash:#2B2013; --s-wash:#17281F; --c-wash:#1B2635; --bal-wash:#212C36;
+    --flag:#E2704A; --flag-wash:#2E2018;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--font-body);
+    font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:1040px; margin:0 auto; padding:40px 24px 96px; }
+  a{ color:var(--accent); }
+
+  /* ---------------------------------------------------------------- header */
+  .eyebrow{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin:0 0 10px;
+  }
+  h1{
+    font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1.12;
+    margin:0 0 12px; text-wrap:balance; letter-spacing:-.01em;
+  }
+  .lede{ color:var(--slate); font-size:16px; max-width:62ch; margin:0 0 6px; }
+  .privacy-note{
+    display:inline-flex; align-items:center; gap:7px; margin-top:14px;
+    font-size:12.5px; color:var(--slate); background:var(--surface-2);
+    border:1px solid var(--rule); border-radius:99px; padding:6px 13px 6px 11px;
+  }
+  .privacy-note .dot{ width:6px; height:6px; border-radius:50%; background:var(--s); flex:none; }
+
+  section{ margin-top:34px; }
+  h2{
+    font-family:var(--font-display); font-weight:600; font-size:21px; margin:0 0 4px;
+    letter-spacing:-.005em;
+  }
+  .section-note{ color:var(--muted); font-size:13.5px; margin:0 0 16px; max-width:66ch; }
+
+  /* ---------------------------------------------------------------- intake */
+  .intake-grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap:16px; align-items:stretch; }
+  @media (max-width:720px){ .intake-grid{ grid-template-columns:1fr; } }
+
+  .dropzone{
+    border:1.5px dashed var(--rule); border-radius:14px; background:var(--surface);
+    padding:22px 22px; display:flex; align-items:center; gap:16px; cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .dropzone:hover, .dropzone.dragover{ border-color:var(--accent); background:var(--accent-wash); }
+  .dropzone input[type=file]{ display:none; }
+  .dropzone .icon{
+    width:40px; height:40px; flex:none; border-radius:10px; background:var(--accent-wash);
+    color:var(--accent-strong); display:flex; align-items:center; justify-content:center;
+  }
+  .dropzone .icon svg{ width:20px; height:20px; }
+  .dropzone .txt strong{ display:block; font-size:14.5px; margin-bottom:2px; }
+  .dropzone .txt span{ font-size:12.5px; color:var(--muted); }
+
+  .status-card{
+    border:1px solid var(--rule); border-radius:14px; background:var(--surface);
+    padding:18px 20px; display:flex; flex-direction:column; justify-content:center; gap:8px;
+  }
+  .status-card .source{
+    font-family:var(--font-mono); font-size:12px; color:var(--accent); font-weight:600;
+    display:flex; align-items:center; gap:7px;
+  }
+  .status-card .source.example::before{ content:"◆"; }
+  .status-card .source.file::before{ content:"●"; color:var(--s); }
+  .status-card .filename{ font-size:13.5px; color:var(--slate); word-break:break-all; }
+  .status-card .actions{ display:flex; gap:8px; margin-top:4px; }
+
+  button{ font-family:var(--font-body); cursor:pointer; }
+  .btn{
+    border:1px solid var(--rule); background:var(--surface); color:var(--ink);
+    border-radius:9px; padding:7px 13px; font-size:12.8px; font-weight:600;
+  }
+  .btn:hover{ border-color:var(--accent); color:var(--accent-strong); }
+  .btn:focus-visible, a:focus-visible, select:focus-visible, summary:focus-visible{
+    outline:2px solid var(--accent); outline-offset:2px;
+  }
+  .btn.primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn.primary:hover{ filter:brightness(1.06); color:#fff; }
+
+  /* ---------------------------------------------------------------- controls */
+  .controls-row{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:20px; }
+  .session-select{
+    font-family:var(--font-body); font-size:13.5px; font-weight:600; color:var(--ink);
+    background:var(--surface); border:1px solid var(--rule); border-radius:9px;
+    padding:9px 34px 9px 13px; appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2346586B' stroke-width='1.6'><path d='M5.5 8l4.5 4.5L14.5 8'/></svg>");
+    background-repeat:no-repeat; background-position:right 11px center; background-size:14px;
+  }
+  .stat-tiles{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  @media (max-width:720px){ .stat-tiles{ grid-template-columns:repeat(2,1fr); } }
+  .tile{
+    border:1px solid var(--rule); border-radius:12px; background:var(--surface); padding:14px 16px;
+  }
+  .tile .num{
+    font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-weight:600;
+    font-size:24px; color:var(--ink); display:block; line-height:1;
+  }
+  .tile .lbl{ font-size:12px; color:var(--muted); margin-top:6px; display:block; }
+  .tile.flagged .num{ color:var(--flag); }
+
+  /* ---------------------------------------------------------------- synthesis */
+  .synthesis-grid{ display:grid; grid-template-columns: 1fr 1.15fr; gap:18px; align-items:start; }
+  @media (max-width:820px){ .synthesis-grid{ grid-template-columns:1fr; } }
+  .panel{
+    border:1px solid var(--rule); border-radius:14px; background:var(--surface);
+    padding:20px 22px; box-shadow:var(--shadow);
+  }
+  .panel h3{ font-family:var(--font-display); font-size:15.5px; font-weight:600; margin:0 0 14px; }
+
+  .bar-row{ display:grid; grid-template-columns:96px 1fr 78px; align-items:center; gap:10px; margin-bottom:11px; }
+  .bar-row:last-child{ margin-bottom:0; }
+  .bar-row .name{ font-size:12.5px; font-weight:600; color:var(--slate); }
+  .bar-track{ background:var(--surface-2); border-radius:6px; height:12px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:6px; min-width:3px; }
+  .bar-row .val{ font-family:var(--font-mono); font-size:12px; text-align:right; color:var(--muted); font-variant-numeric:tabular-nums; }
+
+  .synth-text p{ margin:0 0 11px; font-size:13.8px; line-height:1.6; color:var(--slate); }
+  .synth-text p:last-child{ margin-bottom:0; }
+  .synth-text b{ color:var(--ink); }
+  .watch-list{ list-style:none; margin:14px 0 0; padding:14px 0 0; border-top:1px solid var(--rule); }
+  .watch-list li{ font-size:13px; color:var(--slate); margin-bottom:7px; display:flex; gap:8px; }
+  .watch-list li:last-child{ margin-bottom:0; }
+  .watch-list .tag{
+    flex:none; font-family:var(--font-mono); font-size:10.5px; font-weight:600; padding:2px 6px;
+    border-radius:5px; background:var(--flag-wash); color:var(--flag); height:fit-content;
+  }
+
+  /* ---------------------------------------------------------------- roster */
+  .roster-toolbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:12px; flex-wrap:wrap; }
+  .roster-toolbar .btn-group{ display:flex; gap:8px; }
+
+  .badge{
+    font-family:var(--font-mono); font-weight:600; font-size:12px; letter-spacing:.02em;
+    padding:3px 8px; border-radius:6px; display:inline-block; line-height:1.3;
+  }
+  .conf-badge{
+    font-size:11px; font-weight:600; padding:2px 8px; border-radius:99px; letter-spacing:.02em;
+  }
+  .conf-elevee{ background:var(--s-wash); color:var(--s); }
+  .conf-moderee{ background:var(--i-wash); color:var(--i); }
+  .conf-faible{ background:var(--flag-wash); color:var(--flag); }
+
+  .roster{ display:flex; flex-direction:column; gap:10px; }
+  details.stagiaire{
+    border:1px solid var(--rule); border-radius:13px; background:var(--surface); overflow:hidden;
+  }
+  details.stagiaire[open]{ box-shadow:var(--shadow); }
+  summary.row{
+    list-style:none; cursor:pointer; padding:14px 18px; display:grid;
+    grid-template-columns: 1.4fr .9fr .9fr auto 20px; gap:14px; align-items:center;
+  }
+  summary.row::-webkit-details-marker{ display:none; }
+  @media (max-width:760px){
+    summary.row{ grid-template-columns:1fr auto; grid-template-areas:"name chev" "meta meta"; row-gap:8px; }
+    summary.row .who{ grid-area:name; } summary.row .chev{ grid-area:chev; }
+    summary.row .meta-wrap{ grid-area:meta; display:flex; gap:14px; flex-wrap:wrap; }
+  }
+  summary.row .who strong{ display:block; font-size:14.5px; }
+  summary.row .who span{ font-size:12px; color:var(--muted); }
+  summary.row .scores{ font-family:var(--font-mono); font-size:11.5px; color:var(--slate); font-variant-numeric:tabular-nums; }
+  summary.row .scores b{ color:var(--ink); }
+  summary.row .chev{ color:var(--muted); transition:transform .15s ease; justify-self:end; }
+  details[open] summary.row .chev{ transform:rotate(90deg); }
+
+  .fiche{ padding:2px 22px 22px; border-top:1px solid var(--rule); }
+  .fiche .headline{ color:var(--slate); font-size:13.5px; margin:14px 0 16px; font-style:italic; font-family:var(--font-display); }
+  .fiche .field{ margin-bottom:14px; }
+  .fiche .field:last-child{ margin-bottom:0; }
+  .fiche .field h4{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.07em;
+    color:var(--accent); margin:0 0 5px; font-weight:600;
+  }
+  .fiche .field p{ margin:0; font-size:13.6px; line-height:1.62; color:var(--slate); }
+
+  .empty-state{
+    text-align:center; padding:50px 20px; color:var(--muted); border:1px dashed var(--rule);
+    border-radius:14px; font-size:14px;
+  }
+
+  footer{ margin-top:48px; padding-top:20px; border-top:1px solid var(--rule); color:var(--muted); font-size:12px; }
+
+  @media print{
+    body{ background:#fff; }
+    .dropzone, .roster-toolbar, .privacy-note, .controls-row .session-select, .status-card .actions{ display:none !important; }
+    details.stagiaire > *:not(summary){ display:block !important; }
+    details.stagiaire{ break-inside:avoid; box-shadow:none; }
+    .panel{ box-shadow:none; }
+    section{ margin-top:20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Outil formateur · DISC</p>
+    <h1>Portrait de session</h1>
+    <p class="lede">Déposez l'export CSV du Google Sheet DISC pour retrouver, session par session, la fiche de chaque stagiaire et une lecture d'ensemble du groupe avant votre formation.</p>
+    <div class="privacy-note"><span class="dot"></span> Rien n'est envoyé sur un serveur — tout se lit et se calcule dans votre navigateur, et rien n'est conservé une fois la page fermée.</div>
+  </header>
+
+  <section class="intake" aria-label="Charger les données">
+    <div class="intake-grid">
+      <label class="dropzone" id="dropzone" for="csvInput">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
+        </span>
+        <span class="txt">
+          <strong>Déposez le CSV ici, ou cliquez pour le choisir</strong>
+          <span>Google Sheet DISC → Fichier → Télécharger → Valeurs séparées par des virgules (.csv)</span>
+        </span>
+        <input type="file" id="csvInput" accept=".csv,text/csv">
+      </label>
+      <div class="status-card">
+        <span class="source example" id="sourceLabel">Exemple de démonstration</span>
+        <span class="filename" id="filenameLabel">9 stagiaires fictifs — « Gestion du temps — 12 novembre 2026 »</span>
+        <div class="actions">
+          <button class="btn" id="loadSampleBtn">Recharger l'exemple</button>
+          <button class="btn" id="clearBtn">Effacer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="app"></div>
+
+  <footer>
+    Les fiches reprennent le même texte, par style, que <code>guide-formateur-profils-disc.md</code> — seules les valeurs (nom, scores, intensité, confiance) viennent de votre fichier.
+  </footer>
+</div>
+
+<script>
+const PROFILES = __PROFILES_JSON__;
+
+const FIELD_LABELS = [
+  ["strengths", "Forces naturelles"],
+  ["challenges", "Axes de progrès"],
+  ["time_relationship", "Rapport au temps"],
+  ["decision_making", "Prise de décision"],
+  ["interruptions", "Rapport aux interruptions"],
+  ["communication_tips", "Comment communiquer avec cette personne"],
+];
+
+const STYLE_LETTERS = ["D", "I", "S", "C"];
+const LETTER_NAMES = { D: "Dominance", I: "Influence", S: "Stabilité", C: "Conformité" };
+
+const SAMPLE_ROWS = [
+  { horodatage:"2026-11-12T08:14:00Z", prenom:"Camille", nom:"Dubois",   session:"Gestion du temps — 12 novembre 2026", style:"D",  titre:"Style Dominance (D)",              intensite:"Marquée",       confiance:"élevée",  D:82, I:54, S:28, C:41 },
+  { horodatage:"2026-11-12T08:21:00Z", prenom:"Farid",   nom:"Benali",   session:"Gestion du temps — 12 novembre 2026", style:"DI", titre:"Style Dominance + Influence (DI)", intensite:"Modérée",       confiance:"élevée",  D:68, I:61, S:33, C:29 },
+  { horodatage:"2026-11-12T08:26:00Z", prenom:"Karim",   nom:"Haddad",   session:"Gestion du temps — 12 novembre 2026", style:"DC", titre:"Style Dominance + Conformité (DC)", intensite:"Modérée",       confiance:"modérée", D:57, I:22, S:26, C:66 },
+  { horodatage:"2026-11-12T08:33:00Z", prenom:"Élodie",  nom:"Marchand", session:"Gestion du temps — 12 novembre 2026", style:"I",  titre:"Style Influence (I)",              intensite:"Marquée",       confiance:"modérée", D:39, I:79, S:52, C:24 },
+  { horodatage:"2026-11-12T08:40:00Z", prenom:"Julien",  nom:"Petit",    session:"Gestion du temps — 12 novembre 2026", style:"IS", titre:"Style Influence + Stabilité (IS)", intensite:"Modérée",       confiance:"élevée",  D:22, I:64, S:58, C:31 },
+  { horodatage:"2026-11-12T08:47:00Z", prenom:"Nadia",   nom:"Rousseau", session:"Gestion du temps — 12 novembre 2026", style:"S",  titre:"Style Stabilité (S)",              intensite:"Marquée",       confiance:"élevée",  D:18, I:35, S:81, C:47 },
+  { horodatage:"2026-11-12T08:55:00Z", prenom:"Thomas",  nom:"Lefebvre", session:"Gestion du temps — 12 novembre 2026", style:"SC", titre:"Style Stabilité + Conformité (SC)",intensite:"Modérée",       confiance:"faible",  D:25, I:29, S:62, C:57 },
+  { horodatage:"2026-11-12T09:02:00Z", prenom:"Sophie",  nom:"Girard",   session:"Gestion du temps — 12 novembre 2026", style:"C",  titre:"Style Conformité (C)",             intensite:"Marquée",       confiance:"élevée",  D:31, I:19, S:38, C:84 },
+  { horodatage:"2026-11-12T09:09:00Z", prenom:"Léa",     nom:"Fontaine", session:"Gestion du temps — 12 novembre 2026", style:"balanced", titre:"Style équilibré / situationnel", intensite:"Situationnelle", confiance:"modérée", D:48, I:52, S:45, C:50 },
+];
+
+const HEADER_MAP = {
+  "horodatage":"horodatage", "prénom":"prenom", "prenom":"prenom", "nom":"nom",
+  "session / formation":"session", "session":"session",
+  "style disc":"style", "titre du profil":"titre",
+  "intensité":"intensite", "intensite":"intensite",
+  "confiance":"confiance",
+  "score d":"D", "score i":"I", "score s":"S", "score c":"C",
+};
+
+let state = { rows: SAMPLE_ROWS.slice(), isSample: true, filename: "" };
+
+function stripBOM(text){ return text.charCodeAt(0) === 0xFEFF ? text.slice(1) : text; }
+
+function parseCSV(text){
+  text = stripBOM(text);
+  const rows = []; let row = []; let field = ""; let inQuotes = false;
+  for (let i = 0; i < text.length; i++){
+    const c = text[i];
+    if (inQuotes){
+      if (c === '"'){
+        if (text[i+1] === '"'){ field += '"'; i++; } else { inQuotes = false; }
+      } else field += c;
+    } else if (c === '"'){ inQuotes = true; }
+    else if (c === ','){ row.push(field); field = ""; }
+    else if (c === '\n' || c === '\r'){
+      if (c === '\r' && text[i+1] === '\n') i++;
+      row.push(field); field = "";
+      if (row.some(v => v !== "")) rows.push(row);
+      row = [];
+    } else field += c;
+  }
+  if (field !== "" || row.length){ row.push(field); rows.push(row); }
+  if (!rows.length) return [];
+  const header = rows[0].map(h => h.trim().toLowerCase());
+  return rows.slice(1).map(cols => {
+    const obj = {};
+    header.forEach((h, idx) => {
+      const key = HEADER_MAP[h];
+      if (key) obj[key] = (cols[idx] || "").trim();
+    });
+    ["D","I","S","C"].forEach(k => obj[k] = obj[k] !== undefined ? parseFloat(obj[k]) : NaN);
+    return obj;
+  }).filter(r => r.nom || r.prenom);
+}
+
+function primaryCategory(styleCode){
+  if (!styleCode) return null;
+  const s = styleCode.trim();
+  if (s.toLowerCase() === "balanced" || s.toLowerCase().startsWith("équilibr")) return "balanced";
+  const letter = s[0].toUpperCase();
+  return STYLE_LETTERS.includes(letter) ? letter : null;
+}
+
+function fmtName(r){ return [r.prenom, r.nom].filter(Boolean).join(" ") || "(sans nom)"; }
+function slug(s){ return (s||"").toLowerCase(); }
+function confClass(c){
+  const s = slug(c);
+  if (s.startsWith("élev") || s.startsWith("elev")) return "conf-elevee";
+  if (s.startsWith("faib")) return "conf-faible";
+  return "conf-moderee";
+}
+function styleToken(letterOrBalanced){
+  return letterOrBalanced === "balanced" ? "bal" : letterOrBalanced.toLowerCase();
+}
+
+function el(tag, attrs, children){
+  const n = document.createElement(tag);
+  for (const k in (attrs||{})){
+    if (k === "html") n.innerHTML = attrs[k];
+    else if (k === "text") n.textContent = attrs[k];
+    else n.setAttribute(k, attrs[k]);
+  }
+  (children||[]).forEach(c => n.appendChild(c));
+  return n;
+}
+
+function renderApp(){
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  if (!state.rows.length){
+    app.appendChild(el("div", { class:"empty-state", text:"Aucune donnée pour l'instant — déposez un export CSV, ou rechargez l'exemple." }));
+    return;
+  }
+
+  const sessions = Array.from(new Set(state.rows.map(r => r.session).filter(Boolean)));
+  let currentSession = app.dataset.session || sessions[0] || "";
+  if (!sessions.includes(currentSession)) currentSession = sessions[0] || "";
+
+  const controls = el("section", { class:"controls" });
+  const controlsRow = el("div", { class:"controls-row" });
+  const select = el("select", { class:"session-select", "aria-label":"Choisir la session" });
+  sessions.forEach(s => {
+    const count = state.rows.filter(r => r.session === s).length;
+    select.appendChild(el("option", { value:s, text:`${s} (${count} stagiaire${count>1?"s":""})` }));
+  });
+  if (sessions.length > 1){
+    select.appendChild(el("option", { value:"__all__", text:`Toutes les sessions (${state.rows.length} stagiaires)` }));
+  }
+  select.value = currentSession;
+  select.addEventListener("change", () => { app.dataset.session = select.value; renderApp(); });
+  controlsRow.appendChild(select);
+  controls.appendChild(controlsRow);
+
+  const rows = select.value === "__all__" ? state.rows.slice() : state.rows.filter(r => r.session === currentSession);
+
+  const counts = { D:0, I:0, S:0, C:0, balanced:0 };
+  const lowConfidence = []; const markedIntensity = [];
+  rows.forEach(r => {
+    const cat = primaryCategory(r.style);
+    if (cat) counts[cat]++;
+    if (slug(r.confiance).startsWith("faib")) lowConfidence.push(r);
+    if (slug(r.intensite).startsWith("marqu")) markedIntensity.push(r);
+  });
+  const total = rows.length;
+  const stylesRepresented = new Set(rows.map(r => (r.style||"").trim().toLowerCase())).size;
+
+  const tiles = el("div", { class:"stat-tiles" }, [
+    el("div", { class:"tile" }, [ el("span", { class:"num", text:String(total) }), el("span", { class:"lbl", text:`stagiaire${total>1?"s":""}` }) ]),
+    el("div", { class:"tile" }, [ el("span", { class:"num", text:String(stylesRepresented) }), el("span", { class:"lbl", text:"profils DISC différents" }) ]),
+    el("div", { class:"tile" }, [ el("span", { class:"num", text:String(markedIntensity.length) }), el("span", { class:"lbl", text:"intensité marquée" }) ]),
+    el("div", { class: "tile" + (lowConfidence.length ? " flagged" : "") }, [ el("span", { class:"num", text:String(lowConfidence.length) }), el("span", { class:"lbl", text:"confiance faible à vérifier" }) ]),
+  ]);
+  controls.appendChild(tiles);
+  app.appendChild(controls);
+
+  // ---- synthesis: distribution chart + narrative -------------------------
+  const synthSection = el("section", { class:"synthesis-grid" });
+
+  const chartPanel = el("div", { class:"panel" }, [ el("h3", { text:"Répartition des dominantes" }) ]);
+  const maxCount = Math.max(1, ...Object.values(counts));
+  const order = [["D","Dominance"],["I","Influence"],["S","Stabilité"],["C","Conformité"],["balanced","Équilibré"]];
+  order.forEach(([key, label]) => {
+    const n = counts[key];
+    const pct = total ? Math.round((n/total)*100) : 0;
+    const row = el("div", { class:"bar-row" });
+    row.appendChild(el("span", { class:"name", text:label }));
+    const track = el("div", { class:"bar-track" });
+    const fill = el("div", { class:"bar-fill" });
+    fill.style.width = (n/maxCount*100) + "%";
+    fill.style.background = `var(--${styleToken(key)})`;
+    track.appendChild(fill);
+    row.appendChild(track);
+    row.appendChild(el("span", { class:"val", text:`${n} · ${pct}%` }));
+    chartPanel.appendChild(row);
+  });
+  synthSection.appendChild(chartPanel);
+
+  const narrPanel = el("div", { class:"panel" }, [ el("h3", { text:"Lecture du groupe" }) ]);
+  const textWrap = el("div", { class:"synth-text" });
+  order.forEach(([key]) => {}); // no-op to keep order referenced
+  const pace = (counts.D + counts.I); const posed = (counts.S + counts.C);
+  const task = (counts.D + counts.C); const relation = (counts.I + counts.S);
+  function pctOf(n){ return total ? Math.round((n/total)*100) : 0; }
+
+  const paras = [];
+  if (total){
+    if (pace !== posed){
+      const leader = pace > posed ? "un rythme plutôt rapide et direct (D/I)" : "un rythme plutôt posé et réfléchi (S/C)";
+      const leadCount = pace > posed ? pace : posed;
+      paras.push(`Le groupe penche vers <b>${leader}</b> — ${leadCount} stagiaire${leadCount>1?"s":""} sur ${total} (${pctOf(leadCount)}%). Pour une formation à la gestion du temps, ${pace > posed ? "gardez un rythme soutenu mais prévoyez des temps de méthode explicites pour ceux qui en ont besoin" : "prenez le temps d'installer chaque étape, quitte à donner des respirations plus rythmées pour ne pas perdre les profils rapides"}.`);
+    } else {
+      paras.push(`Le groupe est équilibré entre rythme rapide (D/I) et rythme posé (S/C) — ${pace} contre ${posed} sur ${total}. Alternez temps d'action et temps de méthode pour parler aux deux moitiés de la salle.`);
+    }
+    if (task !== relation){
+      const leader = task > relation ? "la tâche et le résultat (D/C)" : "la relation et l'humain (I/S)";
+      paras.push(`Côté attention, la salle est plutôt tournée vers <b>${leader}</b> (${task > relation ? task : relation}/${total}). ${task > relation ? "Des exemples concrets et chiffrés porteront mieux que des tours de table trop longs." : "Les échanges en petits groupes et les retours d'expérience porteront mieux qu'une suite d'exercices individuels silencieux."}`);
+    }
+    Object.entries(counts).forEach(([key, n]) => {
+      if (n === 1 && key !== "balanced"){
+        const person = rows.find(r => primaryCategory(r.style) === key);
+        paras.push(`<b>${LETTER_NAMES[key]}</b> n'est représentée que par une seule personne (${fmtName(person)}) — pensez à ${key === "C" || key === "S" ? "lui laisser le temps de vérifier ou de se positionner avant de trancher en groupe" : "ne pas la freiner si elle avance plus vite ou plus fort que le reste du groupe"}.`);
+      } else if (n === 0 && key !== "balanced"){
+        paras.push(`Aucune dominante <b>${LETTER_NAMES[key]}</b> dans cette session.`);
+      }
+    });
+  }
+  textWrap.innerHTML = paras.map(p => `<p>${p}</p>`).join("");
+  narrPanel.appendChild(textWrap);
+
+  if (lowConfidence.length){
+    const list = el("ul", { class:"watch-list" });
+    lowConfidence.forEach(r => {
+      list.appendChild(el("li", {}, [ el("span", { class:"tag", text:"confiance faible" }), el("span", { text:`${fmtName(r)} — profil à confirmer avec elle plutôt qu'à annoncer comme acquis.` }) ]));
+    });
+    narrPanel.appendChild(list);
+  }
+  synthSection.appendChild(narrPanel);
+  app.appendChild(synthSection);
+
+  // ---- roster --------------------------------------------------------------
+  const rosterSection = el("section", { class:"roster-section" });
+  rosterSection.appendChild(el("h2", { text:"Fiches individuelles" }));
+  rosterSection.appendChild(el("p", { class:"section-note", text:"Le texte de chaque fiche est générique par style — identique pour toute personne ressortant le même profil, comme dans le guide formateur." }));
+
+  const toolbar = el("div", { class:"roster-toolbar" });
+  const btnGroup = el("div", { class:"btn-group" });
+  const expandBtn = el("button", { class:"btn", text:"Tout déplier" });
+  const collapseBtn = el("button", { class:"btn", text:"Tout replier" });
+  const printBtn = el("button", { class:"btn primary", text:"Imprimer les fiches de cette session" });
+  btnGroup.appendChild(expandBtn); btnGroup.appendChild(collapseBtn);
+  toolbar.appendChild(btnGroup); toolbar.appendChild(printBtn);
+  rosterSection.appendChild(toolbar);
+
+  const roster = el("div", { class:"roster" });
+  rows.forEach(r => {
+    const cat = primaryCategory(r.style);
+    const codeKey = (r.style || "").trim();
+    const profile = PROFILES[codeKey] || PROFILES[codeKey.toLowerCase()] || null;
+    const details = el("details", { class:"stagiaire" });
+    const summary = el("summary", { class:"row" });
+    summary.appendChild(el("span", { class:"who" }, [ el("strong", { text:fmtName(r) }), el("span", { text:profile ? profile.title : (r.titre || codeKey) }) ]));
+    const metaWrap = el("span", { class:"meta-wrap" });
+    metaWrap.appendChild(el("span", { class:"badge", style:`background:var(--${styleToken(cat||"balanced")}-wash);color:var(--${styleToken(cat||"balanced")})`, text:codeKey === "balanced" ? "ÉQ" : codeKey }));
+    metaWrap.appendChild(el("span", { class:"conf-badge " + confClass(r.confiance), text:r.confiance || "—" }));
+    metaWrap.appendChild(el("span", { class:"scores", html:`D<b>${isNaN(r.D)?"–":r.D}</b> I<b>${isNaN(r.I)?"–":r.I}</b> S<b>${isNaN(r.S)?"–":r.S}</b> C<b>${isNaN(r.C)?"–":r.C}</b>` }));
+    summary.appendChild(metaWrap);
+    summary.appendChild(el("span", { class:"chev", html:"&#8250;" }));
+    details.appendChild(summary);
+
+    const fiche = el("div", { class:"fiche" });
+    if (profile){
+      fiche.appendChild(el("p", { class:"headline", text:profile.headline }));
+      FIELD_LABELS.forEach(([key, label]) => {
+        if (profile[key]){
+          const field = el("div", { class:"field" });
+          field.appendChild(el("h4", { text:label }));
+          field.appendChild(el("p", { text:profile[key] }));
+          fiche.appendChild(field);
+        }
+      });
+    } else {
+      fiche.appendChild(el("p", { text:`Style « ${codeKey} » non reconnu — vérifiez la colonne « Style DISC » du CSV.` }));
+    }
+    details.appendChild(fiche);
+    roster.appendChild(details);
+  });
+  rosterSection.appendChild(roster);
+  app.appendChild(rosterSection);
+
+  expandBtn.addEventListener("click", () => roster.querySelectorAll("details").forEach(d => d.open = true));
+  collapseBtn.addEventListener("click", () => roster.querySelectorAll("details").forEach(d => d.open = false));
+  printBtn.addEventListener("click", () => { roster.querySelectorAll("details").forEach(d => d.open = true); setTimeout(() => window.print(), 50); });
+}
+
+function loadRows(rows, isSample, filename){
+  state = { rows, isSample, filename: filename || "" };
+  document.getElementById("app").dataset.session = "";
+  document.getElementById("sourceLabel").className = "source " + (isSample ? "example" : "file");
+  document.getElementById("sourceLabel").textContent = isSample ? "Exemple de démonstration" : "Fichier chargé";
+  document.getElementById("filenameLabel").textContent = isSample
+    ? "9 stagiaires fictifs — « Gestion du temps — 12 novembre 2026 »"
+    : `${filename} — ${rows.length} ligne${rows.length>1?"s":""}`;
+  renderApp();
+}
+
+document.getElementById("csvInput").addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const rows = parseCSV(String(reader.result));
+    loadRows(rows, false, file.name);
+  };
+  reader.readAsText(file, "UTF-8");
+});
+
+const dropzone = document.getElementById("dropzone");
+["dragover","dragenter"].forEach(evt => dropzone.addEventListener(evt, (e) => { e.preventDefault(); dropzone.classList.add("dragover"); }));
+["dragleave","drop"].forEach(evt => dropzone.addEventListener(evt, (e) => { e.preventDefault(); dropzone.classList.remove("dragover"); }));
+dropzone.addEventListener("drop", (e) => {
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => { loadRows(parseCSV(String(reader.result)), false, file.name); };
+  reader.readAsText(file, "UTF-8");
+});
+
+document.getElementById("loadSampleBtn").addEventListener("click", () => loadRows(SAMPLE_ROWS.slice(), true, ""));
+document.getElementById("clearBtn").addEventListener("click", () => loadRows([], false, ""));
+
+renderApp();
+</script>
+</body>
+</html>

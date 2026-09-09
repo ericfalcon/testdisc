@@ -115,6 +115,28 @@ l'avertissement « problème technique » :**
   Pour un vrai test, ouvrez l'URL `/exec` dans un navigateur, ou faites
   passer le test DISC en entier depuis l'application.
 
+## Analyser une session (formateur qui n'a que le Google Sheet)
+
+[`docs/portrait-session-formateur.html`](docs/portrait-session-formateur.html) est un outil
+autonome pour le formateur qui n'a accès qu'au Google Sheet des résultats (pas à l'application,
+ni aux PDF envoyés par les stagiaires). C'est un simple fichier HTML : pas d'installation, pas de
+serveur, pas de compte à créer.
+
+1. Dans le Google Sheet, **Fichier > Télécharger > Valeurs séparées par des virgules (.csv)**.
+2. Ouvrez `docs/portrait-session-formateur.html` en double-cliquant dessus (il s'ouvre dans le
+   navigateur).
+3. Déposez le fichier CSV téléchargé sur la page.
+
+L'outil regroupe les lignes par session, affiche une lecture d'ensemble du groupe (répartition
+des styles, points d'attention, profils à confiance faible) et la fiche complète de chaque
+stagiaire — les mêmes textes que ceux du rapport remis au stagiaire et du guide formateur
+ci-dessus. Tout se lit et se calcule dans le navigateur : rien n'est envoyé sur un serveur, et
+rien n'est conservé une fois la page fermée — un choix voulu, puisque le fichier contient les
+noms et les scores des stagiaires.
+
+Comme le guide formateur, cet outil est généré à partir de `data/disc_descriptions.json` via
+`python3 scripts/build_portrait_session.py` — à relancer si vous modifiez les descriptions.
+
 ## Déployer gratuitement, sans serveur (Streamlit Community Cloud)
 
 1. Créez un compte sur [share.streamlit.io](https://share.streamlit.io) (gratuit,
