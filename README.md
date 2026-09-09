@@ -1,5 +1,8 @@
 # Test DISC — version française
 
+🔗 **Application en ligne : [disctest-cafoc.streamlit.app](https://disctest-cafoc.streamlit.app)**
+— c'est ce lien qui est à envoyer aux stagiaires avant la formation.
+
 Une application [Streamlit](https://streamlit.io) qui fait passer un test de personnalité
 DISC (Dominance, Influence, Stabilité, Conformité) et restitue un profil détaillé,
 avec sa marge d'incertitude plutôt que des chiffres présentés comme définitifs.
@@ -89,6 +92,29 @@ Tant que ce secret n'est pas configuré, l'application fonctionne normalement
 pour les stagiaires (test, profil, PDF) : seul l'envoi automatique vers le
 Sheet est simplement ignoré.
 
+**Si le secret est configuré mais que les stagiaires voient quand même
+l'avertissement « problème technique » :**
+
+- Rouvrez `docs/apps_script.gs` **et redéployez-le** (Déployer > Gérer les
+  déploiements > icône crayon > Nouvelle version) — un simple enregistrement
+  dans l'éditeur ne suffit pas, l'URL `/exec` continue sinon de pointer vers
+  l'ancienne version du script tant qu'une nouvelle version n'est pas
+  publiée.
+- Vérifiez que le déploiement est bien configuré avec « Qui a accès : Tout
+  le monde » (pas « Tout le monde sauf les utilisateurs anonymes »), sinon
+  Google répond par une page de connexion au lieu d'enregistrer la ligne.
+- Regardez les journaux de l'application sur Streamlit Community Cloud
+  (menu **⋮ > Manage app**, puis l'onglet des logs) : une ligne commençant
+  par « Sheet sync » y indique la cause exacte de l'échec (code HTTP renvoyé
+  par Apps Script, ou erreur réseau).
+- Un test depuis le journal d'exécution d'Apps Script (bouton ▶ Exécuter sur
+  `doPost` ou `doGet` directement dans l'éditeur) déclenche toujours une
+  erreur « requete_vide », même quand le webhook fonctionne très bien
+  autrement : ce test simule un appel sans aucune requête HTTP réelle, donc
+  sans aucune donnée à lire. Ce n'est pas un signe que le webhook est cassé.
+  Pour un vrai test, ouvrez l'URL `/exec` dans un navigateur, ou faites
+  passer le test DISC en entier depuis l'application.
+
 ## Déployer gratuitement, sans serveur (Streamlit Community Cloud)
 
 1. Créez un compte sur [share.streamlit.io](https://share.streamlit.io) (gratuit,
@@ -103,10 +129,25 @@ Sheet est simplement ignoré.
 
 Chaque mise à jour poussée sur GitHub redéploie automatiquement l'application.
 
-Si votre application a déjà été déployée une première fois **avant** l'ajout du fichier
-`runtime.txt`, un simple `git push` ne suffit pas à changer la version de Python déjà
-installée : ouvrez le menu **⋮** de l'application sur share.streamlit.io et choisissez
-**Reboot app** pour qu'elle soit reprovisionnée avec la version épinglée.
+**Important — la version de Python d'une application ne peut pas être changée après son
+premier déploiement**, même avec `runtime.txt` : Streamlit Community Cloud choisit la
+version de Python une seule fois, au moment où vous cliquez sur **Deploy** la toute
+première fois (par défaut la dernière version, actuellement Python 3.14, à moins de la
+changer explicitement) — ni un `git push`, ni **Reboot app** dans le menu **⋮**, ne la
+changent ensuite. Si votre application a déjà été déployée une première fois avec la
+mauvaise version, il faut :
+
+1. Noter ses réglages : sous-domaine personnalisé, dépôt/branche/fichier GitHub, et les
+   secrets déjà configurés (`Settings > Secrets`).
+2. La supprimer (menu **⋮ > Delete app**).
+3. La redéployer à l'identique (**New app**, mêmes dépôt/branche/fichier), mais avant de
+   cliquer sur **Deploy**, ouvrir **Advanced settings** et choisir **Python version :
+   3.12** dans le menu déroulant — c'est ce menu, pas `runtime.txt`, qui fixe la version
+   réellement utilisée. Redonnez le même sous-domaine et recollez les secrets dans ce
+   même écran.
+
+`runtime.txt` reste dans ce dépôt à titre indicatif, mais ne comptez que sur le menu
+**Advanced settings** au moment du déploiement pour obtenir Python 3.12.
 
 ## Mettre le dépôt sur votre GitHub
 
