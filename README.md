@@ -137,6 +137,21 @@ noms et les scores des stagiaires.
 Comme le guide formateur, cet outil est généré à partir de `data/disc_descriptions.json` via
 `python3 scripts/build_portrait_session.py` — à relancer si vous modifiez les descriptions.
 
+**En cliquant sur le fichier depuis le site GitHub, vous voyez le code au lieu de la page.**
+C'est normal : GitHub affiche toujours le contenu source d'un fichier `.html`, il ne l'exécute
+jamais dans la page. Deux façons d'avoir la vraie page :
+
+- **Le plus simple** : sur la page du fichier, cliquez sur **Raw** (au-dessus du code), puis
+  enregistrez la page (**Ctrl/Cmd+S**) ou faites un clic droit **Enregistrer sous** — vous obtenez
+  le fichier `.html` sur votre ordinateur, à ouvrir ensuite en double-cliquant.
+- **Pour un lien à partager sans rien télécharger** : activez GitHub Pages une fois pour toutes —
+  **Settings** du dépôt **> Pages**, source **Deploy from a branch**, branche `main`, dossier
+  `/docs`, **Save**. GitHub vous donne alors une adresse du type
+  `https://<votre-compte>.github.io/<nom-du-depot>/portrait-session-formateur.html`, qui affiche
+  la page directement (elle se met à jour à chaque `git push`). Le guide formateur
+  (`guide-formateur-profils-disc.md`) restera lui affiché en Markdown par GitHub, comme
+  aujourd'hui — cette activation ne change que le rendu des fichiers `.html`.
+
 ## Déployer gratuitement, sans serveur (Streamlit Community Cloud)
 
 1. Créez un compte sur [share.streamlit.io](https://share.streamlit.io) (gratuit,
