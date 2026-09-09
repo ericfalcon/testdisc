@@ -117,6 +117,10 @@ def _disc_section(report: dict) -> None:
     ui.panel("Rythme et attention", f'<p>{disc["tempo"]}</p>')
     if disc.get("time_relationship"):
         ui.panel("Votre rapport au temps", f'<p>{html.escape(disc["time_relationship"])}</p>')
+    if disc.get("decision_making"):
+        ui.panel("Votre prise de décision", f'<p>{html.escape(disc["decision_making"])}</p>')
+    if disc.get("interruptions"):
+        ui.panel("Votre rapport aux interruptions", f'<p>{html.escape(disc["interruptions"])}</p>')
     ui.panel("Où vous êtes le plus efficace", f'<p>{html.escape(disc["environment"])}</p>')
 
     friction = "".join(

@@ -154,6 +154,12 @@ def build_pdf(report: dict, results: dict) -> BytesIO:
         if disc.get("time_relationship"):
             flow.append(Paragraph("Votre rapport au temps", s["h3"]))
             flow.append(Paragraph(_clean(disc["time_relationship"]), s["body"]))
+        if disc.get("decision_making"):
+            flow.append(Paragraph("Votre prise de décision", s["h3"]))
+            flow.append(Paragraph(_clean(disc["decision_making"]), s["body"]))
+        if disc.get("interruptions"):
+            flow.append(Paragraph("Votre rapport aux interruptions", s["h3"]))
+            flow.append(Paragraph(_clean(disc["interruptions"]), s["body"]))
         flow.append(Paragraph("Avec qui il vous est le plus difficile de travailler", s["h3"]))
         for who, text in disc["friction"]:
             flow.append(Paragraph(f"<b>Pour un collègue {_clean(who)}.</b> {_clean(text)}", s["body"]))

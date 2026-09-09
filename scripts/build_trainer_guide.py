@@ -40,6 +40,10 @@ def _section(profile: dict) -> list[str]:
         "",
         f"**Rapport au temps.** {profile['time_relationship']}",
         "",
+        f"**Prise de décision.** {profile['decision_making']}",
+        "",
+        f"**Rapport aux interruptions.** {profile['interruptions']}",
+        "",
         f"**Comment communiquer avec cette personne.** {profile['communication_tips']}",
         "",
     ]
@@ -55,8 +59,9 @@ def build(data: dict) -> str:
         "fait pour le formateur — les stagiaires reçoivent leur propre profil, plus détaillé, "
         "en PDF à la fin du test.",
         "",
-        "Pour chaque profil : l'accroche, la description, les forces, les axes de progrès, "
-        "et le rapport au temps — le point le plus utile pour une formation à la gestion du temps.",
+        "Pour chaque profil : l'accroche, la description, les forces, les axes de progrès, et "
+        "quatre points utiles pour une formation à la gestion du temps — le rapport au temps, la "
+        "prise de décision, le rapport aux interruptions, et comment communiquer avec cette personne.",
         "",
     ]
     for code in ORDER:
