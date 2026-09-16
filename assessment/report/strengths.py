@@ -61,7 +61,7 @@ def narrative(result, themes: dict) -> dict:
         "bottom_note": (
             "Ces thèmes arrivent en dernier non pas parce que vous y êtes mauvais, mais parce que "
             "vous ne les avez pas choisis quand autre chose était proposé. Ce sont ceux que vous "
-            "déclassez systématiquement — exactement là où une équipe ressentira votre absence."
+            "mettez systématiquement de côté — exactement là où une équipe ressentira votre absence."
         ),
         "domains": s["domain_percentages"],
     }

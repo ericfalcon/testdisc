@@ -34,7 +34,7 @@
     "domain": "Mobiliser",
     "badge_color": "#C9762B",
     "tagline": "Donne envie à un groupe d'avancer ensemble.",
-    "description": "Vous savez transformer un objectif abstrait en élan collectif : vous nommez ce qui est en jeu, remarquez les efforts de chacun, et le groupe avance avec plus d'énergie qu'avant que vous n'interveniez.",
+    "description": "Vous savez transformer un objectif abstrait en élan collectif : vous dites clairement ce qui est en jeu, remarquez les efforts de chacun, et le groupe avance avec plus d'énergie qu'avant que vous n'interveniez.",
     "action_tip": "Avant votre prochaine réunion d'équipe, préparez une phrase qui relie la tâche du jour à ce que le groupe cherche à accomplir plus largement.",
     "shadow": "Les autres vous associent à l'énergie du groupe, au point de compter sur vous pour la maintenir même quand ce n'est pas à vous de le faire.",
     "overuse": "Vous maintenez l'enthousiasme d'un groupe sur un projet qui, en réalité, devrait être remis en question plutôt qu'encouragé."
@@ -64,7 +64,7 @@
     "domain": "Relier",
     "badge_color": "#1F8A70",
     "tagline": "Entend ce qui n'est pas dit.",
-    "description": "Vous remarquez le changement de ton, l'hésitation, ce qu'une personne n'ose pas formuler directement — et vous lui donnez l'espace pour le dire quand elle est prête.",
+    "description": "Vous remarquez le changement de ton, l'hésitation, ce qu'une personne n'ose pas formuler directement — et vous lui laissez le temps de le dire quand elle est prête.",
     "action_tip": "Lors de votre prochain échange difficile, laissez un silence après votre question au lieu de le remplir, et voyez ce qui en sort.",
     "shadow": "Les autres se sentent entendus par vous, au point de vous confier des choses qu'ils ne partagent avec personne d'autre — ce qui peut devenir un poids.",
     "overuse": "Vous absorbez la charge émotionnelle d'une situation qui ne vous revient pas, au point d'en porter plus que la personne concernée elle-même."
@@ -106,7 +106,7 @@
     "tagline": "Voit où mène la trajectoire actuelle.",
     "description": "Vous projetez naturellement une situation présente vers ce qu'elle deviendra dans un an ou cinq, et vous repérez tôt les tournants que d'autres ne verront qu'une fois qu'ils seront arrivés dessus.",
     "action_tip": "Décrivez en une phrase où mènera, dans un an, la décision que votre équipe s'apprête à prendre — et partagez-la avant qu'elle ne soit actée.",
-    "shadow": "Les autres apprécient que vous anticipiez, mais peuvent aussi se sentir pressés d'agir sur un horizon qui ne leur semble pas encore réel.",
+    "shadow": "Les autres apprécient que vous anticipiez, mais peuvent aussi se sentir pressés de se projeter sur un horizon qui ne leur semble pas encore réel.",
     "overuse": "Vous vous projetez si loin dans l'avenir que le problème concret d'aujourd'hui reste sans réponse."
   },
   "Rigueur": {

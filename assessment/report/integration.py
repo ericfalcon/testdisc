@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from ..scoring.disc import STYLE_NAMES
 from ..scoring.stress import MODE_BLURBS, MODE_LABELS, MODE_TO_STYLE
-from ..types import and_join
+from ..types import and_join, de, de_prefix
 
 # Sur quelle dimension DISC s'appuie chaque thème de forces. Sert à repérer où
 # les forces d'une personne tirent dans le même sens que son comportement par
@@ -35,8 +35,9 @@ def disc_x_strengths(disc_result, strengths_result) -> dict | None:
         lines.append(
             f"<b>Ça se renforce :</b> {and_join(reinforcing)} "
             f"{_verb(reinforcing, 's’appuie', 's’appuient')} sur {STYLE_NAMES[primary]}, déjà "
-            f"votre dimension la plus forte. C'est là que vous êtes le plus fiablement vous-même "
-            f"— et là où vous serez le moins enclin à remettre votre propre jugement en question."
+            f"votre dimension la plus forte. C'est là que vous êtes vous-même de la façon la plus "
+            f"constante — et là où vous serez le moins enclin à remettre votre propre jugement en "
+            f"question."
         )
     if conflicting:
         lines.append(
@@ -44,8 +45,8 @@ def disc_x_strengths(disc_result, strengths_result) -> dict | None:
             f"{_verb(conflicting, 's’appuie', 's’appuient')} sur "
             f"{STYLE_NAMES[lowest]}, votre dimension <i>la plus faible</i>. Vous valorisez cette "
             f"façon de travailler, mais ce n'est pas votre comportement par défaut. Attendez-vous "
-            f"à ce que ça se voie plus dans vos intentions que dans votre agenda réel, et à ce que "
-            f"cet écart soit visible pour vos collègues."
+            f"à ce que ça se voie plus dans vos intentions que dans ce que vous faites réellement "
+            f"au quotidien, et à ce que cet écart soit visible pour vos collègues."
         )
     if not lines:
         lines.append(
@@ -53,7 +54,7 @@ def disc_x_strengths(disc_result, strengths_result) -> dict | None:
             f"concentrer sur {STYLE_NAMES[primary]}. Cela vous rend plus difficile à prévoir, et "
             f"plus difficile à enfermer dans une case."
         )
-    return {"title": "Comportement vs. forces", "icon": "\U0001f501", "lines": lines}
+    return {"title": "Comportement et forces", "icon": "\U0001f501", "lines": lines}
 
 
 def strain_x_stress(strain: dict | None, stress_result) -> dict | None:
@@ -106,10 +107,9 @@ def stress_x_disc(disc_result, stress_result) -> dict | None:
         line = (
             f"Sous pression, vous changez de registre : votre dimension naturelle est "
             f"{STYLE_NAMES[primary]}, mais votre mode sous pression est <b>{MODE_LABELS[mode]}</b>, la "
-            f"version amplifiée de {STYLE_NAMES[expected]}. Les personnes qui connaissent votre version "
-            f"posée ne reconnaissent pas votre version sous tension. Ce décalage mérite d'être nommé à "
-            f"votre équipe à l'avance, sans quoi elle risque de lire ce changement comme quelque chose "
-            f"qui les concerne personnellement."
+            f"version amplifiée {de(STYLE_NAMES[expected])}. Les personnes qui connaissent votre "
+            f"version posée ne reconnaissent pas votre version sous tension. Ce décalage mérite d'être "
+            f"signalé à votre équipe à l'avance, sans quoi elle risque de le prendre personnellement."
         )
     return {"title": "Qui vous devenez sous charge", "icon": "\U0001f329", "lines": [line]}
 
@@ -117,18 +117,18 @@ def stress_x_disc(disc_result, stress_result) -> dict | None:
 def motivators_x_role(motivator_result, strain: dict | None) -> dict | None:
     if motivator_result is None:
         return None
-    top = motivator_result.summary["top"]
-    bottom = motivator_result.summary["bottom"]
+    top_text = and_join(motivator_result.summary["top"])
+    bottom_text = and_join(motivator_result.summary["bottom"])
     lines = [
-        f"Vous avez systématiquement fait le choix de <b>{and_join(top)}</b>, au détriment de "
-        f"<b>{and_join(bottom)}</b> quand il fallait trancher. Ce sont ces arbitrages, pas votre "
-        f"intitulé de poste, qui décideront si un rôle vaut la peine d'y rester."
+        f"Vous avez systématiquement fait le choix {de_prefix(top_text)}<b>{top_text}</b>, au "
+        f"détriment {de_prefix(bottom_text)}<b>{bottom_text}</b> quand il fallait trancher. Ce sont "
+        f"ces arbitrages, pas votre intitulé de poste, qui décideront si un rôle vaut la peine d'y "
+        f"rester."
     ]
     if strain and strain["band"] == "high":
         lines.append(
-            "Au regard de votre charge d'adaptation élevée, la question à se poser est de savoir si le "
-            "poste vous paie dans la monnaie que vous avez réellement choisie ici. Un effort "
-            "supplémentaire est acceptable quand il achète vos moteurs principaux, et coûteux quand ce "
-            "n'est pas le cas."
+            "Au regard de votre charge d'adaptation élevée, la question à se poser est de savoir si "
+            "ce poste vous apporte vraiment ce qui compte pour vous. Un effort supplémentaire se "
+            "justifie quand il nourrit vos moteurs principaux, et pèse lourd quand ce n'est pas le cas."
         )
-    return {"title": "Ce que vous achetez réellement", "icon": "\U0001f9f2", "lines": lines}
+    return {"title": "Ce qui vous fait rester", "icon": "\U0001f9f2", "lines": lines}

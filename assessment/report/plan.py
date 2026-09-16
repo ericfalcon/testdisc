@@ -6,13 +6,7 @@ from __future__ import annotations
 
 from ..scoring.disc import STYLE_NAMES
 from ..scoring.stress import MODE_LABELS
-
-_VOWELS = "aeiouàâéèêëîïôùûü"
-
-
-def _de(word: str) -> str:
-    """"de Sécurité" but "d'Autonomie" — elides before a vowel sound."""
-    return f"d’{word}" if word[:1].lower() in _VOWELS else f"de {word}"
+from ..types import de as _de
 
 BLIND_SPOT_EXPERIMENT = {
     "D": ("Assumez seul une décision",
@@ -30,8 +24,8 @@ BLIND_SPOT_EXPERIMENT = {
 }
 
 STRESS_EXPERIMENT = {
-    "push": ("Mettez un jour entre la pression et l'action",
-             "La prochaine fois que la charge grimpe, attendez une journée complète avant d'agir sur le premier plan qui vous vient. Gardez ce plan ; "
+    "push": ("Laissez passer une journée avant d'agir",
+             "La prochaine fois que la charge grimpe, attendez une journée complète avant de mettre en œuvre le premier plan qui vous vient. Gardez ce plan ; "
              "comparez-le avec celui que vous avez un jour plus tard."),
     "perform": ("Dites la vérité, même si elle n'est pas flatteuse",
                 "Lors de votre prochaine réunion tendue, dites une chose exacte plutôt que rassurante. Observez si le groupe "
@@ -60,7 +54,7 @@ def build(disc_result, strengths_narrative, stress_result, strain, motivator_res
     if strengths_narrative and strengths_narrative["top"]:
         top = strengths_narrative["top"][0]
         experiments.append({
-            "title": f"Repérez les excès de {top['name']}",
+            "title": f"Repérez les excès {_de(top['name'])}",
             "why": f"{top['name']} est votre thème dominant, et chaque thème dominant a une version qui vous coûte quelque chose.",
             "body": (
                 f"{top['overuse']} Repérez une occurrence de cela cette semaine et notez ce que ça vous a coûté. "
@@ -92,7 +86,7 @@ def build(disc_result, strengths_narrative, stress_result, strain, motivator_res
             "title": f"Donnez-vous plus {_de(top)}",
             "why": f"{top} est le moteur pour lequel vous avez le plus systématiquement fait un choix.",
             "body": (
-                f"Nommez un changement concret pour la semaine prochaine qui vous donnerait mesurablement plus "
+                f"Choisissez un changement concret pour la semaine prochaine qui vous donnerait clairement plus "
                 f"{_de(top.lower())}. Pas un plan pour l'année — un seul changement, la semaine prochaine, que "
                 f"vous pouvez faire vous-même."
             ),

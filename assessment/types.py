@@ -60,3 +60,19 @@ def and_join(names: list[str]) -> str:
     if len(names) <= 1:
         return ", ".join(names)
     return ", ".join(names[:-1]) + " et " + names[-1]
+
+
+_VOWELS = "aeiouàâéèêëîïôùûü"
+
+
+def de_prefix(word: str) -> str:
+    """The preposition that goes before ``word`` — "de " normally, "d’" when
+    ``word`` starts with a vowel sound ("d’Autonomie", not "de Autonomie").
+    Works just as well on a whole and_join() list, since only the first word
+    of the list decides the elision ("d’Autonomie, Reconnaissance et Lien")."""
+    return "d’" if word[:1].lower() in _VOWELS else "de "
+
+
+def de(word: str) -> str:
+    """"de Sécurité" but "d’Autonomie" — the full elided phrase."""
+    return f"{de_prefix(word)}{word}"

@@ -150,7 +150,7 @@ def _disc_section(report: dict) -> None:
 
 def _strain_section(report: dict) -> None:
     strain = report["strain"]
-    st.markdown("## Naturel vs. au travail")
+    st.markdown("## Le naturel face au travail")
     st.markdown(
         f'<span class="tag">indice de tension · <span class="num">{strain["index"]:.0f}</span></span>'
         f'<span class="tag">charge d\'adaptation {STRAIN_BAND_LABELS.get(strain["band"], strain["band"])}</span>',
@@ -221,7 +221,7 @@ def _strengths_section(report: dict) -> None:
                 )
 
     ui.panel(
-        "Ce que vous déclassez",
+        "Ce que vous mettez de côté",
         f'<p>{html.escape(strengths["bottom_note"])}</p>'
         + "".join(
             f'<p style="margin-bottom:3px;"><b>{html.escape(t["name"])}</b> '

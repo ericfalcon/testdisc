@@ -196,7 +196,7 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
 
     if "strain" in report:
         strain = report["strain"]
-        flow.append(Paragraph("Naturel vs. au travail", s["h2"]))
+        flow.append(Paragraph("Le naturel face au travail", s["h2"]))
         flow.append(Paragraph(
             f"Indice d'écart <b>{strain['index']:.0f}</b> — charge d'adaptation "
             f"{STRAIN_BAND_LABELS.get(strain['band'], strain['band'])}, "

@@ -6,8 +6,8 @@ from ..scoring.disc import STYLE_NAMES
 
 PRIMARY = {
     "D": "Votre mode de fonctionnement de base est proactif et déterminé. Vous puisez votre énergie dans le fait de lever des obstacles, de prendre des initiatives et d'aller vers un résultat concret, et vous voulez pouvoir décider sans attendre d'autorisation.",
-    "I": "Votre mode de fonctionnement de base est expressif et relationnel. Vous réfléchissez à voix haute, vous créez de la dynamique par le contact humain, et vous donnez le meilleur de vous-même là où il y a du dialogue, de l'enthousiasme visible et un mérite partagé.",
-    "S": "Votre mode de fonctionnement de base est patient et fiable. Vous construisez une confiance qui dure, vous tenez un rythme stable sur la durée, et vous êtes la personne sur laquelle les autres bâtissent leurs plans.",
+    "I": "Votre mode de fonctionnement de base est expressif et relationnel. Vous réfléchissez à voix haute, vous créez de la dynamique par le contact humain, et vous donnez le meilleur de vous-même là où il y a du dialogue, de l'enthousiasme visible et une réussite qui se partage.",
+    "S": "Votre mode de fonctionnement de base est patient et fiable. Vous construisez une confiance qui dure, vous tenez un rythme stable sur la durée, et vous êtes la personne sur qui les autres s'appuient pour construire leurs propres plans.",
     "C": "Votre mode de fonctionnement de base est analytique et exigeant. Vous décomposez les problèmes, vous voulez des décisions fondées sur quelque chose de vérifiable, et vous tirez une vraie satisfaction d'un travail qui résiste à l'examen.",
 }
 
@@ -21,16 +21,16 @@ BLEND = {
     "S-D": "Votre Dominance donne de la fermeté à votre patience : quand c'est important, vous savez tenir votre position.",
     "S-I": "Votre Influence rend votre Stabilité sociable — vous êtes la personne qui maintient le lien dans un groupe.",
     "S-C": "Votre Conformité rend votre fiabilité rigoureuse : ce que vous prenez en charge n'est jamais laissé de côté.",
-    "C-D": "Votre Dominance transforme l'analyse en argumentaire : vous ne vous contentez pas de trouver la faille, vous poussez pour qu'elle soit corrigée.",
+    "C-D": "Votre Dominance transforme l'analyse en argumentaire : vous ne vous contentez pas de trouver la faille, vous insistez pour qu'elle soit corrigée.",
     "C-I": "Votre Influence vous permet de traduire l'analyse pour ceux qui ne la liront jamais.",
     "C-S": "Votre Stabilité rend votre rigueur tenable dans la durée — minutieuse, et toujours là au neuvième mois.",
 }
 
 BLIND_SPOT = {
-    "D": "La Dominance est votre dimension la plus faible. Vous cherchez l'accord avant d'agir, ce qui paraît collaboratif jusqu'au moment où une décision a besoin d'un responsable et que personne ne s'en empare. Le coût retombe sur celui qui finit par le faire.",
-    "I": "L'Influence est votre dimension la plus faible. Vous laissez le travail parler de lui-même, ce qui est honorable mais peu fiable : les personnes qui n'ont jamais de vos nouvelles se forgent une opinion de votre travail à partir du récit de quelqu'un d'autre.",
+    "D": "La Dominance est votre dimension la plus faible. Vous cherchez l'accord avant d'agir, ce qui paraît collaboratif jusqu'au moment où une décision doit être tranchée et que personne ne s'en charge. Le coût retombe sur celui qui finit par le faire.",
+    "I": "L'Influence est votre dimension la plus faible. Vous misez sur le fait qu'un travail bien fait se remarque de lui-même, ce qui est honorable mais peu fiable : les personnes qui n'ont jamais de vos nouvelles se forgent une opinion de votre travail à partir du récit de quelqu'un d'autre.",
     "S": "La Stabilité est votre dimension la plus faible. Vous passez vite à autre chose, alors que les personnes qui avaient besoin que le plan précédent tienne continuent de s'y référer. Le changement est rarement le problème ; le manque de préavis, si.",
-    "C": "La Conformité est votre dimension la plus faible. Vous agissez sur l'essentiel, ce qui est rapide et parfois coûteux. Le détail que vous avez sauté a tendance à réapparaître sous la forme de l'urgence de quelqu'un d'autre.",
+    "C": "La Conformité est votre dimension la plus faible. Vous allez droit à l'essentiel, ce qui est rapide et parfois coûteux. Le détail que vous avez sauté a tendance à ressurgir plus tard, sous la pression de quelqu'un d'autre.",
 }
 
 # Écrit délibérément du point de vue de l'autre personne. Le sujet est ce que
@@ -45,7 +45,7 @@ FRICTION = {
         ("à dominante Dominance", "La discussion ressemble à un retard alors qu'ils voulaient une décision. Ce qui aide : commencer par la recommandation, puis expliquer le raisonnement."),
     ],
     "S": [
-        ("à dominante Dominance", "Votre prudence donne l'impression d'une résistance. Ce qui aide : nommer ce dont vous avez besoin pour avancer, plutôt que ce qui vous inquiète."),
+        ("à dominante Dominance", "Votre prudence donne l'impression d'une résistance. Ce qui aide : dire ce dont vous avez besoin pour avancer, plutôt que ce qui vous inquiète."),
         ("à dominante Influence", "Votre discrétion donne l'impression de désapprobation. Ce qui aide : exprimer à voix haute ce qui est positif ; ils ne peuvent pas le deviner."),
     ],
     "C": [
@@ -122,7 +122,7 @@ def narrative(result, confidence: dict, descriptions: dict) -> dict:
         "headline": style_info.get("headline", ""),
         "claims": claims,
         "tempo": (
-            f"Votre rythme se lit comme <b>{pace_word}</b> (rythme {s['pace']:+.0f}), avec une attention portée sur "
+            f"Votre rythme est plutôt <b>{pace_word}</b> (rythme {s['pace']:+.0f}), avec une attention portée sur "
             f"<b>{focus_word}</b> (focus {s['focus']:+.0f}). Intensité du style : <b>{s['intensity'].lower()}</b>."
         ),
         "environment": ENVIRONMENT[primary],

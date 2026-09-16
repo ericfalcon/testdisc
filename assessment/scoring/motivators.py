@@ -18,8 +18,8 @@ DRIVERS = (
 
 DRIVER_BLURBS = {
     "Autonomie": "La liberté de choisir votre méthode et d'être jugé sur le résultat.",
-    "Maîtrise": "Devenir mesurablement meilleur dans quelque chose de difficile.",
-    "Reconnaissance": "Un crédit précis et personnel, venant de gens dont vous respectez le jugement.",
+    "Maîtrise": "Faire des progrès visibles sur quelque chose de difficile.",
+    "Reconnaissance": "Voir son travail reconnu, précisément et personnellement, par des gens dont on respecte le jugement.",
     "Sécurité": "Un socle stable : des exigences prévisibles et un poste qui sera toujours là.",
     "Sens": "Un travail dont vous croyez le bien-fondé, au-delà du travail lui-même.",
     "Lien": "Appartenir à un groupe de personnes avec qui vous aimez sincèrement travailler.",
