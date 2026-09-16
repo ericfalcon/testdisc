@@ -2,6 +2,21 @@
  * Reçoit les résultats du test DISC (envoyés par l'application Streamlit) et
  * les ajoute comme une nouvelle ligne dans la feuille active.
  *
+ * Les huit premières colonnes de résultat (Style DISC ... Score C) sont
+ * toujours renseignées. Les six suivantes (Style au travail ... Points forts
+ * principaux) viennent des quatre modules complémentaires et facultatifs de
+ * l'application ; elles restent vides pour un·e stagiaire qui n'a fait que le
+ * module DISC. Si un·e stagiaire complète un module complémentaire après
+ * avoir déjà vu ses résultats une première fois, l'application envoie une
+ * nouvelle ligne, plus complète que la précédente — pour un·e même
+ * stagiaire, la ligne la plus récente (Horodatage) est la plus à jour.
+ *
+ * Si vous aviez déjà déployé une version antérieure de ce script (avant ces
+ * six colonnes), aucune action n'est requise : à la première nouvelle ligne
+ * enregistrée après la mise à jour, ce script complète automatiquement la
+ * ligne d'en-têtes existante avec les colonnes manquantes, sans toucher aux
+ * lignes déjà présentes.
+ *
  * Installation :
  * 1. Ouvrez (ou créez) le Google Sheet qui doit recevoir les résultats.
  * 2. Menu Extensions > Apps Script.
@@ -46,6 +61,8 @@ var EN_TETES = [
   "Horodatage", "Prénom", "Nom", "Session / formation",
   "Style DISC", "Titre du profil", "Intensité", "Confiance",
   "Score D", "Score I", "Score S", "Score C",
+  "Style au travail", "Indice de tension", "Charge d'adaptation",
+  "Mode sous pression", "Moteurs principaux", "Points forts principaux",
 ];
 
 function doGet(e) {
@@ -74,6 +91,9 @@ function enregistrerResultat(donnees) {
   var feuille = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   assurerEnTetes(feuille);
 
+  var indiceTension = (donnees.indice_tension !== undefined && donnees.indice_tension !== "")
+    ? Number(donnees.indice_tension) : "";
+
   feuille.appendRow([
     donnees.horodatage || new Date().toISOString(),
     donnees.prenom || "",
@@ -87,6 +107,12 @@ function enregistrerResultat(donnees) {
     Number(donnees.score_I),
     Number(donnees.score_S),
     Number(donnees.score_C),
+    donnees.style_travail || "",
+    indiceTension,
+    donnees.charge_adaptation || "",
+    donnees.mode_sous_pression || "",
+    donnees.moteurs_principaux || "",
+    donnees.points_forts_principaux || "",
   ]);
 
   return ContentService
@@ -98,5 +124,15 @@ function assurerEnTetes(feuille) {
   if (feuille.getLastRow() === 0) {
     feuille.appendRow(EN_TETES);
     feuille.setFrozenRows(1);
+    return;
+  }
+  // La feuille a déjà des lignes (script mis à jour après un premier
+  // déploiement) : on complète la ligne d'en-têtes avec les colonnes
+  // manquantes plutôt que de la réécrire, pour ne jamais décaler ou effacer
+  // les résultats déjà enregistrés.
+  var largeurActuelle = feuille.getLastColumn();
+  if (largeurActuelle < EN_TETES.length) {
+    var manquantes = EN_TETES.slice(largeurActuelle);
+    feuille.getRange(1, largeurActuelle + 1, 1, manquantes.length).setValues([manquantes]);
   }
 }

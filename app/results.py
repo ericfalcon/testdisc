@@ -381,15 +381,23 @@ def _export_filename(extension: str) -> str:
 
 
 def _sync_to_trainer(report: dict, results: dict) -> None:
-    """Send this result to the trainer's Google Sheet once, the first time the
-    results page is reached with a finished disc_natural module."""
-    if "disc_natural" not in results or st.session_state.get("_sent_to_trainer"):
+    """Send this result to the trainer's Google Sheet: once as soon as
+    disc_natural is done, and again whenever an addon module completes
+    afterwards (the trainee can add modules from this same results page —
+    see _add_modules below, which sends them back through the picker and
+    then back here). Each send carries the full up-to-date snapshot, so a
+    trainer's sheet ends up with one row per attempt, each richer than the
+    last, rather than silently dropping whatever was completed after the
+    first sync."""
+    if "disc_natural" not in results:
         return
+    current_modules = frozenset(results)
+    already_synced = st.session_state.get("_synced_modules")
+    if already_synced is not None and current_modules <= already_synced:
+        return  # nothing new to report since the last send
     identity = st.session_state.get("identity") or {}
-    summary = results["disc_natural"].summary
-    confidence_level = report["confidence"].get("disc_natural", {}).get("level", "Moderate")
-    ok, status = sheet_sync.send_result(identity, report, summary, confidence_level)
-    st.session_state["_sent_to_trainer"] = True
+    ok, status = sheet_sync.send_result(identity, report, results)
+    st.session_state["_synced_modules"] = current_modules
     st.session_state["_sent_to_trainer_status"] = status
     if ok:
         st.caption("✓ Résultat transmis à votre formateur.")

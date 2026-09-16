@@ -49,3 +49,14 @@ class ModuleResult:
 def adjust(response: int, keyed: int) -> int:
     """Flip a reverse-keyed response onto the forward scale."""
     return response if keyed >= 0 else 6 - response
+
+
+def and_join(names: list[str]) -> str:
+    """A French-style enumeration: 'A', 'A et B', 'A, B et C' — never the bare
+    comma-separated list a naive join() produces, which reads as a fragment
+    rather than a full French list. Shared by the report narrative and the
+    trainer Sheet export, which both list module results (top themes, top
+    drivers, ...) inside French sentences or cells."""
+    if len(names) <= 1:
+        return ", ".join(names)
+    return ", ".join(names[:-1]) + " et " + names[-1]

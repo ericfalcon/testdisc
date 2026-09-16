@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from ..scoring.disc import STYLE_NAMES
 from ..scoring.stress import MODE_BLURBS, MODE_LABELS, MODE_TO_STYLE
+from ..types import and_join
 
 # Sur quelle dimension DISC s'appuie chaque thème de forces. Sert à repérer où
 # les forces d'une personne tirent dans le même sens que son comportement par
@@ -21,15 +22,6 @@ def _verb(names: list[str], singular: str, plural: str) -> str:
     return singular if len(names) == 1 else plural
 
 
-def _and_join(names: list[str]) -> str:
-    """A French-style enumeration: 'A', 'A et B', 'A, B et C' — never the bare
-    comma-separated list a naive join() produces, which reads as a fragment
-    rather than a full French list."""
-    if len(names) <= 1:
-        return ", ".join(names)
-    return ", ".join(names[:-1]) + " et " + names[-1]
-
-
 def disc_x_strengths(disc_result, strengths_result) -> dict | None:
     d = disc_result.summary
     primary, lowest = d["primary"], d["lowest"]
@@ -41,14 +33,14 @@ def disc_x_strengths(disc_result, strengths_result) -> dict | None:
     lines = []
     if reinforcing:
         lines.append(
-            f"<b>Ça se renforce :</b> {_and_join(reinforcing)} "
+            f"<b>Ça se renforce :</b> {and_join(reinforcing)} "
             f"{_verb(reinforcing, 's’appuie', 's’appuient')} sur {STYLE_NAMES[primary]}, déjà "
             f"votre dimension la plus forte. C'est là que vous êtes le plus fiablement vous-même "
             f"— et là où vous serez le moins enclin à remettre votre propre jugement en question."
         )
     if conflicting:
         lines.append(
-            f"<b>Ça tire à contre-courant :</b> {_and_join(conflicting)} "
+            f"<b>Ça tire à contre-courant :</b> {and_join(conflicting)} "
             f"{_verb(conflicting, 's’appuie', 's’appuient')} sur "
             f"{STYLE_NAMES[lowest]}, votre dimension <i>la plus faible</i>. Vous valorisez cette "
             f"façon de travailler, mais ce n'est pas votre comportement par défaut. Attendez-vous "
@@ -128,8 +120,8 @@ def motivators_x_role(motivator_result, strain: dict | None) -> dict | None:
     top = motivator_result.summary["top"]
     bottom = motivator_result.summary["bottom"]
     lines = [
-        f"Vous avez systématiquement fait le choix de <b>{_and_join(top)}</b>, au détriment de "
-        f"<b>{_and_join(bottom)}</b> quand il fallait trancher. Ce sont ces arbitrages, pas votre "
+        f"Vous avez systématiquement fait le choix de <b>{and_join(top)}</b>, au détriment de "
+        f"<b>{and_join(bottom)}</b> quand il fallait trancher. Ce sont ces arbitrages, pas votre "
         f"intitulé de poste, qui décideront si un rôle vaut la peine d'y rester."
     ]
     if strain and strain["band"] == "high":

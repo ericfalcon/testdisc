@@ -111,6 +111,22 @@ Tant que ce secret n'est pas configuré, l'application fonctionne normalement
 pour les stagiaires (test, profil, PDF) : seul l'envoi automatique vers le
 Sheet est simplement ignoré.
 
+**Ce qui part vers le Sheet.** Les huit premières colonnes (style, titre,
+intensité, confiance, scores D/I/S/C) partent dès que le module DISC est
+terminé — c'est le seul module obligatoire. Si un·e stagiaire fait aussi l'un
+des quatre modules complémentaires (facultatifs), six colonnes de plus
+s'ajoutent avec un résumé de chacun (style au travail, indice de tension,
+mode sous pression, moteurs principaux, points forts principaux) ; elles
+restent vides sinon. Un·e stagiaire peut voir ses résultats DISC, puis
+revenir en ajouter un depuis la même page (« Pour aller plus loin ») :
+l'application renvoie alors une seconde ligne, plus complète que la première
+— pour une même personne, c'est donc la ligne la plus récente (colonne
+Horodatage) qui compte. Si vous aviez déjà ce Sheet en service avant ces six
+colonnes, aucune reprise n'est nécessaire : redéployez simplement le script
+mis à jour (voir ci-dessous) et il complète tout seul la ligne d'en-têtes
+existante à la prochaine réponse enregistrée, sans toucher aux lignes déjà
+là.
+
 **Si le secret est configuré mais que les stagiaires voient quand même
 l'avertissement « problème technique » :**
 
@@ -139,7 +155,9 @@ l'avertissement « problème technique » :**
 [`docs/portrait-session-formateur.html`](docs/portrait-session-formateur.html) est un outil
 autonome pour le formateur qui n'a accès qu'au Google Sheet des résultats (pas à l'application,
 ni aux PDF envoyés par les stagiaires). C'est un simple fichier HTML : pas d'installation, pas de
-serveur, pas de compte à créer.
+serveur, pas de compte à créer. Quand le CSV contient les six colonnes des modules complémentaires
+(voir ci-dessus), la fiche de chaque stagiaire les affiche aussi, dans une section « Modules
+complémentaires » — absente pour qui n'a fait que le DISC.
 
 1. Dans le Google Sheet, **Fichier > Télécharger > Valeurs séparées par des virgules (.csv)**.
 2. Ouvrez `docs/portrait-session-formateur.html` en double-cliquant dessus (il s'ouvre dans le

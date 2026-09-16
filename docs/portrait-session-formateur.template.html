@@ -264,7 +264,7 @@
   <div id="app"></div>
 
   <footer>
-    Les fiches reprennent le même texte, par style, que <code>guide-formateur-profils-disc.md</code> — seules les valeurs (nom, scores, intensité, confiance) viennent de votre fichier.
+    Les fiches reprennent le même texte, par style, que <code>guide-formateur-profils-disc.md</code> — seules les valeurs (nom, scores, intensité, confiance, et les modules complémentaires quand la personne les a faits) viennent de votre fichier.
   </footer>
 </div>
 
@@ -284,14 +284,18 @@ const STYLE_LETTERS = ["D", "I", "S", "C"];
 const LETTER_NAMES = { D: "Dominance", I: "Influence", S: "Stabilité", C: "Conformité" };
 
 const SAMPLE_ROWS = [
-  { horodatage:"2026-11-12T08:14:00Z", prenom:"Camille", nom:"Dubois",   session:"Gestion du temps — 12 novembre 2026", style:"D",  titre:"Style Dominance (D)",              intensite:"Marquée",       confiance:"élevée",  D:82, I:54, S:28, C:41 },
+  { horodatage:"2026-11-12T08:14:00Z", prenom:"Camille", nom:"Dubois",   session:"Gestion du temps — 12 novembre 2026", style:"D",  titre:"Style Dominance (D)",              intensite:"Marquée",       confiance:"élevée",  D:82, I:54, S:28, C:41,
+    styleTravail:"Dominance", indiceTension:"9", chargeAdaptation:"faible", modeSousPression:"Contrôle", moteursPrincipaux:"Autonomie, Statut et Variété", pointsFortsPrincipaux:"Lancement, Conviction et Vision" },
   { horodatage:"2026-11-12T08:21:00Z", prenom:"Farid",   nom:"Benali",   session:"Gestion du temps — 12 novembre 2026", style:"DI", titre:"Style Dominance + Influence (DI)", intensite:"Modérée",       confiance:"élevée",  D:68, I:61, S:33, C:29 },
-  { horodatage:"2026-11-12T08:26:00Z", prenom:"Karim",   nom:"Haddad",   session:"Gestion du temps — 12 novembre 2026", style:"DC", titre:"Style Dominance + Conformité (DC)", intensite:"Modérée",       confiance:"modérée", D:57, I:22, S:26, C:66 },
+  { horodatage:"2026-11-12T08:26:00Z", prenom:"Karim",   nom:"Haddad",   session:"Gestion du temps — 12 novembre 2026", style:"DC", titre:"Style Dominance + Conformité (DC)", intensite:"Modérée",       confiance:"modérée", D:57, I:22, S:26, C:66,
+    styleTravail:"Conformité", indiceTension:"22", chargeAdaptation:"élevée", modeSousPression:"Retrait", moteursPrincipaux:"Maîtrise et Sécurité", pointsFortsPrincipaux:"Rigueur, Discernement et Optimisation" },
   { horodatage:"2026-11-12T08:33:00Z", prenom:"Élodie",  nom:"Marchand", session:"Gestion du temps — 12 novembre 2026", style:"I",  titre:"Style Influence (I)",              intensite:"Marquée",       confiance:"modérée", D:39, I:79, S:52, C:24 },
-  { horodatage:"2026-11-12T08:40:00Z", prenom:"Julien",  nom:"Petit",    session:"Gestion du temps — 12 novembre 2026", style:"IS", titre:"Style Influence + Stabilité (IS)", intensite:"Modérée",       confiance:"élevée",  D:22, I:64, S:58, C:31 },
+  { horodatage:"2026-11-12T08:40:00Z", prenom:"Julien",  nom:"Petit",    session:"Gestion du temps — 12 novembre 2026", style:"IS", titre:"Style Influence + Stabilité (IS)", intensite:"Modérée",       confiance:"élevée",  D:22, I:64, S:58, C:31,
+    modeSousPression:"Absorption", moteursPrincipaux:"Lien, Sens et Reconnaissance" },
   { horodatage:"2026-11-12T08:47:00Z", prenom:"Nadia",   nom:"Rousseau", session:"Gestion du temps — 12 novembre 2026", style:"S",  titre:"Style Stabilité (S)",              intensite:"Marquée",       confiance:"élevée",  D:18, I:35, S:81, C:47 },
   { horodatage:"2026-11-12T08:55:00Z", prenom:"Thomas",  nom:"Lefebvre", session:"Gestion du temps — 12 novembre 2026", style:"SC", titre:"Style Stabilité + Conformité (SC)",intensite:"Modérée",       confiance:"faible",  D:25, I:29, S:62, C:57 },
-  { horodatage:"2026-11-12T09:02:00Z", prenom:"Sophie",  nom:"Girard",   session:"Gestion du temps — 12 novembre 2026", style:"C",  titre:"Style Conformité (C)",             intensite:"Marquée",       confiance:"élevée",  D:31, I:19, S:38, C:84 },
+  { horodatage:"2026-11-12T09:02:00Z", prenom:"Sophie",  nom:"Girard",   session:"Gestion du temps — 12 novembre 2026", style:"C",  titre:"Style Conformité (C)",             intensite:"Marquée",       confiance:"élevée",  D:31, I:19, S:38, C:84,
+    pointsFortsPrincipaux:"Écoute, Médiation et Loyauté" },
   { horodatage:"2026-11-12T09:09:00Z", prenom:"Léa",     nom:"Fontaine", session:"Gestion du temps — 12 novembre 2026", style:"balanced", titre:"Style équilibré / situationnel", intensite:"Situationnelle", confiance:"modérée", D:48, I:52, S:45, C:50 },
 ];
 
@@ -302,7 +306,25 @@ const HEADER_MAP = {
   "intensité":"intensite", "intensite":"intensite",
   "confiance":"confiance",
   "score d":"D", "score i":"I", "score s":"S", "score c":"C",
+  // Colonnes des quatre modules complémentaires — vides pour un·e stagiaire
+  // qui n'a fait que le DISC, donc ignorées silencieusement dans la fiche
+  // quand la valeur est absente (voir ADDON_FIELDS plus bas).
+  "style au travail":"styleTravail",
+  "indice de tension":"indiceTension",
+  "charge d'adaptation":"chargeAdaptation",
+  "mode sous pression":"modeSousPression",
+  "moteurs principaux":"moteursPrincipaux",
+  "points forts principaux":"pointsFortsPrincipaux",
 };
+
+// Affichées dans la fiche d'un·e stagiaire uniquement quand renseignées.
+const ADDON_FIELDS = [
+  ["styleTravail", "Style au travail"],
+  ["chargeAdaptation", "Charge d'adaptation"],
+  ["modeSousPression", "Mode sous pression"],
+  ["moteursPrincipaux", "Moteurs principaux"],
+  ["pointsFortsPrincipaux", "Points forts principaux"],
+];
 
 let state = { rows: SAMPLE_ROWS.slice(), isSample: true, filename: "" };
 
@@ -526,6 +548,24 @@ function renderApp(){
           fiche.appendChild(field);
         }
       });
+      // Les quatre modules complémentaires sont facultatifs : cette section
+      // n'apparaît que si la personne en a fait au moins un (colonnes vides
+      // dans le CSV sinon), donc une fiche DISC seule reste identique à avant.
+      const addonLines = [];
+      if (r.styleTravail) addonLines.push(`<b>Style au travail :</b> ${r.styleTravail}`);
+      if (r.chargeAdaptation){
+        const indice = r.indiceTension ? ` (indice ${r.indiceTension})` : "";
+        addonLines.push(`<b>Charge d'adaptation :</b> ${r.chargeAdaptation}${indice}`);
+      }
+      if (r.modeSousPression) addonLines.push(`<b>Mode sous pression :</b> ${r.modeSousPression}`);
+      if (r.moteursPrincipaux) addonLines.push(`<b>Moteurs principaux :</b> ${r.moteursPrincipaux}`);
+      if (r.pointsFortsPrincipaux) addonLines.push(`<b>Points forts principaux :</b> ${r.pointsFortsPrincipaux}`);
+      if (addonLines.length){
+        const addonField = el("div", { class:"field" });
+        addonField.appendChild(el("h4", { text:"Modules complémentaires" }));
+        addonField.appendChild(el("p", { html: addonLines.join("<br>") }));
+        fiche.appendChild(addonField);
+      }
     } else {
       fiche.appendChild(el("p", { text:`Style « ${codeKey} » non reconnu — vérifiez la colonne « Style DISC » du CSV.` }));
     }
