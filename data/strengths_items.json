@@ -1,7 +1,7 @@
 [
   {
     "id": "f001",
-    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
+    "question": "Entre ces deux réflexes, lequel vous ressemble le plus au travail ?",
     "option_a": "Je me lance tout de suite, quitte à ajuster en cours de route.",
     "option_b": "Je donne de l'énergie au groupe pour qu'il avance ensemble.",
     "alignment": {
@@ -15,7 +15,7 @@
   },
   {
     "id": "f002",
-    "question": "Devant une décision à prendre rapidement, vous êtes plutôt du genre à :",
+    "question": "Laquelle de ces deux phrases sonne le plus vrai pour vous ?",
     "option_a": "Quand l'équipe s'essouffle en pleine réunion, je relance la dynamique.",
     "option_b": "J'écoute ce qui ne se dit pas directement dans une conversation.",
     "alignment": {
@@ -29,7 +29,7 @@
   },
   {
     "id": "f003",
-    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
+    "question": "Si on devait n'en garder qu'une, laquelle vous décrit le mieux ?",
     "option_a": "Je remarque le changement de ton avant que quelqu'un n'ait dit quoi que ce soit.",
     "option_b": "J'examine une proposition en cherchant d'abord ce qui ne tient pas.",
     "alignment": {
@@ -43,7 +43,7 @@
   },
   {
     "id": "f004",
-    "question": "Quand un collègue vous sollicite, votre réflexe est plutôt de :",
+    "question": "Face à ces deux tendances, laquelle est la plus vous ?",
     "option_a": "Je repère l'hypothèse fragile dans un plan que tout le monde trouve déjà convaincant.",
     "option_b": "Je continue un dossier bien après que son attrait initial soit retombé.",
     "alignment": {
@@ -57,7 +57,7 @@
   },
   {
     "id": "f005",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
+    "question": "Un collègue qui vous connaît bien choisirait laquelle des deux pour vous décrire ?",
     "option_a": "Sur une tâche répétitive qui traîne depuis des semaines, je suis encore celui qui la termine.",
     "option_b": "Quand je crois à une idée, je trouve l'angle qui va vraiment parler à mon interlocuteur.",
     "alignment": {
@@ -71,7 +71,7 @@
   },
   {
     "id": "f006",
-    "question": "Sous un délai serré, vous avez tendance à :",
+    "question": "Laquelle de ces deux façons de faire est la plus naturelle chez vous ?",
     "option_a": "Je construis un argumentaire qui emporte l'adhésion plutôt que d'imposer mon avis.",
     "option_b": "Une fois que je me suis engagé auprès de quelqu'un, je tiens parole quoi qu'il arrive.",
     "alignment": {
@@ -85,7 +85,7 @@
   },
   {
     "id": "f007",
-    "question": "Quand une situation devient tendue, vous avez tendance à :",
+    "question": "Entre les deux, laquelle vous arrive le plus souvent ?",
     "option_a": "Je reste dans le camp d'un collègue même quand la situation devient inconfortable pour moi.",
     "option_b": "Je projette une situation présente vers ce qu'elle deviendra dans un an ou cinq.",
     "alignment": {
@@ -99,7 +99,7 @@
   },
   {
     "id": "f008",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
+    "question": "Laquelle de ces deux réactions est la plus spontanée chez vous ?",
     "option_a": "Je repère un tournant important avant que les autres ne le voient arriver.",
     "option_b": "Je repère une étape inutile dans une procédure, même quand personne ne s'en plaint.",
     "alignment": {
@@ -113,7 +113,7 @@
   },
   {
     "id": "f009",
-    "question": "Face à un imprévu, vous avez tendance à :",
+    "question": "Si vous deviez vous reconnaître dans une seule des deux, ce serait :",
     "option_a": "Je change ma façon de faire dès que je vois un raccourci qui ferait gagner du temps à tous.",
     "option_b": "J'entretiens un grand nombre de contacts professionnels, même ceux que je croise rarement.",
     "alignment": {
@@ -127,7 +127,7 @@
   },
   {
     "id": "f010",
-    "question": "Quand les choses ralentissent, votre réflexe est plutôt de :",
+    "question": "Entre ces deux comportements, lequel revient le plus souvent chez vous ?",
     "option_a": "Je sais exactement qui appeler pour débloquer une situation en une journée.",
     "option_b": "Face à une tension entre deux collègues, je cherche ce que chacun peut céder sans perdre la face.",
     "alignment": {
@@ -141,7 +141,7 @@
   },
   {
     "id": "f011",
-    "question": "Sur un dossier qui traîne depuis longtemps, vous êtes plutôt du genre à :",
+    "question": "Laquelle des deux phrases pourrait être écrite par vous ?",
     "option_a": "Je ne prends pas parti dans un désaccord, je cherche le terrain où les deux peuvent avancer.",
     "option_b": "Je ne laisse pas passer un détail qui cloche, même sur un dossier déjà bien avancé.",
     "alignment": {
@@ -155,7 +155,7 @@
   },
   {
     "id": "f012",
-    "question": "Face à un désaccord entre deux collègues, votre réflexe est plutôt de :",
+    "question": "Face à ces deux tournures d'esprit, laquelle est la vôtre ?",
     "option_a": "Je vérifie une source avant de m'appuyer dessus, même si tout le monde la cite déjà.",
     "option_b": "Face à un brief encore flou, je préfère démarrer avec ce qu'on a plutôt qu'attendre d'être prêt à 100 %.",
     "alignment": {
@@ -169,7 +169,7 @@
   },
   {
     "id": "f013",
-    "question": "Quand un projet manque encore de clarté, vous avez tendance à :",
+    "question": "Un ancien collègue dirait plutôt de vous :",
     "option_a": "Dès qu'une direction se dessine, je passe à l'action sans attendre le feu vert final.",
     "option_b": "Je laisse à mon interlocuteur le temps de dire ce qu'il n'ose pas exprimer directement.",
     "alignment": {
@@ -183,7 +183,7 @@
   },
   {
     "id": "f014",
-    "question": "Devant un enthousiasme général dans la salle, vous êtes plutôt du genre à :",
+    "question": "Entre ces deux instincts, lequel prend le dessus chez vous ?",
     "option_a": "Je nomme clairement ce qui est en jeu pour remotiver tout le monde.",
     "option_b": "Un chiffre qui ne colle pas m'arrête, même au milieu d'un enthousiasme général.",
     "alignment": {
@@ -197,7 +197,7 @@
   },
   {
     "id": "f015",
-    "question": "Quand quelque chose vous semble mal expliqué, votre réflexe est plutôt de :",
+    "question": "Laquelle des deux vous ressemble sans hésitation ?",
     "option_a": "Je perçois l'hésitation derrière une réponse donnée trop vite.",
     "option_b": "Ce qui compte pour moi, ce n'est pas de commencer un projet, mais de le finir vraiment.",
     "alignment": {
@@ -211,7 +211,7 @@
   },
   {
     "id": "f016",
-    "question": "Face à une tâche répétitive, vous avez tendance à :",
+    "question": "Si on devait parier sur l'une des deux pour vous, ce serait :",
     "option_a": "Je pose la question qui dérange avant que la décision ne soit prise trop vite.",
     "option_b": "Face à un doute sincère, je cherche à convaincre plutôt qu'à trancher par l'autorité.",
     "alignment": {
@@ -225,7 +225,7 @@
   },
   {
     "id": "f017",
-    "question": "Quand vous devez obtenir une information rapidement, vous êtes plutôt du genre à :",
+    "question": "Entre ces deux réflexes, lequel est le plus vous, même les mauvais jours ?",
     "option_a": "Je tiens un engagement dans la durée, même quand plus personne ne surveille l'avancement.",
     "option_b": "Je tiens mes engagements envers les personnes, pas seulement envers les tâches à accomplir.",
     "alignment": {
@@ -239,7 +239,7 @@
   },
   {
     "id": "f018",
-    "question": "Dans une conversation informelle, vous remarquez plutôt :",
+    "question": "Laquelle de ces deux affirmations vous correspond le mieux ?",
     "option_a": "Je sais adapter mon discours selon la personne que j'ai en face de moi.",
     "option_b": "Je vois où mène une tendance actuelle bien avant qu'elle ne devienne évidente pour tous.",
     "alignment": {
@@ -253,7 +253,7 @@
   },
   {
     "id": "f019",
-    "question": "Quand une méthode de travail existe déjà, vous avez tendance à :",
+    "question": "Face à ces deux options, laquelle décrit votre façon d'être la plupart du temps ?",
     "option_a": "Si quelqu'un peut compter sur moi, il peut vraiment compter sur moi, pas seulement quand ça m'arrange.",
     "option_b": "Un détour évitable dans un processus me démange jusqu'à ce que je le corrige.",
     "alignment": {
@@ -267,7 +267,7 @@
   },
   {
     "id": "f020",
-    "question": "Face à un objectif encore flou pour l'équipe, votre réflexe est plutôt de :",
+    "question": "Entre ces deux traits, lequel domine chez vous ?",
     "option_a": "Je prépare une réponse à un problème qui n'existe pas encore, mais qui approche.",
     "option_b": "Je garde le contact avec d'anciens collègues, au cas où ça servirait un jour à l'un de nous.",
     "alignment": {
@@ -281,7 +281,7 @@
   },
   {
     "id": "f021",
-    "question": "Quand quelqu'un doute de votre idée, vous êtes plutôt du genre à :",
+    "question": "Laquelle des deux sonnerait juste si un collègue la disait de vous ?",
     "option_a": "Je remarque les petits frottements du quotidien avant qu'ils ne deviennent un vrai problème.",
     "option_b": "Entre deux points de vue opposés, je trouve souvent le compromis auquel personne n'avait pensé.",
     "alignment": {
@@ -295,7 +295,7 @@
   },
   {
     "id": "f022",
-    "question": "Sur un sujet qui dépasse votre équipe, votre réflexe est plutôt de :",
+    "question": "Si vous deviez trancher entre les deux, laquelle l'emporte ?",
     "option_a": "Face à une question précise, je connais la bonne personne à qui la poser, même hors de mon équipe.",
     "option_b": "Une étape sautée dans une procédure m'arrête net, même sous la pression du délai.",
     "alignment": {
@@ -309,7 +309,7 @@
   },
   {
     "id": "f023",
-    "question": "Quand un collègue traverse une période difficile, vous avez tendance à :",
+    "question": "Entre ces deux façons d'être, laquelle est la plus proche de vous ?",
     "option_a": "Je reformule la position de chacun jusqu'à ce que les deux se sentent compris.",
     "option_b": "Je teste une première version dès la première semaine, plutôt que d'en discuter encore.",
     "alignment": {
@@ -323,7 +323,7 @@
   },
   {
     "id": "f024",
-    "question": "Face à une tension qui monte entre deux personnes, votre réflexe est plutôt de :",
+    "question": "Laquelle des deux phrases vous ressemble le plus, la main sur le cœur ?",
     "option_a": "Pour moi, la qualité se joue précisément dans ce que personne d'autre ne prend la peine de contrôler.",
     "option_b": "Je remarque à voix haute les efforts de chacun, pas seulement les résultats.",
     "alignment": {
@@ -337,7 +337,7 @@
   },
   {
     "id": "f025",
-    "question": "Quand on vous annonce un changement soudain, vous êtes plutôt du genre à :",
+    "question": "Face à ces deux tendances naturelles, laquelle est la plus marquée chez vous ?",
     "option_a": "Pour moi, un projet existe dès que quelque chose bouge concrètement, pas seulement sur le papier.",
     "option_b": "Je me méfie d'une idée séduisante tant que je n'en ai pas vérifié les bases.",
     "alignment": {
@@ -351,7 +351,7 @@
   },
   {
     "id": "f026",
-    "question": "Devant un chiffre qui semble étrange, votre réflexe est plutôt de :",
+    "question": "Entre les deux, laquelle décrit le mieux votre façon d'être au travail ?",
     "option_a": "Je transforme un objectif encore flou en élan collectif dès la première réunion.",
     "option_b": "Face à une tâche ingrate qui revient chaque mois, je la fais sans qu'on ait à me le rappeler.",
     "alignment": {
@@ -365,7 +365,7 @@
   },
   {
     "id": "f027",
-    "question": "Quand un projet démarre sans plan clair, vous avez tendance à :",
+    "question": "Laquelle de ces deux réactions est la plus vous ?",
     "option_a": "Je m'attarde sur ce qu'une personne évite de dire plutôt que sur ce qu'elle dit vraiment.",
     "option_b": "Une objection ne me fait pas lâcher une idée à laquelle je crois vraiment.",
     "alignment": {
@@ -379,7 +379,7 @@
   },
   {
     "id": "f028",
-    "question": "Face à une routine bien installée, votre réflexe est plutôt de :",
+    "question": "Si une seule des deux devait rester vraie pour vous, ce serait :",
     "option_a": "Je remarque ce qui manque dans un raisonnement, même quand il paraît solide en surface.",
     "option_b": "Je défends un collègue absent plutôt que de le laisser critiquer sans réagir.",
     "alignment": {
@@ -393,7 +393,7 @@
   },
   {
     "id": "f029",
-    "question": "Quand vous repensez à l'année à venir, vous êtes plutôt du genre à :",
+    "question": "Entre ces deux dispositions, laquelle vous définit le mieux ?",
     "option_a": "Je préfère aller au bout d'un dossier difficile plutôt qu'en démarrer un nouveau plus excitant.",
     "option_b": "Je pense au-delà du trimestre en cours quand je prends une décision aujourd'hui.",
     "alignment": {
@@ -407,7 +407,7 @@
   },
   {
     "id": "f030",
-    "question": "Devant un collègue qui hésite à s'exprimer, votre réflexe est plutôt de :",
+    "question": "Laquelle des deux vous colle le plus à la peau ?",
     "option_a": "Je prends le temps de faire adhérer les gens à une décision plutôt que de l'imposer.",
     "option_b": "Je préfère simplifier une méthode qui fonctionne déjà plutôt que la laisser telle quelle.",
     "alignment": {
@@ -421,7 +421,7 @@
   },
   {
     "id": "f031",
-    "question": "Quand une promesse a été faite à quelqu'un, vous êtes plutôt du genre à :",
+    "question": "Face à ces deux profils, dans lequel vous reconnaissez-vous le plus ?",
     "option_a": "Une fois ma parole donnée à quelqu'un, je ne la reprends pas au premier obstacle.",
     "option_b": "Je présente spontanément deux personnes qui gagneraient à se connaître.",
     "alignment": {
@@ -435,7 +435,7 @@
   },
   {
     "id": "f032",
-    "question": "Face à un dossier presque terminé mais fastidieux, vous avez tendance à :",
+    "question": "Entre ces deux tendances, laquelle l'emporte chez vous la plupart du temps ?",
     "option_a": "Je perçois tôt les signaux faibles qui annoncent un changement à venir.",
     "option_b": "Dans un conflit qui s'enlise, c'est souvent moi qui trouve l'issue acceptable pour tous.",
     "alignment": {
@@ -449,7 +449,7 @@
   },
   {
     "id": "f033",
-    "question": "Quand vous devez présenter une idée à un public sceptique, votre réflexe est plutôt de :",
+    "question": "Laquelle de ces deux phrases un proche choisirait pour vous décrire ?",
     "option_a": "Je propose une meilleure façon de faire, même sur un point de détail que personne ne remarque.",
     "option_b": "Je relis et je vérifie, même quand le délai pousse à aller vite.",
     "alignment": {
@@ -463,7 +463,7 @@
   },
   {
     "id": "f034",
-    "question": "Sur un point de détail que personne d'autre ne remarque, vous êtes plutôt du genre à :",
+    "question": "Si vous deviez n'en cocher qu'une, ce serait :",
     "option_a": "Je mobilise mon réseau pour obtenir une information plutôt que de chercher seul pendant des heures.",
     "option_b": "Je préfère avancer et corriger le tir en marchant plutôt qu'attendre d'avoir toutes les garanties.",
     "alignment": {
@@ -477,7 +477,7 @@
   },
   {
     "id": "f035",
-    "question": "Quand deux collègues ne sont pas d'accord, votre réflexe est plutôt de :",
+    "question": "Entre ces deux instincts naturels, lequel est le vôtre ?",
     "option_a": "Je désamorce une tension avant qu'elle ne s'installe entre deux personnes.",
     "option_b": "Après mon intervention, le groupe repart généralement avec plus d'énergie qu'avant.",
     "alignment": {
@@ -491,7 +491,7 @@
   },
   {
     "id": "f036",
-    "question": "Face à une décision prise trop vite par le groupe, vous êtes plutôt du genre à :",
+    "question": "Laquelle des deux vous décrit le mieux, sincèrement ?",
     "option_a": "Je remarque une incohérence dans un chiffre que tout le monde a laissé passer.",
     "option_b": "Je sens quand quelqu'un a besoin qu'on lui repose la question autrement.",
     "alignment": {
