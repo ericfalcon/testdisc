@@ -129,9 +129,43 @@ def sample_stress(rng: random.Random, per_mode: int = 5, reverse_per_mode: int =
     return chosen
 
 
-def sample_motivators(rng: random.Random) -> list[dict]:
-    """All 28 pairs: a round robin over the eight drivers, so exposure is exact."""
-    chosen = list(motivator_items())
+def sample_motivators(rng: random.Random, count: int = 16) -> list[dict]:
+    """A balanced subset of the round-robin pool of 28 driver-vs-driver pairs.
+
+    The full pool has each of the eight drivers meeting every other exactly
+    once — clean for measurement, but 28 rounds of "which do you want more"
+    between the same eight recurring ideas reads to most people as the test
+    repeating itself, even though no two items are actually identical. Drawing
+    a smaller, still-balanced subset (greedily favouring whichever pair most
+    helps the least-exposed drivers, same approach as ``sample_strengths``)
+    keeps every driver compared against a good spread of the others while
+    cutting the number of rounds — and the score is a win rate (wins over
+    exposures), which stays meaningful at any exposure count, not just seven.
+    Pass ``count >= 28`` to get the full round robin back.
+    """
+    pool = list(motivator_items())
+    rng.shuffle(pool)  # breaks ties reproducibly
+    if count >= len(pool):
+        return pool
+
+    drivers = {item["alignment"]["option_a"] for item in pool} | {
+        item["alignment"]["option_b"] for item in pool
+    }
+    exposure = {driver: 0 for driver in drivers}
+    chosen: list[dict] = []
+    remaining = pool[:]
+
+    while remaining and len(chosen) < count:
+        def gain(item: dict) -> float:
+            a, b = item["alignment"]["option_a"], item["alignment"]["option_b"]
+            return 1.0 / (1.0 + exposure[a]) + 1.0 / (1.0 + exposure[b])
+
+        best = max(remaining, key=gain)
+        remaining.remove(best)
+        chosen.append(best)
+        exposure[best["alignment"]["option_a"]] += 1
+        exposure[best["alignment"]["option_b"]] += 1
+
     rng.shuffle(chosen)
     return chosen
 

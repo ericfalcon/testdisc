@@ -24,6 +24,16 @@ ADAPTIVE_FRAME = (
     "comment vous vous comportez réellement au travail."
 )
 STRESS_FRAME = "Pensez à votre dernière semaine vraiment sous tension, pas à une semaine moyenne."
+MOTIVATORS_FRAME = (
+    "Les mêmes envies reviennent plusieurs fois, chaque fois face à une concurrente "
+    "différente : c'est volontaire, c'est ce qui permet de les classer les unes par "
+    "rapport aux autres — pas un bug."
+)
+STRENGTHS_FRAME = (
+    "Les mêmes qualités reviennent plusieurs fois, chaque fois face à une autre : "
+    "c'est volontaire, c'est ce qui permet de les classer les unes par rapport aux "
+    "autres — pas un bug."
+)
 
 
 @dataclass(frozen=True)
@@ -83,7 +93,7 @@ def _score_stress(items: list[Item], answers: dict[str, Any], context: dict) -> 
 # --------------------------------------------------------------------- motivators
 
 def _build_motivators(rng: random.Random, variant: str, context: dict) -> list[Item]:
-    return pools.to_choice_items(pools.sample_motivators(rng), "motivators")
+    return pools.to_choice_items(pools.sample_motivators(rng), "motivators", MOTIVATORS_FRAME)
 
 
 def _score_motivators(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
@@ -93,7 +103,7 @@ def _score_motivators(items: list[Item], answers: dict[str, Any], context: dict)
 # --------------------------------------------------------------------- strengths
 
 def _build_strengths(rng: random.Random, variant: str, context: dict) -> list[Item]:
-    return pools.to_choice_items(pools.sample_strengths(rng, 24), "strengths_core")
+    return pools.to_choice_items(pools.sample_strengths(rng, 24), "strengths_core", STRENGTHS_FRAME)
 
 
 def _score_strengths(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
@@ -176,9 +186,9 @@ _register(Module(
     kind="addon",
     item_type="forced_choice",
     build=_build_motivators,
-    rebuild=_rebuilder("motivators", "motivators"),
+    rebuild=_rebuilder("motivators", "motivators", MOTIVATORS_FRAME),
     score=_score_motivators,
-    minutes={"standard": 4},
+    minutes={"standard": 3},
 ))
 
 # Le module "Forces" du projet d'origine reprenait le modèle des 34 thèmes CliftonStrengths
@@ -197,7 +207,7 @@ _register(Module(
     kind="addon",
     item_type="forced_choice",
     build=_build_strengths,
-    rebuild=_rebuilder("strengths", "strengths_core"),
+    rebuild=_rebuilder("strengths", "strengths_core", STRENGTHS_FRAME),
     score=_score_strengths,
     minutes={"standard": 4},
 ))

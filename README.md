@@ -46,9 +46,14 @@ Aucun compte, aucun serveur, aucune base de données.
     tension (« charge d'adaptation ») et affiche les deux profils sur la même roue.
   - **Sous pression** : 20 affirmations sur une semaine vraiment difficile, notées
     selon quatre modes de réaction (contrôle, persuasion, absorption, retrait).
-  - **Ce qui vous motive** : 28 choix forcés entre deux façons de travailler, sur
+  - **Ce qui vous motive** : 16 choix forcés (tirés d'une banque de 28 — le
+    round robin complet entre les 8 moteurs) entre deux façons de travailler, sur
     8 moteurs (autonomie, maîtrise, reconnaissance, sécurité, sens, lien, statut,
-    variété) — chaque moteur affronte chacun des autres exactement une fois.
+    variété) — chaque moteur affronte plusieurs des autres, avec une exposition
+    équilibrée. Un tirage complet de 28 paires (chaque moteur contre chacun des
+    autres exactement une fois) est plus rigoureux mais donne l'impression de
+    répéter la même comparaison ; réduire à 16 tout en gardant l'équilibre garde
+    l'essentiel du signal pour beaucoup moins de lassitude.
   - **Vos forces naturelles** : 24 choix forcés (tirés d'une banque de 36) entre
     deux façons de travailler, sur 12 thèmes originaux répartis en 4 domaines
     (Construire, Mobiliser, Relier, Éclairer) — voir ci-dessous pourquoi ce
