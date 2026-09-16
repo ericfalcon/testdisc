@@ -1,6 +1,6 @@
 # Test DISC — version française
 
-🔗 **Application en ligne : [testdisc-ericfalcon.streamlit.app][(https://testdisc-ericfalcon.streamlit.app](https://testdisc-ericfalcon.streamlit.app/))**
+🔗 **Application en ligne : [disctest-cafoc.streamlit.app](https://disctest-cafoc.streamlit.app)**
 — c'est ce lien qui est à envoyer aux stagiaires avant la formation.
 
 Une application [Streamlit](https://streamlit.io) qui fait passer un test de personnalité

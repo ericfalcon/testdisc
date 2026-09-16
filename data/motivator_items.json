@@ -52,7 +52,7 @@
   {
     "id": "m006",
     "question": "Il faut en sacrifier une des deux. Laquelle gardez-vous ?",
-    "option_a": "Personne ne relit votre façon de faire, seulement ce qui en sort à la fin.",
+    "option_a": "Personne ne relit votre façon de faire, seulement le résultat final.",
     "option_b": "On vous consulte avant de trancher une décision importante, pas après coup.",
     "alignment": {
       "option_a": "Autonomie",
@@ -62,7 +62,7 @@
   {
     "id": "m007",
     "question": "Laquelle de ces deux choses vous manquerait le plus si elle disparaissait de votre travail ?",
-    "option_a": "Vous travaillez porte fermée une bonne partie de la semaine, sans que personne s'en étonne.",
+    "option_a": "Vous passez la majeure partie de la semaine sans que personne vérifie comment vous vous organisez.",
     "option_b": "Le contenu de votre semaine de travail vous surprend encore, même après plusieurs mois.",
     "alignment": {
       "option_a": "Autonomie",
@@ -92,7 +92,7 @@
   {
     "id": "m010",
     "question": "Deux propositions arrivent le même jour, une seule différence entre elles : laquelle vous fait pencher ?",
-    "option_a": "Vous repoussez, semaine après semaine, la limite de ce que vous savez faire sur cet outil.",
+    "option_a": "Vous repoussez, semaine après semaine, la limite de ce que vous savez faire sur ce sujet.",
     "option_b": "Vous voyez concrètement, chaque semaine, à qui votre travail profite réellement.",
     "alignment": {
       "option_a": "Maîtrise",
@@ -183,7 +183,7 @@
     "id": "m019",
     "question": "Si vous deviez résumer votre poste idéal par une seule de ces deux choses, ce serait laquelle ?",
     "option_a": "Le cadre de votre travail reste le même, que la direction change ou non.",
-    "option_b": "Le pourquoi de votre poste vous convainc autant que le poste lui-même.",
+    "option_b": "Vous adhérez à la raison d'être de votre poste, pas seulement aux tâches qu'il implique.",
     "alignment": {
       "option_a": "Sécurité",
       "option_b": "Sens"
@@ -213,7 +213,7 @@
     "id": "m022",
     "question": "Un seul de ces deux points restera vrai l'an prochain. Lequel voulez-vous garder ?",
     "option_a": "Même répétitif, votre travail repose sur un terrain qui ne bouge pas sous vos pieds.",
-    "option_b": "Une routine bien huilée vous pèserait plus qu'elle ne vous rassurerait.",
+    "option_b": "Vous préférez un rythme qui change plutôt qu'une routine bien huilée.",
     "alignment": {
       "option_a": "Sécurité",
       "option_b": "Variété"
@@ -222,7 +222,7 @@
   {
     "id": "m023",
     "question": "Si un poste ne cochait qu'une seule de ces deux cases, laquelle devrait-il cocher ?",
-    "option_a": "Vous travaillez sur quelque chose dont vous pensiez, avant même d'y être, que ça devait exister.",
+    "option_a": "Vous travaillez sur une idée à laquelle vous croyiez déjà, avant même d'occuper ce poste.",
     "option_b": "On s'inquiète autant de savoir comment vous allez que de savoir où en est le dossier.",
     "alignment": {
       "option_a": "Sens",
@@ -253,7 +253,7 @@
     "id": "m026",
     "question": "On vous demande de trancher entre ces deux aspects d'un poste : votre réponse ?",
     "option_a": "Vous partagez le travail avec des gens en qui vous avez une confiance totale.",
-    "option_b": "Vous pesez sur les orientations du service, au-delà de votre propre périmètre.",
+    "option_b": "Votre avis influence des décisions qui vont au-delà de votre poste.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Statut"
@@ -271,9 +271,9 @@
   },
   {
     "id": "m028",
-    "question": "Votre futur poste doit sacrifier l'une des deux : laquelle est la moins grave à perdre ?",
+    "question": "Votre futur poste doit sacrifier l'une des deux : laquelle gardez-vous ?",
     "option_a": "On sait, sans que vous ayez à le dire, que votre feu vert compte.",
-    "option_b": "Refaire deux semaines de suite exactement la même chose vous userait vite.",
+    "option_b": "Vous aimez sentir que le travail ne se répète jamais vraiment d'une semaine à l'autre.",
     "alignment": {
       "option_a": "Statut",
       "option_b": "Variété"
