@@ -86,10 +86,12 @@ def sample_disc(rng: random.Random, per_style: int = 10, reverse_per_style: int 
 def sample_strengths(rng: random.Random, count: int = 35) -> list[dict]:
     """Greedy stratified draw that equalises how often each theme is offered.
 
-    The pool is badly unbalanced by construction (some themes appear in 41
-    items, others in 9), so a uniform random draw makes a theme's rank partly a
-    property of the pool. Each pick here goes to the item that does most for the
-    themes currently least represented.
+    The 36-item pool is already balanced by construction (a circulant design:
+    each of the 12 themes appears in exactly 6 pairs), but the module only
+    samples a subset of it (count < 36), so a uniform random draw could still
+    happen to under- or over-represent a theme in what's actually shown. Each
+    pick here goes to the item that does most for the themes currently least
+    represented, keeping the sampled subset balanced too.
     """
     pool = list(strengths_items())
     rng.shuffle(pool)  # breaks ties reproducibly

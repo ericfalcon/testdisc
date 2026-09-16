@@ -56,7 +56,7 @@
   {
     "id": "x010",
     "mode": "push",
-    "question": "Quand un plan s'effondre, je me satisfais de laisser quelqu'un d'autre reprendre les choses en main.",
+    "question": "Quand un plan s'effondre, ça me convient que quelqu'un d'autre reprenne les choses en main.",
     "keyed": -1
   },
   {
@@ -80,7 +80,7 @@
   {
     "id": "x014",
     "mode": "perform",
-    "question": "Sous tension, je me surprends à vendre le plan plus fort que ne le justifient les faits.",
+    "question": "Sous tension, je me surprends à présenter le plan en meilleure posture qu'il ne l'est vraiment.",
     "keyed": 1
   },
   {
@@ -116,7 +116,7 @@
   {
     "id": "x020",
     "mode": "perform",
-    "question": "Le stress me rend moins soucieux de l'image que la situation renvoie aux autres.",
+    "question": "Sous stress, je me soucie moins de l'image que je donne aux autres.",
     "keyed": -1
   },
   {
@@ -200,7 +200,7 @@
   {
     "id": "x034",
     "mode": "retreat",
-    "question": "Face à la critique, j'ai envie de documenter et de justifier plutôt que d'en discuter.",
+    "question": "Face à la critique, j'ai envie de rassembler des preuves et de me justifier plutôt que d'en discuter.",
     "keyed": 1
   },
   {

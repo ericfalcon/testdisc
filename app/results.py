@@ -12,7 +12,7 @@ import streamlit as st
 
 from assessment.registry import ADDON_MODULES, REGISTRY
 from assessment.report.build import build_report
-from assessment.scoring.disc import STYLE_NAMES
+from assessment.scoring.disc import STRAIN_BAND_LABELS, STYLE_NAMES
 from assessment.scoring.motivators import DRIVER_BLURBS
 from assessment.scoring.stress import MODE_BLURBS, MODE_LABELS
 from assessment.types import LIKERT_OPTIONS
@@ -148,15 +148,12 @@ def _disc_section(report: dict) -> None:
         ui.panel("Détail du style — forces, difficultés, communication, pression", detail_html)
 
 
-_BAND_LABELS_FR = {"high": "élevée", "moderate": "modérée", "low": "faible"}
-
-
 def _strain_section(report: dict) -> None:
     strain = report["strain"]
     st.markdown("## Naturel vs. au travail")
     st.markdown(
         f'<span class="tag">indice de tension · <span class="num">{strain["index"]:.0f}</span></span>'
-        f'<span class="tag">charge d\'adaptation {_BAND_LABELS_FR.get(strain["band"], strain["band"])}</span>',
+        f'<span class="tag">charge d\'adaptation {STRAIN_BAND_LABELS.get(strain["band"], strain["band"])}</span>',
         unsafe_allow_html=True,
     )
     st.write("")

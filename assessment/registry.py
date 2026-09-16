@@ -119,8 +119,9 @@ _register(Module(
     title="DISC — votre style naturel",
     icon="\U0001f9ed",
     blurb=(
-        "Quarante affirmations, réparties équitablement entre les quatre dimensions et "
-        "mêlant des formulations positives et négatives afin de vérifier la cohérence du résultat."
+        "Comment vous vous comportez naturellement : vos décisions, votre façon de "
+        "communiquer, vos réactions face aux autres. Le module de base — il suffit pour "
+        "la formation."
     ),
     kind="core",
     item_type="likert5",
@@ -135,8 +136,8 @@ _register(Module(
     title="DISC — votre style au travail",
     icon="\U0001f3e2",
     blurb=(
-        "Les mêmes quarante affirmations, répondues pour votre poste actuel. L'écart avec "
-        "votre profil naturel est la tension que votre rôle vous demande."
+        "Le même test, mais en pensant à votre poste actuel plutôt qu'à vous en général. "
+        "Montre l'écart entre qui vous êtes et ce que le poste vous demande d'être."
     ),
     kind="addon",
     item_type="likert5",
@@ -152,8 +153,9 @@ _register(Module(
     title="Sous pression",
     icon="⚡",
     blurb=(
-        "Vingt affirmations sur une semaine vraiment sous tension, notées selon quatre modes "
-        "de réaction : contrôle, persuasion, absorption, retrait."
+        "Comment vous réagissez quand la pression monte vraiment : vous prenez le contrôle, "
+        "vous insistez pour convaincre, vous encaissez en silence, ou vous vous repliez pour "
+        "réfléchir."
     ),
     kind="addon",
     item_type="likert5",
@@ -168,8 +170,8 @@ _register(Module(
     title="Ce qui vous motive",
     icon="\U0001f9f2",
     blurb=(
-        "Vingt-huit choix forcés portant sur huit moteurs. Chaque moteur affronte chacun des "
-        "autres exactement une fois, donc rien n'est décidé par sa fréquence d'apparition."
+        "Ce qui vous donne — ou vous retire — l'envie de vous investir dans un poste : "
+        "autonomie, reconnaissance, sécurité, sens, esprit d'équipe, statut, variété, maîtrise."
     ),
     kind="addon",
     item_type="forced_choice",
@@ -189,8 +191,8 @@ _register(Module(
     title="Vos forces naturelles",
     icon="\U0001f48e",
     blurb=(
-        "Vingt-quatre choix forcés entre deux façons de travailler, tirés d'une banque de "
-        "36 questions couvrant 12 thèmes en 4 domaines."
+        "Vos points forts naturels au travail, parmi 12 qualités réparties en 4 grandes "
+        "familles : construire, mobiliser, relier, éclairer."
     ),
     kind="addon",
     item_type="forced_choice",

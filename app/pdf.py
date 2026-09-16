@@ -16,7 +16,8 @@ from reportlab.pdfgen import canvas as pdfcanvas
 from reportlab.platypus import (HRFlowable, Image, PageBreak, Paragraph, SimpleDocTemplate,
                                 Spacer, Table, TableStyle)
 
-from assessment.scoring.disc import STYLE_NAMES
+from assessment.registry import REGISTRY
+from assessment.scoring.disc import STRAIN_BAND_LABELS, STYLE_NAMES
 
 _MOIS_FR = {
     1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
@@ -120,7 +121,7 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
     for module_id, verdict in report.get("confidence", {}).items():
         if verdict["level"] == "Low":
             flow.append(Paragraph(
-                f"<b>Confiance faible — {module_id.replace('_', ' ')}.</b> "
+                f"<b>Confiance faible — {REGISTRY[module_id].title}.</b> "
                 + " ".join(_clean(r) for r in verdict["reasons"]), s["muted"]))
 
     if "disc" in report:
@@ -197,7 +198,8 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         strain = report["strain"]
         flow.append(Paragraph("Naturel vs. au travail", s["h2"]))
         flow.append(Paragraph(
-            f"Indice d'écart <b>{strain['index']:.0f}</b> — charge d'adaptation {strain['band']}, "
+            f"Indice d'écart <b>{strain['index']:.0f}</b> — charge d'adaptation "
+            f"{STRAIN_BAND_LABELS.get(strain['band'], strain['band'])}, "
             f"la plus marquée sur {STYLE_NAMES[strain['largest']]}.", s["body"]))
         for style in "DISC":
             shift = strain["shifts"][style]

@@ -82,9 +82,9 @@ Cette version française a donc remplacé ce référentiel par une taxonomie mai
 (`data/strengths_themes.json`, `data/strengths_items.json`). Aucun nom de thème ni
 de domaine de Gallup n'y figure ; seul le principe général (des choix forcés entre
 deux façons de travailler pour dégager un profil de points forts) est conservé,
-comme il l'est aussi entre le modèle DISC de William Marston, qui est dans le domaine
-public, et les formulations commerciales précises comme le « DISC Classic »® que ce
-projet n'utilise pas.
+comme la même distinction existe pour le modèle DISC lui-même, entre le modèle de
+William Marston, qui est dans le domaine public, et des formulations commerciales
+précises comme le « DISC Classic »® que ce projet n'utilise pas.
 
 ## Récupérer les résultats des stagiaires (Google Sheet)
 

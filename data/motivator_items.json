@@ -1,9 +1,9 @@
 [
   {
     "id": "m001",
-    "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Décider vous-même comment faire le travail, sans validation à obtenir.",
-    "option_b": "Travailler en étroite collaboration avec des gens que vous appréciez sincèrement.",
+    "question": "Si on ne pouvait vous offrir qu'une seule de ces deux choses, laquelle choisiriez-vous ?",
+    "option_a": "Décider seul de votre méthode, sans avoir à la faire valider.",
+    "option_b": "Travailler entouré de gens que vous appréciez vraiment.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Lien"
@@ -11,9 +11,9 @@
   },
   {
     "id": "m002",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Être maître de votre agenda et fixer vos propres priorités.",
-    "option_b": "Devenir mesurablement meilleur dans quelque chose de vraiment difficile.",
+    "question": "Deux postes, même salaire. Lequel choisissez-vous ?",
+    "option_a": "Qu'on vous laisse organiser votre semaine comme vous l'entendez.",
+    "option_b": "Devenir nettement meilleur dans quelque chose de difficile.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Maîtrise"
@@ -21,9 +21,9 @@
   },
   {
     "id": "m003",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Qu'on vous fasse confiance pour choisir la méthode et qu'on ne vous juge que sur le résultat.",
-    "option_b": "Travailler sur quelque chose dont vous croyez qu'il devrait exister.",
+    "question": "Entre ces deux options, laquelle l'emporte pour vous ?",
+    "option_a": "Qu'on vous fasse confiance sur le résultat plutôt que sur la façon d'y arriver.",
+    "option_b": "Travailler sur quelque chose qui, selon vous, devrait exister.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Sens"
@@ -31,9 +31,9 @@
   },
   {
     "id": "m004",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Travailler sans que personne ne contrôle votre méthode.",
-    "option_b": "Que votre contribution soit citée devant les personnes qui comptent.",
+    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
+    "option_a": "Ne rendre de comptes à personne sur la façon dont vous vous y prenez.",
+    "option_b": "Qu'on cite précisément votre nom pour ce que vous avez fait.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Reconnaissance"
@@ -41,9 +41,9 @@
   },
   {
     "id": "m005",
-    "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Décider vous-même comment faire le travail, sans validation à obtenir.",
-    "option_b": "Savoir que le poste existera encore dans trois ans.",
+    "question": "Entre les deux, laquelle est la moins négociable pour vous ?",
+    "option_a": "Choisir vous-même l'ordre dans lequel vous traitez les choses.",
+    "option_b": "Savoir que ce poste existera encore dans plusieurs années.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Sécurité"
@@ -51,9 +51,9 @@
   },
   {
     "id": "m006",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Être maître de votre agenda et fixer vos propres priorités.",
-    "option_b": "Détenir un titre qui a du poids dans la pièce.",
+    "question": "Laquelle des deux pèse le plus lourd dans votre choix d'un poste ?",
+    "option_a": "Pouvoir changer de méthode en cours de route sans en référer à personne.",
+    "option_b": "Avoir un titre qu'on respecte vraiment, pas juste sur le papier.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Statut"
@@ -61,9 +61,9 @@
   },
   {
     "id": "m007",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Qu'on vous fasse confiance pour choisir la méthode et qu'on ne vous juge que sur le résultat.",
-    "option_b": "Travailler sur quelque chose de différent toutes les quelques semaines.",
+    "question": "Si l'un des deux devait disparaître de votre travail, lequel regretteriez-vous le plus ?",
+    "option_a": "Être jugé sur ce que vous produisez, jamais sur la façon dont vous vous y prenez.",
+    "option_b": "Changer de sujet assez souvent pour ne jamais vous ennuyer.",
     "alignment": {
       "option_a": "Autonomie",
       "option_b": "Variété"
@@ -71,9 +71,9 @@
   },
   {
     "id": "m008",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Appartenir à une équipe qui remarquerait votre absence.",
-    "option_b": "Travailler à la limite de vos compétences actuelles.",
+    "question": "Laquelle de ces deux choses vous manquerait le plus si elle disparaissait ?",
+    "option_a": "Avoir des collègues qui sont aussi, un peu, des amis.",
+    "option_b": "Sentir que vous progressez vraiment sur un sujet exigeant.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Maîtrise"
@@ -82,8 +82,8 @@
   {
     "id": "m009",
     "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Avoir des collègues qui sont aussi des amis.",
-    "option_b": "Voir concrètement en quoi votre travail aide quelqu'un.",
+    "option_a": "Faire partie d'une équipe qui remarquerait votre absence.",
+    "option_b": "Voir concrètement à qui votre travail profite.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Sens"
@@ -91,9 +91,9 @@
   },
   {
     "id": "m010",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Faire le travail aux côtés d'autres plutôt que seul.",
-    "option_b": "Recevoir un crédit précis et personnel pour ce que vous avez fait.",
+    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
+    "option_a": "Ne pas travailler seul, même quand la tâche le permettrait.",
+    "option_b": "Être remercié clairement, devant les bonnes personnes.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Reconnaissance"
@@ -101,9 +101,9 @@
   },
   {
     "id": "m011",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Travailler en étroite collaboration avec des gens que vous appréciez sincèrement.",
-    "option_b": "Avoir des exigences prévisibles et une charge de travail stable.",
+    "question": "Laquelle des deux pèse le plus lourd dans votre choix d'un poste ?",
+    "option_a": "Partager le travail avec des gens en qui vous avez confiance.",
+    "option_b": "Des exigences stables, qui ne changent pas toutes les semaines.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Sécurité"
@@ -111,9 +111,9 @@
   },
   {
     "id": "m012",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Appartenir à une équipe qui remarquerait votre absence.",
-    "option_b": "Avoir de l'influence sur des décisions qui dépassent votre niveau.",
+    "question": "Si on ne pouvait vous offrir qu'une seule de ces deux choses, laquelle choisiriez-vous ?",
+    "option_a": "Qu'on tienne à vous autant qu'à ce que vous produisez.",
+    "option_b": "Qu'on vous consulte avant de trancher, pas après.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Statut"
@@ -121,9 +121,9 @@
   },
   {
     "id": "m013",
-    "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Avoir des collègues qui sont aussi des amis.",
-    "option_b": "Faire en sorte que le problème change pour qu'il reste intéressant.",
+    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
+    "option_a": "Retrouver la même équipe chaque jour plutôt que des visages qui changent.",
+    "option_b": "Ne pas refaire la même chose deux semaines de suite.",
     "alignment": {
       "option_a": "Lien",
       "option_b": "Variété"
@@ -131,9 +131,9 @@
   },
   {
     "id": "m014",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Approfondir un sujet assez loin pour en devenir un véritable expert.",
-    "option_b": "Que la mission corresponde à ce qui compte vraiment pour vous.",
+    "question": "Deux postes, même salaire. Lequel choisissez-vous ?",
+    "option_a": "Repousser un peu plus loin la limite de ce que vous savez faire.",
+    "option_b": "Pouvoir défendre ce que vous faites en dehors du travail sans gêne.",
     "alignment": {
       "option_a": "Maîtrise",
       "option_b": "Sens"
@@ -141,9 +141,9 @@
   },
   {
     "id": "m015",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Consacrer votre temps à la qualité du geste plutôt qu'au rendement.",
-    "option_b": "Être remercié concrètement plutôt que silencieusement présumé.",
+    "question": "Laquelle de ces deux choses vous manquerait le plus si elle disparaissait ?",
+    "option_a": "Passer d'à peu près bon à vraiment compétent sur un domaine précis.",
+    "option_b": "Recevoir un retour qui montre qu'on a vraiment vu ce que vous avez apporté.",
     "alignment": {
       "option_a": "Maîtrise",
       "option_b": "Reconnaissance"
@@ -151,9 +151,9 @@
   },
   {
     "id": "m016",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Devenir mesurablement meilleur dans quelque chose de vraiment difficile.",
-    "option_b": "Travailler quelque part où le terrain ne bouge pas sans cesse.",
+    "question": "Si l'un des deux devait disparaître de votre travail, lequel regretteriez-vous le plus ?",
+    "option_a": "Consacrer du temps à progresser plutôt qu'à simplement produire.",
+    "option_b": "Ne pas avoir à vous demander si vous serez encore là l'an prochain.",
     "alignment": {
       "option_a": "Maîtrise",
       "option_b": "Sécurité"
@@ -162,8 +162,8 @@
   {
     "id": "m017",
     "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Travailler à la limite de vos compétences actuelles.",
-    "option_b": "Être assez senior pour que votre avis soit sollicité par défaut.",
+    "option_a": "Qu'on reconnaisse que vous êtes devenu une référence sur un sujet.",
+    "option_b": "Peser sur les décisions qui comptent, pas seulement les exécuter.",
     "alignment": {
       "option_a": "Maîtrise",
       "option_b": "Statut"
@@ -171,9 +171,9 @@
   },
   {
     "id": "m018",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Approfondir un sujet assez loin pour en devenir un véritable expert.",
-    "option_b": "Passer d'un projet à l'autre plutôt que de s'installer dans un seul.",
+    "question": "Entre les deux, laquelle est la moins négociable pour vous ?",
+    "option_a": "Continuer d'apprendre plutôt que de refaire ce que vous savez déjà faire.",
+    "option_b": "Un travail qui vous surprend encore après plusieurs mois.",
     "alignment": {
       "option_a": "Maîtrise",
       "option_b": "Variété"
@@ -181,9 +181,9 @@
   },
   {
     "id": "m019",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Faire un travail que vous défendriez en dehors du travail.",
-    "option_b": "Savoir que votre travail a été remarqué par des gens que vous respectez.",
+    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
+    "option_a": "Que la mission compte à vos yeux, pas seulement le salaire.",
+    "option_b": "Que votre travail vous soit attribué, pas absorbé par le collectif.",
     "alignment": {
       "option_a": "Sens",
       "option_b": "Reconnaissance"
@@ -191,9 +191,9 @@
   },
   {
     "id": "m020",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Travailler sur quelque chose dont vous croyez qu'il devrait exister.",
-    "option_b": "Échanger une part de potentiel de gain contre un plancher sur lequel compter.",
+    "question": "Entre ces deux options, laquelle l'emporte pour vous ?",
+    "option_a": "Sentir que ce que vous faites aurait manqué si vous ne l'aviez pas fait.",
+    "option_b": "Un cadre prévisible plutôt que des règles qui bougent sans cesse.",
     "alignment": {
       "option_a": "Sens",
       "option_b": "Sécurité"
@@ -201,9 +201,9 @@
   },
   {
     "id": "m021",
-    "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Voir concrètement en quoi votre travail aide quelqu'un.",
-    "option_b": "Avoir une place là où se prennent les décisions importantes.",
+    "question": "Deux postes, même salaire. Lequel choisissez-vous ?",
+    "option_a": "Croire à ce que produit votre travail, pas seulement l'exécuter.",
+    "option_b": "Une position qu'on reconnaît sans avoir à la rappeler.",
     "alignment": {
       "option_a": "Sens",
       "option_b": "Statut"
@@ -211,9 +211,9 @@
   },
   {
     "id": "m022",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Que la mission corresponde à ce qui compte vraiment pour vous.",
-    "option_b": "Éviter un travail qui devient identique chaque jour.",
+    "question": "Entre les deux, laquelle est la moins négociable pour vous ?",
+    "option_a": "Que le pourquoi du poste vous convainque autant que le poste lui-même.",
+    "option_b": "Passer d'un problème à un autre plutôt que creuser toujours le même.",
     "alignment": {
       "option_a": "Sens",
       "option_b": "Variété"
@@ -221,9 +221,9 @@
   },
   {
     "id": "m023",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Que votre contribution soit citée devant les personnes qui comptent.",
-    "option_b": "Savoir que le poste existera encore dans trois ans.",
+    "question": "Si l'un des deux devait disparaître de votre travail, lequel regretteriez-vous le plus ?",
+    "option_a": "Un compliment précis de quelqu'un dont vous respectez le jugement.",
+    "option_b": "Un poste qui ne repose pas sur un contrat ou un client fragile.",
     "alignment": {
       "option_a": "Reconnaissance",
       "option_b": "Sécurité"
@@ -231,9 +231,9 @@
   },
   {
     "id": "m024",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Recevoir un crédit précis et personnel pour ce que vous avez fait.",
-    "option_b": "Détenir un titre qui a du poids dans la pièce.",
+    "question": "Laquelle de ces deux choses vous manquerait le plus si elle disparaissait ?",
+    "option_a": "Qu'on se souvienne que c'est vous qui avez fait la différence.",
+    "option_b": "Être assez haut placé pour que votre avis change une décision.",
     "alignment": {
       "option_a": "Reconnaissance",
       "option_b": "Statut"
@@ -241,9 +241,9 @@
   },
   {
     "id": "m025",
-    "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
-    "option_a": "Être remercié concrètement plutôt que silencieusement présumé.",
-    "option_b": "Travailler sur quelque chose de différent toutes les quelques semaines.",
+    "question": "Entre ces deux options, laquelle l'emporte pour vous ?",
+    "option_a": "Être crédité pour de bon, pas juste remercié en passant.",
+    "option_b": "De la nouveauté régulière plutôt qu'une routine bien huilée.",
     "alignment": {
       "option_a": "Reconnaissance",
       "option_b": "Variété"
@@ -251,9 +251,9 @@
   },
   {
     "id": "m026",
-    "question": "Laquelle de ces deux choses abandonneriez-vous en dernier ?",
-    "option_a": "Avoir des exigences prévisibles et une charge de travail stable.",
-    "option_b": "Avoir de l'influence sur des décisions qui dépassent votre niveau.",
+    "question": "Si vous ne pouviez garder qu'une seule de ces deux choses, laquelle garderiez-vous ?",
+    "option_a": "Pouvoir vous projeter sans craindre une réorganisation surprise.",
+    "option_b": "Qu'on s'adresse à vous en premier sur les sujets importants.",
     "alignment": {
       "option_a": "Sécurité",
       "option_b": "Statut"
@@ -261,9 +261,9 @@
   },
   {
     "id": "m027",
-    "question": "Deux offres, même salaire. Laquelle choisissez-vous ?",
-    "option_a": "Travailler quelque part où le terrain ne bouge pas sans cesse.",
-    "option_b": "Faire en sorte que le problème change pour qu'il reste intéressant.",
+    "question": "Laquelle des deux pèse le plus lourd dans votre choix d'un poste ?",
+    "option_a": "Un terrain stable sous les pieds, même si c'est répétitif.",
+    "option_b": "Un poste où le contenu change plus vite que l'ennui ne s'installe.",
     "alignment": {
       "option_a": "Sécurité",
       "option_b": "Variété"
@@ -271,9 +271,9 @@
   },
   {
     "id": "m028",
-    "question": "De laquelle voudriez-vous avoir davantage dans votre travail ?",
-    "option_a": "Être assez senior pour que votre avis soit sollicité par défaut.",
-    "option_b": "Passer d'un projet à l'autre plutôt que de s'installer dans un seul.",
+    "question": "Si on ne pouvait vous offrir qu'une seule de ces deux choses, laquelle choisiriez-vous ?",
+    "option_a": "Une influence réelle, pas seulement un titre sur la porte.",
+    "option_b": "Ne jamais savoir à l'avance de quoi sera faite la semaine suivante.",
     "alignment": {
       "option_a": "Statut",
       "option_b": "Variété"

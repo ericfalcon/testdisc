@@ -38,7 +38,7 @@
   {
     "id": "d004",
     "style": "S",
-    "question": "Je privilégie le maintien de l'harmonie et je crois qu'on peut toujours trouver un terrain d'entente pour résoudre les conflits pacifiquement.",
+    "question": "Je privilégie le maintien de l'harmonie et je préfère résoudre les conflits par le dialogue plutôt que par l'affrontement.",
     "mapping": {
       "D": -1,
       "I": 0,
@@ -566,7 +566,7 @@
   {
     "id": "d048",
     "style": "D",
-    "question": "Je n'aime pas me trouver dans des situations où je n'ai que peu, voire aucun contrôle sur le résultat.",
+    "question": "Je n'aime pas avoir peu ou pas de contrôle sur le résultat d'une situation.",
     "mapping": {
       "D": 2,
       "I": 0,
@@ -602,7 +602,7 @@
   {
     "id": "d051",
     "style": "C",
-    "question": "Je n'aime pas aborder des tâches qui demandent plus de créativité que de précision et de rigueur.",
+    "question": "Je préfère les tâches où la précision et la rigueur comptent plus que la créativité.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -662,7 +662,7 @@
   {
     "id": "d056",
     "style": "D",
-    "question": "Je n'aime pas les situations où ce n'est pas moi qui mène l'effort ou qui décide.",
+    "question": "Je n'aime pas laisser un autre mener l'effort ou décider à ma place.",
     "mapping": {
       "D": 2,
       "I": 0,
@@ -698,7 +698,7 @@
   {
     "id": "d059",
     "style": "C",
-    "question": "Je n'aime pas travailler dans des environnements qui accordent peu d'importance à la précision ou au souci du détail.",
+    "question": "Je n'aime pas les environnements qui négligent la précision et le souci du détail.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -1634,7 +1634,7 @@
   {
     "id": "d137",
     "style": "I",
-    "question": "J'aime les activités spontanées et je m'adapte facilement quand les plans changent vers quelque chose de plus amusant.",
+    "question": "J'aime les activités spontanées et je m'adapte facilement quand les plans évoluent vers quelque chose de plus amusant.",
     "mapping": {
       "D": 0,
       "I": 2,
@@ -2126,7 +2126,7 @@
   {
     "id": "d178",
     "style": "D",
-    "question": "Je suis prêt à opérer des réaffectations difficiles de personnel ou de ressources pour tenir des délais critiques.",
+    "question": "Je suis prêt à réaffecter des personnes ou des ressources, même si c'est difficile, pour tenir un délai critique.",
     "mapping": {
       "D": 2,
       "I": 0,
@@ -2138,7 +2138,7 @@
   {
     "id": "d179",
     "style": "D",
-    "question": "Je juge ma réussite professionnelle à des résultats mesurables, des jalons atteints et un impact concret sur les résultats.",
+    "question": "Je juge ma réussite professionnelle à des résultats mesurables, des jalons atteints et un impact concret sur l'activité.",
     "mapping": {
       "D": 2,
       "I": 0,
@@ -2522,7 +2522,7 @@
   {
     "id": "d211",
     "style": "S",
-    "question": "Je trouve une satisfaction à résoudre discrètement les frictions opérationnelles et à soutenir mes coéquipiers en coulisses.",
+    "question": "Je trouve une satisfaction à résoudre discrètement les petits problèmes du quotidien et à soutenir mes coéquipiers en coulisses.",
     "mapping": {
       "D": -1,
       "I": 0,
@@ -2570,7 +2570,7 @@
   {
     "id": "d215",
     "style": "S",
-    "question": "Je veille à préserver l'équilibre vie professionnelle-vie personnelle et à éviter l'épuisement de l'équipe.",
+    "question": "Je veille à ce que mon équipe garde un bon équilibre entre travail et vie personnelle, pour éviter qu'elle s'épuise.",
     "mapping": {
       "D": -1,
       "I": 1,
@@ -2630,7 +2630,7 @@
   {
     "id": "d220",
     "style": "S",
-    "question": "Je fais de la sécurité psychologique et de la confiance une priorité dans toutes mes interactions professionnelles.",
+    "question": "Je fais en sorte que les autres se sentent en confiance et à l'aise pour s'exprimer avec moi.",
     "mapping": {
       "D": -1,
       "I": 1,
@@ -2666,7 +2666,7 @@
   {
     "id": "d223",
     "style": "C",
-    "question": "Je repère naturellement les failles, les cas limites et les incohérences logiques que d'autres laissent passer.",
+    "question": "Je repère naturellement les failles, les cas exceptionnels et les incohérences logiques que d'autres laissent passer.",
     "mapping": {
       "D": 1,
       "I": -1,
@@ -2678,7 +2678,7 @@
   {
     "id": "d224",
     "style": "C",
-    "question": "Je préfère prendre des décisions à partir d'une analyse quantitative systématique plutôt que sur intuition.",
+    "question": "Je préfère prendre des décisions à partir d'une analyse quantitative systématique plutôt que sur l'intuition.",
     "mapping": {
       "D": 0,
       "I": -2,
@@ -2738,7 +2738,7 @@
   {
     "id": "d229",
     "style": "C",
-    "question": "Je décompose systématiquement les architectures complexes en composants modulaires et faciles à gérer.",
+    "question": "Je décompose systématiquement les sujets complexes en éléments simples et faciles à gérer.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -2786,7 +2786,7 @@
   {
     "id": "d233",
     "style": "C",
-    "question": "Je suis rigoureux pour maintenir des pistes d'audit, un suivi de versions et une documentation des processus.",
+    "question": "Je suis rigoureux pour garder une trace précise de ce qui a été fait, par qui, et à quel moment.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -2822,7 +2822,7 @@
   {
     "id": "d236",
     "style": "C",
-    "question": "Je préfère clarifier les ambiguïtés par des définitions précises et des critères fonctionnels explicites.",
+    "question": "Je préfère clarifier les ambiguïtés en donnant des définitions précises et des critères de réussite clairs.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -2834,7 +2834,7 @@
   {
     "id": "d237",
     "style": "C",
-    "question": "J'examine attentivement les risques potentiels et les modes de défaillance avant de valider la conception d'un système.",
+    "question": "J'examine attentivement les risques et tout ce qui pourrait mal tourner avant de valider un projet.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -2858,7 +2858,7 @@
   {
     "id": "d239",
     "style": "C",
-    "question": "Je trouve satisfaisant d'optimiser des systèmes pour une fiabilité durable et un taux de défauts nul.",
+    "question": "Je trouve satisfaisant d'améliorer un système jusqu'à ce qu'il soit fiable et sans erreur.",
     "mapping": {
       "D": 0,
       "I": -1,
@@ -2882,7 +2882,7 @@
   {
     "id": "d241",
     "style": "D",
-    "question": "Je préfère que quelqu'un d'autre prenne la décision finale plutôt que d'avoir à en défendre une moi-même.",
+    "question": "Je préfère que quelqu'un d'autre prenne la décision finale plutôt que d'avoir à la défendre moi-même.",
     "mapping": {
       "D": 2,
       "I": 0,
@@ -3062,7 +3062,7 @@
   {
     "id": "d256",
     "style": "S",
-    "question": "Les engagements de longue durée finissent par me peser comme une contrainte.",
+    "question": "Les engagements de longue durée finissent par devenir une contrainte pour moi.",
     "mapping": {
       "D": 0,
       "I": 0,
@@ -3110,7 +3110,7 @@
   {
     "id": "d260",
     "style": "C",
-    "question": "Rédiger une documentation détaillée me semble être une mauvaise utilisation de mon temps.",
+    "question": "Rédiger une documentation détaillée me semble être une perte de temps.",
     "mapping": {
       "D": 0,
       "I": 0,

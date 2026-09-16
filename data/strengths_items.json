@@ -15,8 +15,8 @@
   },
   {
     "id": "f002",
-    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
-    "option_a": "Je donne de l'énergie au groupe pour qu'il avance ensemble.",
+    "question": "Quand une situation devient tendue, vous avez tendance à :",
+    "option_a": "Je nomme ce qui est en jeu pour remotiver l'équipe.",
     "option_b": "J'écoute ce qui ne se dit pas directement.",
     "alignment": {
       "option_a": [
@@ -29,8 +29,8 @@
   },
   {
     "id": "f003",
-    "question": "Quand une situation devient tendue, vous avez tendance à :",
-    "option_a": "J'écoute ce qui ne se dit pas directement.",
+    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
+    "option_a": "Je remarque le changement de ton avant que quelqu'un ne dise quoi que ce soit.",
     "option_b": "Je cherche la faille avant de me laisser convaincre.",
     "alignment": {
       "option_a": [
@@ -43,8 +43,8 @@
   },
   {
     "id": "f004",
-    "question": "Sous un délai serré, vous avez tendance à :",
-    "option_a": "Je cherche la faille avant de me laisser convaincre.",
+    "question": "Face à un imprévu, vous avez tendance à :",
+    "option_a": "Je repère l'hypothèse fragile avant d'y adhérer.",
     "option_b": "Je vais jusqu'au bout, même quand l'élan est retombé.",
     "alignment": {
       "option_a": [
@@ -57,8 +57,8 @@
   },
   {
     "id": "f005",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
-    "option_a": "Je vais jusqu'au bout, même quand l'élan est retombé.",
+    "question": "Devant une décision à prendre rapidement, vous êtes plutôt du genre à :",
+    "option_a": "Je termine une tâche longue même quand elle a perdu tout son attrait.",
     "option_b": "Je construis l'argumentaire qui emportera l'adhésion.",
     "alignment": {
       "option_a": [
@@ -71,8 +71,8 @@
   },
   {
     "id": "f006",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
-    "option_a": "Je construis l'argumentaire qui emportera l'adhésion.",
+    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
+    "option_a": "Je cherche l'angle qui va vraiment parler à mon interlocuteur.",
     "option_b": "Je tiens mes engagements envers les personnes, sur la durée.",
     "alignment": {
       "option_a": [
@@ -85,8 +85,8 @@
   },
   {
     "id": "f007",
-    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
-    "option_a": "Je tiens mes engagements envers les personnes, sur la durée.",
+    "question": "Quand un collègue vous sollicite, votre réflexe est plutôt de :",
+    "option_a": "Une fois que je me suis engagé auprès de quelqu'un, je tiens parole quoi qu'il arrive.",
     "option_b": "Je me projette sur ce que la situation deviendra dans un an.",
     "alignment": {
       "option_a": [
@@ -99,8 +99,8 @@
   },
   {
     "id": "f008",
-    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
-    "option_a": "Je me projette sur ce que la situation deviendra dans un an.",
+    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
+    "option_a": "Je repère tôt un tournant que d'autres ne verront qu'une fois dessus.",
     "option_b": "Je cherche comment faire la même chose plus efficacement.",
     "alignment": {
       "option_a": [
@@ -113,9 +113,9 @@
   },
   {
     "id": "f009",
-    "question": "Quand une situation devient tendue, vous avez tendance à :",
-    "option_a": "Je cherche comment faire la même chose plus efficacement.",
-    "option_b": "Je mobilise la bonne personne de mon réseau pour débloquer la situation.",
+    "question": "Sous un délai serré, vous avez tendance à :",
+    "option_a": "Je repère l'étape inutile dans une façon de faire, même si personne ne s'en plaint.",
+    "option_b": "Je sais toujours qui appeler pour débloquer une situation.",
     "alignment": {
       "option_a": [
         "Optimisation"
@@ -127,9 +127,9 @@
   },
   {
     "id": "f010",
-    "question": "Sous un délai serré, vous avez tendance à :",
-    "option_a": "Je mobilise la bonne personne de mon réseau pour débloquer la situation.",
-    "option_b": "Je cherche le terrain d'entente entre deux positions opposées.",
+    "question": "Quand les choses ralentissent, votre réflexe est plutôt de :",
+    "option_a": "J'entretiens naturellement beaucoup de relations professionnelles.",
+    "option_b": "Je cherche le terrain d'entente avant que ça ne dégénère.",
     "alignment": {
       "option_a": [
         "Réseau"
@@ -141,9 +141,9 @@
   },
   {
     "id": "f011",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
-    "option_a": "Je cherche le terrain d'entente entre deux positions opposées.",
-    "option_b": "Je vérifie le détail que personne d'autre ne prend la peine de contrôler.",
+    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
+    "option_a": "Face à une tension, je cherche ce que chacun peut céder sans perdre la face.",
+    "option_b": "Je vérifie ce que les autres tiennent pour acquis.",
     "alignment": {
       "option_a": [
         "Médiation"
@@ -155,9 +155,9 @@
   },
   {
     "id": "f012",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
-    "option_a": "Je vérifie le détail que personne d'autre ne prend la peine de contrôler.",
-    "option_b": "Je me lance tout de suite, quitte à ajuster en cours de route.",
+    "question": "Sous un délai serré, vous avez tendance à :",
+    "option_a": "Je ne laisse pas passer un détail qui cloche.",
+    "option_b": "Je préfère démarrer avec ce qu'on a plutôt qu'attendre d'être prêt à 100 %.",
     "alignment": {
       "option_a": [
         "Rigueur"
@@ -169,9 +169,9 @@
   },
   {
     "id": "f013",
-    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
-    "option_a": "Je me lance tout de suite, quitte à ajuster en cours de route.",
-    "option_b": "J'écoute ce qui ne se dit pas directement.",
+    "question": "Face à un imprévu, vous avez tendance à :",
+    "option_a": "Je passe à l'action dès qu'une direction se dessine.",
+    "option_b": "Je laisse à mon interlocuteur le temps de dire ce qu'il n'ose pas exprimer directement.",
     "alignment": {
       "option_a": [
         "Lancement"
@@ -183,9 +183,9 @@
   },
   {
     "id": "f014",
-    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
-    "option_a": "Je donne de l'énergie au groupe pour qu'il avance ensemble.",
-    "option_b": "Je cherche la faille avant de me laisser convaincre.",
+    "question": "Quand les choses ralentissent, votre réflexe est plutôt de :",
+    "option_a": "Je relance la dynamique quand je sens le groupe faiblir.",
+    "option_b": "Je mets en doute le chiffre qui ne colle pas, même si personne d'autre n'y a pensé.",
     "alignment": {
       "option_a": [
         "Entraînement"
@@ -197,9 +197,9 @@
   },
   {
     "id": "f015",
-    "question": "Quand une situation devient tendue, vous avez tendance à :",
-    "option_a": "J'écoute ce qui ne se dit pas directement.",
-    "option_b": "Je vais jusqu'au bout, même quand l'élan est retombé.",
+    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
+    "option_a": "Je perçois l'hésitation derrière une réponse trop rapide.",
+    "option_b": "Je continue sur un dossier répétitif là où d'autres décrochent.",
     "alignment": {
       "option_a": [
         "Écoute"
@@ -211,9 +211,9 @@
   },
   {
     "id": "f016",
-    "question": "Sous un délai serré, vous avez tendance à :",
-    "option_a": "Je cherche la faille avant de me laisser convaincre.",
-    "option_b": "Je construis l'argumentaire qui emportera l'adhésion.",
+    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
+    "option_a": "J'examine ce qui ne tient pas avant de me laisser emporter par l'enthousiasme général.",
+    "option_b": "Quand j'y crois, je trouve les mots pour convaincre plutôt que d'imposer.",
     "alignment": {
       "option_a": [
         "Discernement"
@@ -225,9 +225,9 @@
   },
   {
     "id": "f017",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
-    "option_a": "Je vais jusqu'au bout, même quand l'élan est retombé.",
-    "option_b": "Je tiens mes engagements envers les personnes, sur la durée.",
+    "question": "Quand une situation devient tendue, vous avez tendance à :",
+    "option_a": "Ce qui compte pour moi, c'est de finir, pas seulement de commencer.",
+    "option_b": "Je reste fiable même quand la relation devient inconfortable.",
     "alignment": {
       "option_a": [
         "Ténacité"
@@ -239,9 +239,9 @@
   },
   {
     "id": "f018",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
-    "option_a": "Je construis l'argumentaire qui emportera l'adhésion.",
-    "option_b": "Je me projette sur ce que la situation deviendra dans un an.",
+    "question": "Devant une décision à prendre rapidement, vous êtes plutôt du genre à :",
+    "option_a": "Je prépare mes arguments jusqu'à ce qu'ils tiennent face à toute objection.",
+    "option_b": "Je pense à où mène la trajectoire actuelle plutôt qu'à la situation du jour.",
     "alignment": {
       "option_a": [
         "Conviction"
@@ -253,9 +253,9 @@
   },
   {
     "id": "f019",
-    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
-    "option_a": "Je tiens mes engagements envers les personnes, sur la durée.",
-    "option_b": "Je cherche comment faire la même chose plus efficacement.",
+    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
+    "option_a": "Je ne laisse pas tomber quelqu'un juste parce que le contexte a changé.",
+    "option_b": "J'ai envie de corriger un frottement dès que je le remarque.",
     "alignment": {
       "option_a": [
         "Loyauté"
@@ -267,9 +267,9 @@
   },
   {
     "id": "f020",
-    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
-    "option_a": "Je me projette sur ce que la situation deviendra dans un an.",
-    "option_b": "Je mobilise la bonne personne de mon réseau pour débloquer la situation.",
+    "question": "Quand un collègue vous sollicite, votre réflexe est plutôt de :",
+    "option_a": "Je vois venir un problème avant qu'il ne devienne visible pour tout le monde.",
+    "option_b": "Je sais quelle personne activer au bon moment pour obtenir une information.",
     "alignment": {
       "option_a": [
         "Vision"
@@ -282,8 +282,8 @@
   {
     "id": "f021",
     "question": "Quand une situation devient tendue, vous avez tendance à :",
-    "option_a": "Je cherche comment faire la même chose plus efficacement.",
-    "option_b": "Je cherche le terrain d'entente entre deux positions opposées.",
+    "option_a": "Je me demande toujours s'il n'y a pas plus rapide ou plus simple.",
+    "option_b": "Je préfère désamorcer un désaccord plutôt que prendre parti.",
     "alignment": {
       "option_a": [
         "Optimisation"
@@ -295,9 +295,9 @@
   },
   {
     "id": "f022",
-    "question": "Sous un délai serré, vous avez tendance à :",
-    "option_a": "Je mobilise la bonne personne de mon réseau pour débloquer la situation.",
-    "option_b": "Je vérifie le détail que personne d'autre ne prend la peine de contrôler.",
+    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
+    "option_a": "Je préfère passer par la bonne personne plutôt que par la voie officielle.",
+    "option_b": "Je contrôle la source avant de m'y fier, même si tout le monde l'a déjà fait.",
     "alignment": {
       "option_a": [
         "Réseau"
@@ -309,9 +309,9 @@
   },
   {
     "id": "f023",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
-    "option_a": "Je cherche le terrain d'entente entre deux positions opposées.",
-    "option_b": "Je me lance tout de suite, quitte à ajuster en cours de route.",
+    "question": "Devant une décision à prendre rapidement, vous êtes plutôt du genre à :",
+    "option_a": "Je cherche à rapprocher deux points de vue plutôt qu'à trancher entre eux.",
+    "option_b": "Je teste une première version plutôt que d'en discuter plus longtemps.",
     "alignment": {
       "option_a": [
         "Médiation"
@@ -323,9 +323,9 @@
   },
   {
     "id": "f024",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
-    "option_a": "Je vérifie le détail que personne d'autre ne prend la peine de contrôler.",
-    "option_b": "Je donne de l'énergie au groupe pour qu'il avance ensemble.",
+    "question": "Sous un délai serré, vous avez tendance à :",
+    "option_a": "Je repère l'étape sautée que personne n'a pris la peine de vérifier.",
+    "option_b": "Je remarque et je dis à voix haute les efforts de chacun.",
     "alignment": {
       "option_a": [
         "Rigueur"
@@ -338,8 +338,8 @@
   {
     "id": "f025",
     "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
-    "option_a": "Je me lance tout de suite, quitte à ajuster en cours de route.",
-    "option_b": "Je cherche la faille avant de me laisser convaincre.",
+    "option_a": "Je préfère avancer et corriger le tir que d'attendre le feu vert parfait.",
+    "option_b": "Je pose la question qui dérange avant de valider une idée séduisante.",
     "alignment": {
       "option_a": [
         "Lancement"
@@ -352,8 +352,8 @@
   {
     "id": "f026",
     "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
-    "option_a": "Je donne de l'énergie au groupe pour qu'il avance ensemble.",
-    "option_b": "Je vais jusqu'au bout, même quand l'élan est retombé.",
+    "option_a": "Je cherche à transformer un objectif flou en élan collectif.",
+    "option_b": "Je m'accroche à un engagement pris, même quand ce n'est plus motivant.",
     "alignment": {
       "option_a": [
         "Entraînement"
@@ -365,9 +365,9 @@
   },
   {
     "id": "f027",
-    "question": "Quand une situation devient tendue, vous avez tendance à :",
-    "option_a": "J'écoute ce qui ne se dit pas directement.",
-    "option_b": "Je construis l'argumentaire qui emportera l'adhésion.",
+    "question": "Quand un collègue vous sollicite, votre réflexe est plutôt de :",
+    "option_a": "Je m'attarde sur ce qu'une personne évite de dire plutôt que sur ce qu'elle dit.",
+    "option_b": "Je défends une idée jusqu'à ce qu'elle soit vraiment entendue.",
     "alignment": {
       "option_a": [
         "Écoute"
@@ -379,9 +379,9 @@
   },
   {
     "id": "f028",
-    "question": "Sous un délai serré, vous avez tendance à :",
-    "option_a": "Je cherche la faille avant de me laisser convaincre.",
-    "option_b": "Je tiens mes engagements envers les personnes, sur la durée.",
+    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
+    "option_a": "Je vérifie le raisonnement avant de me fier à la conclusion.",
+    "option_b": "Ce que j'ai promis à une personne, je le tiens, même longtemps après.",
     "alignment": {
       "option_a": [
         "Discernement"
@@ -393,9 +393,9 @@
   },
   {
     "id": "f029",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
-    "option_a": "Je vais jusqu'au bout, même quand l'élan est retombé.",
-    "option_b": "Je me projette sur ce que la situation deviendra dans un an.",
+    "question": "Face à un imprévu, vous avez tendance à :",
+    "option_a": "Je préfère tenir un projet long plutôt que d'en démarrer un nouveau plus stimulant.",
+    "option_b": "Je préfère anticiper l'évolution d'une situation plutôt que réagir à ce qui se présente.",
     "alignment": {
       "option_a": [
         "Ténacité"
@@ -407,9 +407,9 @@
   },
   {
     "id": "f030",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
-    "option_a": "Je construis l'argumentaire qui emportera l'adhésion.",
-    "option_b": "Je cherche comment faire la même chose plus efficacement.",
+    "question": "Quand les choses ralentissent, votre réflexe est plutôt de :",
+    "option_a": "Je préfère convaincre étape par étape plutôt qu'attendre l'adhésion immédiate.",
+    "option_b": "J'aime améliorer un processus qui marche déjà, plutôt que le laisser tel quel.",
     "alignment": {
       "option_a": [
         "Conviction"
@@ -421,9 +421,9 @@
   },
   {
     "id": "f031",
-    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
-    "option_a": "Je tiens mes engagements envers les personnes, sur la durée.",
-    "option_b": "Je mobilise la bonne personne de mon réseau pour débloquer la situation.",
+    "question": "Sous un délai serré, vous avez tendance à :",
+    "option_a": "Je privilégie la constance envers les gens plutôt que la performance du moment.",
+    "option_b": "J'ai souvent le bon contact avant même d'en avoir besoin.",
     "alignment": {
       "option_a": [
         "Loyauté"
@@ -435,9 +435,9 @@
   },
   {
     "id": "f032",
-    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
-    "option_a": "Je me projette sur ce que la situation deviendra dans un an.",
-    "option_b": "Je cherche le terrain d'entente entre deux positions opposées.",
+    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
+    "option_a": "Je me demande où cela nous mènera dans cinq ans, pas seulement demain.",
+    "option_b": "Je m'interpose dès que je sens une tension monter entre deux personnes.",
     "alignment": {
       "option_a": [
         "Vision"
@@ -449,9 +449,9 @@
   },
   {
     "id": "f033",
-    "question": "Quand une situation devient tendue, vous avez tendance à :",
-    "option_a": "Je cherche comment faire la même chose plus efficacement.",
-    "option_b": "Je vérifie le détail que personne d'autre ne prend la peine de contrôler.",
+    "question": "Face à un nouveau projet, votre premier réflexe est plutôt de :",
+    "option_a": "Je remarque le détour évitable avant que quelqu'un d'autre ne s'en aperçoive.",
+    "option_b": "Pour moi, la qualité se joue dans ce que personne d'autre ne prend la peine de contrôler.",
     "alignment": {
       "option_a": [
         "Optimisation"
@@ -463,9 +463,9 @@
   },
   {
     "id": "f034",
-    "question": "Sous un délai serré, vous avez tendance à :",
-    "option_a": "Je mobilise la bonne personne de mon réseau pour débloquer la situation.",
-    "option_b": "Je me lance tout de suite, quitte à ajuster en cours de route.",
+    "question": "Devant une décision à prendre rapidement, vous êtes plutôt du genre à :",
+    "option_a": "Je mobilise mon réseau plutôt que de chercher seul une solution.",
+    "option_b": "Pour moi, un projet existe dès que quelque chose bouge concrètement.",
     "alignment": {
       "option_a": [
         "Réseau"
@@ -477,9 +477,9 @@
   },
   {
     "id": "f035",
-    "question": "Quand on vous présente une idée, votre réflexe est plutôt de :",
-    "option_a": "Je cherche le terrain d'entente entre deux positions opposées.",
-    "option_b": "Je donne de l'énergie au groupe pour qu'il avance ensemble.",
+    "question": "Quand un collègue vous sollicite, votre réflexe est plutôt de :",
+    "option_a": "J'essaie de trouver un compromis avant que la situation ne se braque.",
+    "option_b": "Je fais en sorte que l'équipe reparte avec plus d'énergie qu'avant.",
     "alignment": {
       "option_a": [
         "Médiation"
@@ -491,9 +491,9 @@
   },
   {
     "id": "f036",
-    "question": "Dans votre travail au quotidien, vous êtes plutôt du genre à :",
-    "option_a": "Je vérifie le détail que personne d'autre ne prend la peine de contrôler.",
-    "option_b": "J'écoute ce qui ne se dit pas directement.",
+    "question": "Dans une réunion d'équipe, vous êtes plutôt du genre à :",
+    "option_a": "Je relis et je vérifie, même quand le délai pousse à aller vite.",
+    "option_b": "Je sens quand quelqu'un a besoin qu'on lui pose la question autrement.",
     "alignment": {
       "option_a": [
         "Rigueur"

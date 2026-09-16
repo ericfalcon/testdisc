@@ -30,6 +30,11 @@ STYLE_NAMES = {
     "C": "Conformité",
 }
 
+# The strain "band" below (high/moderate/low) is an internal code, translated
+# here once so every display surface (results page, PDF) shows the same
+# French word instead of leaking the raw code.
+STRAIN_BAND_LABELS = {"high": "élevée", "moderate": "modérée", "low": "faible"}
+
 _SECTORS = [
     (300, 330, "D"), (330, 360, "DI"), (0, 30, "ID"), (30, 60, "I"),
     (60, 90, "IS"), (90, 120, "SI"), (120, 150, "S"), (150, 180, "SC"),

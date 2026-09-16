@@ -50,7 +50,7 @@ def _module_row(module_id: str, default: bool) -> tuple[bool, str]:
 
 
 def _identification() -> dict[str, str]:
-    st.markdown('<div class="chan">Avant de commencer</div>', unsafe_allow_html=True)
+    st.markdown('<div class="chan">Étape 1 · Vos informations</div>', unsafe_allow_html=True)
     cols = st.columns(2)
     with cols[0]:
         prenom = st.text_input("Prénom", key="id_prenom")
@@ -74,9 +74,20 @@ def render() -> None:
     ui.masthead(
         "Votre profil DISC, en quelques minutes",
         "Un profil comportemental présenté avec sa marge d'incertitude — y compris quand les "
-        "chiffres sont trop proches pour trancher. Le module DISC suffit pour une formation ; les "
-        "modules complémentaires sont facultatifs et indiquent chacun leur coût en temps.",
+        "chiffres sont trop proches pour trancher.",
         eyebrow="Test · avant la formation",
+    )
+
+    ui.panel(
+        "Comment ça se passe",
+        "<p>Ce test mesure votre style de comportement : comment vous décidez, communiquez et "
+        "réagissez au quotidien. Il n'y a pas de bonne ou de mauvaise réponse — répondez avec ce "
+        "qui vous ressemble le plus, pas ce qui semble le mieux vu.</p>"
+        "<p style=\"margin-bottom:0;\">Trois étapes : indiquez qui vous êtes, choisissez vos "
+        "modules, puis répondez. Le module <b>DISC</b> ci-dessous (≈ 5 min) suffit pour la "
+        "formation ; les autres sont facultatifs — ne les ajoutez que si vous voulez aller plus "
+        "loin ou que votre formateur vous l'ait demandé.</p>",
+        icon="🧭",
     )
 
     # A form batches the identification fields and the module list so that
@@ -89,7 +100,9 @@ def render() -> None:
         identity = _identification()
         st.write("")
 
-        st.markdown('<div class="chan">Module principal</div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="chan">Étape 2 · Le test DISC (recommandé)</div>', unsafe_allow_html=True
+        )
         selection: dict[str, str] = {}
         st.session_state["_picked"] = set()
         for module_id in CORE_MODULES:
@@ -100,7 +113,7 @@ def render() -> None:
 
         if ADDON_MODULES:
             st.markdown(
-                '<div class="chan" style="margin-top:0.8rem;">Modules complémentaires</div>',
+                '<div class="chan" style="margin-top:0.8rem;">Pour aller plus loin (facultatif)</div>',
                 unsafe_allow_html=True,
             )
         for module_id in ADDON_MODULES:
@@ -109,7 +122,7 @@ def render() -> None:
                 selection[module_id] = variant
                 st.session_state["_picked"].add(module_id)
 
-        st.markdown("---")
+        st.markdown('<div class="chan" style="margin-top:0.8rem;">Étape 3 · C\'est parti</div>', unsafe_allow_html=True)
         submitted = st.form_submit_button(
             "Commencer", key="begin", use_container_width=True, type="primary"
         )
