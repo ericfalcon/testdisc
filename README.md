@@ -1,7 +1,11 @@
-# Test DISC — version française
+# Test DISC — Eric Falcon Formation
 
-🔗 **Application en ligne : [disctest-cafoc.streamlit.app](https://disctest-cafoc.streamlit.app)**
+🔗 **Application en ligne : [testdisc-ericfalcon.streamlit.app](https://testdisc-ericfalcon.streamlit.app/)**
 — c'est ce lien qui est à envoyer aux stagiaires avant la formation.
+
+*Ce dépôt est la version personnelle et indépendante du test, avec ses quatre modules
+complémentaires. Il n'a aucun lien avec le dépôt du CAFOC (`disctest-cafoc.streamlit.app`),
+qui reste volontairement limité au seul module DISC de base et évolue séparément.*
 
 Une application [Streamlit](https://streamlit.io) qui fait passer un test de personnalité
 DISC (Dominance, Influence, Stabilité, Conformité) et restitue un profil détaillé,
