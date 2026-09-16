@@ -5,12 +5,10 @@ import random
 from assessment.registry import ADDON_MODULES, CORE_MODULES, REGISTRY
 from assessment.report.build import build_report
 
-# This French edition keeps only the DISC module (see assessment/registry.py for
-# why: the strengths/stress/motivators modules of the upstream project mirror
-# Gallup's trademarked CliftonStrengths taxonomy, and were dropped rather than
-# translated). These tests were trimmed to match — the removed modules' own
-# tests went with them, and the multi-module assertions now cover the one
-# module that remains.
+# This French edition keeps DISC (core) plus four addons — the work style
+# variant, the pressure-mode module, the motivators module, and a "Forces"
+# module built on an original 12-theme taxonomy rather than Gallup's
+# trademarked 34-theme CliftonStrengths (see assessment/registry.py).
 
 
 def _run(module_ids, seed=6):
@@ -44,11 +42,14 @@ def test_every_module_builds_scores_and_round_trips():
             assert all(i.module_id == module_id for i in rebuilt)
 
 
-def test_only_disc_is_registered():
-    """This French edition is scoped to the DISC module only (see registry.py)."""
+def test_disc_plus_four_addons_are_registered():
+    """This French edition activates DISC plus four addons, including the
+    original "Forces" taxonomy — no Gallup theme or domain names anywhere."""
     assert CORE_MODULES == ("disc_natural",)
-    assert ADDON_MODULES == ()
-    assert set(REGISTRY) == {"disc_natural"}
+    assert set(ADDON_MODULES) == {"disc_adaptive", "stress_profile", "motivators", "strengths_core"}
+    assert set(REGISTRY) == {
+        "disc_natural", "disc_adaptive", "stress_profile", "motivators", "strengths_core",
+    }
 
 
 def test_report_builds_for_the_core_alone():
@@ -58,6 +59,22 @@ def test_report_builds_for_the_core_alone():
     assert report["plan"]
     assert "strain" not in report
     assert report["integrations"] == []
+
+
+def test_report_builds_with_all_active_modules_together():
+    """disc_adaptive depends on disc_natural for its item ids, so it must be
+    built after it — _run() builds modules in the order given, and disc_natural
+    is listed first here for exactly that reason."""
+    module_ids = ["disc_natural", "disc_adaptive", "stress_profile", "motivators", "strengths_core"]
+    results, sources, answers = _run(module_ids)
+    report = build_report(results, sources, answers)
+    assert "disc" in report
+    assert "strain" in report
+    assert "stress" in report
+    assert "motivators" in report
+    assert "strengths" in report
+    assert report["plan"]
+    assert report["integrations"], "at least one cross-module section should fire"
 
 
 def test_built_items_are_tagged_with_their_own_module():

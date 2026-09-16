@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 from . import items as pools
-from .scoring import disc, motivators, strengths, stress
+from .scoring import disc, motivators, stress
 from .types import Item, ModuleResult
 
 NATURAL_FRAME = (
@@ -88,16 +88,6 @@ def _build_motivators(rng: random.Random, variant: str, context: dict) -> list[I
 
 def _score_motivators(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
     return motivators.score([i.source for i in items], _answers_by_source(items, answers))
-
-
-# --------------------------------------------------------------------- strengths
-
-def _build_strengths(rng: random.Random, variant: str, context: dict) -> list[Item]:
-    return pools.to_choice_items(pools.sample_strengths(rng, 24), "strengths_core")
-
-
-def _score_strengths(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
-    return strengths.score([i.source for i in items], _answers_by_source(items, answers), pools.strengths_themes())
 
 
 def _rebuilder(kind: str, module_id: str, frame: str = "") -> Callable[[list[str], str], list[Item]]:
@@ -179,26 +169,12 @@ _register(Module(
     minutes={"standard": 4},
 ))
 
-# Le module "Forces" du projet d'origine reprenait le modèle des 34 thèmes CliftonStrengths
-# de Gallup (une évaluation commerciale déposée) et est resté désactivé pour cette raison.
-# Celui-ci le remplace avec un référentiel original : 12 thèmes en 4 domaines (Construire,
-# Mobiliser, Relier, Éclairer), sans reprendre ni les noms ni le regroupement de Gallup — voir
-# data/strengths_themes.json et data/strengths_items.json.
-_register(Module(
-    id="strengths_core",
-    title="Vos forces naturelles",
-    icon="\U0001f48e",
-    blurb=(
-        "Vingt-quatre choix forcés entre deux façons de travailler, tirés d'une banque de "
-        "36 questions couvrant 12 thèmes en 4 domaines."
-    ),
-    kind="addon",
-    item_type="forced_choice",
-    build=_build_strengths,
-    rebuild=_rebuilder("strengths", "strengths_core"),
-    score=_score_strengths,
-    minutes={"standard": 4},
-))
+# Remarque : le module "strengths" (Forces) du projet d'origine reprend le modèle des 34
+# thèmes CliftonStrengths de Gallup, qui est une évaluation commerciale déposée. Il reste
+# désactivé dans cette version française pour cette raison — le diffuser publiquement, même
+# traduit, exposerait à un risque de contrefaçon de marque. Le code reste dans le dépôt
+# (assessment/scoring/strengths.py, data/strengths_*.json) en attendant un contenu original
+# qui ne reprenne ni les noms de thèmes ni les domaines de Gallup.
 
 CORE_MODULES = tuple(m.id for m in REGISTRY.values() if m.kind == "core")
 ADDON_MODULES = tuple(m.id for m in REGISTRY.values() if m.kind == "addon")

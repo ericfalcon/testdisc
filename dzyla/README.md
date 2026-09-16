@@ -39,7 +39,7 @@ Aucun compte, aucun serveur, aucune base de données.
   sont envoyés dans un Google Sheet que vous partagez avec les formateurs (voir
   ci-dessous). Tout le calcul du profil, lui, se fait dans la session Streamlit
   du stagiaire — seul le résultat final part vers le Sheet.
-- Quatre modules complémentaires, facultatifs et décochés par défaut (le module DISC
+- Trois modules complémentaires, facultatifs et décochés par défaut (le module DISC
   seul suffit pour une formation) :
   - **DISC — votre style au travail** : les mêmes 40 affirmations, répondues cette
     fois pour le poste actuel. L'écart avec le profil naturel donne un indice de
@@ -49,10 +49,6 @@ Aucun compte, aucun serveur, aucune base de données.
   - **Ce qui vous motive** : 28 choix forcés entre deux façons de travailler, sur
     8 moteurs (autonomie, maîtrise, reconnaissance, sécurité, sens, lien, statut,
     variété) — chaque moteur affronte chacun des autres exactement une fois.
-  - **Vos forces naturelles** : 24 choix forcés (tirés d'une banque de 36) entre
-    deux façons de travailler, sur 12 thèmes originaux répartis en 4 domaines
-    (Construire, Mobiliser, Relier, Éclairer) — voir ci-dessous pourquoi ce
-    référentiel est original plutôt que repris d'un test du commerce.
   
   Quand plusieurs de ces modules sont pris ensemble, le rapport ajoute des
   sections qui croisent leurs résultats (par exemple : qui vous devenez sous
@@ -68,23 +64,26 @@ le test soi-même pour se rappeler ce que signifie tel ou tel profil. Ce guide e
 partir des mêmes textes que ceux montrés aux stagiaires (`data/disc_descriptions.json`) via
 `python3 scripts/build_trainer_guide.py` — à relancer si vous modifiez les descriptions.
 
-## Le module « Forces » : un référentiel original, pas CliftonStrengths
+## Pourquoi pas de module « Forces » ?
 
 Le projet d'origine ([dzyla/disc-personality-assessment](https://github.com/dzyla/disc-personality-assessment),
-licence MIT) proposait un module « forces » (Signature strengths) qui reprenait le
-référentiel des 34 thèmes CliftonStrengths de Gallup (les noms des thèmes eux-mêmes,
-et les 4 domaines qui les regroupent) — une évaluation commerciale déposée, donc pas
-un contenu à diffuser librement, même traduit.
+licence MIT) proposait aussi un module « forces » (Signature strengths), en plus de
+« sous pression » et « motivateurs ». Ce dernier reprend le référentiel des 34 thèmes
+CliftonStrengths de Gallup (les noms des thèmes eux-mêmes, et les 4 domaines qui les
+regroupent), qui est une évaluation commerciale déposée — ce n'est donc pas un
+contenu à diffuser librement, même traduit. Cette version française l'a donc laissé
+désactivé, contrairement aux deux autres modules ci-dessus (« Sous pression » et
+« Ce qui vous motive »), dont le contenu est original et ne reprend aucun test
+propriétaire.
 
-Cette version française a donc remplacé ce référentiel par une taxonomie maison de
-12 thèmes originaux, répartis en 4 domaines (Construire, Mobiliser, Relier,
-Éclairer), avec ses propres noms, descriptions et 36 questions de choix forcé
-(`data/strengths_themes.json`, `data/strengths_items.json`). Aucun nom de thème ni
-de domaine de Gallup n'y figure ; seul le principe général (des choix forcés entre
-deux façons de travailler pour dégager un profil de points forts) est conservé,
-comme il l'est aussi entre le modèle DISC de William Marston, qui est dans le domaine
-public, et les formulations commerciales précises comme le « DISC Classic »® que ce
-projet n'utilise pas.
+(Le modèle DISC lui-même, issu des travaux de William Marston, est dans le domaine
+public ; ce qui est protégé, ce sont des formulations commerciales précises comme le
+« DISC Classic »® que ce projet n'utilise pas.)
+
+Le code du module « Forces » reste dans le dépôt (`assessment/scoring/strengths.py`,
+`assessment/report/strengths.py`, `data/strengths_*.json`) au cas où on voudrait un
+jour le réactiver avec un contenu original — voir le commentaire dans
+`assessment/registry.py`.
 
 ## Récupérer les résultats des stagiaires (Google Sheet)
 
@@ -236,8 +235,7 @@ Ce projet est une adaptation française, pour Eric Falcon Formation, du projet
 de Dawid Zyla, sous licence MIT (voir `LICENSE`). Le code de calcul et
 l'architecture Streamlit viennent du projet d'origine ; les questions, les
 descriptions de profils et l'interface ont été traduites et adaptées en
-français. Le module « Forces » du projet d'origine, lui, a été remplacé par un
-référentiel entièrement original plutôt que traduit (voir plus haut).
+français, et les modules non liés au DISC ont été retirés (voir plus haut).
 
 Ce test est un instrument d'auto-évaluation, pas un outil clinique ni de
 recrutement : il mesure comment une personne se décrit elle-même à un instant

@@ -1,0 +1,3170 @@
+[
+  {
+    "id": "d001",
+    "style": "D",
+    "question": "Je m'épanouis dans les environnements qui vont vite, où je peux prendre les choses en main et décider rapidement.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d002",
+    "style": "I",
+    "question": "J'aime sincèrement collaborer avec les autres et créer des relations solides au sein d'une équipe.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d003",
+    "style": "C",
+    "question": "Je tire une grande satisfaction d'une planification minutieuse où aucun détail n'est laissé de côté.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d004",
+    "style": "S",
+    "question": "Je privilégie le maintien de l'harmonie et je crois qu'on peut toujours trouver un terrain d'entente pour résoudre les conflits pacifiquement.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d005",
+    "style": "D",
+    "question": "Je suis naturellement attiré par les rôles de leader et je suis à l'aise pour prendre des initiatives en groupe.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d006",
+    "style": "I",
+    "question": "J'ai le don d'inspirer les autres et j'aime communiquer mon enthousiasme pour les rallier à mes idées.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d007",
+    "style": "S",
+    "question": "J'apprécie le confort des habitudes et je préfère que mes journées suivent une structure prévisible.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d008",
+    "style": "C",
+    "question": "Je suis très attentif aux détails et je suis fier de produire un travail précis et rigoureux.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d009",
+    "style": "D",
+    "question": "Je me sens le plus à l'aise quand mes responsabilités sont claires et que je garde le contrôle de mes tâches.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d010",
+    "style": "I",
+    "question": "J'aime être le boute-en-train du groupe et je crée facilement du lien dans les situations sociales.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d011",
+    "style": "S",
+    "question": "J'accorde de la valeur à la stabilité et je préfère les environnements calmes et prévisibles.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d012",
+    "style": "C",
+    "question": "Je suis à l'aise pour analyser des données et utiliser la logique afin de résoudre des problèmes complexes.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d013",
+    "style": "D",
+    "question": "Les défis me stimulent et j'aime réagir vite dans les situations sous pression.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d014",
+    "style": "I",
+    "question": "Je suis quelqu'un de très sociable et je crée facilement des liens avec des personnes de tous horizons.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d015",
+    "style": "S",
+    "question": "J'ai tendance à être prudent et je préfère bien peser mes options avant de prendre le moindre risque.",
+    "mapping": {
+      "D": -2,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d016",
+    "style": "C",
+    "question": "J'ai des exigences élevées envers moi-même et envers les autres, et je vise l'excellence dans tout ce que je fais.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d017",
+    "style": "D",
+    "question": "J'accorde de l'importance à l'honnêteté et à la franchise dans la communication, même si cela implique des conversations difficiles.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d018",
+    "style": "S",
+    "question": "Je crois au pouvoir de la collaboration et je préfère travailler en équipe, là où chacun peut faire entendre sa voix.",
+    "mapping": {
+      "D": 0,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d019",
+    "style": "C",
+    "question": "J'aime creuser des informations complexes et repérer des tendances ou des éléments que d'autres pourraient manquer.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d020",
+    "style": "D",
+    "question": "Je suis constamment à la recherche de nouvelles occasions d'apprendre et de progresser, sur le plan personnel comme professionnel.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d021",
+    "style": "S",
+    "question": "Je m'efforce d'entretenir des relations positives et d'éviter les conflits inutiles autant que possible.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d022",
+    "style": "C",
+    "question": "Je suis fier de ma capacité à élaborer des plans bien structurés et à les exécuter sans faille.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d023",
+    "style": "D",
+    "question": "Je suis prêt à prendre des décisions difficiles et à tenir ma position, même si cela implique de faire face à l'opposition ou au désaccord.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d024",
+    "style": "I",
+    "question": "J'adore partager ma passion avec les autres et je parviens facilement à les enthousiasmer pour mes idées.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d025",
+    "style": "S",
+    "question": "Je suis fier d'être quelqu'un de fiable et de constant dans tout ce que je fais.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d026",
+    "style": "C",
+    "question": "Je vérifie mon travail avec minutie pour garantir son exactitude et éviter les erreurs.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d027",
+    "style": "D",
+    "question": "Je m'épanouis dans les environnements qui me permettent de décider vite et d'avancer sans délibérations inutiles.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d028",
+    "style": "D",
+    "question": "Je me sens à l'aise pour prendre les commandes dans des situations où d'autres hésiteraient ou douteraient.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d029",
+    "style": "D",
+    "question": "J'aime me fixer des objectifs ambitieux et me pousser à les atteindre, même quand les chances sont contre moi.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d030",
+    "style": "I",
+    "question": "Il m'arrive souvent de motiver les autres grâce à mon enthousiasme et à mon attitude positive.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d031",
+    "style": "I",
+    "question": "Être entouré de monde me donne de l'énergie et j'aime interagir régulièrement avec les autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d032",
+    "style": "S",
+    "question": "J'ai tendance à éviter la confrontation et je préfère résoudre les désaccords par le dialogue et le compromis.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d033",
+    "style": "S",
+    "question": "Je trouve une satisfaction à entretenir des relations durables et à mettre les autres à l'aise.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d034",
+    "style": "C",
+    "question": "J'aime travailler dans des environnements structurés où les tâches sont bien définies et les attentes claires.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d035",
+    "style": "C",
+    "question": "Je suis très méthodique dans ma façon de faire et je veille à suivre précisément chaque étape d'un processus.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d036",
+    "style": "D",
+    "question": "Je préfère décider vite et sans détour plutôt que de trop réfléchir à chaque détail.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d037",
+    "style": "I",
+    "question": "L'idée de rencontrer de nouvelles personnes et de créer des liens autour de moi m'enthousiasme.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d038",
+    "style": "S",
+    "question": "Je préfère un environnement calme et stable, où les changements brusques sont rares et où les choses se déroulent comme prévu.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d039",
+    "style": "C",
+    "question": "J'ai tendance à me concentrer sur l'exactitude des détails et je relis toujours mon travail pour traquer les erreurs.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d040",
+    "style": "D",
+    "question": "Je m'épanouis dans les environnements compétitifs et j'aime chercher à être le meilleur dans ce que je fais.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d041",
+    "style": "S",
+    "question": "Je préfère jouer un rôle de soutien, aider les autres à atteindre leurs objectifs plutôt que d'être moi-même sous les projecteurs.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d042",
+    "style": "I",
+    "question": "J'aime souvent raconter des histoires ou des expériences vécues pour divertir ou inspirer mon entourage.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d043",
+    "style": "C",
+    "question": "J'ai besoin de cohérence et de rigueur, et je supporte mal que les choses restent inachevées ou bâclées.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d044",
+    "style": "D",
+    "question": "Je n'aime pas les situations où je dois attendre que d'autres prennent une décision.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d045",
+    "style": "I",
+    "question": "Je n'aime pas passer de longues périodes à travailler seul, sans aucune interaction avec les autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d046",
+    "style": "S",
+    "question": "Je n'aime pas les environnements qui changent en permanence et sont imprévisibles.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d047",
+    "style": "C",
+    "question": "Je n'aime pas prendre des décisions à partir d'informations incomplètes ou d'approximations.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d048",
+    "style": "D",
+    "question": "Je n'aime pas me trouver dans des situations où je n'ai que peu, voire aucun contrôle sur le résultat.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d049",
+    "style": "I",
+    "question": "Je n'aime pas travailler isolé, sans aucun retour ni reconnaissance de la part des autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d050",
+    "style": "S",
+    "question": "Je n'aime pas les situations impliquant du conflit ou du désaccord.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d051",
+    "style": "C",
+    "question": "Je n'aime pas aborder des tâches qui demandent plus de créativité que de précision et de rigueur.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d052",
+    "style": "D",
+    "question": "Je n'aime pas suivre les instructions des autres sans pouvoir donner mon avis ou faire des suggestions.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d053",
+    "style": "I",
+    "question": "Je n'aime pas les tâches routinières qui n'impliquent aucune interaction avec les autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d054",
+    "style": "S",
+    "question": "Je n'aime pas travailler dans des environnements rapides, sous pression constante.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d055",
+    "style": "C",
+    "question": "Je n'aime pas les situations où les règles sont floues ou changent fréquemment.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d056",
+    "style": "D",
+    "question": "Je n'aime pas les situations où ce n'est pas moi qui mène l'effort ou qui décide.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d057",
+    "style": "I",
+    "question": "Je n'aime pas travailler dans des environnements où je ne peux ni échanger ni collaborer avec les autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d058",
+    "style": "S",
+    "question": "Je n'aime pas être forcé de décider rapidement sans avoir eu le temps de bien réfléchir.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d059",
+    "style": "C",
+    "question": "Je n'aime pas travailler dans des environnements qui accordent peu d'importance à la précision ou au souci du détail.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d060",
+    "style": "I",
+    "question": "J'aime participer à des activités de groupe où je peux échanger avec des personnes très diverses.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d061",
+    "style": "I",
+    "question": "J'arrive facilement à motiver et à dynamiser les autres au sein d'une équipe.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d062",
+    "style": "I",
+    "question": "Je suis à l'aise pour parler devant un large public et j'aime partager mes idées.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d063",
+    "style": "I",
+    "question": "Je m'épanouis dans les environnements où je peux échanger régulièrement avec les autres et créer du lien.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d064",
+    "style": "I",
+    "question": "Je préfère les sessions de remue-méninges où je peux construire des idées avec les autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d065",
+    "style": "I",
+    "question": "Je m'épanouis en aidant les autres à prendre du recul et en les inspirant vers un objectif commun.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d066",
+    "style": "I",
+    "question": "Je sais construire un consensus au sein de groupes très divers.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d067",
+    "style": "I",
+    "question": "J'aime prendre les devants lors des moments conviviaux et faire naître un esprit de communauté.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d068",
+    "style": "I",
+    "question": "On me connaît pour mon pouvoir de persuasion, et j'arrive facilement à rallier les autres à mes idées.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d069",
+    "style": "I",
+    "question": "Je m'épanouis dans les environnements qui encouragent la créativité et la collaboration.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d070",
+    "style": "I",
+    "question": "Je prends souvent l'initiative d'aller vers les autres pour créer des liens.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d071",
+    "style": "I",
+    "question": "J'aime célébrer les réussites des autres et cultiver un état d'esprit positif au sein de l'équipe.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d072",
+    "style": "I",
+    "question": "Travailler sur des projets qui me font collaborer avec plusieurs services ou équipes me donne de l'énergie.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d073",
+    "style": "I",
+    "question": "Je suis doué pour le réseautage et j'aime construire des relations professionnelles durables.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d074",
+    "style": "I",
+    "question": "La reconnaissance des autres me motive et j'aime recevoir des retours sur mes contributions.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d075",
+    "style": "C",
+    "question": "J'aime élaborer des plans détaillés et les suivre précisément pour atteindre mes objectifs.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d076",
+    "style": "C",
+    "question": "Je suis fier de ma capacité à maintenir des standards élevés de précision et de qualité dans mon travail.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d077",
+    "style": "C",
+    "question": "Je préfère les environnements où les tâches sont clairement définies et où il existe une méthode structurée pour les réaliser.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d078",
+    "style": "C",
+    "question": "Je suis méticuleux et je m'assure que tous les détails sont corrects avant d'avancer sur une tâche.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d079",
+    "style": "C",
+    "question": "Je suis à l'aise pour analyser des données complexes et m'assurer que rien n'a été oublié avant de décider.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d080",
+    "style": "C",
+    "question": "Je m'épanouis dans les rôles où le souci du détail et la précision sont essentiels.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d081",
+    "style": "C",
+    "question": "Je suis très organisé et je préfère planifier mes tâches à l'avance pour être efficace.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d082",
+    "style": "C",
+    "question": "J'accorde de la valeur à la précision et je supporte mal les situations ambiguës ou incertaines.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d083",
+    "style": "C",
+    "question": "Je préfère travailler dans des environnements où des règles et des consignes claires s'appliquent à tous.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d084",
+    "style": "C",
+    "question": "J'aime les projets où je peux suivre méthodiquement des étapes pour m'assurer que tout est fait correctement.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d085",
+    "style": "C",
+    "question": "Je relis souvent mon travail pour m'assurer qu'il ne contient aucune erreur avant de le rendre.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d086",
+    "style": "C",
+    "question": "J'aime créer des processus bien organisés et structurés que les autres peuvent suivre.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d087",
+    "style": "C",
+    "question": "Je suis motivé par la volonté de produire un travail sans erreur et de répondre à des exigences élevées.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d088",
+    "style": "C",
+    "question": "Je me sens le plus à l'aise quand mes responsabilités sont claires et définies et que je peux me concentrer sur les détails.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d089",
+    "style": "C",
+    "question": "Je n'aime pas les situations où l'on maîtrise peu la qualité et la précision.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d090",
+    "style": "D",
+    "question": "Je m'épanouis quand je peux prendre les situations en main et guider les autres vers l'atteinte d'objectifs.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d091",
+    "style": "D",
+    "question": "Je préfère fixer des objectifs ambitieux et me pousser, ainsi que les autres, à les atteindre.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d092",
+    "style": "D",
+    "question": "J'aime décider rapidement et je n'hésite pas à agir dès qu'une opportunité se présente.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d093",
+    "style": "D",
+    "question": "Je suis à l'aise pour prendre des risques si cela permet d'obtenir un gain plus important.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d094",
+    "style": "D",
+    "question": "Je n'ai pas peur de remettre en question l'ordre établi si cela permet de faire avancer les choses.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d095",
+    "style": "D",
+    "question": "J'ai confiance en ma capacité à diriger des équipes et à prendre des décisions difficiles.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d096",
+    "style": "D",
+    "question": "Je préfère les environnements qui vont vite, où je peux avoir un impact important rapidement.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d097",
+    "style": "D",
+    "question": "J'aime travailler dans des environnements où c'est moi qui suis responsable des résultats.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d098",
+    "style": "D",
+    "question": "La compétition me stimule et j'ai à cœur de surpasser les autres.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d099",
+    "style": "D",
+    "question": "Je suis à l'aise pour demander des comptes aux autres afin d'atteindre des standards élevés.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d100",
+    "style": "D",
+    "question": "J'aime relever des défis difficiles qui mettent à l'épreuve mes compétences et ma résistance.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d101",
+    "style": "D",
+    "question": "Je préfère diriger des projets plutôt que de suivre les instructions des autres.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d102",
+    "style": "D",
+    "question": "Je suis prêt à prendre des décisions impopulaires si elles mènent à une réussite durable.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d103",
+    "style": "D",
+    "question": "J'aime les situations où je peux démontrer mon expertise et prendre les commandes.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d104",
+    "style": "D",
+    "question": "Les occasions d'exercer de l'autorité et de l'influence me donnent de l'énergie.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d105",
+    "style": "S",
+    "question": "Je m'épanouis dans les environnements où les tâches et les attentes sont clairement définies et changent rarement.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d106",
+    "style": "S",
+    "question": "Je me sens le plus à l'aise quand je peux suivre une routine stable et éviter les changements imprévus.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d107",
+    "style": "S",
+    "question": "Je préfère travailler dans un environnement structuré, avec des processus clairs et peu de perturbations.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d108",
+    "style": "S",
+    "question": "J'accorde de la valeur aux relations durables et j'aime travailler longtemps avec la même équipe.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d109",
+    "style": "S",
+    "question": "Je suis le plus efficace quand je peux me concentrer sur une seule tâche à la fois, sans interruptions fréquentes.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d110",
+    "style": "S",
+    "question": "Je préfère des méthodes de travail prévisibles, où je sais à quoi m'attendre chaque jour.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d111",
+    "style": "S",
+    "question": "Je suis le plus productif dans des environnements où la stabilité et la fiabilité priment sur le changement rapide.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d112",
+    "style": "S",
+    "question": "Je suis plus à l'aise avec des améliorations progressives qu'avec des changements soudains et de grande ampleur.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d113",
+    "style": "S",
+    "question": "Je privilégie une approche calme et posée pour résoudre les problèmes plutôt que de me précipiter vers des solutions rapides.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d114",
+    "style": "S",
+    "question": "Je préfère les projets de longue durée qui me permettent d'avancer méthodiquement vers un objectif défini.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d115",
+    "style": "S",
+    "question": "J'aime les environnements où le changement est soigneusement planifié et géré plutôt que subi de manière imprévue.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d116",
+    "style": "S",
+    "question": "Je me sens plus rassuré quand je connais précisément les résultats ou les conséquences de mes actes.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d117",
+    "style": "S",
+    "question": "J'apprécie les environnements où la stabilité est une priorité et où les changements brusques sont limités au minimum.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d118",
+    "style": "S",
+    "question": "Je suis à l'aise quand je peux m'appuyer sur des processus établis et que je sais que les choses suivront un schéma prévisible.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d119",
+    "style": "S",
+    "question": "Je préfère travailler dans des environnements où les changements brusques ou les incertitudes sont rares et où les décisions sont mûrement réfléchies.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d120",
+    "style": "D",
+    "question": "Quand un obstacle se présente, je cherche immédiatement des solutions concrètes pour le surmonter plutôt que d'attendre un consensus.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d121",
+    "style": "D",
+    "question": "Je suis à l'aise pour remettre en cause des règles ou des méthodes existantes si elles ralentissent la progression.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d122",
+    "style": "D",
+    "question": "Je préfère fixer des objectifs ambitieux et repousser les limites, même au risque de l'échec.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d123",
+    "style": "D",
+    "question": "Dans les discussions, je vais droit au but et j'attends des autres qu'ils soient tout aussi concis et directs.",
+    "mapping": {
+      "D": 2,
+      "I": -1,
+      "S": -1,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d124",
+    "style": "D",
+    "question": "Je me sens revigoré quand on me laisse une pleine autonomie pour diriger des projets et trancher en dernier ressort.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d125",
+    "style": "D",
+    "question": "Quand une crise survient, mon réflexe est d'intervenir, de prendre les commandes et de déclencher une action immédiate.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d126",
+    "style": "D",
+    "question": "La compétition me motive et je compare en permanence ma performance à des standards élevés.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d127",
+    "style": "D",
+    "question": "Je préfère une exécution rapide plutôt que d'attendre une certitude totale avant d'avancer.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d128",
+    "style": "D",
+    "question": "Je n'ai aucune difficulté à prendre des décisions difficiles et à enjeux élevés sous pression.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d129",
+    "style": "I",
+    "question": "J'utilise naturellement des histoires, de l'humour et de l'enthousiasme pour faire passer mes idées et convaincre les autres.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d130",
+    "style": "I",
+    "question": "Je m'épanouis dans les sessions de brainstorming où toute idée créative est accueillie sans jugement hâtif.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d131",
+    "style": "I",
+    "question": "J'engage facilement la conversation et je crée du lien avec des personnes de tous horizons.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d132",
+    "style": "I",
+    "question": "Je recherche activement les interactions sociales et je me sens vidé quand je suis isolé du travail d'équipe trop longtemps.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d133",
+    "style": "I",
+    "question": "J'aime célébrer les victoires de l'équipe et entretenir un moral élevé grâce aux encouragements.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d134",
+    "style": "I",
+    "question": "Je suis naturellement optimiste face à de nouveaux projets et j'ai tendance à voir d'abord les possibilités plutôt que les risques.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d135",
+    "style": "I",
+    "question": "Je préfère les réunions informelles et conviviales aux présentations formelles et rigides.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d136",
+    "style": "I",
+    "question": "Je sais motiver les autres à s'impliquer et à contribuer à des initiatives communes.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d137",
+    "style": "I",
+    "question": "J'aime les activités spontanées et je m'adapte facilement quand les plans changent vers quelque chose de plus amusant.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d138",
+    "style": "I",
+    "question": "J'accorde de la valeur à la reconnaissance publique et au sentiment que mes contributions font une différence visible.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d139",
+    "style": "I",
+    "question": "Je préfère les discussions ouvertes où chacun peut exprimer librement ses ressentis et son point de vue.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d140",
+    "style": "I",
+    "question": "J'exprime facilement mon enthousiasme et je cache rarement mon excitation face à un projet prometteur.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d141",
+    "style": "S",
+    "question": "Je prends le temps d'écouter patiemment les préoccupations de mes collègues avant de donner un avis ou un conseil.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d142",
+    "style": "S",
+    "question": "J'accorde de la valeur à la loyauté durable et à la constance dans les relations professionnelles comme personnelles.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d143",
+    "style": "S",
+    "question": "Je préfère une charge de travail régulière et maîtrisable plutôt que des alternances brutales entre calme plat et rush intense.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d144",
+    "style": "S",
+    "question": "Je travaille beaucoup en coulisses pour soutenir mes coéquipiers, sans avoir besoin d'être sous les projecteurs.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d145",
+    "style": "S",
+    "question": "Quand des changements sont nécessaires, je préfère qu'ils soient introduits progressivement, avec des explications claires.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d146",
+    "style": "S",
+    "question": "Je fais consciemment l'effort de garder une ambiance de groupe calme, agréable et sans tension.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d147",
+    "style": "S",
+    "question": "Je préfère finir mes tâches à fond et à un rythme régulier plutôt que de sauter sans cesse d'une idée à l'autre.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d148",
+    "style": "S",
+    "question": "Je suis quelqu'un sur qui on peut compter quand on a besoin d'aide, et je dis rarement non quand on me la demande.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d149",
+    "style": "S",
+    "question": "J'accorde une grande importance à la confiance, à une coopération sincère et au respect mutuel entre les membres d'une équipe.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d150",
+    "style": "S",
+    "question": "Je me sens le plus à l'aise quand les attentes sont prévisibles et communiquées clairement, bien à l'avance.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d151",
+    "style": "C",
+    "question": "Je préfère baser mes arguments sur des faits vérifiables, des données et des normes établies plutôt que sur des émotions.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d152",
+    "style": "C",
+    "question": "Je vérifie systématiquement les calculs, les spécifications et les procédures pour éviter les erreurs.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d153",
+    "style": "C",
+    "question": "Je préfère prendre le temps nécessaire pour bien faire le travail du premier coup plutôt que de me précipiter pour tenir un délai artificiel.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d154",
+    "style": "C",
+    "question": "J'apprécie les consignes bien documentées, les procédures standardisées et des critères de réussite clairs.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d155",
+    "style": "C",
+    "question": "J'aborde les problèmes complexes en les décomposant méthodiquement en leurs différentes composantes.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d156",
+    "style": "C",
+    "question": "Je me sens mal à l'aise quand je dois formuler une recommandation sans preuves suffisantes à l'appui.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d157",
+    "style": "C",
+    "question": "J'accorde une grande importance à la cohérence, à la logique et à la rigueur intellectuelle.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d158",
+    "style": "C",
+    "question": "Je recherche activement des critères objectifs pour évaluer équitablement la performance et les résultats.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d159",
+    "style": "C",
+    "question": "Je préfère travailler dans des environnements calmes où je peux me concentrer profondément sur des tâches d'analyse complexes.",
+    "mapping": {
+      "D": 0,
+      "I": -2,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d160",
+    "style": "C",
+    "question": "Je trouve une satisfaction à organiser des informations désordonnées en formats clairs, structurés et logiques.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d161",
+    "style": "D",
+    "question": "Je suis à l'aise pour prendre les devants dans des situations ambiguës qui exigent une action immédiate.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d162",
+    "style": "D",
+    "question": "Je préfère prendre rapidement une décision imparfaite et l'ajuster plus tard plutôt que de retarder l'avancement.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d163",
+    "style": "D",
+    "question": "Je remets activement en question les hypothèses en réunion quand je vois des alternatives plus efficaces.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d164",
+    "style": "D",
+    "question": "Je suis motivé par des objectifs ambitieux que d'autres pourraient juger irréalistes ou risqués.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d165",
+    "style": "D",
+    "question": "Quand je délègue une tâche, je me concentre avant tout sur le résultat final plutôt que sur la façon exacte de l'obtenir.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d166",
+    "style": "D",
+    "question": "Je trouve une satisfaction à couper court à la bureaucratie et aux lourdeurs administratives pour faire avancer les choses.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d167",
+    "style": "D",
+    "question": "Les négociations sous forte pression me stimulent, tout comme le fait de tenir bon sur des objectifs essentiels.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d168",
+    "style": "D",
+    "question": "Je préfère un retour franc et direct plutôt que des circonvolutions diplomatiques.",
+    "mapping": {
+      "D": 2,
+      "I": -1,
+      "S": -1,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d169",
+    "style": "D",
+    "question": "Je recherche naturellement les occasions de développer les activités et d'étendre rapidement leur portée.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d170",
+    "style": "D",
+    "question": "Je m'agace vite quand des projets sont bloqués par une recherche excessive de consensus.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d171",
+    "style": "D",
+    "question": "Je me sens à l'aise pour assumer personnellement la responsabilité d'initiatives stratégiques à forts enjeux.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d172",
+    "style": "D",
+    "question": "Je vois les revers comme des défis à surmonter plutôt que comme des raisons de ralentir.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d173",
+    "style": "D",
+    "question": "Je préfère travailler sur des projets compétitifs où mon équipe peut dépasser les références du secteur.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d174",
+    "style": "D",
+    "question": "Je n'hésite pas à interrompre de longues discussions pour recentrer l'équipe sur l'action immédiate.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d175",
+    "style": "D",
+    "question": "Je préfère avoir le dernier mot sur l'orientation d'un projet et l'allocation des ressources.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d176",
+    "style": "D",
+    "question": "Je suis stimulé à l'idée de mener de nouveaux projets de redressement qui exigent un changement radical.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d177",
+    "style": "D",
+    "question": "Je préfère fixer l'ordre du jour et imposer le rythme dans un travail de groupe.",
+    "mapping": {
+      "D": 2,
+      "I": 1,
+      "S": -1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d178",
+    "style": "D",
+    "question": "Je suis prêt à opérer des réaffectations difficiles de personnel ou de ressources pour tenir des délais critiques.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d179",
+    "style": "D",
+    "question": "Je juge ma réussite professionnelle à des résultats mesurables, des jalons atteints et un impact concret sur les résultats.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d180",
+    "style": "D",
+    "question": "Je préfère agir directement plutôt qu'attendre des consignes détaillées ou une validation extérieure.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": -1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d181",
+    "style": "I",
+    "question": "J'aime utiliser des histoires percutantes et des métaphores pour rendre des concepts techniques passionnants.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d182",
+    "style": "I",
+    "question": "Je ressors plein d'énergie après des débats animés et des ateliers d'équipe collaboratifs.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d183",
+    "style": "I",
+    "question": "Je remarque naturellement quand quelqu'un se sent mis à l'écart et je fais l'effort de l'inclure.",
+    "mapping": {
+      "D": -1,
+      "I": 2,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d184",
+    "style": "I",
+    "question": "Je préfère réfléchir à voix haute avec des collègues plutôt qu'analyser un problème isolément.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d185",
+    "style": "I",
+    "question": "Je suis motivé par les retours positifs et la reconnaissance publique de mes contributions à l'équipe.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d186",
+    "style": "I",
+    "question": "J'adapte facilement ma façon de communiquer pour créer du lien avec des personnalités et des cultures diverses.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d187",
+    "style": "I",
+    "question": "J'aime apporter de l'humour et une chaleur informelle dans les réunions professionnelles pour détendre l'atmosphère.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d188",
+    "style": "I",
+    "question": "Je préfère travailler sur des initiatives créatives tournées vers l'avenir plutôt que sur des tâches administratives répétitives.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": -1,
+      "C": -2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d189",
+    "style": "I",
+    "question": "Je trouve exaltant de présenter des idées audacieuses et créatives à des partenaires externes ou à des dirigeants.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d190",
+    "style": "I",
+    "question": "Je n'hésite pas à exprimer mon enthousiasme et à féliciter mes coéquipiers quand ils produisent un travail remarquable.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d191",
+    "style": "I",
+    "question": "J'aime animer des rétrospectives d'équipe et des moments conviviaux qui renforcent la camaraderie.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 2,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d192",
+    "style": "I",
+    "question": "J'arrive facilement à remotiver une équipe démoralisée en dessinant une vision optimiste de la réussite à venir.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d193",
+    "style": "I",
+    "question": "Je préfère les discussions ouvertes où l'on explore librement les possibilités, sans contraintes précoces.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d194",
+    "style": "I",
+    "question": "Je suis naturellement attiré par la prise de parole en public, les présentations et l'animation de groupe.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d195",
+    "style": "I",
+    "question": "Je me sens vidé quand je travaille longtemps sans collaboration avec d'autres personnes.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d196",
+    "style": "I",
+    "question": "J'accorde autant d'importance à la relation personnelle et à la confiance qu'aux contrats formels dans les partenariats professionnels.",
+    "mapping": {
+      "D": -1,
+      "I": 2,
+      "S": 2,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d197",
+    "style": "I",
+    "question": "J'aime expérimenter de nouveaux formats de présentation pour capter l'attention du public.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d198",
+    "style": "I",
+    "question": "Le réseautage entre services et la découverte d'opportunités communes me donnent de l'énergie.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d199",
+    "style": "I",
+    "question": "J'ai tendance à me concentrer sur le potentiel inspirant d'un plan avant d'en examiner les contraintes détaillées.",
+    "mapping": {
+      "D": 1,
+      "I": 2,
+      "S": 0,
+      "C": -2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d200",
+    "style": "I",
+    "question": "Je m'épanouis dans des cultures d'équipe qui encouragent une participation expressive, enthousiaste et spontanée.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 1,
+      "C": -1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d201",
+    "style": "S",
+    "question": "Je suis fier d'apporter calme et stabilité pendant les périodes de transition organisationnelle.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d202",
+    "style": "S",
+    "question": "Je préfère construire des relations profondes et authentiques sur le long terme plutôt que des liens superficiels.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d203",
+    "style": "S",
+    "question": "J'écoute activement pour comprendre les ressentis profonds des autres avant de proposer des solutions.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d204",
+    "style": "S",
+    "question": "Je préfère avoir un emploi du temps bien défini et des attentes claires pour mes tâches quotidiennes.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d205",
+    "style": "S",
+    "question": "Je suis prêt à m'adapter aux emplois du temps et aux préférences des autres pour préserver l'harmonie du groupe.",
+    "mapping": {
+      "D": -2,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d206",
+    "style": "S",
+    "question": "J'accorde de la valeur à une ambiance d'équipe bienveillante et courtoise, où chacun se traite avec gentillesse.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d207",
+    "style": "S",
+    "question": "Je préfère terminer un projet à fond avant de passer à quelque chose de complètement nouveau.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d208",
+    "style": "S",
+    "question": "Je me sens mal à l'aise quand des tensions interpersonnelles ou une compétition agressive apparaissent au sein de mon équipe.",
+    "mapping": {
+      "D": -2,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d209",
+    "style": "S",
+    "question": "Je suis profondément loyal envers les organisations, mentors et coéquipiers qui soutiennent mon évolution sur le long terme.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d210",
+    "style": "S",
+    "question": "Je préfère bien réfléchir et évaluer les conséquences concrètes avant d'adopter des changements soudains.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d211",
+    "style": "S",
+    "question": "Je trouve une satisfaction à résoudre discrètement les frictions opérationnelles et à soutenir mes coéquipiers en coulisses.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d212",
+    "style": "S",
+    "question": "Je veille à ce que les délais des projets et la répartition de la charge de travail soient réalistes et équitables.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d213",
+    "style": "S",
+    "question": "Je préfère des méthodes fiables et éprouvées à des tendances expérimentales non validées.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d214",
+    "style": "S",
+    "question": "J'apprécie les managers qui donnent des consignes claires et patientes plutôt que des exigences brusques et urgentes.",
+    "mapping": {
+      "D": -1,
+      "I": 0,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d215",
+    "style": "S",
+    "question": "Je veille à préserver l'équilibre vie professionnelle-vie personnelle et à éviter l'épuisement de l'équipe.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d216",
+    "style": "S",
+    "question": "Je préfère les réunions basées sur le consensus, où chaque membre de l'équipe peut s'exprimer sans pression.",
+    "mapping": {
+      "D": -2,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d217",
+    "style": "S",
+    "question": "Je prends le temps de suivre individuellement mes collègues pour m'assurer qu'ils se sentent soutenus sur les projets communs.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d218",
+    "style": "S",
+    "question": "Je préfère des stratégies organisationnelles stables et durables plutôt que des changements de cap fréquents.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d219",
+    "style": "S",
+    "question": "Je fais preuve de patience quand j'explique des procédures complexes à de nouveaux membres de l'équipe.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 1
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d220",
+    "style": "S",
+    "question": "Je fais de la sécurité psychologique et de la confiance une priorité dans toutes mes interactions professionnelles.",
+    "mapping": {
+      "D": -1,
+      "I": 1,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d221",
+    "style": "C",
+    "question": "Je tiens à vérifier les sources de données de façon indépendante avant d'accepter des conclusions comme avérées.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d222",
+    "style": "C",
+    "question": "Je préfère des méthodes de travail structurées, une documentation complète et des critères de qualité bien définis.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d223",
+    "style": "C",
+    "question": "Je repère naturellement les failles, les cas limites et les incohérences logiques que d'autres laissent passer.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d224",
+    "style": "C",
+    "question": "Je préfère prendre des décisions à partir d'une analyse quantitative systématique plutôt que sur intuition.",
+    "mapping": {
+      "D": 0,
+      "I": -2,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d225",
+    "style": "C",
+    "question": "Je prends le temps d'organiser fichiers, systèmes et processus selon une architecture logique et claire.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d226",
+    "style": "C",
+    "question": "Je suis mal à l'aise à l'idée de livrer un travail qui n'a pas été testé et validé en profondeur.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d227",
+    "style": "C",
+    "question": "J'apprécie les réunions qui suivent un ordre du jour structuré avec des objectifs de référence clairs.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d228",
+    "style": "C",
+    "question": "Je préfère travailler dans des environnements où la précision et le travail soigné priment sur la rapidité d'exécution.",
+    "mapping": {
+      "D": -1,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d229",
+    "style": "C",
+    "question": "Je décompose systématiquement les architectures complexes en composants modulaires et faciles à gérer.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d230",
+    "style": "C",
+    "question": "J'accorde de la valeur à l'honnêteté intellectuelle et j'attends que les affirmations soient étayées par des preuves vérifiables.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d231",
+    "style": "C",
+    "question": "Je préfère créer des modèles standardisés et des listes de contrôle pour réduire le taux d'erreurs opérationnelles.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d232",
+    "style": "C",
+    "question": "Je trouve une satisfaction à mener des recherches approfondies et à synthétiser des données complexes en modèles clairs.",
+    "mapping": {
+      "D": 0,
+      "I": -2,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d233",
+    "style": "C",
+    "question": "Je suis rigoureux pour maintenir des pistes d'audit, un suivi de versions et une documentation des processus.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d234",
+    "style": "C",
+    "question": "Je préfère des sessions de résolution de problèmes calmes et rationnelles, centrées sur l'analyse des causes profondes.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d235",
+    "style": "C",
+    "question": "Je m'impose, à moi-même comme à mes collègues, des exigences techniques et éthiques rigoureuses.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d236",
+    "style": "C",
+    "question": "Je préfère clarifier les ambiguïtés par des définitions précises et des critères fonctionnels explicites.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d237",
+    "style": "C",
+    "question": "J'examine attentivement les risques potentiels et les modes de défaillance avant de valider la conception d'un système.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d238",
+    "style": "C",
+    "question": "Je préfère une communication concise, logique et structurée, appuyée par des données.",
+    "mapping": {
+      "D": 1,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d239",
+    "style": "C",
+    "question": "Je trouve satisfaisant d'optimiser des systèmes pour une fiabilité durable et un taux de défauts nul.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 1,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d240",
+    "style": "C",
+    "question": "Je me sens le plus sûr de moi quand mes recommandations s'appuient sur des preuves empiriques.",
+    "mapping": {
+      "D": 0,
+      "I": -1,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": 1
+  },
+  {
+    "id": "d241",
+    "style": "D",
+    "question": "Je préfère que quelqu'un d'autre prenne la décision finale plutôt que d'avoir à en défendre une moi-même.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d242",
+    "style": "D",
+    "question": "Je garde mon opinion pour moi en réunion jusqu'à ce que je sente vers quoi le groupe penche.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d243",
+    "style": "D",
+    "question": "Un désaccord sur un sujet professionnel me met suffisamment mal à l'aise pour que je préfère laisser tomber.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d244",
+    "style": "D",
+    "question": "Je préfère laisser un projet avancer lentement plutôt que d'avoir à m'imposer face à un collègue.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d245",
+    "style": "D",
+    "question": "J'attends qu'on me confie l'autorité plutôt que de la prendre de moi-même.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d246",
+    "style": "D",
+    "question": "Quand une décision est urgente et que la réponse n'est pas claire, je préfère que ce soit quelqu'un d'autre qui tranche.",
+    "mapping": {
+      "D": 2,
+      "I": 0,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d247",
+    "style": "I",
+    "question": "Les événements de réseautage m'épuisent plus qu'ils ne me donnent de l'énergie.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d248",
+    "style": "I",
+    "question": "Je préfère envoyer un point d'avancement par écrit plutôt que de le présenter en personne.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d249",
+    "style": "I",
+    "question": "Je préfère réfléchir seul à un problème avant d'en discuter avec qui que ce soit.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d250",
+    "style": "I",
+    "question": "Faire la conversation avec des collègues me demande un effort que je préférerais éviter.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d251",
+    "style": "I",
+    "question": "Je garde mon enthousiasme pour moi, même quand un travail m'enthousiasme vraiment.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d252",
+    "style": "I",
+    "question": "Je préfère que mon travail parle de lui-même plutôt que d'avoir à le mettre en avant.",
+    "mapping": {
+      "D": 0,
+      "I": 2,
+      "S": 0,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d253",
+    "style": "S",
+    "question": "Je m'agite quand une routine reste identique trop longtemps.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d254",
+    "style": "S",
+    "question": "Je préfère changer de plan en cours de route plutôt que de suivre un chemin prévisible jusqu'au bout.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d255",
+    "style": "S",
+    "question": "Je perds patience avec les collègues qui ont besoin de temps pour s'adapter à un changement.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d256",
+    "style": "S",
+    "question": "Les engagements de longue durée finissent par me peser comme une contrainte.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d257",
+    "style": "S",
+    "question": "Je passe vite à autre chose une fois que la partie intéressante d'un projet d'équipe est terminée.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d258",
+    "style": "S",
+    "question": "Une charge de travail stable et invariable m'ennuierait.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 2,
+      "C": 0
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d259",
+    "style": "C",
+    "question": "Je suis à l'aise pour agir sur la base d'une estimation approximative plutôt que de vérifier les chiffres.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d260",
+    "style": "C",
+    "question": "Rédiger une documentation détaillée me semble être une mauvaise utilisation de mon temps.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d261",
+    "style": "C",
+    "question": "Je préfère livrer quelque chose d'imparfait maintenant plutôt que quelque chose de peaufiné plus tard.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d262",
+    "style": "C",
+    "question": "Je survole les petites lignes en me disant que ça devrait aller.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d263",
+    "style": "C",
+    "question": "Les procédures formelles me ralentissent généralement plus qu'elles ne me protègent.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": -1
+  },
+  {
+    "id": "d264",
+    "style": "C",
+    "question": "Je me fie davantage à mon instinct qu'à l'analyse pour juger un plan.",
+    "mapping": {
+      "D": 0,
+      "I": 0,
+      "S": 0,
+      "C": 2
+    },
+    "keyed": -1
+  }
+]

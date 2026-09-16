@@ -1,4 +1,4 @@
-"""Récit des forces : chaque thème est présenté avec son coût, pas seulement son atout."""
+"""Strengths narrative: every theme reported with its cost, not only its upside."""
 
 from __future__ import annotations
 
@@ -10,16 +10,12 @@ def narrative(result, themes: dict) -> dict:
     if tied:
         names = ", ".join(tied[:4]) + ("…" if len(tied) > 4 else "")
         tie_note = (
-            f"<b>{len(tied)} autre{'s' if len(tied) != 1 else ''} thème{'s' if len(tied) != 1 else ''} "
-            f"à égalité avec le dernier de votre tête de classement</b> ({names}). À ce niveau, la "
-            f"frontière de votre tête de classement est arbitraire : les thèmes ci-dessus forment un "
-            f"groupe, pas un classement strict."
+            f"<b>{len(tied)} other theme{'s' if len(tied) != 1 else ''} scored level with your fifth</b> "
+            f"({names}). At this length the boundary of your top five is arbitrary; the themes above "
+            f"are a cluster, not a ranking. The deep variant of this module separates them further."
         )
     else:
-        tie_note = (
-            "Votre tête de classement se détache nettement du reste — la frontière est réelle, pas "
-            "un artefact de l'endroit où la liste a été coupée."
-        )
+        tie_note = "Your top five separate cleanly from the rest — the boundary is real, not an artefact of where the list was cut."
 
     def card(name: str) -> dict:
         theme = themes[name]
@@ -59,9 +55,9 @@ def narrative(result, themes: dict) -> dict:
         ],
         "bottom": bottom,
         "bottom_note": (
-            "Ces thèmes arrivent en dernier non pas parce que vous y êtes mauvais, mais parce que "
-            "vous ne les avez pas choisis quand autre chose était proposé. Ce sont ceux que vous "
-            "déclassez systématiquement — exactement là où une équipe ressentira votre absence."
+            "These came last not because you are bad at them but because you did not choose them "
+            "when something else was on offer. They are what you systematically deprioritise — which "
+            "is exactly where a team will feel your absence."
         ),
         "domains": s["domain_percentages"],
     }

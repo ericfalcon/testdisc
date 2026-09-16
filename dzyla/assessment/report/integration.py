@@ -6,14 +6,18 @@ from __future__ import annotations
 from ..scoring.disc import STYLE_NAMES
 from ..scoring.stress import MODE_BLURBS, MODE_LABELS, MODE_TO_STYLE
 
-# Sur quelle dimension DISC s'appuie chaque thème de forces. Sert à repérer où
-# les forces d'une personne tirent dans le même sens que son comportement par
-# défaut, ou au contraire à contre-courant de celui-ci.
+# Which DISC dimension each strength theme leans on. Used to find where a
+# person's strengths pull against their behavioural default.
 THEME_AFFINITY = {
-    "Lancement": "D", "Vision": "D",
-    "Entraînement": "I", "Conviction": "I", "Réseau": "I",
-    "Ténacité": "S", "Écoute": "S", "Loyauté": "S", "Médiation": "S",
-    "Optimisation": "C", "Discernement": "C", "Rigueur": "C",
+    "Achiever": "D", "Activator": "D", "Adaptability": "S", "Analytical": "C",
+    "Arranger": "C", "Belief": "S", "Command": "D", "Communication": "I",
+    "Competition": "D", "Connectedness": "S", "Consistency": "C", "Context": "C",
+    "Deliberative": "C", "Developer": "S", "Discipline": "C", "Empathy": "S",
+    "Focus": "D", "Futuristic": "I", "Harmony": "S", "Ideation": "I",
+    "Includer": "I", "Individualization": "I", "Input": "C", "Intellection": "C",
+    "Learner": "C", "Maximizer": "C", "Positivity": "I", "Relator": "S",
+    "Responsibility": "C", "Restorative": "C", "Self-Assurance": "D",
+    "Significance": "I", "Strategic": "D", "Woo": "I",
 }
 
 
@@ -32,27 +36,25 @@ def disc_x_strengths(disc_result, strengths_result) -> dict | None:
     lines = []
     if reinforcing:
         lines.append(
-            f"<b>Ça se renforce :</b> {', '.join(reinforcing)} "
-            f"{_verb(reinforcing, 's’appuie', 's’appuient')} sur {STYLE_NAMES[primary]}, déjà "
-            f"votre dimension la plus forte. C'est là que vous êtes le plus fiablement vous-même "
-            f"— et là où vous serez le moins enclin à remettre votre propre jugement en question."
+            f"<b>Reinforcing:</b> {', '.join(reinforcing)} "
+            f"{_verb(reinforcing, 'leans', 'lean')} on {STYLE_NAMES[primary]}, "
+            f"which is already your strongest dimension. This is where you are most reliably "
+            f"yourself — and where you will be least inclined to check your own judgement."
         )
     if conflicting:
         lines.append(
-            f"<b>Ça tire à contre-courant :</b> {', '.join(conflicting)} "
-            f"{_verb(conflicting, 's’appuie', 's’appuient')} sur "
-            f"{STYLE_NAMES[lowest]}, votre dimension <i>la plus faible</i>. Vous valorisez cette "
-            f"façon de travailler, mais ce n'est pas votre comportement par défaut. Attendez-vous "
-            f"à ce que ça se voie plus dans vos intentions que dans votre agenda réel, et à ce que "
-            f"cet écart soit visible pour vos collègues."
+            f"<b>Pulling against you:</b> {', '.join(conflicting)} "
+            f"{_verb(conflicting, 'draws', 'draw')} on "
+            f"{STYLE_NAMES[lowest]}, your <i>lowest</i> dimension. You value this way of working "
+            f"and it is not how you behave by default. Expect it to show up in your intentions "
+            f"more than in your calendar, and expect that gap to be visible to colleagues."
         )
     if not lines:
         lines.append(
-            f"Vos thèmes dominants se répartissent entre les dimensions plutôt que de se "
-            f"concentrer sur {STYLE_NAMES[primary]}. Cela vous rend plus difficile à prévoir, et "
-            f"plus difficile à enfermer dans une case."
+            f"Your signature themes spread across dimensions rather than concentrating on "
+            f"{STYLE_NAMES[primary]}. That makes you harder to predict, and harder to pigeonhole."
         )
-    return {"title": "Comportement vs. forces", "icon": "\U0001f501", "lines": lines}
+    return {"title": "Behaviour vs. strengths", "icon": "\U0001f501", "lines": lines}
 
 
 def strain_x_stress(strain: dict | None, stress_result) -> dict | None:

@@ -22,10 +22,10 @@ FLAG = "#B4471F"
 
 STYLE_COLOURS = {"D": "#C2453B", "I": "#C98A16", "S": "#2E8B5A", "C": "#2C6FB5"}
 DOMAIN_COLOURS = {
-    "Construire": "#6B4C9A",
-    "Mobiliser": "#C9762B",
-    "Relier": "#1F8A70",
-    "Éclairer": "#2F5D8A",
+    "Executing": "#6D4AA6",
+    "Influencing": "#C98A16",
+    "Relationship Building": "#2E8B5A",
+    "Strategic Thinking": "#2C6FB5",
 }
 CONFIDENCE_COLOURS = {"High": "#2E8B5A", "Moderate": "#C98A16", "Low": FLAG}
 

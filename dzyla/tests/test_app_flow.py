@@ -87,11 +87,8 @@ def _answer_everything(app: AppTest, choice: int = 3) -> AppTest:
 def test_picker_offers_the_disc_module_and_starts_the_queue():
     app = _app()
     keys = {c.key for c in app.checkbox}
-    assert keys == {
-        "pick_disc_natural", "pick_disc_adaptive", "pick_stress_profile",
-        "pick_motivators", "pick_strengths_core",
-    }
-    # Only the core DISC module is pre-checked; the four addons default to off,
+    assert keys == {"pick_disc_natural", "pick_disc_adaptive", "pick_stress_profile", "pick_motivators"}
+    # Only the core DISC module is pre-checked; the three addons default to off,
     # so leaving them untouched below must still queue disc_natural alone.
     # The identification fields and the submit button live in one st.form, so
     # setting all three and clicking Commencer can be queued together and

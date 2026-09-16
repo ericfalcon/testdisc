@@ -179,10 +179,10 @@ def _strain_section(report: dict) -> None:
 
 def _strengths_section(report: dict) -> None:
     strengths = report["strengths"]
-    st.markdown("## Vos forces naturelles")
+    st.markdown("## Signature strengths")
     st.markdown(f'<div class="panel"><p>{strengths["tie_note"]}</p></div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="chan">Équilibre entre domaines</div>', unsafe_allow_html=True)
+    st.markdown('<div class="chan">Domain balance</div>', unsafe_allow_html=True)
     st.write("")
     st.markdown(
         "".join(
@@ -197,34 +197,30 @@ def _strengths_section(report: dict) -> None:
         st.markdown(
             f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
               <div class="theme-rank">#{rank} · {html.escape(theme['domain'])} ·
-                <span class="num">choisi {theme['wins']}/{theme['exposure']} fois proposé</span></div>
+                <span class="num">chosen {theme['wins']}/{theme['exposure']} times offered</span></div>
               <div class="theme-name">{html.escape(theme['name'])}</div>
               <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
               <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
-              <p style="margin:0;font-size:0.94rem;"><b>À utiliser ainsi :</b> {html.escape(theme['action'])}</p>
+              <p style="margin:0;font-size:0.94rem;"><b>Use it:</b> {html.escape(theme['action'])}</p>
               <div class="theme-cost">
-                <b>Comment ça se voit.</b> {html.escape(theme['shadow'])}<br>
-                <b>Quand ça vous coûte.</b> {html.escape(theme['overuse'])}
+                <b>How it lands.</b> {html.escape(theme['shadow'])}<br>
+                <b>When it costs you.</b> {html.escape(theme['overuse'])}
               </div>
             </div>""",
             unsafe_allow_html=True,
         )
-        with st.expander(f"Pourquoi {theme['name']} ? — les choix derrière ce thème"):
+        with st.expander(f"Why {theme['name']}? — the choices behind it"):
             _choice_evidence(theme["evidence"])
 
-    if strengths["supporting"]:
-        first = len(strengths["top"]) + 1
-        last = first + len(strengths["supporting"]) - 1
-        label = f"Thèmes intermédiaires (#{first}–#{last})" if last > first else f"Thème intermédiaire (#{first})"
-        with st.expander(label):
-            for rank, theme in enumerate(strengths["supporting"], start=first):
-                st.markdown(
-                    f"**#{rank} {theme['name']}** *({theme['domain']})* — {theme['tagline']} "
-                    f"`{theme['win_rate']:.0%}`"
-                )
+    with st.expander("Supporting themes (#6–#10)"):
+        for rank, theme in enumerate(strengths["supporting"], start=6):
+            st.markdown(
+                f"**#{rank} {theme['name']}** *({theme['domain']})* — {theme['tagline']} "
+                f"`{theme['win_rate']:.0%}`"
+            )
 
     ui.panel(
-        "Ce que vous déclassez",
+        "What you deprioritise",
         f'<p>{html.escape(strengths["bottom_note"])}</p>'
         + "".join(
             f'<p style="margin-bottom:3px;"><b>{html.escape(t["name"])}</b> '
@@ -234,8 +230,8 @@ def _strengths_section(report: dict) -> None:
         ),
     )
 
-    result = st.session_state.results["strengths_core"].summary
-    with st.expander(f"Classement complet des {len(result['ranking'])} thèmes"):
+    with st.expander("Full ranking of all 34 themes"):
+        result = st.session_state.results["strengths_core"].summary
         for rank, name in enumerate(result["ranking"], start=1):
             st.markdown(
                 f'<div style="display:flex;justify-content:space-between;font-size:0.92rem;'
