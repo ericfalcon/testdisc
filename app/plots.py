@@ -29,6 +29,62 @@ def _resultant(normalized: dict[str, float]) -> tuple[float, float]:
     return math.atan2(y, x) % (2 * math.pi), math.hypot(x, y)
 
 
+# The traditional Enneagram figure — see app/components.py's enneagram_wheel
+# for the SVG version used on-screen; this is the same geometry (9 points on
+# a circle, numbered 1-9 clockwise from the top, joined by the "hexad"
+# 1-4-2-8-5-7-1 and the "triangle" 3-9-6-3) redrawn with matplotlib so the PDF
+# export — which cannot embed inline SVG — gets the same picture as a PNG.
+_HEXAD = (1, 4, 2, 8, 5, 7, 1)
+_TRIANGLE = (3, 9, 6, 3)
+
+
+def _wheel_xy(number: int, r: float = 1.0) -> tuple[float, float]:
+    angle = math.radians(90 - (number - 9) % 9 * 40)
+    return r * math.cos(angle), r * math.sin(angle)
+
+
+def enneagram_wheel(entries: list[dict], top_names: set[str]):
+    """`entries`: dicts with name / number / colour / win_rate for all 9 types
+    (see report["enneagram"]["wheel"], built in assessment/report/build.py)."""
+    fig, ax = plt.subplots(figsize=(5.0, 5.0))
+    fig.patch.set_facecolor(ui.PAPER)
+    ax.set_facecolor("#FFFFFF")
+    ax.set_aspect("equal")
+    ax.axis("off")
+
+    by_number = {e["number"]: e for e in entries}
+
+    ax.add_patch(plt.Circle((0, 0), 1.0, fill=False, edgecolor=ui.RULE, linewidth=1.2, zorder=1))
+    for seq in (_HEXAD, _TRIANGLE):
+        xs, ys = zip(*[_wheel_xy(n) for n in seq])
+        ax.plot(xs, ys, color=ui.RULE, linewidth=1.0, alpha=0.55, zorder=1)
+
+    for number in range(1, 10):
+        entry = by_number[number]
+        x, y = _wheel_xy(number)
+        rate = entry["win_rate"]
+        radius = 0.09 + rate * 0.07
+        colour = entry["colour"]
+        is_top = entry["name"] in top_names
+        if is_top:
+            ax.add_patch(plt.Circle((x, y), radius + 0.035, fill=False,
+                                     edgecolor=colour, linewidth=2.0, zorder=3))
+        ax.add_patch(plt.Circle((x, y), radius, facecolor=colour, edgecolor=colour,
+                                 alpha=0.22 + rate * 0.68, linewidth=1.0, zorder=4))
+        ax.text(x, y, str(number), fontsize=9, fontweight="600", ha="center", va="center",
+                color="#FFFFFF" if rate > 0.35 else ui.INK, zorder=5)
+        if is_top:
+            lx, ly = x * 1.32, y * 1.32
+            ha = "center" if abs(x) < 0.08 else ("left" if x > 0 else "right")
+            ax.text(lx, ly, entry["name"], fontsize=8.2, fontweight="600", color=colour,
+                    ha=ha, va="center", zorder=5)
+
+    ax.set_xlim(-1.55, 1.55)
+    ax.set_ylim(-1.55, 1.55)
+    fig.tight_layout()
+    return fig
+
+
 def circumplex(normalized: dict[str, float], adaptive: dict[str, float] | None = None):
     fig, ax = plt.subplots(figsize=(5.4, 5.4), subplot_kw={"projection": "polar"})
     fig.patch.set_facecolor(ui.PAPER)

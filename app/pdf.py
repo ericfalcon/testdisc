@@ -253,6 +253,23 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             "Cadre théorique complémentaire au DISC, pas un remplacement — jamais validé "
             "scientifiquement d'aussi près que le DISC ; à lire comme une piste de réflexion.",
             s["muted"]))
+
+        top_names = {t["name"] for t in enneagram["top"]}
+        image = BytesIO()
+        figure = plots.enneagram_wheel(enneagram["wheel"], top_names)
+        figure.savefig(image, format="png", dpi=170, bbox_inches="tight",
+                       facecolor=figure.get_facecolor())
+        image.seek(0)
+        flow.append(Table(
+            [[Image(image, width=70 * mm, height=70 * mm)]],
+            colWidths=[doc.width],
+            style=TableStyle([("ALIGN", (0, 0), (-1, -1), "CENTER")]),
+        ))
+        flow.append(Paragraph(
+            "Positionnement sur le schéma traditionnel de l'ennéagramme (le triangle 3-9-6 et "
+            "l'hexagone 1-4-2-8-5-7) — taille et intensité de chaque point selon votre taux de "
+            "choix pour ce type.", s["muted"]))
+
         flow.append(Paragraph(_clean(enneagram["tie_note"]), s["muted"]))
         for rank, theme in enumerate(enneagram["top"], start=1):
             flow.append(Paragraph(f"#{rank} {_clean(theme['name'])} — {_clean(theme['domain'])}", s["h3"]))
@@ -266,6 +283,25 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         flow.append(Paragraph(
             ", ".join(f"{_clean(t['name'])} ({t['win_rate']:.0%})" for t in enneagram["bottom"]),
             s["muted"]))
+
+        flow.append(PageBreak())
+        flow.append(Paragraph("Pour affiner : les 9 profils complets", s["h2"]))
+        flow.append(Paragraph(
+            "Un score par choix forcés donne une hypothèse de départ, pas un verdict — les "
+            "instruments de référence sur l'ennéagramme (dont celui de la tradition narrative, "
+            "narrativeenneagram.org) fonctionnent d'ailleurs sur ce principe : lire les 9 "
+            "descriptions complètes et retenir celle qui sonne le plus juste, pas seulement se "
+            "fier au classement calculé. Le vôtre est indiqué à titre de repère.",
+            s["muted"]))
+        for theme in enneagram["all_types"]:
+            flow.append(Paragraph(
+                f"Type {theme['number']} — {_clean(theme['name'])} "
+                f"({theme['win_rate']:.0%} à ce test)", s["h3"]))
+            flow.append(Paragraph(f"<i>{_clean(theme['tagline'])}</i>", s["body"]))
+            flow.append(Paragraph(_clean(theme["description"]), s["body"]))
+            flow.append(Paragraph(
+                f"<b>Comment ça se voit.</b> {_clean(theme['shadow'])}<br/>"
+                f"<b>Quand ça vous coûte.</b> {_clean(theme['overuse'])}", s["muted"]))
 
     if "instinct" in report:
         instinct = report["instinct"]
