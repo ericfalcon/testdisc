@@ -43,6 +43,7 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
     strengths_result = results.get("strengths_core")
     stress_result = results.get("stress_profile")
     motivator_result = results.get("motivators")
+    enneagram_result = results.get("enneagram")
 
     disc_narrative = None
     if disc_result is not None:
@@ -71,6 +72,9 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
     if motivator_result is not None:
         report["motivators"] = motivator_result.summary
         report["motivator_evidence"] = motivator_result.detail["evidence"]
+
+    if enneagram_result is not None:
+        report["enneagram"] = strengths_report.narrative(enneagram_result, pools.enneagram_types())
 
     sections = []
     if disc_result is not None and strengths_result is not None:
