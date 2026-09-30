@@ -139,6 +139,16 @@ h1, h2, h3, h4 {{ font-family: 'Archivo', system-ui, sans-serif; letter-spacing:
 @keyframes rise {{ from {{ opacity: 0; transform: translateY(5px); }} to {{ opacity: 1; transform: none; }} }}
 @media (prefers-reduced-motion: reduce) {{ .qcard {{ animation: none; }} }}
 
+/* The two statements of a graduated forced-choice item, with the five-point
+   scale sandwiched between them ("phrase du haut" / "phrase du bas"). */
+.pole {{
+    font-family: 'Archivo', sans-serif; font-size: 1.1rem; font-weight: 500;
+    line-height: 1.45; padding: 14px 18px; border: 1px solid {RULE}; border-radius: 3px;
+    background: #FFFFFF;
+}}
+.pole-a {{ margin-bottom: 12px; }}
+.pole-b {{ margin-top: 12px; }}
+
 .meter {{ height: 2px; background: {RULE}; margin: 6px 0 26px 0; }}
 .meter > div {{ height: 2px; background: {SIGNAL}; transition: width 220ms ease-out; }}
 

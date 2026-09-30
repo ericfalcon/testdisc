@@ -195,7 +195,7 @@ def _strengths_section(report: dict) -> None:
         st.markdown(
             f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
               <div class="theme-rank">#{rank} · {html.escape(theme['domain'])} ·
-                <span class="num">choisi {theme['wins']}/{theme['exposure']} fois proposé</span></div>
+                <span class="num">{theme['wins']:.1f}/{theme['exposure']} — degré de préférence moyen</span></div>
               <div class="theme-name">{html.escape(theme['name'])}</div>
               <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
               <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
@@ -240,7 +240,7 @@ def _strengths_section(report: dict) -> None:
                 f'padding:2px 0;border-bottom:1px solid {ui.RULE};">'
                 f'<span><span class="num">{rank:02d}</span> {html.escape(name)}</span>'
                 f'<span class="num" style="color:{ui.SLATE};">{result["win_rates"][name]:.0%} '
-                f'({result["wins"][name]}/{result["exposure"][name]})</span></div>',
+                f'({result["wins"][name]:.1f}/{result["exposure"][name]})</span></div>',
                 unsafe_allow_html=True,
             )
 
@@ -277,6 +277,21 @@ def _enneagram_section(report: dict) -> None:
     )
     st.markdown(f'<div class="panel"><p>{enneagram["tie_note"]}</p></div>', unsafe_allow_html=True)
 
+    with st.expander("Deux repères utiles avant de lire la suite"):
+        st.markdown(
+            "**Un type dominant, pas un seul type possible.** La théorie de l'ennéagramme "
+            "considère que chacun a accès, à des degrés divers, aux neuf structures — ce test "
+            "cherche celle qui organise le plus souvent vos réflexes spontanés, pas celle qui "
+            "expliquerait 100 % de votre comportement. Voir un score élevé sur un deuxième ou "
+            "troisième type n'est donc pas une anomalie : c'est attendu.\n\n"
+            "**Le type ne change pas, la façon de l'habiter oui.** Contrairement au DISC natal / "
+            "au travail, qui mesure deux comportements réellement différents, l'ennéagramme "
+            "suppose une structure stable depuis longtemps — ce qui bouge selon le contexte ou le "
+            "niveau de stress, c'est la version qu'on en montre. C'est tout l'intérêt de la "
+            "section « ailes, point de stress, point de développement » plus bas : elle décrit "
+            "des variations autour d'un même type, pas un changement de type."
+        )
+
     top_names = {t["name"] for t in enneagram["top"]}
     st.markdown('<div class="chan">Votre positionnement sur le disque</div>', unsafe_allow_html=True)
     st.markdown(ui.enneagram_wheel(enneagram["wheel"], top_names), unsafe_allow_html=True)
@@ -302,7 +317,7 @@ def _enneagram_section(report: dict) -> None:
         st.markdown(
             f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
               <div class="theme-rank">#{rank} · {html.escape(theme['domain'])} ·
-                <span class="num">choisi {theme['wins']}/{theme['exposure']} fois proposé</span></div>
+                <span class="num">{theme['wins']:.1f}/{theme['exposure']} — degré de préférence moyen</span></div>
               <div class="theme-name">{html.escape(theme['name'])}</div>
               <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
               <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
@@ -352,6 +367,28 @@ def _enneagram_section(report: dict) -> None:
         unsafe_allow_html=True,
     )
 
+    def _relation_card(heading: str, r: dict) -> str:
+        return f"""<div class="theme-card" style="border-left-color:{r['colour']};">
+              <div class="theme-rank">{html.escape(heading)}</div>
+              <div class="theme-name">Type {r['number']} — {html.escape(r['name'])}</div>
+              <p style="margin:4px 0 8px 0;">{html.escape(r['manifestation'])}</p>
+              <div class="theme-cost">
+                <b>Ce que ça donne de bien.</b> {html.escape(r['avantage'])}<br>
+                <b>Le piège.</b> {html.escape(r['piege'])}
+              </div>
+            </div>"""
+
+    with st.expander("Comment ces connexions se manifestent concrètement chez vous"):
+        st.caption(
+            "Le classement ci-dessus et le disque montrent QUELS types sont vos ailes et vos "
+            "points de stress/développement ; ce qui suit décrit COMMENT chacun se manifeste "
+            "concrètement au quotidien, avec un bénéfice et un piège identifiés pour chacun."
+        )
+        st.markdown(_relation_card(f"Aile — Type {wing_lo['number']}", wing_lo), unsafe_allow_html=True)
+        st.markdown(_relation_card(f"Aile — Type {wing_hi['number']}", wing_hi), unsafe_allow_html=True)
+        st.markdown(_relation_card("Sous tension", stress), unsafe_allow_html=True)
+        st.markdown(_relation_card("En travail sur soi", growth), unsafe_allow_html=True)
+
     if enneagram["supporting"]:
         first = len(enneagram["top"]) + 1
         last = first + len(enneagram["supporting"]) - 1
@@ -382,7 +419,10 @@ def _enneagram_section(report: dict) -> None:
             "un tiers d'entre elles, donc le rapporter aux 36 diluerait le score de tout le monde "
             "par le même facteur sans rien changer au classement. C'est la même logique qu'un "
             "classement de tournoi : le pourcentage de victoires d'une équipe se calcule sur ses "
-            "propres matchs, pas sur tous les matchs du tournoi."
+            "propres matchs, pas sur tous les matchs du tournoi. Chaque réponse étant graduée "
+            "(vous pouvez pencher plus ou moins fort vers une phrase plutôt que trancher net), le "
+            "nombre entre parenthèses peut comporter une décimale : un « 5,5/8 » veut dire que vous "
+            "avez, en moyenne, penché à mi-chemin sur une des huit comparaisons."
         )
         for rank, name in enumerate(result["ranking"], start=1):
             st.markdown(
@@ -390,7 +430,7 @@ def _enneagram_section(report: dict) -> None:
                 f'padding:2px 0;border-bottom:1px solid {ui.RULE};">'
                 f'<span><span class="num">{rank:02d}</span> {html.escape(name)}</span>'
                 f'<span class="num" style="color:{ui.SLATE};">{result["win_rates"][name]:.0%} '
-                f'({result["wins"][name]}/{result["exposure"][name]})</span></div>',
+                f'({result["wins"][name]:.1f}/{result["exposure"][name]})</span></div>',
                 unsafe_allow_html=True,
             )
 
@@ -414,6 +454,8 @@ def _enneagram_section(report: dict) -> None:
                   <p style="margin:0 0 8px 0;font-style:italic;color:{ui.SLATE};">
                     {html.escape(theme['vision_du_monde'])}</p>
                   <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
+                  <p style="margin:0 0 8px 0;font-size:0.94rem;">
+                    <b>Ce qu'il évite structurellement.</b> {html.escape(theme['peur_de_base'])}</p>
                   <p style="margin:0 0 8px 0;font-size:0.94rem;">
                     <b>Ce que ça donne de bien.</b> {html.escape(theme['forces'])}</p>
                   <div class="theme-cost">

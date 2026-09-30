@@ -1,12 +1,20 @@
 """Strengths scoring by win rate rather than raw hit count.
 
-A theme's score is how often it was chosen out of how often it was offered.
-Counting raw hits would make the ranking partly a property of the item pool
-whenever exposure is uneven across themes, and options can carry more than one
-tag, so a single click could otherwise award more than one point to some
-themes and not others. Domains and how many themes count as "top" / "bottom"
-are derived from whatever `themes` dict is passed in, so this file has no
-knowledge of any particular taxonomy — swap the data, keep the scoring.
+A theme's score is how much it was preferred out of how often it was offered.
+"Preferred" is graduated, not a single click on one of the two statements —
+the answer can land anywhere between them — so a theme's win is the fraction
+of the answer that fell on its side (1.0 at the extreme, 0.5 for "autant
+l'une que l'autre", down to 0.0 at the other extreme), summed over every
+exposure. This is a strict generalisation of a plain win/loss count: an
+answer recorded before the graduated scale existed is still exactly
+"option_a" or "option_b" and still contributes a full 1.0/0.0, so old results
+score identically to before. Counting raw hits would make the ranking partly
+a property of the item pool whenever exposure is uneven across themes, and
+options can carry more than one tag, so a single answer could otherwise award
+more than one point to some themes and not others. Domains and how many
+themes count as "top" / "bottom" are derived from whatever `themes` dict is
+passed in, so this file has no knowledge of any particular taxonomy — swap
+the data, keep the scoring.
 """
 
 from __future__ import annotations
@@ -14,7 +22,7 @@ from __future__ import annotations
 import math
 from typing import Sequence
 
-from ..types import ModuleResult
+from ..types import ModuleResult, bipolar_weight
 
 
 def _domains_of(themes: dict) -> list[str]:
@@ -42,15 +50,16 @@ def score(items: Sequence[dict], answers: dict[str, str], themes: dict) -> Modul
             for option in ("option_a", "option_b")
         }
         for option, tags in offered.items():
+            weight = bipolar_weight(chosen, option)
             for theme in tags:
                 exposure[theme] += 1
-                picked = option == chosen
-                wins[theme] += 1 if picked else 0
+                wins[theme] += weight
                 evidence[theme].append({
                     "id": item["id"],
                     "question": item["question"],
                     "text": item[option],
-                    "chosen": picked,
+                    "chosen": weight >= 0.5,
+                    "weight": weight,
                 })
 
     rates: dict[str, float] = {}

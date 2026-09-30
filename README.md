@@ -45,6 +45,14 @@ Aucun compte, aucun serveur, aucune base de données.
   du stagiaire — seul le résultat final part vers le Sheet.
 - Cinq modules complémentaires, facultatifs et décochés par défaut (le module DISC
   seul suffit pour une formation) :
+  - Les modules dits « à choix forcés » (Ce qui vous motive, Vos forces naturelles,
+    Ennéagramme, Votre instinct dominant) montrent deux affirmations et une échelle
+    graduée à 5 points entre elles (« complètement la phrase du haut » … « autant
+    l'une que l'autre » … « complètement la phrase du bas »), pas un simple clic
+    sur l'une des deux — la réponse peut nuancer plutôt que trancher net. Chaque
+    échelon vaut une fraction de point pour le thème visé (1 / 0,75 / 0,5 / 0,25 /
+    0 et son complément pour l'autre thème), donc un ancien export qui ne
+    connaissait que les deux extrêmes se recalcule à l'identique.
   - **DISC — votre style au travail** : les mêmes 40 affirmations, répondues cette
     fois pour le poste actuel. L'écart avec le profil naturel donne un indice de
     tension (« charge d'adaptation ») et affiche les deux profils sur la même roue.
@@ -81,19 +89,28 @@ Aucun compte, aucun serveur, aucune base de données.
     David Daniels, narrativeenneagram.org) : Perfectionniste, Altruiste,
     Performeur, Individualiste, Observateur, Questionneur, Enthousiaste,
     Protecteur, Médiateur. La description de chaque type (vision du monde,
-    moteur profond, forces, ce que ça coûte, piste de progression) est
-    nettement plus étoffée que dans les autres modules, et se déploie en
-    entier dans la section « Pour affiner : lisez les 9 profils complets »,
-    classée du score le plus haut au plus bas plutôt que par numéro. Le
-    rapport ajoute aussi, pour le type dominant (le premier du classement),
-    ses deux « ailes » (les types voisins sur le cercle, qui le colorent en
-    permanence) ainsi que son point de stress et son point de développement
-    — les deux bouts des flèches déjà visibles sur le schéma (le triangle et
-    l'hexagone), lus comme des connexions plutôt qu'une simple forme. Cette
-    lecture des flèches (stress dans un sens, développement dans l'autre)
-    est l'heuristique la plus reproduite dans l'enseignement de l'ennéagramme
-    ; comme le reste du module, un cadre public et une écriture originale,
-    pas plus validé scientifiquement que le score lui-même.
+    moteur profond, peur de base — ce qu'il évite structurellement —, forces,
+    ce que ça coûte, piste de progression) est nettement plus étoffée que
+    dans les autres modules, et se déploie en entier dans la section « Pour
+    affiner : lisez les 9 profils complets », classée du score le plus haut
+    au plus bas plutôt que par numéro. Le rapport ajoute aussi, pour le type
+    dominant (le premier du classement), ses deux « ailes » (les types
+    voisins sur le cercle, qui le colorent en permanence) ainsi que son
+    point de stress et son point de développement — les deux bouts des
+    flèches déjà visibles sur le schéma (le triangle et l'hexagone), lus
+    comme des connexions plutôt qu'une simple forme. Cette lecture des
+    flèches (stress dans un sens, développement dans l'autre) est
+    l'heuristique la plus reproduite dans l'enseignement de l'ennéagramme ;
+    comme le reste du module, un cadre public et une écriture originale, pas
+    plus validé scientifiquement que le score lui-même. Chacune de ces
+    quatre connexions (deux ailes, stress, développement) est en plus
+    détaillée pour les 9 types dans une section dépliable : comment elle se
+    manifeste concrètement au quotidien pour le type dominant concerné, avec
+    un bénéfice et un piège identifiés pour chacune — pas seulement le nom
+    du type voisin. Une note dépliable rappelle aussi, avant les résultats,
+    qu'un score élevé sur plusieurs types n'a rien d'anormal (tout le monde a
+    accès aux 9 structures à des degrés divers) et que c'est la façon
+    d'habiter le type qui varie avec le contexte, pas le type lui-même.
   - **Votre instinct dominant** : un complément rapide (9 choix forcés) à
     l'Ennéagramme — lequel des 3 instincts de survie (conservation, social,
     sexuel/un-à-un) capte le plus l'attention en premier. Cette couche est

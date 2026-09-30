@@ -1,0 +1,206 @@
+{
+  "wings": {
+    "Perfectionniste": {
+      "Médiateur": {
+        "manifestation": "Votre exigence se double d'une vraie capacité à temporiser et à écouter avant de trancher — vous imposez moins votre point de vue qu'avec l'autre aile, et vous cherchez plus volontiers un compromis acceptable par tous.",
+        "avantage": "Vous savez faire retomber une tension avant qu'elle ne s'envenime, et votre exigence passe mieux parce qu'elle s'accompagne de patience.",
+        "piege": "Vous pouvez remettre à plus tard une correction nécessaire simplement pour éviter la friction qu'elle provoquerait, ce qui laisse le problème s'installer."
+      },
+      "Altruiste": {
+        "manifestation": "Votre exigence se met plus facilement au service des autres : vous corrigez, formez, améliorez ce qui vous entoure autant que vous-même, avec une vraie chaleur derrière l'exactitude.",
+        "avantage": "Vous êtes perçu comme quelqu'un qui aide à progresser plutôt que comme quelqu'un qui juge — vos remarques passent mieux.",
+        "piege": "Vous pouvez finir par corriger les autres avant qu'ils ne le demandent, avec la conviction sincère de leur rendre service."
+      }
+    },
+    "Altruiste": {
+      "Perfectionniste": {
+        "manifestation": "Votre générosité s'accompagne d'un sens du devoir plus marqué : vous aidez parce que c'est bien de le faire, pas seulement parce que la personne vous touche, et vous attendez un minimum de rigueur en retour.",
+        "avantage": "Votre aide est plus constante et moins sélective — elle ne dépend pas seulement de qui vous plaît.",
+        "piege": "Vous pouvez juger sévèrement ceux qui ne rendent pas l'attention que vous leur donnez, avec un ressentiment que vous avez du mal à formuler directement."
+      },
+      "Performeur": {
+        "manifestation": "Votre générosité se voit davantage : vous aimez que votre aide soit reconnue, et vous savez la mettre en scène sans que cela paraisse calculé.",
+        "avantage": "Vous êtes un allié visible et efficace, qui sait valoriser ce qu'il fait pour les autres sans s'effacer complètement.",
+        "piege": "Vous pouvez choisir d'aider là où ça se verra le plus, plutôt que là où le besoin est réellement le plus grand."
+      }
+    },
+    "Performeur": {
+      "Altruiste": {
+        "manifestation": "Votre ambition se met au service d'une vraie chaleur relationnelle : vous réussissez en fédérant les gens autour de vous, pas seulement en accumulant des résultats individuels.",
+        "avantage": "Vous êtes perçu comme un leader charismatique et généreux, pas seulement comme quelqu'un d'efficace.",
+        "piege": "Vous pouvez calculer votre générosité en fonction de ce qu'elle vous rapportera en image ou en soutien."
+      },
+      "Individualiste": {
+        "manifestation": "Votre besoin de réussir se double d'un souci d'authenticité : vous voulez que votre image reflète qui vous êtes vraiment, pas seulement ce qui marche.",
+        "avantage": "Votre réussite a une couleur personnelle reconnaissable, moins interchangeable qu'une réussite purement formatée.",
+        "piege": "Vous pouvez douter de la valeur de vos succès dès qu'ils ne semblent pas assez originaux ou personnels à vos yeux."
+      }
+    },
+    "Individualiste": {
+      "Performeur": {
+        "manifestation": "Votre sensibilité se met en mouvement : vous transformez ce que vous ressentez en projets concrets et visibles, plutôt que de rester dans l'introspection pure.",
+        "avantage": "Vous savez donner une forme et une reconnaissance à votre singularité, pas seulement la ressentir intérieurement.",
+        "piege": "Vous pouvez mettre en scène votre différence davantage que la vivre réellement, dans une quête de reconnaissance qui s'ajoute à la quête de sens."
+      },
+      "Observateur": {
+        "manifestation": "Votre sensibilité se double d'une vraie distance : vous observez et analysez ce que vous ressentez, plutôt que de le montrer directement.",
+        "avantage": "Vous avez une profondeur de réflexion sur vos propres émotions rare, qui nourrit une créativité originale.",
+        "piege": "Vous pouvez vous replier dans un monde intérieur riche mais coupé des autres, au point de vous sentir incompris sans vraiment chercher à être compris."
+      }
+    },
+    "Observateur": {
+      "Individualiste": {
+        "manifestation": "Votre besoin de comprendre se double d'une vraie sensibilité esthétique et émotionnelle : vous n'analysez pas seulement les idées, vous ressentez aussi ce qu'elles évoquent.",
+        "avantage": "Votre réflexion a une profondeur et une originalité qui dépassent la simple accumulation de connaissances.",
+        "piege": "Vous pouvez vous isoler dans un monde intérieur à la fois intellectuel et mélancolique, doublement difficile à partager."
+      },
+      "Questionneur": {
+        "manifestation": "Votre besoin de comprendre se met au service d'un groupe ou d'un système : vous cherchez à sécuriser une situation en la comprenant à fond, plus qu'à satisfaire votre curiosité seule.",
+        "avantage": "Votre expertise devient un vrai point d'appui pour les autres, pas seulement un savoir accumulé pour vous.",
+        "piege": "Vous pouvez nourrir vos propres inquiétudes en cherchant toujours plus d'informations, sans jamais vous sentir prêt à agir."
+      }
+    },
+    "Questionneur": {
+      "Observateur": {
+        "manifestation": "Votre vigilance se double d'une vraie réflexion : vous cherchez à comprendre en profondeur ce qui pourrait mal tourner, plus qu'à réagir à chaud.",
+        "avantage": "Vos anticipations sont mieux étayées, plus difficiles à balayer d'un revers de main.",
+        "piege": "Vous pouvez vous replier dans l'analyse au point de ne plus jamais vous sentir prêt à trancher."
+      },
+      "Enthousiaste": {
+        "manifestation": "Votre vigilance se double d'une énergie plus sociable et optimiste : vous gérez l'incertitude en restant actif et entouré, plus qu'en vous repliant.",
+        "avantage": "Vous savez rassurer un groupe entier, pas seulement gérer votre propre inquiétude.",
+        "piege": "Vous pouvez masquer une inquiétude réelle derrière une agitation ou un enthousiasme qui ne trompent pas longtemps votre entourage proche."
+      }
+    },
+    "Enthousiaste": {
+      "Questionneur": {
+        "manifestation": "Votre goût pour les options multiples se double d'un vrai souci de loyauté : vous vous engagez plus facilement auprès d'un groupe ou d'une cause que d'autres Enthousiastes.",
+        "avantage": "Vous combinez énergie positive et fidélité, ce qui rassure un entourage qui pourrait sinon craindre votre besoin de nouveauté.",
+        "piege": "Vous pouvez rester engagé dans une situation par loyauté bien après que l'envie réelle s'est éteinte, créant une tension intérieure."
+      },
+      "Protecteur": {
+        "manifestation": "Votre énergie se double d'une vraie assurance : vous n'hésitez pas à affirmer vos envies, voire à bousculer pour obtenir ce que vous voulez.",
+        "avantage": "Vous savez transformer une idée enthousiasmante en décision concrète, sans attendre la permission de personne.",
+        "piege": "Vous pouvez imposer votre rythme et vos envies aux autres, avec une impatience que votre entourage vit comme de la pression."
+      }
+    },
+    "Protecteur": {
+      "Enthousiaste": {
+        "manifestation": "Votre force de caractère se double d'une vraie énergie positive et sociable : vous entraînez les autres avec enthousiasme, pas seulement en les dirigeant.",
+        "avantage": "Vous êtes un leader qui donne envie de suivre, pas seulement un leader qu'on obéit.",
+        "piege": "Vous pouvez avancer trop vite pour ceux qui vous entourent, en sous-estimant leur besoin de temps ou de prudence."
+      },
+      "Médiateur": {
+        "manifestation": "Votre force de caractère se double d'une vraie capacité à écouter et à intégrer les points de vue des autres avant de trancher.",
+        "avantage": "Vos décisions sont mieux acceptées parce qu'elles tiennent compte de ce que les autres pensent, pas seulement de ce que vous voulez.",
+        "piege": "Vous pouvez retenir votre force réelle par souci de ne pas brusquer, jusqu'à ce qu'elle ressorte d'un coup, de façon disproportionnée."
+      }
+    },
+    "Médiateur": {
+      "Protecteur": {
+        "manifestation": "Votre calme habituel s'accompagne d'une vraie capacité de protection et d'affirmation quand une chose ou une personne qui compte pour vous est menacée : la retenue laisse alors place à une assurance directe, presque surprenante pour votre entourage.",
+        "avantage": "Vous combinez une présence apaisante au quotidien avec une force de caractère réelle dès qu'il le faut vraiment — un mélange rare de diplomatie et de fermeté.",
+        "piege": "Cette force reste sous la surface la plupart du temps, accumulée plutôt qu'exprimée au fil de l'eau ; si la pression monte trop, elle peut ressortir d'un coup, de façon plus abrupte que la situation ne l'exigeait, laissant votre entourage surpris par le contraste."
+      },
+      "Perfectionniste": {
+        "manifestation": "Votre recherche d'harmonie se double d'un vrai souci de bien faire les choses : vous ne cherchez pas seulement la paix, mais une paix qui repose sur une solution juste et cohérente.",
+        "avantage": "Vos compromis sont plus solides parce qu'ils ne sacrifient pas complètement l'exigence à la seule volonté d'apaiser.",
+        "piege": "Vous pouvez vous reprocher intérieurement de ne pas avoir fait respecter une norme que vous jugiez importante, par souci de ne pas créer de tension."
+      }
+    }
+  },
+  "stress": {
+    "Perfectionniste": {
+      "manifestation": "Sous une pression prolongée, votre discipline habituelle cède la place à une humeur plus sombre, plus centrée sur ce qui ne va pas chez vous ou dans votre vie, avec moins de retenue qu'à l'ordinaire.",
+      "avantage": "Ce passage vous reconnecte, un temps, à une sensibilité et une authenticité émotionnelle que votre quotidien très maîtrisé laisse peu s'exprimer.",
+      "piege": "Vous pouvez ruminer un sentiment d'être fondamentalement à côté de la plaque, bien au-delà de ce que la situation réelle justifie."
+    },
+    "Altruiste": {
+      "manifestation": "Sous tension prolongée, votre douceur habituelle laisse place à une franchise presque cassante : vous dites enfin ce que vous pensiez depuis longtemps, souvent avec plus de force que nécessaire.",
+      "avantage": "Ce sursaut vous permet, pour une fois, de défendre vos propres besoins plutôt que ceux des autres.",
+      "piege": "L'entourage, habitué à votre patience, peut vivre ce changement de ton comme une agression disproportionnée."
+    },
+    "Performeur": {
+      "manifestation": "Sous pression prolongée, votre énergie habituelle retombe : vous vous désengagez, remettez les choses à plus tard, perdez le fil de priorités que vous maîtrisiez pourtant parfaitement d'habitude.",
+      "avantage": "Cette pause forcée, si vous l'écoutez, peut être le seul moment où vous acceptez de ralentir et de vous reposer.",
+      "piege": "Vous pouvez procrastiner sur exactement ce qui compte le plus, au moment où il faudrait le plus avancer."
+    },
+    "Individualiste": {
+      "manifestation": "Sous tension prolongée, vous devenez plus demandeur d'attention et de réassurance, au point de solliciter les autres d'une façon qui ne vous ressemble pas d'habitude.",
+      "avantage": "Ce mouvement vers les autres peut, pour une fois, casser un isolement que vous entretenez habituellement.",
+      "piege": "Vous pouvez devenir possessif ou intrusif avec les personnes dont vous cherchez l'attention, par peur d'être laissé de côté."
+    },
+    "Observateur": {
+      "manifestation": "Sous tension prolongée, votre calme habituel laisse place à une agitation mentale et à une dispersion inhabituelles : vous sautez d'une idée à l'autre sans les approfondir comme d'habitude.",
+      "avantage": "Cette agitation peut vous pousser, exceptionnellement, à sortir de votre tête pour tester quelque chose plutôt que de continuer à l'analyser.",
+      "piege": "Vous pouvez fuir dans une multiplication d'options ou de projets plutôt que de faire face à ce qui vous a mis sous tension."
+    },
+    "Questionneur": {
+      "manifestation": "Sous tension prolongée, vous accélérez et vous vous mettez à afficher une assurance et une productivité inhabituelles, comme pour prouver que la situation est sous contrôle.",
+      "avantage": "Cette poussée peut, pour une fois, vous faire avancer plus vite que votre prudence habituelle ne le permettrait.",
+      "piege": "Vous pouvez vous survendre ou promettre plus que ce que vous pourrez tenir, uniquement pour faire taire le doute."
+    },
+    "Enthousiaste": {
+      "manifestation": "Sous tension prolongée, votre légèreté habituelle cède la place à une irritabilité critique : vous devenez pointilleux, exigeant, à cran sur des détails que vous auriez laissés passer d'habitude.",
+      "avantage": "Cette rigueur inhabituelle peut, pour une fois, vous pousser à finir ce que vous aviez commencé sans le terminer.",
+      "piege": "Vous pouvez devenir dur avec vous-même et avec les autres, d'une façon qui tranche nettement avec votre optimisme naturel."
+    },
+    "Protecteur": {
+      "manifestation": "Sous tension prolongée, votre assurance habituelle laisse place à un retrait inhabituel : vous vous coupez des autres, gardez vos réflexions pour vous, évitez le contact direct que vous recherchez d'habitude.",
+      "avantage": "Ce retrait peut, pour une fois, vous laisser le temps de réfléchir avant d'agir, plutôt que de foncer.",
+      "piege": "Votre entourage, habitué à votre présence affirmée, peut lire ce retrait comme un désengagement ou une froideur inquiétante."
+    },
+    "Médiateur": {
+      "manifestation": "Sous tension prolongée, votre sérénité habituelle laisse place à une inquiétude et une indécision inhabituelles : vous doutez, cherchez des garanties, avez besoin d'être rassuré plus que d'habitude.",
+      "avantage": "Ce doute peut, pour une fois, vous pousser à anticiper un risque réel que votre optimisme habituel aurait minimisé.",
+      "piege": "Vous pouvez rester bloqué dans l'indécision, incapable de choisir entre plusieurs options par peur de faire le mauvais choix."
+    }
+  },
+  "growth": {
+    "Perfectionniste": {
+      "manifestation": "Quand vous travaillez consciemment sur vous, vous gagnez en légèreté : vous relativisez plus vite une imperfection, vous vous autorisez plus de plaisir spontané, sans attendre d'avoir tout réglé d'abord.",
+      "avantage": "Vous devenez plus supportable pour vous-même, et votre entourage voit apparaître un humour et une spontanéité que votre exigence habituelle masque.",
+      "piege": "Pris à l'excès, ça peut devenir une façon d'éviter le travail de fond que vous faites d'habitude si bien, au profit d'une légèreté de façade."
+    },
+    "Altruiste": {
+      "manifestation": "En travaillant sur vous, vous vous autorisez à ressentir et à exprimer vos propres besoins et émotions, même quand ils ne sont pas au service de quelqu'un d'autre.",
+      "avantage": "Vous gagnez une profondeur et une authenticité émotionnelle qui vous rendent plus vrai, pas seulement plus utile.",
+      "piege": "Vous pouvez basculer dans une focalisation sur ce qui vous manque, après des années passées à ne regarder que les besoins des autres."
+    },
+    "Performeur": {
+      "manifestation": "En travaillant sur vous, vous devenez plus loyal à un groupe ou une cause plutôt qu'à votre seule image, et vous acceptez de vous appuyer sur les autres plutôt que de tout porter seul.",
+      "avantage": "Vous construisez des liens de confiance plus profonds et plus durables que la simple admiration pour vos résultats.",
+      "piege": "Vous pouvez développer un doute ou une méfiance qui tranche avec votre assurance naturelle."
+    },
+    "Individualiste": {
+      "manifestation": "En travaillant sur vous, vous gagnez en discipline et en constance : vous transformez une intensité émotionnelle ponctuelle en engagement tenu dans la durée.",
+      "avantage": "Vos élans créatifs aboutissent enfin à des résultats concrets, plutôt que de rester à l'état d'inspiration.",
+      "piege": "Vous pouvez devenir dur avec vous-même sur ce que vous produisez, avec une exigence qui ne vous ressemblait pas avant."
+    },
+    "Observateur": {
+      "manifestation": "En travaillant sur vous, vous osez occuper davantage d'espace : vous affirmez une position, prenez une décision, sans attendre d'avoir toutes les données.",
+      "avantage": "Vous transformez une compréhension déjà solide en action réelle, avec une assurance que votre retenue habituelle ne montre pas.",
+      "piege": "Vous pouvez passer d'un extrême à l'autre — du retrait à une affirmation plus abrupte que nécessaire, faute d'habitude."
+    },
+    "Questionneur": {
+      "manifestation": "En travaillant sur vous, vous gagnez en calme : vous faites confiance plus facilement, à vous-même comme aux autres, sans avoir besoin de tout vérifier d'abord.",
+      "avantage": "Vous devenez une présence rassurante pour les autres, plutôt qu'une source supplémentaire d'inquiétude partagée.",
+      "piege": "Vous pouvez relâcher une vigilance qui, par ailleurs, vous rendait réellement utile à votre entourage."
+    },
+    "Enthousiaste": {
+      "manifestation": "En travaillant sur vous, vous acceptez de ralentir et d'approfondir un sujet plutôt que de passer déjà au suivant, en tolérant mieux l'ennui ou l'attente.",
+      "avantage": "Vous gagnez une vraie profondeur de réflexion, plutôt qu'une accumulation d'expériences superficielles.",
+      "piege": "Vous pouvez vous isoler plus que nécessaire, dans un repli qui ne vous ressemble pas naturellement."
+    },
+    "Protecteur": {
+      "manifestation": "En travaillant sur vous, vous laissez apparaître une vulnérabilité et une attention aux autres que votre force habituelle masque : vous prenez soin, pas seulement vous protégez.",
+      "avantage": "Vous devenez accessible d'une façon nouvelle, ce qui approfondit des relations que votre autorité tenait jusque-là à distance.",
+      "piege": "Vous pouvez avoir l'impression de perdre le contrôle en vous laissant aller à ce type d'attention, ce qui vous met mal à l'aise."
+    },
+    "Médiateur": {
+      "manifestation": "En travaillant sur vous, vous gagnez en énergie et en capacité à agir pour vos propres priorités, pas seulement pour maintenir la paix autour de vous.",
+      "avantage": "Vous avancez enfin sur ce qui compte réellement pour vous, avec une efficacité que votre tendance à temporiser ne montre pas d'habitude.",
+      "piege": "Vous pouvez, à l'excès, vous focaliser sur l'image ou le résultat au point de perdre l'authenticité tranquille qui vous caractérise."
+    }
+  }
+}

@@ -92,6 +92,28 @@ def test_unanswered_items_do_not_count_as_exposure():
     assert summary["exposure"]["Alpha"] == 1
 
 
+def test_graduated_answers_award_partial_credit():
+    """The scale between the two statements ("lean_a", "neutral", "lean_b")
+    must score as a fraction of a win, not as a full point or a zero — and the
+    old all-or-nothing answers ("option_a"/"option_b") must still score
+    exactly as before, since real exports predate the graduated scale."""
+    themes = _themes("Alpha", "Beta")
+    items = [
+        _item("a", ["Alpha"], ["Beta"]),
+        _item("b", ["Alpha"], ["Beta"]),
+        _item("c", ["Alpha"], ["Beta"]),
+        _item("d", ["Alpha"], ["Beta"]),
+        _item("e", ["Alpha"], ["Beta"]),
+    ]
+    answers = {
+        "a": "option_a", "b": "lean_a", "c": "neutral", "d": "lean_b", "e": "option_b",
+    }
+    summary = strengths.score(items, answers, themes).summary
+    assert summary["wins"]["Alpha"] == 1.0 + 0.75 + 0.5 + 0.25 + 0.0
+    assert summary["wins"]["Beta"] == 0.0 + 0.25 + 0.5 + 0.75 + 1.0
+    assert summary["exposure"]["Alpha"] == summary["exposure"]["Beta"] == 5
+
+
 def test_real_pool_produces_a_full_ranking():
     themes = pools.strengths_themes()
     items = pools.sample_strengths(random.Random(4), 35)

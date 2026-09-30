@@ -11,7 +11,7 @@ import html
 import streamlit as st
 
 from assessment.registry import REGISTRY
-from assessment.types import LIKERT_OPTIONS
+from assessment.types import BIPOLAR_LABELS, BIPOLAR_VALUES, LIKERT_OPTIONS
 
 from . import components as ui
 from . import state
@@ -56,16 +56,27 @@ def render() -> None:
         )
         value = options.index(choice) + 1 if choice is not None else None
     else:
-        options = [item.options[0], item.options[1]]
+        # Two statements with a graduated scale between them, not a single
+        # click on one of the two — you can land anywhere from "complètement
+        # la phrase du haut" to "complètement la phrase du bas" rather than
+        # only at either end.
+        st.markdown(
+            f'<div class="pole pole-a">{html.escape(item.options[0])}</div>',
+            unsafe_allow_html=True,
+        )
         choice = st.radio(
-            "Lequel vous ressemble le plus ?",
-            options=options,
+            "Où vous situez-vous entre les deux phrases ci-dessus et ci-dessous ?",
+            options=list(BIPOLAR_LABELS),
             index=None,
             key=f"resp_{item.uid}",
             label_visibility="collapsed",
             horizontal=True,
         )
-        value = ("option_a" if choice == options[0] else "option_b") if choice is not None else None
+        st.markdown(
+            f'<div class="pole pole-b">{html.escape(item.options[1])}</div>',
+            unsafe_allow_html=True,
+        )
+        value = BIPOLAR_VALUES[BIPOLAR_LABELS.index(choice)] if choice is not None else None
 
     last_overall = st.session_state.position == overall - 1
     label = "Voir mes résultats" if last_overall else "Suivant"

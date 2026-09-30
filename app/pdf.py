@@ -317,6 +317,19 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             f"<b>En travail sur soi, vers le Type {growth_pt['number']} ({_clean(growth_pt['name'])}).</b> "
             f"{_clean(growth_pt['tagline'])}", s["body"]))
 
+        flow.append(Paragraph("Comment ces connexions se manifestent concrètement", s["h3"]))
+        for heading, rel in (
+            (f"Aile — Type {wing_lo['number']} ({_clean(wing_lo['name'])})", wing_lo),
+            (f"Aile — Type {wing_hi['number']} ({_clean(wing_hi['name'])})", wing_hi),
+            (f"Sous tension — Type {stress_pt['number']} ({_clean(stress_pt['name'])})", stress_pt),
+            (f"En travail sur soi — Type {growth_pt['number']} ({_clean(growth_pt['name'])})", growth_pt),
+        ):
+            flow.append(Paragraph(f"<b>{heading}</b>", s["body"]))
+            flow.append(Paragraph(_clean(rel["manifestation"]), s["body"]))
+            flow.append(Paragraph(
+                f"<b>Ce que ça donne de bien.</b> {_clean(rel['avantage'])}<br/>"
+                f"<b>Le piège.</b> {_clean(rel['piege'])}", s["muted"]))
+
         flow.append(Paragraph("Ce qui vous ressemble le moins", s["h3"]))
         flow.append(Paragraph(_clean(enneagram["bottom_note"]), s["body"]))
         flow.append(Paragraph(
@@ -341,6 +354,8 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             flow.append(Paragraph(f"<i>{_clean(theme['tagline'])}</i>", s["body"]))
             flow.append(Paragraph(f"<i>{_clean(theme['vision_du_monde'])}</i>", s["muted"]))
             flow.append(Paragraph(_clean(theme["description"]), s["body"]))
+            flow.append(Paragraph(
+                f"<b>Ce qu'il évite structurellement.</b> {_clean(theme['peur_de_base'])}", s["body"]))
             flow.append(Paragraph(f"<b>Ce que ça donne de bien.</b> {_clean(theme['forces'])}", s["body"]))
             flow.append(Paragraph(
                 f"<b>Comment ça se voit.</b> {_clean(theme['shadow'])}<br/>"

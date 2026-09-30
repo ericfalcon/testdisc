@@ -14,6 +14,43 @@ LIKERT_OPTIONS = (
     "Tout à fait d'accord",
 )
 
+# A "forced_choice" item still compares exactly two statements, but the answer
+# is graduated rather than a single click on one of them — the same five-point
+# logic as LIKERT_OPTIONS, anchored to "the statement above" / "the statement
+# below" instead of an agreement scale. BIPOLAR_VALUES are what gets stored in
+# an answer, in the same order as the labels; the two extremes are spelled
+# "option_a"/"option_b" on purpose, so an export saved before this scale
+# existed (a plain, unweighted pick) still loads and scores exactly as it did
+# before — this is a strict generalisation of the old binary choice, not a
+# rescoring of it.
+BIPOLAR_LABELS = (
+    "Complètement la phrase du haut",
+    "Plutôt la phrase du haut",
+    "Autant l'une que l'autre",
+    "Plutôt la phrase du bas",
+    "Complètement la phrase du bas",
+)
+BIPOLAR_VALUES = ("option_a", "lean_a", "neutral", "lean_b", "option_b")
+BIPOLAR_WEIGHTS: dict[str, tuple[float, float]] = {
+    "option_a": (1.0, 0.0),
+    "lean_a": (0.75, 0.25),
+    "neutral": (0.5, 0.5),
+    "lean_b": (0.25, 0.75),
+    "option_b": (0.0, 1.0),
+}
+
+
+def bipolar_weight(value: str, option: str) -> float:
+    """Share of a graduated forced-choice answer that goes to ``option``
+    ("option_a" or "option_b"). Unknown/legacy values fall back to whichever
+    extreme they name, so a value that is literally "option_a" or "option_b"
+    (every answer recorded before this scale existed) behaves exactly as the
+    old all-or-nothing scoring did."""
+    weight_a, weight_b = BIPOLAR_WEIGHTS.get(
+        value, (1.0, 0.0) if value == "option_a" else (0.0, 1.0)
+    )
+    return weight_a if option == "option_a" else weight_b
+
 
 @dataclass(frozen=True)
 class Item:

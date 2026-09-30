@@ -182,6 +182,31 @@ def test_each_item_is_shown_once_and_only_once():
     assert len(seen) == len(set(seen)) == 40
 
 
+def test_forced_choice_items_offer_a_graduated_scale():
+    """A forced-choice item (e.g. the Ennéagramme) shows both statements as
+    text and lets the response land anywhere on a five-point scale between
+    them — not a plain click on one of the two, which used to be the only
+    way to answer and gave no way to say "a bit of both"."""
+    from assessment.types import BIPOLAR_LABELS
+
+    app = _started({"enneagram": "standard"})
+    item = app.session_state.flat[app.session_state.position]
+    radio = app.radio(key=f"resp_{item.uid}")
+    assert list(radio.options) == list(BIPOLAR_LABELS)
+
+    import html as _html
+
+    body = " ".join(m.value for m in app.markdown)
+    assert _html.escape(item.options[0]) in body
+    assert _html.escape(item.options[1]) in body
+
+    radio.set_value(BIPOLAR_LABELS[1])  # "Plutôt la phrase du haut"
+    app.run()
+    app.button(key="advance").click()
+    app.run()
+    assert app.session_state.answers[item.uid] == "lean_a"
+
+
 # -------------------------------------------------------------------- results
 
 def test_a_full_run_produces_a_report():

@@ -139,6 +139,7 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
                 "tagline": info["tagline"],
                 "vision_du_monde": info["vision_du_monde"],
                 "moteur_profond": info["moteur_profond"],
+                "peur_de_base": info["peur_de_base"],
                 "description": info["description"],
                 "forces": info["forces"],
                 "shadow": info["shadow"],
@@ -154,6 +155,7 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
         # The dominant type (highest win rate) plus its two wings and its
         # stress/growth points — see the heuristic note above the maps.
         number_to_name = {info["number"]: name for name, info in enneagram_types.items()}
+        relations = pools.enneagram_relations()
 
         def _brief(name: str) -> dict:
             info = enneagram_types[name]
@@ -162,15 +164,35 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
                 "tagline": info["tagline"], "win_rate": win_rates[name],
             }
 
+        def _relation_brief(name: str, kind: str, base_name: str) -> dict:
+            """``_brief`` plus how this specific relationship (this wing, or
+            this type's stress/growth point) actually plays out for the
+            dominant type — see data/enneagram_relations.json."""
+            brief = _brief(name)
+            data = relations[kind][base_name]
+            if kind == "wings":
+                data = data[name]
+            brief.update({
+                "manifestation": data["manifestation"],
+                "avantage": data["avantage"],
+                "piege": data["piege"],
+            })
+            return brief
+
         dominant_name = enneagram_result.summary["ranking"][0]
         dominant_number = enneagram_types[dominant_name]["number"]
         wing_lo, wing_hi = _wing_numbers(dominant_number)
         report["enneagram"]["dominant"] = _brief(dominant_name)
         report["enneagram"]["wings"] = [
-            _brief(number_to_name[wing_lo]), _brief(number_to_name[wing_hi]),
+            _relation_brief(number_to_name[wing_lo], "wings", dominant_name),
+            _relation_brief(number_to_name[wing_hi], "wings", dominant_name),
         ]
-        report["enneagram"]["stress_point"] = _brief(number_to_name[_STRESS_BY_NUMBER[dominant_number]])
-        report["enneagram"]["growth_point"] = _brief(number_to_name[_GROWTH_BY_NUMBER[dominant_number]])
+        report["enneagram"]["stress_point"] = _relation_brief(
+            number_to_name[_STRESS_BY_NUMBER[dominant_number]], "stress", dominant_name
+        )
+        report["enneagram"]["growth_point"] = _relation_brief(
+            number_to_name[_GROWTH_BY_NUMBER[dominant_number]], "growth", dominant_name
+        )
 
     if instinct_result is not None:
         report["instinct"] = instinct_result.summary

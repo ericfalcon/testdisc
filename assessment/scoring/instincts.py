@@ -10,7 +10,10 @@ belongs to no one; only the exact wording below is original to this app.
 
 Same win-rate mechanics as motivators.py: every instinct meets every other
 exactly once per round, repeated for stability, so exposure is equal by
-construction and the win rate needs no correction.
+construction and the win rate needs no correction. Each pair is answered on a
+graduated scale rather than a single click (see ``bipolar_weight``), so a
+"win" is a fraction of the answer, not always a whole point — a legacy
+all-or-nothing answer still scores exactly as it did before.
 """
 
 from __future__ import annotations
@@ -18,7 +21,7 @@ from __future__ import annotations
 import math
 from typing import Sequence
 
-from ..types import ModuleResult
+from ..types import ModuleResult, bipolar_weight
 
 INSTINCTS = ("Conservation", "Social", "Sexuel")
 
@@ -119,15 +122,16 @@ def score(items: Sequence[dict], answers: dict[str, str]) -> ModuleResult:
             instinct = item["alignment"][option]
             if instinct not in wins:
                 continue
+            weight = bipolar_weight(chosen, option)
             exposure[instinct] += 1
-            picked = option == chosen
-            wins[instinct] += 1 if picked else 0
+            wins[instinct] += weight
             other = item["alignment"]["option_b" if option == "option_a" else "option_a"]
             evidence[instinct].append({
                 "id": item["id"],
                 "text": item[option],
                 "against": other,
-                "chosen": picked,
+                "chosen": weight >= 0.5,
+                "weight": weight,
             })
 
     rates = {

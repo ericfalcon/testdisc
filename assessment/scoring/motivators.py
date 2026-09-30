@@ -1,7 +1,12 @@
 """Motivator scoring over a round-robin of forced-choice pairs.
 
 Every driver meets every other driver exactly once, so exposure is equal by
-construction and the win rate needs no correction.
+construction and the win rate needs no correction. The answer to each pair is
+graduated (see ``bipolar_weight``), not a single click on one driver, so a
+"win" is a fraction of the answer rather than always a whole point — an
+answer recorded before the graduated scale existed is still a plain
+"option_a"/"option_b" and still scores as a full point, so old results are
+unaffected.
 """
 
 from __future__ import annotations
@@ -9,7 +14,7 @@ from __future__ import annotations
 import math
 from typing import Sequence
 
-from ..types import ModuleResult
+from ..types import ModuleResult, bipolar_weight
 
 DRIVERS = (
     "Autonomie", "Maîtrise", "Reconnaissance", "Sécurité",
@@ -41,15 +46,16 @@ def score(items: Sequence[dict], answers: dict[str, str]) -> ModuleResult:
             driver = item["alignment"][option]
             if driver not in wins:
                 continue
+            weight = bipolar_weight(chosen, option)
             exposure[driver] += 1
-            picked = option == chosen
-            wins[driver] += 1 if picked else 0
+            wins[driver] += weight
             other = item["alignment"]["option_b" if option == "option_a" else "option_a"]
             evidence[driver].append({
                 "id": item["id"],
                 "text": item[option],
                 "against": other,
-                "chosen": picked,
+                "chosen": weight >= 0.5,
+                "weight": weight,
             })
 
     rates = {

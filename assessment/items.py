@@ -67,6 +67,13 @@ def enneagram_types() -> dict:
 
 
 @lru_cache(maxsize=None)
+def enneagram_relations() -> dict:
+    """How each type's two wings, stress point and growth point actually show
+    up day to day — see data/enneagram_relations.json for the structure."""
+    return _load("enneagram_relations.json")
+
+
+@lru_cache(maxsize=None)
 def instinct_items() -> list[dict]:
     return _load("instinct_items.json")
 
