@@ -298,10 +298,13 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
                 f"Type {theme['number']} — {_clean(theme['name'])} "
                 f"({theme['win_rate']:.0%} à ce test)", s["h3"]))
             flow.append(Paragraph(f"<i>{_clean(theme['tagline'])}</i>", s["body"]))
+            flow.append(Paragraph(f"<i>{_clean(theme['vision_du_monde'])}</i>", s["muted"]))
             flow.append(Paragraph(_clean(theme["description"]), s["body"]))
+            flow.append(Paragraph(f"<b>Ce que ça donne de bien.</b> {_clean(theme['forces'])}", s["body"]))
             flow.append(Paragraph(
                 f"<b>Comment ça se voit.</b> {_clean(theme['shadow'])}<br/>"
-                f"<b>Quand ça vous coûte.</b> {_clean(theme['overuse'])}", s["muted"]))
+                f"<b>Quand ça vous coûte.</b> {_clean(theme['overuse'])}<br/>"
+                f"<b>Pour progresser.</b> {_clean(theme['developpement'])}", s["muted"]))
 
     if "instinct" in report:
         instinct = report["instinct"]

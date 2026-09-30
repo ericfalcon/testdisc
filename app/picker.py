@@ -15,21 +15,18 @@ from . import state
 
 def _module_row(module_id: str, default: bool) -> tuple[bool, str]:
     module = REGISTRY[module_id]
-    blocked = [d for d in module.depends_on if d not in st.session_state.get("_picked", set())]
     label = f"{module.icon}  {module.title}"
 
-    if blocked:
-        # Rendered as text rather than a disabled checkbox: there is nothing to
-        # click, and a dead widget only adds noise to the list.
-        needs = ", ".join(REGISTRY[d].title for d in blocked)
-        st.markdown(
-            f'<p style="color:{ui.SLATE};margin-bottom:14px;">{html.escape(label)}<br>'
-            f'<span class="chan">nécessite d\'abord {html.escape(needs)} — '
-            f'la comparaison n\'a pas de sens sans cela</span></p>',
-            unsafe_allow_html=True,
-        )
-        return False, module.variants[0]
-
+    # Dependencies used to be enforced by hiding the checkbox behind blocked
+    # text until the prerequisite module was checked elsewhere in the same
+    # render — but every widget here lives inside `st.form`, and Streamlit
+    # forms explicitly do not rerun the script (and so never re-evaluate that
+    # "is the prerequisite checked" condition) until the whole form is
+    # submitted. A checkbox that can only unblock on a rerun that never
+    # happens can never be checked — confirmed live: ticking "Vos moteurs
+    # profonds" never unblocked "Votre instinct dominant" underneath it. The
+    # checkbox is now always clickable; the dependency is enforced instead at
+    # submit time, below, by silently adding whatever it needs.
     picked = st.checkbox(label, value=default, key=f"pick_{module_id}")
     variant = module.variants[0]
     if picked and len(module.variants) > 1:
@@ -41,9 +38,16 @@ def _module_row(module_id: str, default: bool) -> tuple[bool, str]:
             label_visibility="collapsed",
         )
     minutes = module.minutes.get(variant, 5)
+    needs_note = ""
+    if module.depends_on:
+        needs = ", ".join(REGISTRY[d].title for d in module.depends_on)
+        needs_note = (
+            f'<br><span class="chan">nécessite {html.escape(needs)} — '
+            f"ajouté automatiquement si vous cochez celui-ci sans lui</span>"
+        )
     st.markdown(
         f'<div style="margin:-6px 0 14px 30px;color:{ui.SLATE};font-size:0.93rem;line-height:1.55;">'
-        f'{html.escape(module.blurb)}<br><span class="chan">≈ {minutes} min</span></div>',
+        f'{html.escape(module.blurb)}<br><span class="chan">≈ {minutes} min</span>{needs_note}</div>',
         unsafe_allow_html=True,
     )
     return picked, variant
@@ -104,12 +108,10 @@ def render() -> None:
             '<div class="chan">Étape 2 · Le test DISC (recommandé)</div>', unsafe_allow_html=True
         )
         selection: dict[str, str] = {}
-        st.session_state["_picked"] = set()
         for module_id in CORE_MODULES:
             picked, variant = _module_row(module_id, default=True)
             if picked:
                 selection[module_id] = variant
-                st.session_state["_picked"].add(module_id)
 
         if ADDON_MODULES:
             st.markdown(
@@ -120,7 +122,6 @@ def render() -> None:
             picked, variant = _module_row(module_id, default=False)
             if picked:
                 selection[module_id] = variant
-                st.session_state["_picked"].add(module_id)
 
         st.markdown('<div class="chan" style="margin-top:0.8rem;">Étape 3 · C\'est parti</div>', unsafe_allow_html=True)
         submitted = st.form_submit_button(
@@ -128,6 +129,14 @@ def render() -> None:
         )
 
     if submitted:
+        # A dependent module (e.g. "Votre instinct dominant") can be picked
+        # without its prerequisite being checked in the same pass — the
+        # comparison it needs has to come from somewhere, so the prerequisite
+        # is added here rather than left to silently produce a hollow result.
+        for module_id in list(selection):
+            for dep in REGISTRY[module_id].depends_on:
+                selection.setdefault(dep, REGISTRY[dep].variants[0])
+
         missing_identity = not (identity["prenom"] and identity["nom"] and identity["session"])
         if not selection:
             st.warning("Sélectionnez au moins un module pour commencer.")

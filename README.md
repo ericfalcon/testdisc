@@ -62,22 +62,28 @@ Aucun compte, aucun serveur, aucune base de données.
     deux façons de travailler, sur 12 thèmes originaux répartis en 4 domaines
     (Construire, Mobiliser, Relier, Éclairer) — voir ci-dessous pourquoi ce
     référentiel est original plutôt que repris d'un test du commerce.
-  - **Vos moteurs profonds (Ennéagramme)** : 24 choix forcés (tirés d'une banque
-    de 36 — chaque type est comparé une fois à chacun des 8 autres, pas
-    seulement à une partie d'entre eux) entre deux façons de réagir, sur 9
-    types répartis en 3 centres (Corps, Cœur, Tête). Le DISC décrit le
-    comportement observable ; l'ennéagramme cherche la motivation derrière —
-    les deux se complètent sans se recouvrir, et le rapport le rappelle
-    explicitement, avec un avertissement sur le fait que ce cadre n'a jamais
-    été validé aussi solidement que le DISC. Les résultats sont aussi
-    positionnés sur le schéma circulaire traditionnel (les 9 points, le
+  - **Vos moteurs profonds (Ennéagramme)** : les 36 choix forcés de la banque
+    en entier — le round robin complet, chaque type comparé une fois à chacun
+    des 8 autres, sans exception — entre deux façons de réagir, sur 9 types
+    répartis en 3 centres (Corps, Cœur, Tête). Administrer le round robin
+    entier plutôt qu'un sous-ensemble (24 items dans une version antérieure)
+    élimine toute possibilité qu'un tirage particulier laisse deux types
+    jamais comparés l'un à l'autre pour une personne donnée. Le DISC décrit
+    le comportement observable ; l'ennéagramme cherche la motivation
+    derrière — les deux se complètent sans se recouvrir, et le rapport le
+    rappelle explicitement, avec un avertissement sur le fait que ce cadre
+    n'a jamais été validé aussi solidement que le DISC. Les résultats sont
+    aussi positionnés sur le schéma circulaire traditionnel (les 9 points, le
     triangle 3-9-6 et l'hexagone 1-4-2-8-5-7), pas seulement listés par ordre
     de classement. Référentiel et formulations originaux, pas une reprise
     d'un test existant comme le RHETI de Riso-Hudson (protégé). Noms des 9
     types alignés sur la tradition narrative de l'ennéagramme (Helen Palmer &
     David Daniels, narrativeenneagram.org) : Perfectionniste, Altruiste,
     Performeur, Individualiste, Observateur, Questionneur, Enthousiaste,
-    Protecteur, Médiateur.
+    Protecteur, Médiateur. La description de chaque type (vision du monde,
+    moteur profond, forces, ce que ça coûte, piste de progression) est
+    nettement plus étoffée que dans les autres modules, et se déploie en
+    entier dans la section « Pour affiner : lisez les 9 profils complets ».
   - **Votre instinct dominant** : un complément rapide (9 choix forcés) à
     l'Ennéagramme — lequel des 3 instincts de survie (conservation, social,
     sexuel/un-à-un) capte le plus l'attention en premier. Cette couche est

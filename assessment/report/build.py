@@ -109,9 +109,13 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
                 "number": info["number"],
                 "colour": info["badge_color"],
                 "tagline": info["tagline"],
+                "vision_du_monde": info["vision_du_monde"],
+                "moteur_profond": info["moteur_profond"],
                 "description": info["description"],
+                "forces": info["forces"],
                 "shadow": info["shadow"],
                 "overuse": info["overuse"],
+                "developpement": info["developpement"],
                 "win_rate": enneagram_result.summary["win_rates"][name],
             }
             for name, info in sorted(enneagram_types.items(), key=lambda kv: kv[1]["number"])

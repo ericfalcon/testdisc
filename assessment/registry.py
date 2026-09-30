@@ -129,7 +129,11 @@ def _score_strengths(items: list[Item], answers: dict[str, Any], context: dict) 
 # --------------------------------------------------------------------- enneagram
 
 def _build_enneagram(rng: random.Random, variant: str, context: dict) -> list[Item]:
-    return pools.to_choice_items(pools.sample_enneagram(rng, 24), "enneagram", ENNEAGRAM_FRAME)
+    # The full 36-item pool, not a subset: it's exactly the round-robin (every
+    # type compared once against every other), so administering all of it is
+    # what actually closes the door on the "not enough comparisons to be sure"
+    # complaint a partial sample can still leave open for a given respondent.
+    return pools.to_choice_items(pools.sample_enneagram(rng, 36), "enneagram", ENNEAGRAM_FRAME)
 
 
 def _score_enneagram(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
@@ -271,7 +275,7 @@ _register(Module(
     build=_build_enneagram,
     rebuild=_rebuilder("enneagram", "enneagram", ENNEAGRAM_FRAME),
     score=_score_enneagram,
-    minutes={"standard": 4},
+    minutes={"standard": 6},
 ))
 
 # Les 3 instincts de survie (conservation, social, sexuel/un-à-un) sont une

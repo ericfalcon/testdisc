@@ -87,13 +87,18 @@ def _answer_everything(app: AppTest, choice: int = 3) -> AppTest:
 def test_picker_offers_the_disc_module_and_starts_the_queue():
     app = _app()
     keys = {c.key for c in app.checkbox}
+    # Every module gets a real checkbox from the start, including addons that
+    # depend on another one (enneagram_instinct on enneagram) — see the note
+    # in app/picker.py: these widgets live inside st.form, which only reruns
+    # the script on submit, so a checkbox that could only unblock on a rerun
+    # triggered by ticking another one in the same form could never actually
+    # be checked live. The dependency is enforced at submit time instead —
+    # see test_dependent_addon_pulls_in_its_prerequisite_at_submit below.
     assert keys == {
         "pick_disc_natural", "pick_disc_adaptive", "pick_stress_profile",
         "pick_motivators", "pick_strengths_core", "pick_enneagram",
+        "pick_enneagram_instinct",
     }
-    # The sixth addon (enneagram_instinct) depends on enneagram, which is
-    # unchecked here, so it renders as blocked text rather than a checkbox —
-    # see test_instinct_module_unblocks_once_enneagram_is_picked below.
     # Only the core DISC module is pre-checked; the addons default to off,
     # so leaving them untouched below must still queue disc_natural alone.
     # The identification fields and the submit button live in one st.form, so
@@ -109,17 +114,24 @@ def test_picker_offers_the_disc_module_and_starts_the_queue():
     assert len(app.session_state.flat) == 40
 
 
-def test_instinct_module_unblocks_once_enneagram_is_picked():
-    """enneagram_instinct depends_on=("enneagram",) — comparing raw win rates
-    across the 3 instincts only means something once the person has also done
-    the 9-type module, so the picker keeps it as inert text until then."""
+def test_dependent_addon_pulls_in_its_prerequisite_at_submit():
+    """Ticking only "Votre instinct dominant" (enneagram_instinct) without its
+    prerequisite "Vos moteurs profonds" (enneagram) used to be impossible to
+    even represent correctly — now it's allowed at pick time and corrected at
+    submit: the comparison the instinct module needs has to come from
+    somewhere, so the prerequisite module is silently queued alongside it."""
     app = _app()
-    assert "pick_enneagram_instinct" not in {c.key for c in app.checkbox}
-    assert any("nécessite d'abord" in m.value for m in app.markdown)
-
-    app.checkbox(key="pick_enneagram").set_value(True)
+    app.checkbox(key="pick_disc_natural").set_value(False)
+    app.checkbox(key="pick_enneagram_instinct").set_value(True)
+    app.text_input(key="id_prenom").set_value("Ada")
+    app.text_input(key="id_nom").set_value("Lovelace")
+    app.text_input(key="id_session").set_value("Gestion du temps — test")
+    app.button(key="begin").click()
     app.run()
-    assert "pick_enneagram_instinct" in {c.key for c in app.checkbox}
+    assert app.session_state.stage == "running"
+    assert set(app.session_state.selection) == {"enneagram", "enneagram_instinct"}
+    module_ids = {item.module_id for item in app.session_state.flat}
+    assert module_ids == {"enneagram", "enneagram_instinct"}
 
 
 def test_begin_button_requires_identification_before_advancing():

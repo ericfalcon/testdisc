@@ -366,10 +366,15 @@ def _enneagram_section(report: dict) -> None:
                     <span class="num">{theme['win_rate']:.0%} à ce test</span></div>
                   <div class="theme-name">{html.escape(theme['name'])}</div>
                   <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
+                  <p style="margin:0 0 8px 0;font-style:italic;color:{ui.SLATE};">
+                    {html.escape(theme['vision_du_monde'])}</p>
                   <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
+                  <p style="margin:0 0 8px 0;font-size:0.94rem;">
+                    <b>Ce que ça donne de bien.</b> {html.escape(theme['forces'])}</p>
                   <div class="theme-cost">
                     <b>Comment ça se voit.</b> {html.escape(theme['shadow'])}<br>
-                    <b>Quand ça vous coûte.</b> {html.escape(theme['overuse'])}
+                    <b>Quand ça vous coûte.</b> {html.escape(theme['overuse'])}<br>
+                    <b>Pour progresser.</b> {html.escape(theme['developpement'])}
                   </div>
                 </div>""",
                 unsafe_allow_html=True,

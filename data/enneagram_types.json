@@ -5,10 +5,14 @@
     "domain": "Corps",
     "badge_color": "#8A4B3E",
     "tagline": "Veut que les choses soient faites comme il faut.",
-    "description": "Vous voyez immédiatement l'écart entre ce qui est fait et ce qui devrait l'être, et vous vous sentez responsable de corriger cet écart, même quand personne ne vous l'a demandé. Un travail bâclé vous coûte plus qu'à la plupart des gens.",
+    "vision_du_monde": "Vous avez grandi avec l'idée qu'il existe, pour presque tout, une façon plus juste de s'y prendre — et qu'être quelqu'un de bien passe par le fait de la trouver et de s'y tenir.",
+    "moteur_profond": "Être irréprochable, ou du moins n'avoir rien à se reprocher.",
+    "description": "Vous voyez immédiatement l'écart entre ce qui est fait et ce qui devrait l'être, et vous vous sentez responsable de corriger cet écart, même quand personne ne vous l'a demandé. Un travail bâclé vous coûte plus qu'à la plupart des gens. Ce n'est pas du perfectionnisme gratuit : vous avez intériorisé qu'il existe une bonne façon de faire les choses, et vous la remarquez avant même de l'avoir cherchée. Vous vous jugez au moins aussi durement que vous jugez les autres — la plupart des gens autour de vous ne voient jamais à quel point votre propre critique intérieure est sévère.",
+    "forces": "Rigueur, sens de l'équité, fiabilité, capacité à tenir un cap même quand personne ne vérifie, intégrité qui ne varie pas selon qui regarde.",
     "action_tip": "Sur une tâche en cours, choisissez un point que vous auriez normalement corrigé, et laissez-le tel quel jusqu'à la fin — notez ce que ça vous fait.",
     "shadow": "Les autres comptent sur votre exigence pour tenir le niveau, mais peuvent aussi se sentir jugés par votre silence quand quelque chose ne vous convient pas.",
-    "overuse": "Vous retravaillez un détail que personne d'autre n'aurait remarqué, au prix d'un temps que la tâche suivante n'aura plus."
+    "overuse": "Vous retravaillez un détail que personne d'autre n'aurait remarqué, au prix d'un temps que la tâche suivante n'aura plus.",
+    "developpement": "Apprendre à distinguer une erreur qui compte vraiment d'un détail que vous seul remarquez, et à vous accorder le droit à l'imperfection que vous accordez plus facilement aux autres qu'à vous-même."
   },
   "Altruiste": {
     "name": "Altruiste",
@@ -16,10 +20,14 @@
     "domain": "Cœur",
     "badge_color": "#B23A5E",
     "tagline": "Sait ce dont les autres ont besoin avant qu'ils ne le disent.",
-    "description": "Vous repérez ce qui manque à quelqu'un — de l'attention, de l'aide, un mot au bon moment — et vous vous ajustez pour le lui donner, souvent avant même qu'on vous le demande.",
+    "vision_du_monde": "Vous avez appris que l'amour et la reconnaissance se méritent en se rendant utile aux autres — et que vos propres besoins passent après les leurs.",
+    "moteur_profond": "Être aimé, et rester indispensable à ceux qui comptent pour vous.",
+    "description": "Vous repérez ce qui manque à quelqu'un — de l'attention, de l'aide, un mot au bon moment — et vous vous ajustez pour le lui donner, souvent avant même qu'on vous le demande. Vous adaptez volontiers votre propre attitude à la personne en face de vous, dans l'espoir presque inconscient que cela vous rendra plus aimable à ses yeux. Vos propres besoins restent en retrait, au point qu'il vous arrive de ne plus très bien savoir ce que vous voulez vraiment quand personne ne vous le demande directement.",
+    "forces": "Générosité, sens de l'écoute, chaleur, capacité à deviner ce dont quelqu'un a besoin avant qu'il ne le formule, disponibilité constante.",
     "action_tip": "Cette semaine, demandez explicitement à quelqu'un ce dont il a besoin, au lieu de le deviner à sa place.",
     "shadow": "Les autres apprécient d'être soutenus par vous, mais peuvent aussi ne jamais penser à vous demander comment vous allez, puisque vous ne le demandez jamais pour vous-même.",
-    "overuse": "Vous vous rendez indispensable à quelqu'un qui n'a rien demandé, et vous finissez par attendre en retour une reconnaissance que personne ne savait devoir vous donner."
+    "overuse": "Vous vous rendez indispensable à quelqu'un qui n'a rien demandé, et vous finissez par attendre en retour une reconnaissance que personne ne savait devoir vous donner.",
+    "developpement": "Apprendre à demander directement ce dont vous avez besoin, et à accepter d'être aimé sans avoir à le mériter par ce que vous donnez."
   },
   "Performeur": {
     "name": "Performeur",
@@ -27,10 +35,14 @@
     "domain": "Cœur",
     "badge_color": "#C9762B",
     "tagline": "Avance vers le résultat qui se verra.",
-    "description": "Vous ajustez naturellement ce que vous faites en fonction de ce qui sera reconnu comme une réussite, et vous savez accélérer quand un objectif est vraiment en jeu.",
+    "vision_du_monde": "Vous avez appris qu'on vous reconnaît pour ce que vous accomplissez, pas pour qui vous êtes une fois les résultats mis de côté.",
+    "moteur_profond": "Réussir, et que cette réussite se voie et soit reconnue.",
+    "description": "Vous ajustez naturellement ce que vous faites en fonction de ce qui sera reconnu comme une réussite dans le contexte où vous êtes, et vous savez accélérer quand un objectif concret est vraiment en jeu. Vous trouvez sans effort l'énergie qui manque à d'autres pour tenir un rythme soutenu. Le risque, à force, est de confondre ce que vous faites avec ce que vous êtes — et de perdre un peu de vue ce que vous ressentez vraiment derrière l'image que vous présentez aux autres.",
+    "forces": "Efficacité, capacité à mobiliser une équipe autour d'un objectif, adaptabilité, confiance qui rassure, sens du résultat.",
     "action_tip": "Sur un projet en cours, notez ce que vous feriez si personne ne devait jamais savoir que vous l'avez fait — et voyez si ça change quelque chose.",
     "shadow": "Les autres vous voient efficace et entraînant, mais peuvent aussi se demander ce que vous pensez vraiment derrière l'image que vous présentez.",
-    "overuse": "Vous soignez la présentation d'un résultat plus que le résultat lui-même, et ça finit par se voir."
+    "overuse": "Vous soignez la présentation d'un résultat plus que le résultat lui-même, et ça finit par se voir.",
+    "developpement": "Apprendre à ralentir assez pour remarquer ce que vous ressentez, indépendamment de ce que vous êtes en train d'accomplir ou de faire voir."
   },
   "Individualiste": {
     "name": "Individualiste",
@@ -38,10 +50,14 @@
     "domain": "Cœur",
     "badge_color": "#8A5FB2",
     "tagline": "Cherche ce qui, dans une situation, est authentiquement à lui.",
-    "description": "Vous remarquez ce qui manque ou sonne faux dans une situation, et vous cherchez une version plus vraie, plus personnelle, de ce que vous êtes en train de vivre ou de produire.",
+    "vision_du_monde": "Vous avez le sentiment qu'il vous manque quelque chose que les autres possèdent naturellement, et vous cherchez à combler ce manque en étant profondément et visiblement vous-même.",
+    "moteur_profond": "Être reconnu dans ce qui vous rend unique, et vivre des expériences qui ont un sens réel.",
+    "description": "Vous remarquez ce qui manque ou sonne faux dans une situation, un peu comme d'autres remarqueraient d'abord ce qui va bien, et vous cherchez une version plus vraie, plus personnelle, de ce que vous êtes en train de vivre ou de produire. Cette sensibilité vous donne accès à une profondeur émotionnelle que peu de gens autour de vous cultivent. Elle peut aussi vous faire comparer en continu votre quotidien à un idéal, au point que ce qui allait bien finit par vous sembler ordinaire, presque décevant.",
+    "forces": "Sensibilité, créativité, exigence esthétique et émotionnelle, capacité à nommer ce que d'autres ressentent sans le formuler, authenticité.",
     "action_tip": "Sur une tâche ordinaire cette semaine, faites-la sans chercher à la rendre différente de comment n'importe qui d'autre la ferait.",
     "shadow": "Les autres apprécient votre sensibilité et votre exigence sur ce qui compte vraiment, mais peuvent aussi se lasser de devoir constamment ajuster leur approche à votre humeur du moment.",
-    "overuse": "Vous comparez ce que vous vivez à ce qui vous manque, et ce qui allait bien finit par vous sembler insuffisant."
+    "overuse": "Vous comparez ce que vous vivez à ce qui vous manque, et ce qui allait bien finit par vous sembler insuffisant.",
+    "developpement": "Apprendre à rester présent à ce qui va bien maintenant, sans le comparer immédiatement à ce qui manque ou à ce qui pourrait être plus intense ailleurs."
   },
   "Observateur": {
     "name": "Observateur",
@@ -49,10 +65,14 @@
     "domain": "Tête",
     "badge_color": "#4A5FA8",
     "tagline": "Comprend avant d'agir.",
-    "description": "Vous préférez vous retirer pour observer et comprendre une situation en profondeur avant de vous engager, et vous économisez votre énergie pour ce qui compte vraiment pour vous.",
+    "vision_du_monde": "Vous avez appris à protéger votre énergie et votre temps comme des ressources limitées, qu'il ne faut pas laisser les autres épuiser sans y avoir consenti.",
+    "moteur_profond": "Comprendre en profondeur avant de vous engager, et rester maître de votre temps et de votre énergie.",
+    "description": "Vous préférez vous retirer pour observer et analyser une situation avant d'y participer, et vous économisez délibérément votre énergie sociale pour ce qui compte vraiment à vos yeux. Cette distance vous donne une clarté que peu de gens gardent en plein dans l'action. Elle peut aussi vous couper d'informations ou de relations que vous n'auriez pas laissées filer si vous vous étiez engagé un peu plus tôt, avant d'avoir toutes les réponses.",
+    "forces": "Profondeur d'analyse, calme même sous pression, autonomie, respect naturel des limites d'autrui, fiabilité discrète.",
     "action_tip": "La prochaine fois qu'on vous demande votre avis, donnez-le avant d'avoir fini de tout vérifier.",
     "shadow": "Les autres apprécient la profondeur de ce que vous apportez, mais peuvent aussi se sentir tenus à distance, sans savoir ce que vous pensez réellement d'eux.",
-    "overuse": "Vous continuez à vous documenter sur un sujet que vous maîtrisez déjà assez pour agir, et le moment d'agir passe."
+    "overuse": "Vous continuez à vous documenter sur un sujet que vous maîtrisez déjà assez pour agir, et le moment d'agir passe.",
+    "developpement": "Apprendre à vous engager avant d'avoir toutes les réponses, et à partager ce que vous pensez avant qu'on ait besoin de vous le demander trois fois."
   },
   "Questionneur": {
     "name": "Questionneur",
@@ -60,10 +80,14 @@
     "domain": "Tête",
     "badge_color": "#2F5D8A",
     "tagline": "Anticipe ce qui pourrait mal tourner pour mieux s'y préparer.",
-    "description": "Vous repérez les risques et les incohérences avant les autres, et vous tenez vos engagements envers les personnes et les structures en qui vous avez choisi de faire confiance.",
+    "vision_du_monde": "Vous avez appris que le monde est plus sûr et plus prévisible quand on a pris le temps d'anticiper ce qui pourrait mal tourner.",
+    "moteur_profond": "Réduire l'incertitude, et savoir précisément sur qui et sur quoi vous pouvez compter.",
+    "description": "Vous repérez les risques et les incohérences avant la plupart des gens, et une fois que vous avez choisi d'accorder votre confiance à quelqu'un ou à une structure, vous vous y tenez avec une loyauté rare. Ce même réflexe de vigilance peut aussi tourner en boucle sur une décision déjà suffisamment sûre, et transformer une prudence utile en doute permanent qui retarde le moment d'agir.",
+    "forces": "Sens du risque, loyauté, fiabilité, capacité à anticiper les problèmes avant qu'ils n'arrivent, solidité dans les situations de crise.",
     "action_tip": "Sur une décision en cours, avancez avec l'option qui a votre confiance à 70 %, sans attendre d'être sûr à 100 %.",
     "shadow": "Les autres comptent sur votre vigilance pour repérer ce qui pourrait poser problème, mais peuvent aussi se sentir constamment testés avant que vous ne leur accordiez pleinement votre confiance.",
-    "overuse": "Vous imaginez tout ce qui pourrait mal tourner sur une décision déjà suffisamment sûre, et le doute retarde une action qui aurait dû être prise."
+    "overuse": "Vous imaginez tout ce qui pourrait mal tourner sur une décision déjà suffisamment sûre, et le doute retarde une action qui aurait dû être prise.",
+    "developpement": "Apprendre à reconnaître le moment où vous avez déjà assez vérifié pour agir, et à faire confiance à ce que vous avez déjà établi."
   },
   "Enthousiaste": {
     "name": "Enthousiaste",
@@ -71,10 +95,14 @@
     "domain": "Tête",
     "badge_color": "#3E9A8A",
     "tagline": "Garde plusieurs options ouvertes plutôt que de se fermer une porte.",
-    "description": "Vous voyez rapidement le potentiel et les possibilités dans une situation, et vous gardez naturellement de l'énergie et de l'enthousiasme même quand les choses se compliquent.",
+    "vision_du_monde": "Vous voyez le monde comme un endroit plein de possibilités, et vous cherchez à ne jamais vous enfermer dans une seule option ni dans une souffrance inutile.",
+    "moteur_profond": "Garder votre liberté de mouvement, et rester dans une énergie positive.",
+    "description": "Vous voyez rapidement le potentiel d'une situation, et vous gardez naturellement de l'énergie et de l'enthousiasme même quand les choses se compliquent — une vraie ressource pour un groupe qui commence à se décourager. Le prix à payer, c'est une vraie difficulté à rester sur une option dès qu'elle devient inconfortable ou répétitive, alors qu'une autre, plus excitante, se présente déjà à vous.",
+    "forces": "Optimisme, énergie, sens de l'improvisation, capacité à dédramatiser, créativité pour multiplier les options.",
     "action_tip": "Terminez cette semaine une chose que vous avez commencée avec enthousiasme avant de passer à la suivante qui vous tente déjà.",
     "shadow": "Les autres apprécient votre énergie et votre capacité à dédramatiser, mais peuvent aussi douter que vous restiez engagé quand une situation devient difficile ou ennuyeuse.",
-    "overuse": "Vous passez à une nouvelle option dès qu'une difficulté apparaît sur la précédente, et rien de ce que vous commencez n'a le temps d'aboutir."
+    "overuse": "Vous passez à une nouvelle option dès qu'une difficulté apparaît sur la précédente, et rien de ce que vous commencez n'a le temps d'aboutir.",
+    "developpement": "Apprendre à rester sur une difficulté jusqu'au bout plutôt que de changer d'option dès qu'elle apparaît, et à accueillir un inconfort sans chercher tout de suite à vous en distraire."
   },
   "Protecteur": {
     "name": "Protecteur",
@@ -82,10 +110,14 @@
     "domain": "Corps",
     "badge_color": "#C2453B",
     "tagline": "Prend le contrôle plutôt que de le laisser à quelqu'un d'autre.",
-    "description": "Vous sentez rapidement où est le pouvoir réel dans une situation, et vous n'hésitez pas à l'exercer directement plutôt que d'attendre qu'on vous l'accorde.",
+    "vision_du_monde": "Vous avez appris que le monde récompense ceux qui prennent le pouvoir eux-mêmes, et que montrer sa vulnérabilité revient à s'exposer inutilement.",
+    "moteur_profond": "Rester en contrôle de votre vie, et protéger ce qui compte pour vous.",
+    "description": "Vous sentez rapidement où se trouve le pouvoir réel dans une situation, et vous n'hésitez pas à l'exercer directement plutôt que d'attendre qu'on vous l'accorde — une clarté qui rassure une équipe en période difficile. Ce même réflexe peut aussi vous pousser à trancher à la place de quelqu'un qui n'avait rien demandé, ou à cacher derrière une assurance de façade une hésitation pourtant bien réelle.",
+    "forces": "Détermination, sens de la justice, franchise, capacité à protéger les autres, énergie pour faire avancer les choses.",
     "action_tip": "Dans votre prochain désaccord, laissez quelqu'un d'autre trancher en premier, et observez ce que ça vous coûte de ne pas le faire vous-même.",
     "shadow": "Les autres vous voient comme quelqu'un qui protège son équipe et prend les décisions difficiles, mais peuvent aussi hésiter à vous montrer une hésitation ou une faiblesse.",
-    "overuse": "Vous imposez votre position sur un sujet où l'avis de quelqu'un d'autre aurait suffi, et ça coûte la relation plus que ça ne fait avancer le sujet."
+    "overuse": "Vous imposez votre position sur un sujet où l'avis de quelqu'un d'autre aurait suffi, et ça coûte la relation plus que ça ne fait avancer le sujet.",
+    "developpement": "Apprendre à montrer une hésitation ou une fragilité réelle sans y voir une faiblesse, et à laisser quelqu'un d'autre trancher de temps en temps."
   },
   "Médiateur": {
     "name": "Médiateur",
@@ -93,9 +125,13 @@
     "domain": "Corps",
     "badge_color": "#6B4C9A",
     "tagline": "Trouve la version de la situation où tout le monde peut rester en paix.",
-    "description": "Vous voyez naturellement le point de vue de chacun dans un désaccord, et vous préférez maintenir l'harmonie plutôt que d'imposer votre propre priorité.",
+    "vision_du_monde": "Vous avez appris que se faire discret et s'aligner sur les priorités des autres est le chemin le plus sûr vers la paix et vers l'appartenance à un groupe.",
+    "moteur_profond": "Préserver l'harmonie, et ne jamais être la source d'un conflit.",
+    "description": "Vous voyez naturellement le point de vue de chacun dans un désaccord, ce qui vous rend précieux pour faire tenir un groupe ensemble et pour désamorcer une tension avant qu'elle n'éclate. Le revers, c'est que vos propres priorités passent souvent après celles de tout le monde, au point qu'il vous arrive de ne plus très bien savoir ce que vous voulez, vous y compris — et qu'un vrai désaccord reste non résolu simplement parce que le trancher aurait créé une tension.",
+    "forces": "Calme, sens du consensus, capacité d'écoute, absence de jugement, stabilité qui rassure un groupe entier.",
     "action_tip": "Dans votre prochaine réunion, exprimez votre préférence en premier, avant d'avoir entendu celle des autres.",
     "shadow": "Les autres apprécient votre calme et votre capacité à faire tenir un groupe ensemble, mais peuvent aussi ne jamais savoir ce que vous voulez vraiment, vous y compris.",
-    "overuse": "Vous évitez de trancher un désaccord qui aurait dû l'être, et le vrai problème continue de s'accumuler sous la surface."
+    "overuse": "Vous évitez de trancher un désaccord qui aurait dû l'être, et le vrai problème continue de s'accumuler sous la surface.",
+    "developpement": "Apprendre à exprimer votre préférence en premier, avant d'avoir entendu celle de tout le monde, et à considérer qu'un désaccord réglé à temps évite un problème plus grand plus tard."
   }
 }
