@@ -56,6 +56,16 @@ def motivator_items() -> list[dict]:
     return _load("motivator_items.json")
 
 
+@lru_cache(maxsize=None)
+def enneagram_items() -> list[dict]:
+    return _load("enneagram_items.json")
+
+
+@lru_cache(maxsize=None)
+def enneagram_types() -> dict:
+    return _load("enneagram_types.json")
+
+
 def option_themes(item: dict, option: str) -> list[str]:
     return item["alignment"].get(option, [])
 
@@ -111,6 +121,32 @@ def sample_strengths(rng: random.Random, count: int = 35) -> list[dict]:
             for theme in option_themes(best, option):
                 if theme in exposure:
                     exposure[theme] += 1
+
+    rng.shuffle(chosen)
+    return chosen
+
+
+def sample_enneagram(rng: random.Random, count: int = 18) -> list[dict]:
+    """Same greedy stratified draw as sample_strengths, over the 9-type pool
+    (27 items, a circulant design with each type appearing in exactly 6 pairs)."""
+    pool = list(enneagram_items())
+    rng.shuffle(pool)
+    exposure = {t: 0 for t in enneagram_types()}
+    chosen: list[dict] = []
+    remaining = pool[:]
+
+    while remaining and len(chosen) < count:
+        def gain(item: dict) -> float:
+            tags = set(option_themes(item, "option_a")) | set(option_themes(item, "option_b"))
+            return sum(1.0 / (1.0 + exposure[t]) for t in tags if t in exposure)
+
+        best = max(remaining, key=gain)
+        remaining.remove(best)
+        chosen.append(best)
+        for option in ("option_a", "option_b"):
+            for t in option_themes(best, option):
+                if t in exposure:
+                    exposure[t] += 1
 
     rng.shuffle(chosen)
     return chosen
@@ -211,6 +247,7 @@ def rebuild_from_ids(module_id: str, kind: str, ids: list[str], frame: str = "")
         "strengths": strengths_items(),
         "stress": stress_items(),
         "motivators": motivator_items(),
+        "enneagram": enneagram_items(),
     }
     index = {src["id"]: src for src in pools[kind]}
     sources = [index[i] for i in ids if i in index]

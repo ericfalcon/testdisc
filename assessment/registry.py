@@ -15,6 +15,13 @@ from . import items as pools
 from .scoring import disc, motivators, strengths, stress
 from .types import Item, ModuleResult
 
+# L'ennéagramme n'est pas une évaluation commerciale : ses 9 types et ses trois
+# centres (Corps, Cœur, Tête) sont un cadre public partagé par de nombreuses
+# écoles, sans nomenclature déposée unique. Le référentiel et les items
+# ci-dessous (data/enneagram_types.json, data/enneagram_items.json) sont une
+# formulation originale de ce cadre, pas la reprise d'un test existant (par
+# exemple le RHETI de Riso-Hudson, qui lui est protégé).
+
 NATURAL_FRAME = (
     "Répondez tel que vous êtes quand rien de particulier ne vous sollicite — "
     "en dehors du travail, dans votre état le plus naturel."
@@ -31,6 +38,11 @@ MOTIVATORS_FRAME = (
 )
 STRENGTHS_FRAME = (
     "Les mêmes qualités reviennent plusieurs fois, chaque fois face à une autre : "
+    "c'est volontaire, c'est ce qui permet de les classer les unes par rapport aux "
+    "autres — pas un bug."
+)
+ENNEAGRAM_FRAME = (
+    "Les mêmes tendances reviennent plusieurs fois, chaque fois face à une autre : "
     "c'est volontaire, c'est ce qui permet de les classer les unes par rapport aux "
     "autres — pas un bug."
 )
@@ -108,6 +120,21 @@ def _build_strengths(rng: random.Random, variant: str, context: dict) -> list[It
 
 def _score_strengths(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
     return strengths.score([i.source for i in items], _answers_by_source(items, answers), pools.strengths_themes())
+
+
+# --------------------------------------------------------------------- enneagram
+
+def _build_enneagram(rng: random.Random, variant: str, context: dict) -> list[Item]:
+    return pools.to_choice_items(pools.sample_enneagram(rng, 18), "enneagram", ENNEAGRAM_FRAME)
+
+
+def _score_enneagram(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
+    # Le score par taux de victoire est générique (voir scoring/strengths.py) :
+    # il ne connaît rien du référentiel qu'on lui passe, donc il se réutilise
+    # tel quel ici avec les 9 types en guise de "thèmes".
+    result = strengths.score([i.source for i in items], _answers_by_source(items, answers), pools.enneagram_types())
+    result.module_id = "enneagram"
+    return result
 
 
 def _rebuilder(kind: str, module_id: str, frame: str = "") -> Callable[[list[str], str], list[Item]]:
@@ -210,6 +237,24 @@ _register(Module(
     rebuild=_rebuilder("strengths", "strengths_core", STRENGTHS_FRAME),
     score=_score_strengths,
     minutes={"standard": 4},
+))
+
+_register(Module(
+    id="enneagram",
+    title="Vos moteurs profonds (Ennéagramme)",
+    icon="\U0001f300",
+    blurb=(
+        "Ce qui motive vos réactions en profondeur, au-delà du comportement observable : "
+        "9 types répartis en 3 centres (Corps, Cœur, Tête). Complémentaire au DISC, pas "
+        "un remplacement — le DISC décrit le comportement, l'ennéagramme la motivation "
+        "derrière."
+    ),
+    kind="addon",
+    item_type="forced_choice",
+    build=_build_enneagram,
+    rebuild=_rebuilder("enneagram", "enneagram", ENNEAGRAM_FRAME),
+    score=_score_enneagram,
+    minutes={"standard": 3},
 ))
 
 CORE_MODULES = tuple(m.id for m in REGISTRY.values() if m.kind == "core")
