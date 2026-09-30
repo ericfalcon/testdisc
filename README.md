@@ -3,7 +3,7 @@
 🔗 **Application en ligne : [testdisc-ericfalcon.streamlit.app](https://testdisc-ericfalcon.streamlit.app/)**
 — c'est ce lien qui est à envoyer aux stagiaires avant la formation.
 
-*Ce dépôt est la version personnelle et indépendante du test, avec ses quatre modules
+*Ce dépôt est la version personnelle et indépendante du test, avec ses cinq modules
 complémentaires. Il n'a aucun lien avec le dépôt du CAFOC (`disctest-cafoc.streamlit.app`),
 qui reste volontairement limité au seul module DISC de base et évolue séparément.*
 
@@ -43,7 +43,7 @@ Aucun compte, aucun serveur, aucune base de données.
   sont envoyés dans un Google Sheet que vous partagez avec les formateurs (voir
   ci-dessous). Tout le calcul du profil, lui, se fait dans la session Streamlit
   du stagiaire — seul le résultat final part vers le Sheet.
-- Quatre modules complémentaires, facultatifs et décochés par défaut (le module DISC
+- Cinq modules complémentaires, facultatifs et décochés par défaut (le module DISC
   seul suffit pour une formation) :
   - **DISC — votre style au travail** : les mêmes 40 affirmations, répondues cette
     fois pour le poste actuel. L'écart avec le profil naturel donne un indice de
@@ -62,6 +62,14 @@ Aucun compte, aucun serveur, aucune base de données.
     deux façons de travailler, sur 12 thèmes originaux répartis en 4 domaines
     (Construire, Mobiliser, Relier, Éclairer) — voir ci-dessous pourquoi ce
     référentiel est original plutôt que repris d'un test du commerce.
+  - **Vos moteurs profonds (Ennéagramme)** : 18 choix forcés (tirés d'une banque
+    de 27) entre deux façons de réagir, sur 9 types répartis en 3 centres
+    (Corps, Cœur, Tête). Le DISC décrit le comportement observable ;
+    l'ennéagramme cherche la motivation derrière — les deux se complètent sans
+    se recouvrir, et le rapport le rappelle explicitement, avec un avertissement
+    sur le fait que ce cadre n'a jamais été validé aussi solidement que le DISC.
+    Référentiel et formulations originaux, pas une reprise d'un test existant
+    comme le RHETI de Riso-Hudson (protégé).
   
   Quand plusieurs de ces modules sont pris ensemble, le rapport ajoute des
   sections qui croisent leurs résultats (par exemple : qui vous devenez sous
@@ -95,6 +103,23 @@ comme la même distinction existe pour le modèle DISC lui-même, entre le modè
 William Marston, qui est dans le domaine public, et des formulations commerciales
 précises comme le « DISC Classic »® que ce projet n'utilise pas.
 
+## Le module « Ennéagramme » : cadre public, formulations originales
+
+Contrairement à CliftonStrengths, l'ennéagramme (9 types répartis en 3 centres —
+Corps, Cœur, Tête) n'appartient à aucun éditeur : c'est un cadre partagé par de
+nombreuses écoles depuis des décennies, sans nomenclature déposée unique. Ce qui
+est protégé, en revanche, ce sont des instruments précis construits dessus —
+notamment le RHETI (Riso-Hudson Enneagram Type Indicator). Ce module ne reprend
+aucune question ni formulation d'un test existant : les 9 types, leurs
+descriptions et les 27 questions de choix forcé (`data/enneagram_types.json`,
+`data/enneagram_items.json`) sont une écriture originale de ce cadre public.
+
+À noter aussi, pour cadrer avec les stagiaires : l'ennéagramme n'a jamais fait
+l'objet d'une validation scientifique aussi solide que le DISC lui-même (qui
+n'est déjà pas un instrument clinique). Le rapport le rappelle explicitement à
+côté des résultats — ce module est une piste de réflexion complémentaire au
+DISC, pas un diagnostic.
+
 ## Récupérer les résultats des stagiaires (Google Sheet)
 
 Les résultats de chaque stagiaire peuvent s'ajouter automatiquement comme une
@@ -123,18 +148,18 @@ Sheet est simplement ignoré.
 **Ce qui part vers le Sheet.** Les huit premières colonnes (style, titre,
 intensité, confiance, scores D/I/S/C) partent dès que le module DISC est
 terminé — c'est le seul module obligatoire. Si un·e stagiaire fait aussi l'un
-des quatre modules complémentaires (facultatifs), six colonnes de plus
+des cinq modules complémentaires (facultatifs), sept colonnes de plus
 s'ajoutent avec un résumé de chacun (style au travail, indice de tension,
-mode sous pression, moteurs principaux, points forts principaux) ; elles
-restent vides sinon. Un·e stagiaire peut voir ses résultats DISC, puis
-revenir en ajouter un depuis la même page (« Pour aller plus loin ») :
-l'application renvoie alors une seconde ligne, plus complète que la première
-— pour une même personne, c'est donc la ligne la plus récente (colonne
-Horodatage) qui compte. Si vous aviez déjà ce Sheet en service avant ces six
-colonnes, aucune reprise n'est nécessaire : redéployez simplement le script
-mis à jour (voir ci-dessous) et il complète tout seul la ligne d'en-têtes
-existante à la prochaine réponse enregistrée, sans toucher aux lignes déjà
-là.
+mode sous pression, moteurs principaux, points forts principaux, type
+Ennéagramme principal) ; elles restent vides sinon. Un·e stagiaire peut voir
+ses résultats DISC, puis revenir en ajouter un depuis la même page (« Pour
+aller plus loin ») : l'application renvoie alors une seconde ligne, plus
+complète que la première — pour une même personne, c'est donc la ligne la
+plus récente (colonne Horodatage) qui compte. Si vous aviez déjà ce Sheet en
+service avant ces colonnes, aucune reprise n'est nécessaire : redéployez
+simplement le script mis à jour (voir ci-dessous) et il complète tout seul la
+ligne d'en-têtes existante à la prochaine réponse enregistrée, sans toucher
+aux lignes déjà là.
 
 **Si le secret est configuré mais que les stagiaires voient quand même
 l'avertissement « problème technique » :**
@@ -164,7 +189,7 @@ l'avertissement « problème technique » :**
 [`docs/portrait-session-formateur.html`](docs/portrait-session-formateur.html) est un outil
 autonome pour le formateur qui n'a accès qu'au Google Sheet des résultats (pas à l'application,
 ni aux PDF envoyés par les stagiaires). C'est un simple fichier HTML : pas d'installation, pas de
-serveur, pas de compte à créer. Quand le CSV contient les six colonnes des modules complémentaires
+serveur, pas de compte à créer. Quand le CSV contient les colonnes des modules complémentaires
 (voir ci-dessus), la fiche de chaque stagiaire les affiche aussi, dans une section « Modules
 complémentaires » — absente pour qui n'a fait que le DISC.
 
