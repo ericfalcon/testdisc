@@ -1,6 +1,7 @@
 {
   "Perfectionniste": {
     "name": "Perfectionniste",
+    "number": 1,
     "domain": "Corps",
     "badge_color": "#8A4B3E",
     "tagline": "Veut que les choses soient faites comme il faut.",
@@ -11,6 +12,7 @@
   },
   "Altruiste": {
     "name": "Altruiste",
+    "number": 2,
     "domain": "Cœur",
     "badge_color": "#B23A5E",
     "tagline": "Sait ce dont les autres ont besoin avant qu'ils ne le disent.",
@@ -21,6 +23,7 @@
   },
   "Battant": {
     "name": "Battant",
+    "number": 3,
     "domain": "Cœur",
     "badge_color": "#C9762B",
     "tagline": "Avance vers le résultat qui se verra.",
@@ -31,6 +34,7 @@
   },
   "Romantique": {
     "name": "Romantique",
+    "number": 4,
     "domain": "Cœur",
     "badge_color": "#8A5FB2",
     "tagline": "Cherche ce qui, dans une situation, est authentiquement à lui.",
@@ -41,6 +45,7 @@
   },
   "Observateur": {
     "name": "Observateur",
+    "number": 5,
     "domain": "Tête",
     "badge_color": "#4A5FA8",
     "tagline": "Comprend avant d'agir.",
@@ -51,6 +56,7 @@
   },
   "Loyaliste": {
     "name": "Loyaliste",
+    "number": 6,
     "domain": "Tête",
     "badge_color": "#2F5D8A",
     "tagline": "Anticipe ce qui pourrait mal tourner pour mieux s'y préparer.",
@@ -61,6 +67,7 @@
   },
   "Épicurien": {
     "name": "Épicurien",
+    "number": 7,
     "domain": "Tête",
     "badge_color": "#3E9A8A",
     "tagline": "Garde plusieurs options ouvertes plutôt que de se fermer une porte.",
@@ -71,6 +78,7 @@
   },
   "Protecteur": {
     "name": "Protecteur",
+    "number": 8,
     "domain": "Corps",
     "badge_color": "#C2453B",
     "tagline": "Prend le contrôle plutôt que de le laisser à quelqu'un d'autre.",
@@ -81,6 +89,7 @@
   },
   "Médiateur": {
     "name": "Médiateur",
+    "number": 9,
     "domain": "Corps",
     "badge_color": "#6B4C9A",
     "tagline": "Trouve la version de la situation où tout le monde peut rester en paix.",

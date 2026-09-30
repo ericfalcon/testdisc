@@ -74,7 +74,28 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
         report["motivator_evidence"] = motivator_result.detail["evidence"]
 
     if enneagram_result is not None:
-        report["enneagram"] = strengths_report.narrative(enneagram_result, pools.enneagram_types())
+        enneagram_types = pools.enneagram_types()
+        report["enneagram"] = strengths_report.narrative(
+            enneagram_result, enneagram_types,
+            noun="type", nouns="types",
+            bottom_note=(
+                "Ces types arrivent en dernier non pas parce qu'ils vous décrivent mal, mais parce "
+                "que vous ne les avez pas choisis quand une autre tendance était proposée en face. "
+                "Ce sont ceux qui correspondent le moins à vos réflexes spontanés."
+            ),
+        )
+        # The traditional 9-point circle needs every type's number and win rate,
+        # not just the top/bottom bands narrative() keeps — kept separate so the
+        # wheel and the ranked cards can each carry only what they need.
+        report["enneagram"]["wheel"] = [
+            {
+                "name": name,
+                "number": info["number"],
+                "colour": info["badge_color"],
+                "win_rate": enneagram_result.summary["win_rates"][name],
+            }
+            for name, info in enneagram_types.items()
+        ]
 
     sections = []
     if disc_result is not None and strengths_result is not None:

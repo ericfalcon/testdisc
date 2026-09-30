@@ -126,9 +126,11 @@ def sample_strengths(rng: random.Random, count: int = 35) -> list[dict]:
     return chosen
 
 
-def sample_enneagram(rng: random.Random, count: int = 18) -> list[dict]:
+def sample_enneagram(rng: random.Random, count: int = 24) -> list[dict]:
     """Same greedy stratified draw as sample_strengths, over the 9-type pool
-    (27 items, a circulant design with each type appearing in exactly 6 pairs)."""
+    (36 items — a full round robin, every type compared once against every
+    other — so no two types are structurally impossible to compare, unlike an
+    earlier version of this pool that used a partial circulant design)."""
     pool = list(enneagram_items())
     rng.shuffle(pool)
     exposure = {t: 0 for t in enneagram_types()}

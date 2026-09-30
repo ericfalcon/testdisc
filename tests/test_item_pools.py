@@ -115,10 +115,10 @@ def test_every_enneagram_type_has_a_cost_written():
 
 
 def test_enneagram_pool_is_balanced_across_types():
-    """A circulant design (each of the 9 types paired with 6 others), like
-    strengths_items — every type must be offered the same number of times, or
-    the win-rate ranking would silently favour whichever type got the most
-    exposure."""
+    """A full round robin (each of the 9 types paired once with all 8 others),
+    like strengths_items's circulant design — every type must be offered the
+    same number of times, or the win-rate ranking would silently favour
+    whichever type got the most exposure."""
     exposure = collections.Counter()
     for item in pools.enneagram_items():
         for option in ("option_a", "option_b"):

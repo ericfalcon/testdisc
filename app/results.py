@@ -276,6 +276,16 @@ def _enneagram_section(report: dict) -> None:
     )
     st.markdown(f'<div class="panel"><p>{enneagram["tie_note"]}</p></div>', unsafe_allow_html=True)
 
+    top_names = {t["name"] for t in enneagram["top"]}
+    st.markdown('<div class="chan">Votre positionnement sur le disque</div>', unsafe_allow_html=True)
+    st.markdown(ui.enneagram_wheel(enneagram["wheel"], top_names), unsafe_allow_html=True)
+    st.caption(
+        "Chaque point est un des 9 types, placé et relié comme dans le schéma traditionnel de "
+        "l'ennéagramme (le triangle 3-9-6 et l'hexagone 1-4-2-8-5-7). Sa taille et son intensité "
+        "suivent votre taux de choix pour ce type — pas seulement sa place dans le classement."
+    )
+    st.write("")
+
     st.markdown('<div class="chan">Équilibre entre centres</div>', unsafe_allow_html=True)
     st.write("")
     st.markdown(
@@ -340,9 +350,9 @@ def _enneagram_section(report: dict) -> None:
                 unsafe_allow_html=True,
             )
     st.caption(
-        "Ce type n'a pas la même base de preuves que le DISC : c'est un cadre théorique répandu, "
-        "mais qui n'a jamais été validé scientifiquement de façon aussi solide, même comparé au "
-        "DISC — traitez-le comme une piste de réflexion, pas comme un diagnostic."
+        "Ce résultat n'a pas la même base de preuves que le DISC : l'ennéagramme est un cadre "
+        "théorique répandu, mais qui n'a jamais été validé scientifiquement d'aussi près, même "
+        "comparé au DISC — traitez-le comme une piste de réflexion, pas comme un diagnostic."
     )
 
 

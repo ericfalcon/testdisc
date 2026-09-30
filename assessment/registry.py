@@ -125,7 +125,7 @@ def _score_strengths(items: list[Item], answers: dict[str, Any], context: dict) 
 # --------------------------------------------------------------------- enneagram
 
 def _build_enneagram(rng: random.Random, variant: str, context: dict) -> list[Item]:
-    return pools.to_choice_items(pools.sample_enneagram(rng, 18), "enneagram", ENNEAGRAM_FRAME)
+    return pools.to_choice_items(pools.sample_enneagram(rng, 24), "enneagram", ENNEAGRAM_FRAME)
 
 
 def _score_enneagram(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
@@ -254,7 +254,7 @@ _register(Module(
     build=_build_enneagram,
     rebuild=_rebuilder("enneagram", "enneagram", ENNEAGRAM_FRAME),
     score=_score_enneagram,
-    minutes={"standard": 3},
+    minutes={"standard": 4},
 ))
 
 CORE_MODULES = tuple(m.id for m in REGISTRY.values() if m.kind == "core")

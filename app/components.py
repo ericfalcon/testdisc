@@ -10,6 +10,7 @@ as a bare figure.
 from __future__ import annotations
 
 import html
+import math
 
 import streamlit as st
 
@@ -253,6 +254,68 @@ def caveat(title: str, body: str, bullets: list[str] | None = None) -> None:
         f'{f"<ul>{items}</ul>" if items else ""}</div>',
         unsafe_allow_html=True,
     )
+
+
+# The traditional Enneagram figure: 9 points evenly spaced on a circle,
+# numbered 1-9 clockwise starting from the top, joined by the "hexad"
+# (1-4-2-8-5-7-1) and the "triangle" (3-9-6-3). This layout and those two
+# connecting figures are the public-domain symbol itself, not tied to any one
+# instrument or author — reproducing it here is like drawing a standard
+# compass rose, not copying a proprietary diagram.
+_HEXAD = (1, 4, 2, 8, 5, 7, 1)
+_TRIANGLE = (3, 9, 6, 3)
+
+
+def _wheel_point(number: int, cx: float, cy: float, r: float) -> tuple[float, float]:
+    angle = math.radians(90 - (number - 9) % 9 * 40)
+    return cx + r * math.cos(angle), cy - r * math.sin(angle)
+
+
+def enneagram_wheel(entries: list[dict], top_names: set[str]) -> str:
+    """An SVG rendering of the classic Enneagram circle, with each of the 9
+    points sized and shaded by how often that type won when it was offered —
+    a positioning, not just a ranked list. ``entries`` is a list of dicts with
+    name / number / domain / colour / win_rate for all 9 types."""
+    cx, cy, r_outer = 170.0, 170.0, 128.0
+    by_number = {e["number"]: e for e in entries}
+
+    lines = []
+    for seq in (_HEXAD, _TRIANGLE):
+        pts = [_wheel_point(n, cx, cy, r_outer) for n in seq]
+        d = " ".join(f"{'M' if i == 0 else 'L'}{x:.1f},{y:.1f}" for i, (x, y) in enumerate(pts))
+        lines.append(f'<path d="{d}" fill="none" stroke="{RULE}" stroke-width="1.1" opacity="0.55"/>')
+
+    markers = []
+    for number in range(1, 10):
+        e = by_number[number]
+        x, y = _wheel_point(number, cx, cy, r_outer)
+        rate = e["win_rate"]
+        radius = 8 + rate * 12
+        is_top = e["name"] in top_names
+        ring = f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius + 4:.1f}" fill="none" stroke="{e["colour"]}" stroke-width="2"/>' if is_top else ""
+        markers.append(
+            f'{ring}'
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius:.1f}" fill="{e["colour"]}" '
+            f'fill-opacity="{0.22 + rate * 0.68:.2f}" stroke="{e["colour"]}" stroke-width="1.2"/>'
+            f'<text x="{x:.1f}" y="{y + 3.5:.1f}" text-anchor="middle" '
+            f'font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" '
+            f'fill="{"#FFFFFF" if rate > 0.35 else INK}">{number}</text>'
+        )
+        if is_top:
+            label_x = cx + (x - cx) * 1.34
+            label_y = cy + (y - cy) * 1.34
+            anchor = "middle" if abs(x - cx) < 8 else ("start" if x > cx else "end")
+            markers.append(
+                f'<text x="{label_x:.1f}" y="{label_y:.1f}" text-anchor="{anchor}" '
+                f'font-family="Archivo, sans-serif" font-size="12.5" font-weight="600" '
+                f'fill="{e["colour"]}">{html.escape(e["name"])}</text>'
+            )
+
+    return f"""<svg viewBox="0 0 340 340" width="100%" style="max-width:400px;display:block;margin:0 auto;">
+      <circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="none" stroke="{RULE}" stroke-width="1.2"/>
+      {''.join(lines)}
+      {''.join(markers)}
+    </svg>"""
 
 
 def meter(fraction: float) -> None:

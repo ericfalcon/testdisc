@@ -62,14 +62,18 @@ Aucun compte, aucun serveur, aucune base de données.
     deux façons de travailler, sur 12 thèmes originaux répartis en 4 domaines
     (Construire, Mobiliser, Relier, Éclairer) — voir ci-dessous pourquoi ce
     référentiel est original plutôt que repris d'un test du commerce.
-  - **Vos moteurs profonds (Ennéagramme)** : 18 choix forcés (tirés d'une banque
-    de 27) entre deux façons de réagir, sur 9 types répartis en 3 centres
-    (Corps, Cœur, Tête). Le DISC décrit le comportement observable ;
-    l'ennéagramme cherche la motivation derrière — les deux se complètent sans
-    se recouvrir, et le rapport le rappelle explicitement, avec un avertissement
-    sur le fait que ce cadre n'a jamais été validé aussi solidement que le DISC.
-    Référentiel et formulations originaux, pas une reprise d'un test existant
-    comme le RHETI de Riso-Hudson (protégé).
+  - **Vos moteurs profonds (Ennéagramme)** : 24 choix forcés (tirés d'une banque
+    de 36 — chaque type est comparé une fois à chacun des 8 autres, pas
+    seulement à une partie d'entre eux) entre deux façons de réagir, sur 9
+    types répartis en 3 centres (Corps, Cœur, Tête). Le DISC décrit le
+    comportement observable ; l'ennéagramme cherche la motivation derrière —
+    les deux se complètent sans se recouvrir, et le rapport le rappelle
+    explicitement, avec un avertissement sur le fait que ce cadre n'a jamais
+    été validé aussi solidement que le DISC. Les résultats sont aussi
+    positionnés sur le schéma circulaire traditionnel (les 9 points, le
+    triangle 3-9-6 et l'hexagone 1-4-2-8-5-7), pas seulement listés par ordre
+    de classement. Référentiel et formulations originaux, pas une reprise
+    d'un test existant comme le RHETI de Riso-Hudson (protégé).
   
   Quand plusieurs de ces modules sont pris ensemble, le rapport ajoute des
   sections qui croisent leurs résultats (par exemple : qui vous devenez sous
@@ -111,8 +115,11 @@ nombreuses écoles depuis des décennies, sans nomenclature déposée unique. Ce
 est protégé, en revanche, ce sont des instruments précis construits dessus —
 notamment le RHETI (Riso-Hudson Enneagram Type Indicator). Ce module ne reprend
 aucune question ni formulation d'un test existant : les 9 types, leurs
-descriptions et les 27 questions de choix forcé (`data/enneagram_types.json`,
+descriptions et les 36 questions de choix forcé (`data/enneagram_types.json`,
 `data/enneagram_items.json`) sont une écriture originale de ce cadre public.
+Le schéma circulaire (9 points, triangle et hexagone) utilisé pour positionner
+les résultats est le symbole public de l'ennéagramme lui-même, pas un visuel
+propre à un test commercial.
 
 À noter aussi, pour cadrer avec les stagiaires : l'ennéagramme n'a jamais fait
 l'objet d'une validation scientifique aussi solide que le DISC lui-même (qui

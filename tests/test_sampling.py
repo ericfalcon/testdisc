@@ -47,18 +47,19 @@ def test_disc_sample_is_balanced_and_mixes_keying():
 
 
 def test_enneagram_sampling_equalises_type_exposure():
-    """The full 27-item pool gives every type exactly 6 appearances; a smaller
-    drawn set (18) must still keep exposure tight across the 9 types."""
-    counts = _exposure(pools.sample_enneagram(random.Random(1), 18))
+    """The full 36-item pool (a complete round robin) gives every type exactly
+    8 appearances; a smaller drawn set (24) must still keep exposure tight
+    across the 9 types."""
+    counts = _exposure(pools.sample_enneagram(random.Random(1), 24))
     assert len(counts) == len(pools.enneagram_types())
     assert max(counts.values()) - min(counts.values()) <= 2
 
 
 def test_enneagram_sampling_is_deterministic_for_a_seed():
-    first = [i["id"] for i in pools.sample_enneagram(random.Random(9), 18)]
-    second = [i["id"] for i in pools.sample_enneagram(random.Random(9), 18)]
+    first = [i["id"] for i in pools.sample_enneagram(random.Random(9), 24)]
+    second = [i["id"] for i in pools.sample_enneagram(random.Random(9), 24)]
     assert first == second
-    assert first != [i["id"] for i in pools.sample_enneagram(random.Random(10), 18)]
+    assert first != [i["id"] for i in pools.sample_enneagram(random.Random(10), 24)]
 
 
 def test_rebuild_from_ids_restores_order():

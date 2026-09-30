@@ -376,5 +376,131 @@
         "Battant"
       ]
     }
+  },
+  {
+    "id": "e028",
+    "question": "Entre ces deux styles, lequel est le plus proche du vôtre ?",
+    "option_a": "J'ai une idée claire de ce qui est « bien fait », et je le remarque tout de suite quand ce n'est pas le cas.",
+    "option_b": "Je préfère analyser une situation seul avant d'en discuter avec d'autres.",
+    "alignment": {
+      "option_a": [
+        "Perfectionniste"
+      ],
+      "option_b": [
+        "Observateur"
+      ]
+    }
+  },
+  {
+    "id": "e029",
+    "question": "Laquelle de ces deux affirmations tient le plus souvent pour vous ?",
+    "option_a": "Je me souviens précisément de ce qui ferait plaisir à quelqu'un, même dit une seule fois, des mois plus tôt.",
+    "option_b": "Je me demande souvent ce que quelqu'un veut vraiment derrière ce qu'il dit.",
+    "alignment": {
+      "option_a": [
+        "Altruiste"
+      ],
+      "option_b": [
+        "Loyaliste"
+      ]
+    }
+  },
+  {
+    "id": "e030",
+    "question": "Si on devait choisir pour vous, laquelle serait la plus juste ?",
+    "option_a": "Je sais rendre un résultat plus impressionnant qu'il ne l'est vraiment, quand il le faut.",
+    "option_b": "Je remplis mon emploi du temps de choses qui m'enthousiasment, quitte à en faire trop.",
+    "alignment": {
+      "option_a": [
+        "Battant"
+      ],
+      "option_b": [
+        "Épicurien"
+      ]
+    }
+  },
+  {
+    "id": "e031",
+    "question": "Entre ces deux tempéraments, lequel est le plus vous ?",
+    "option_a": "Je me sens différent des autres, même dans un groupe où tout le monde semble se ressembler.",
+    "option_b": "Je préfère qu'on me dise les choses directement, même durement, plutôt qu'on me ménage.",
+    "alignment": {
+      "option_a": [
+        "Romantique"
+      ],
+      "option_b": [
+        "Protecteur"
+      ]
+    }
+  },
+  {
+    "id": "e032",
+    "question": "Laquelle des deux vous semble la plus naturelle à endosser ?",
+    "option_a": "Je remarque tout de suite qu'on me demande plus d'implication émotionnelle que je n'ai envie d'en donner.",
+    "option_b": "Je remets une décision personnelle à plus tard quand elle risque de créer une tension.",
+    "alignment": {
+      "option_a": [
+        "Observateur"
+      ],
+      "option_b": [
+        "Médiateur"
+      ]
+    }
+  },
+  {
+    "id": "e033",
+    "question": "Entre ces deux dispositions, laquelle domine chez vous le plus souvent ?",
+    "option_a": "Je me sens rassuré par une règle claire, même quand elle me contraint.",
+    "option_b": "Je me sens responsable de corriger ce qui ne va pas, même quand ce n'est pas à moi de le faire.",
+    "alignment": {
+      "option_a": [
+        "Loyaliste"
+      ],
+      "option_b": [
+        "Perfectionniste"
+      ]
+    }
+  },
+  {
+    "id": "e034",
+    "question": "Laquelle de ces deux phrases un proche dirait le plus facilement de vous ?",
+    "option_a": "Une contrainte stricte me donne tout de suite envie de trouver une porte de sortie.",
+    "option_b": "J'ai du mal à dire non à une demande d'aide, même quand je suis déjà débordé.",
+    "alignment": {
+      "option_a": [
+        "Épicurien"
+      ],
+      "option_b": [
+        "Altruiste"
+      ]
+    }
+  },
+  {
+    "id": "e035",
+    "question": "Entre ces deux manières d'être, laquelle est la plus fréquente chez vous ?",
+    "option_a": "Je prends naturellement la place laissée vacante dans un groupe sans leader clair.",
+    "option_b": "Je me fixe des objectifs ambitieux et j'y consacre l'énergie qu'il faut pour les atteindre.",
+    "alignment": {
+      "option_a": [
+        "Protecteur"
+      ],
+      "option_b": [
+        "Battant"
+      ]
+    }
+  },
+  {
+    "id": "e036",
+    "question": "Si vous deviez n'en assumer qu'une, laquelle choisiriez-vous ?",
+    "option_a": "Je me fonds facilement dans les habitudes et les priorités de ceux qui m'entourent.",
+    "option_b": "Une émotion forte me marque plus longtemps que ce que je vois chez les gens autour de moi.",
+    "alignment": {
+      "option_a": [
+        "Médiateur"
+      ],
+      "option_b": [
+        "Romantique"
+      ]
+    }
   }
 ]

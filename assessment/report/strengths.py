@@ -3,16 +3,25 @@
 from __future__ import annotations
 
 
-def narrative(result, themes: dict) -> dict:
+def narrative(
+    result, themes: dict,
+    noun: str = "thème", nouns: str = "thèmes",
+    bottom_note: str | None = None,
+) -> dict:
+    """``noun``/``nouns`` and ``bottom_note`` let a different taxonomy (e.g. the
+    Ennéagramme's 9 types) reuse this same scoring narrative without inheriting
+    strengths-specific wording ("thème", "une équipe ressentira votre
+    absence") that wouldn't make sense outside the Forces module."""
     s = result.summary
     top, tied = s["top"], s["tied_with_fifth"]
 
     if tied:
         names = ", ".join(tied[:4]) + ("…" if len(tied) > 4 else "")
+        plural = len(tied) != 1
         tie_note = (
-            f"<b>{len(tied)} autre{'s' if len(tied) != 1 else ''} thème{'s' if len(tied) != 1 else ''} "
+            f"<b>{len(tied)} autre{'s' if plural else ''} {nouns if plural else noun} "
             f"à égalité avec le dernier de votre tête de classement</b> ({names}). À ce niveau, la "
-            f"frontière de votre tête de classement est arbitraire : les thèmes ci-dessus forment un "
+            f"frontière de votre tête de classement est arbitraire : les {nouns} ci-dessus forment un "
             f"groupe, pas un classement strict."
         )
     else:
@@ -58,7 +67,7 @@ def narrative(result, themes: dict) -> dict:
             for n in s["supporting"]
         ],
         "bottom": bottom,
-        "bottom_note": (
+        "bottom_note": bottom_note or (
             "Ces thèmes arrivent en dernier non pas parce que vous y êtes mauvais, mais parce que "
             "vous ne les avez pas choisis quand autre chose était proposé. Ce sont ceux que vous "
             "mettez systématiquement de côté — exactement là où une équipe ressentira votre absence."
