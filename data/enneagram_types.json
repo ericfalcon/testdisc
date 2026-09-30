@@ -1,0 +1,92 @@
+{
+  "Perfectionniste": {
+    "name": "Perfectionniste",
+    "domain": "Corps",
+    "badge_color": "#8A4B3E",
+    "tagline": "Veut que les choses soient faites comme il faut.",
+    "description": "Vous voyez immédiatement l'écart entre ce qui est fait et ce qui devrait l'être, et vous vous sentez responsable de corriger cet écart, même quand personne ne vous l'a demandé. Un travail bâclé vous coûte plus qu'à la plupart des gens.",
+    "action_tip": "Sur une tâche en cours, choisissez un point que vous auriez normalement corrigé, et laissez-le tel quel jusqu'à la fin — notez ce que ça vous fait.",
+    "shadow": "Les autres comptent sur votre exigence pour tenir le niveau, mais peuvent aussi se sentir jugés par votre silence quand quelque chose ne vous convient pas.",
+    "overuse": "Vous retravaillez un détail que personne d'autre n'aurait remarqué, au prix d'un temps que la tâche suivante n'aura plus."
+  },
+  "Altruiste": {
+    "name": "Altruiste",
+    "domain": "Cœur",
+    "badge_color": "#B23A5E",
+    "tagline": "Sait ce dont les autres ont besoin avant qu'ils ne le disent.",
+    "description": "Vous repérez ce qui manque à quelqu'un — de l'attention, de l'aide, un mot au bon moment — et vous vous ajustez pour le lui donner, souvent avant même qu'on vous le demande.",
+    "action_tip": "Cette semaine, demandez explicitement à quelqu'un ce dont il a besoin, au lieu de le deviner à sa place.",
+    "shadow": "Les autres apprécient d'être soutenus par vous, mais peuvent aussi ne jamais penser à vous demander comment vous allez, puisque vous ne le demandez jamais pour vous-même.",
+    "overuse": "Vous vous rendez indispensable à quelqu'un qui n'a rien demandé, et vous finissez par attendre en retour une reconnaissance que personne ne savait devoir vous donner."
+  },
+  "Battant": {
+    "name": "Battant",
+    "domain": "Cœur",
+    "badge_color": "#C9762B",
+    "tagline": "Avance vers le résultat qui se verra.",
+    "description": "Vous ajustez naturellement ce que vous faites en fonction de ce qui sera reconnu comme une réussite, et vous savez accélérer quand un objectif est vraiment en jeu.",
+    "action_tip": "Sur un projet en cours, notez ce que vous feriez si personne ne devait jamais savoir que vous l'avez fait — et voyez si ça change quelque chose.",
+    "shadow": "Les autres vous voient efficace et entraînant, mais peuvent aussi se demander ce que vous pensez vraiment derrière l'image que vous présentez.",
+    "overuse": "Vous soignez la présentation d'un résultat plus que le résultat lui-même, et ça finit par se voir."
+  },
+  "Romantique": {
+    "name": "Romantique",
+    "domain": "Cœur",
+    "badge_color": "#8A5FB2",
+    "tagline": "Cherche ce qui, dans une situation, est authentiquement à lui.",
+    "description": "Vous remarquez ce qui manque ou sonne faux dans une situation, et vous cherchez une version plus vraie, plus personnelle, de ce que vous êtes en train de vivre ou de produire.",
+    "action_tip": "Sur une tâche ordinaire cette semaine, faites-la sans chercher à la rendre différente de comment n'importe qui d'autre la ferait.",
+    "shadow": "Les autres apprécient votre sensibilité et votre exigence sur ce qui compte vraiment, mais peuvent aussi se lasser de devoir constamment ajuster leur approche à votre humeur du moment.",
+    "overuse": "Vous comparez ce que vous vivez à ce qui vous manque, et ce qui allait bien finit par vous sembler insuffisant."
+  },
+  "Observateur": {
+    "name": "Observateur",
+    "domain": "Tête",
+    "badge_color": "#4A5FA8",
+    "tagline": "Comprend avant d'agir.",
+    "description": "Vous préférez vous retirer pour observer et comprendre une situation en profondeur avant de vous engager, et vous économisez votre énergie pour ce qui compte vraiment pour vous.",
+    "action_tip": "La prochaine fois qu'on vous demande votre avis, donnez-le avant d'avoir fini de tout vérifier.",
+    "shadow": "Les autres apprécient la profondeur de ce que vous apportez, mais peuvent aussi se sentir tenus à distance, sans savoir ce que vous pensez réellement d'eux.",
+    "overuse": "Vous continuez à vous documenter sur un sujet que vous maîtrisez déjà assez pour agir, et le moment d'agir passe."
+  },
+  "Loyaliste": {
+    "name": "Loyaliste",
+    "domain": "Tête",
+    "badge_color": "#2F5D8A",
+    "tagline": "Anticipe ce qui pourrait mal tourner pour mieux s'y préparer.",
+    "description": "Vous repérez les risques et les incohérences avant les autres, et vous tenez vos engagements envers les personnes et les structures en qui vous avez choisi de faire confiance.",
+    "action_tip": "Sur une décision en cours, avancez avec l'option qui a votre confiance à 70 %, sans attendre d'être sûr à 100 %.",
+    "shadow": "Les autres comptent sur votre vigilance pour repérer ce qui pourrait poser problème, mais peuvent aussi se sentir constamment testés avant que vous ne leur accordiez pleinement votre confiance.",
+    "overuse": "Vous imaginez tout ce qui pourrait mal tourner sur une décision déjà suffisamment sûre, et le doute retarde une action qui aurait dû être prise."
+  },
+  "Épicurien": {
+    "name": "Épicurien",
+    "domain": "Tête",
+    "badge_color": "#3E9A8A",
+    "tagline": "Garde plusieurs options ouvertes plutôt que de se fermer une porte.",
+    "description": "Vous voyez rapidement le potentiel et les possibilités dans une situation, et vous gardez naturellement de l'énergie et de l'enthousiasme même quand les choses se compliquent.",
+    "action_tip": "Terminez cette semaine une chose que vous avez commencée avec enthousiasme avant de passer à la suivante qui vous tente déjà.",
+    "shadow": "Les autres apprécient votre énergie et votre capacité à dédramatiser, mais peuvent aussi douter que vous restiez engagé quand une situation devient difficile ou ennuyeuse.",
+    "overuse": "Vous passez à une nouvelle option dès qu'une difficulté apparaît sur la précédente, et rien de ce que vous commencez n'a le temps d'aboutir."
+  },
+  "Protecteur": {
+    "name": "Protecteur",
+    "domain": "Corps",
+    "badge_color": "#C2453B",
+    "tagline": "Prend le contrôle plutôt que de le laisser à quelqu'un d'autre.",
+    "description": "Vous sentez rapidement où est le pouvoir réel dans une situation, et vous n'hésitez pas à l'exercer directement plutôt que d'attendre qu'on vous l'accorde.",
+    "action_tip": "Dans votre prochain désaccord, laissez quelqu'un d'autre trancher en premier, et observez ce que ça vous coûte de ne pas le faire vous-même.",
+    "shadow": "Les autres vous voient comme quelqu'un qui protège son équipe et prend les décisions difficiles, mais peuvent aussi hésiter à vous montrer une hésitation ou une faiblesse.",
+    "overuse": "Vous imposez votre position sur un sujet où l'avis de quelqu'un d'autre aurait suffi, et ça coûte la relation plus que ça ne fait avancer le sujet."
+  },
+  "Médiateur": {
+    "name": "Médiateur",
+    "domain": "Corps",
+    "badge_color": "#6B4C9A",
+    "tagline": "Trouve la version de la situation où tout le monde peut rester en paix.",
+    "description": "Vous voyez naturellement le point de vue de chacun dans un désaccord, et vous préférez maintenir l'harmonie plutôt que d'imposer votre propre priorité.",
+    "action_tip": "Dans votre prochaine réunion, exprimez votre préférence en premier, avant d'avoir entendu celle des autres.",
+    "shadow": "Les autres apprécient votre calme et votre capacité à faire tenir un groupe ensemble, mais peuvent aussi ne jamais savoir ce que vous voulez vraiment, vous y compris.",
+    "overuse": "Vous évitez de trancher un désaccord qui aurait dû l'être, et le vrai problème continue de s'accumuler sous la surface."
+  }
+}

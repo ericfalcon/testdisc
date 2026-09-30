@@ -1,0 +1,380 @@
+[
+  {
+    "id": "e001",
+    "question": "Laquelle de ces deux phrases vous ressemble le plus ?",
+    "option_a": "Je relis une dernière fois avant d'envoyer, même quand tout le monde attend déjà.",
+    "option_b": "Je remarque que quelqu'un est fatigué avant qu'il ne le dise lui-même.",
+    "alignment": {
+      "option_a": [
+        "Perfectionniste"
+      ],
+      "option_b": [
+        "Altruiste"
+      ]
+    }
+  },
+  {
+    "id": "e002",
+    "question": "Entre ces deux réflexes, lequel est le plus vous ?",
+    "option_a": "Je propose mon aide à quelqu'un qui n'a rien demandé, parce que je vois qu'il en a besoin.",
+    "option_b": "Je vise un résultat qui se verra clairement, pas seulement un travail bien fait en coulisses.",
+    "alignment": {
+      "option_a": [
+        "Altruiste"
+      ],
+      "option_b": [
+        "Battant"
+      ]
+    }
+  },
+  {
+    "id": "e003",
+    "question": "Si on devait n'en garder qu'une, laquelle vous décrit le mieux ?",
+    "option_a": "J'accélère naturellement dès qu'un objectif concret est posé devant moi.",
+    "option_b": "Je cherche une version plus personnelle d'une tâche que tout le monde ferait de la même façon.",
+    "alignment": {
+      "option_a": [
+        "Battant"
+      ],
+      "option_b": [
+        "Romantique"
+      ]
+    }
+  },
+  {
+    "id": "e004",
+    "question": "Laquelle de ces deux phrases sonne le plus vrai pour vous ?",
+    "option_a": "Je remarque tout de suite quand quelque chose sonne faux dans une situation.",
+    "option_b": "Je préfère observer une situation en silence avant d'y participer.",
+    "alignment": {
+      "option_a": [
+        "Romantique"
+      ],
+      "option_b": [
+        "Observateur"
+      ]
+    }
+  },
+  {
+    "id": "e005",
+    "question": "Entre ces deux tendances, laquelle vous correspond le plus souvent ?",
+    "option_a": "J'ai besoin de comprendre un sujet en profondeur avant de me sentir prêt à en parler.",
+    "option_b": "Je pense d'abord à ce qui pourrait mal tourner avant de m'engager sur une décision.",
+    "alignment": {
+      "option_a": [
+        "Observateur"
+      ],
+      "option_b": [
+        "Loyaliste"
+      ]
+    }
+  },
+  {
+    "id": "e006",
+    "question": "Laquelle des deux vous ressemble le plus au quotidien ?",
+    "option_a": "Je vérifie deux fois une information avant de m'y fier complètement.",
+    "option_b": "Je vois vite plusieurs façons différentes d'aborder une même situation.",
+    "alignment": {
+      "option_a": [
+        "Loyaliste"
+      ],
+      "option_b": [
+        "Épicurien"
+      ]
+    }
+  },
+  {
+    "id": "e007",
+    "question": "Si vous deviez choisir, laquelle vous représente le mieux ?",
+    "option_a": "Je garde une option ouverte plutôt que de m'engager complètement sur une seule.",
+    "option_b": "Je prends la décision directement plutôt que d'attendre que quelqu'un d'autre s'en charge.",
+    "alignment": {
+      "option_a": [
+        "Épicurien"
+      ],
+      "option_b": [
+        "Protecteur"
+      ]
+    }
+  },
+  {
+    "id": "e008",
+    "question": "Entre ces deux façons de faire, laquelle est la plus vous ?",
+    "option_a": "Je dis franchement ce qui ne va pas, sans chercher à adoucir le propos.",
+    "option_b": "Je vois facilement le point de vue de chacun dans un désaccord.",
+    "alignment": {
+      "option_a": [
+        "Protecteur"
+      ],
+      "option_b": [
+        "Médiateur"
+      ]
+    }
+  },
+  {
+    "id": "e009",
+    "question": "Laquelle de ces deux phrases vous reconnaissez-vous le plus ?",
+    "option_a": "Je préfère garder le calme dans un groupe plutôt qu'imposer ma propre priorité.",
+    "option_b": "Une erreur que j'aurais pu éviter me pèse plus longtemps qu'elle ne le mérite.",
+    "alignment": {
+      "option_a": [
+        "Médiateur"
+      ],
+      "option_b": [
+        "Perfectionniste"
+      ]
+    }
+  },
+  {
+    "id": "e010",
+    "question": "Entre ces deux réactions, laquelle est la plus naturelle chez vous ?",
+    "option_a": "Je corrige un détail que personne d'autre n'a remarqué, avant de passer à la suite.",
+    "option_b": "Je sais présenter ce que j'ai fait pour que ça se remarque.",
+    "alignment": {
+      "option_a": [
+        "Perfectionniste"
+      ],
+      "option_b": [
+        "Battant"
+      ]
+    }
+  },
+  {
+    "id": "e011",
+    "question": "Laquelle des deux colle le mieux à votre façon d'être ?",
+    "option_a": "Je me souviens de petites choses qui comptent pour les gens que je côtoie.",
+    "option_b": "J'ai besoin que ce que je fais me ressemble, pas seulement que ce soit efficace.",
+    "alignment": {
+      "option_a": [
+        "Altruiste"
+      ],
+      "option_b": [
+        "Romantique"
+      ]
+    }
+  },
+  {
+    "id": "e012",
+    "question": "Si une seule devait rester, laquelle garderiez-vous ?",
+    "option_a": "Je compare facilement ce que je produis à ce que produisent les autres.",
+    "option_b": "Je garde mon énergie pour ce qui compte vraiment pour moi, et je me retire du reste.",
+    "alignment": {
+      "option_a": [
+        "Battant"
+      ],
+      "option_b": [
+        "Observateur"
+      ]
+    }
+  },
+  {
+    "id": "e013",
+    "question": "Entre ces deux tendances, laquelle domine chez vous ?",
+    "option_a": "Je me sens plus vivant dans les moments intenses que dans le quotidien ordinaire.",
+    "option_b": "Je tiens un engagement pris envers quelqu'un, même quand les circonstances ont changé.",
+    "alignment": {
+      "option_a": [
+        "Romantique"
+      ],
+      "option_b": [
+        "Loyaliste"
+      ]
+    }
+  },
+  {
+    "id": "e014",
+    "question": "Laquelle de ces deux phrases vous décrit le mieux la plupart du temps ?",
+    "option_a": "Je préfère vérifier par moi-même plutôt que de me fier à ce qu'on me raconte.",
+    "option_b": "Je retrouve de l'énergie facilement, même après une journée difficile.",
+    "alignment": {
+      "option_a": [
+        "Observateur"
+      ],
+      "option_b": [
+        "Épicurien"
+      ]
+    }
+  },
+  {
+    "id": "e015",
+    "question": "Entre ces deux habitudes, laquelle est la plus proche de la vôtre ?",
+    "option_a": "Je me sens plus à l'aise une fois que je sais exactement à quoi m'attendre.",
+    "option_b": "Je sens rapidement qui a réellement le dernier mot dans une situation.",
+    "alignment": {
+      "option_a": [
+        "Loyaliste"
+      ],
+      "option_b": [
+        "Protecteur"
+      ]
+    }
+  },
+  {
+    "id": "e016",
+    "question": "Laquelle des deux vous semble la plus évidente pour vous ?",
+    "option_a": "Je préfère avancer sur ce qui m'enthousiasme plutôt que suivre un plan déjà fixé.",
+    "option_b": "Je mets du temps à me décider quand plusieurs options me semblent également acceptables.",
+    "alignment": {
+      "option_a": [
+        "Épicurien"
+      ],
+      "option_b": [
+        "Médiateur"
+      ]
+    }
+  },
+  {
+    "id": "e017",
+    "question": "Si vous deviez trancher, laquelle vous ressemble le plus ?",
+    "option_a": "Je protège les personnes de mon équipe même si ça me met en conflit avec quelqu'un d'autre.",
+    "option_b": "J'ai du mal à me dire qu'un travail est terminé tant qu'il reste perfectible.",
+    "alignment": {
+      "option_a": [
+        "Protecteur"
+      ],
+      "option_b": [
+        "Perfectionniste"
+      ]
+    }
+  },
+  {
+    "id": "e018",
+    "question": "Entre ces deux profils, lequel se rapproche le plus de vous ?",
+    "option_a": "Je remarque en premier ce qui pourrait apaiser une tension entre deux personnes.",
+    "option_b": "Je fais de la place à quelqu'un d'autre dans une conversation, même si j'avais quelque chose à dire.",
+    "alignment": {
+      "option_a": [
+        "Médiateur"
+      ],
+      "option_b": [
+        "Altruiste"
+      ]
+    }
+  },
+  {
+    "id": "e019",
+    "question": "Laquelle de ces deux phrases vous parle le plus ?",
+    "option_a": "Je dis clairement quand quelque chose n'est pas fait comme il faut, même si ce n'est pas le bon moment.",
+    "option_b": "Je remarque ce qui manque dans une situation plus facilement que ce qui va bien.",
+    "alignment": {
+      "option_a": [
+        "Perfectionniste"
+      ],
+      "option_b": [
+        "Romantique"
+      ]
+    }
+  },
+  {
+    "id": "e020",
+    "question": "Entre ces deux comportements, lequel est le plus courant chez vous ?",
+    "option_a": "Je m'adapte facilement à ce dont une personne a besoin, plus qu'à ce qu'elle demande.",
+    "option_b": "Je remarque un détail logique qui ne colle pas, avant que quelqu'un d'autre ne le voie.",
+    "alignment": {
+      "option_a": [
+        "Altruiste"
+      ],
+      "option_b": [
+        "Observateur"
+      ]
+    }
+  },
+  {
+    "id": "e021",
+    "question": "Laquelle des deux reflète le mieux votre façon d'agir ?",
+    "option_a": "Je change d'approche en cours de route si je vois que ça ne mène pas à un résultat visible.",
+    "option_b": "Je remarque une incohérence dans ce qu'on me dit avant même de savoir pourquoi elle me dérange.",
+    "alignment": {
+      "option_a": [
+        "Battant"
+      ],
+      "option_b": [
+        "Loyaliste"
+      ]
+    }
+  },
+  {
+    "id": "e022",
+    "question": "Si on vous observait, laquelle des deux verrait-on le plus souvent ?",
+    "option_a": "Je préfère une réponse sincère, même inconfortable, à une réponse toute faite.",
+    "option_b": "Je dédramatise naturellement une situation qui inquiète les autres autour de moi.",
+    "alignment": {
+      "option_a": [
+        "Romantique"
+      ],
+      "option_b": [
+        "Épicurien"
+      ]
+    }
+  },
+  {
+    "id": "e023",
+    "question": "Entre ces deux options, laquelle vous correspond le mieux ?",
+    "option_a": "Je préfère un échange court et précis à une longue conversation informelle.",
+    "option_b": "Je préfère affronter un désaccord directement plutôt que de le laisser traîner.",
+    "alignment": {
+      "option_a": [
+        "Observateur"
+      ],
+      "option_b": [
+        "Protecteur"
+      ]
+    }
+  },
+  {
+    "id": "e024",
+    "question": "Laquelle de ces deux phrases sonne le plus comme vous ?",
+    "option_a": "Je préfère avoir un plan de secours, même pour une situation qui semble déjà sous contrôle.",
+    "option_b": "Je me range facilement à l'avis du groupe, même quand j'avais un avis différent.",
+    "alignment": {
+      "option_a": [
+        "Loyaliste"
+      ],
+      "option_b": [
+        "Médiateur"
+      ]
+    }
+  },
+  {
+    "id": "e025",
+    "question": "Entre ces deux tendances naturelles, laquelle est la vôtre ?",
+    "option_a": "Je passe facilement à autre chose dès qu'une tâche devient répétitive.",
+    "option_b": "Je préfère refaire une tâche moi-même plutôt que la laisser passer imparfaite.",
+    "alignment": {
+      "option_a": [
+        "Épicurien"
+      ],
+      "option_b": [
+        "Perfectionniste"
+      ]
+    }
+  },
+  {
+    "id": "e026",
+    "question": "Laquelle des deux décrit le mieux votre réflexe le plus courant ?",
+    "option_a": "Je garde le contrôle sur une décision qui me concerne, même sous la pression.",
+    "option_b": "Je reste disponible pour quelqu'un même quand ça me coûte du temps que je n'ai pas vraiment.",
+    "alignment": {
+      "option_a": [
+        "Protecteur"
+      ],
+      "option_b": [
+        "Altruiste"
+      ]
+    }
+  },
+  {
+    "id": "e027",
+    "question": "Entre ces deux phrases, laquelle vous ressemble le plus souvent ?",
+    "option_a": "Je préfère une ambiance stable à une discussion qui pourrait tourner au conflit.",
+    "option_b": "Je me sens porté par la compétition, même une compétition que je suis seul à voir.",
+    "alignment": {
+      "option_a": [
+        "Médiateur"
+      ],
+      "option_b": [
+        "Battant"
+      ]
+    }
+  }
+]
