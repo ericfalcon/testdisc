@@ -80,6 +80,66 @@ def test_stress_pool_shape():
         assert reverse, f"{mode} has no reverse-keyed item"
 
 
+def test_every_enneagram_tag_resolves_to_a_type():
+    types = set(pools.enneagram_types())
+    tags = {
+        tag
+        for item in pools.enneagram_items()
+        for option in ("option_a", "option_b")
+        for tag in pools.option_themes(item, option)
+    }
+    assert not tags - types, f"tags with no type: {sorted(tags - types)}"
+
+
+def test_every_enneagram_type_is_reachable():
+    types = set(pools.enneagram_types())
+    offered = {
+        tag
+        for item in pools.enneagram_items()
+        for option in ("option_a", "option_b")
+        for tag in pools.option_themes(item, option)
+    }
+    assert not types - offered, f"types never offered: {sorted(types - offered)}"
+
+
+def test_no_enneagram_option_is_untagged():
+    for item in pools.enneagram_items():
+        for option in ("option_a", "option_b"):
+            assert pools.option_themes(item, option), f"{item['id']} {option} has no type"
+
+
+def test_every_enneagram_type_has_a_cost_written():
+    for name, theme in pools.enneagram_types().items():
+        assert theme.get("shadow"), f"{name} has no shadow text"
+        assert theme.get("overuse"), f"{name} has no overuse text"
+
+
+def test_enneagram_pool_is_balanced_across_types():
+    """A circulant design (each of the 9 types paired with 6 others), like
+    strengths_items — every type must be offered the same number of times, or
+    the win-rate ranking would silently favour whichever type got the most
+    exposure."""
+    exposure = collections.Counter()
+    for item in pools.enneagram_items():
+        for option in ("option_a", "option_b"):
+            for tag in pools.option_themes(item, option):
+                exposure[tag] += 1
+    assert set(exposure) == set(pools.enneagram_types())
+    assert len(set(exposure.values())) == 1, f"unequal exposure: {exposure}"
+
+
+def test_no_duplicate_enneagram_stems_or_ids():
+    stems = [item["question"].strip().lower() for item in pools.enneagram_items()]
+    ids = [item["id"] for item in pools.enneagram_items()]
+    assert len(ids) == len(set(ids))
+    statements = [
+        item[option].strip().lower()
+        for item in pools.enneagram_items()
+        for option in ("option_a", "option_b")
+    ]
+    assert len(statements) == len(set(statements)), "a statement is reused across two duels"
+
+
 def test_motivator_round_robin_is_complete():
     pairs = set()
     exposure = collections.Counter()

@@ -38,12 +38,16 @@ _MOTIVATORS_RESULT = ModuleResult(
 _STRENGTHS_RESULT = ModuleResult(
     module_id="strengths", summary={"top": ["Lancement", "Vision"]}
 )
+_ENNEAGRAM_RESULT = ModuleResult(
+    module_id="strengths", summary={"top": ["Observateur", "Loyaliste"]}
+)
 _RESULTS_WITH_ADDONS = {
     "disc_natural": _DISC_RESULT,
     "disc_adaptive": _ADAPTIVE_RESULT,
     "stress_profile": _STRESS_RESULT,
     "motivators": _MOTIVATORS_RESULT,
     "strengths_core": _STRENGTHS_RESULT,
+    "enneagram": _ENNEAGRAM_RESULT,
 }
 _REPORT_WITH_ADDONS = {
     **_REPORT,
@@ -85,7 +89,8 @@ def test_build_payload_addon_columns_are_blank_without_those_modules():
     string so the trainer's sheet reads clearly as "not done"."""
     payload = sheet_sync.build_payload(_IDENTITY, _REPORT, _RESULTS)
     for key in ("style_travail", "indice_tension", "charge_adaptation",
-                "mode_sous_pression", "moteurs_principaux", "points_forts_principaux"):
+                "mode_sous_pression", "moteurs_principaux", "points_forts_principaux",
+                "type_enneagramme_principal"):
         assert payload[key] == ""
 
 
@@ -97,6 +102,7 @@ def test_build_payload_includes_completed_addon_modules():
     assert payload["mode_sous_pression"] == "Retrait"
     assert payload["moteurs_principaux"] == "Autonomie, Sens et Maîtrise"
     assert payload["points_forts_principaux"] == "Lancement et Vision"
+    assert payload["type_enneagramme_principal"] == "Observateur"
     # The core columns are unaffected by the addons riding along.
     assert payload["style_code"] == "D"
     assert payload["score_D"] == 70.0

@@ -5,10 +5,11 @@ import random
 from assessment.registry import ADDON_MODULES, CORE_MODULES, REGISTRY
 from assessment.report.build import build_report
 
-# This French edition keeps DISC (core) plus four addons — the work style
-# variant, the pressure-mode module, the motivators module, and a "Forces"
-# module built on an original 12-theme taxonomy rather than Gallup's
-# trademarked 34-theme CliftonStrengths (see assessment/registry.py).
+# This French edition keeps DISC (core) plus five addons — the work style
+# variant, the pressure-mode module, the motivators module, a "Forces" module
+# built on an original 12-theme taxonomy rather than Gallup's trademarked
+# 34-theme CliftonStrengths, and an Ennéagramme module built on the public,
+# non-trademarked 9-type/3-centre framework (see assessment/registry.py).
 
 
 def _run(module_ids, seed=6):
@@ -42,13 +43,16 @@ def test_every_module_builds_scores_and_round_trips():
             assert all(i.module_id == module_id for i in rebuilt)
 
 
-def test_disc_plus_four_addons_are_registered():
-    """This French edition activates DISC plus four addons, including the
+def test_disc_plus_five_addons_are_registered():
+    """This French edition activates DISC plus five addons, including the
     original "Forces" taxonomy — no Gallup theme or domain names anywhere."""
     assert CORE_MODULES == ("disc_natural",)
-    assert set(ADDON_MODULES) == {"disc_adaptive", "stress_profile", "motivators", "strengths_core"}
+    assert set(ADDON_MODULES) == {
+        "disc_adaptive", "stress_profile", "motivators", "strengths_core", "enneagram",
+    }
     assert set(REGISTRY) == {
         "disc_natural", "disc_adaptive", "stress_profile", "motivators", "strengths_core",
+        "enneagram",
     }
 
 
@@ -65,7 +69,10 @@ def test_report_builds_with_all_active_modules_together():
     """disc_adaptive depends on disc_natural for its item ids, so it must be
     built after it — _run() builds modules in the order given, and disc_natural
     is listed first here for exactly that reason."""
-    module_ids = ["disc_natural", "disc_adaptive", "stress_profile", "motivators", "strengths_core"]
+    module_ids = [
+        "disc_natural", "disc_adaptive", "stress_profile", "motivators", "strengths_core",
+        "enneagram",
+    ]
     results, sources, answers = _run(module_ids)
     report = build_report(results, sources, answers)
     assert "disc" in report
@@ -73,6 +80,7 @@ def test_report_builds_with_all_active_modules_together():
     assert "stress" in report
     assert "motivators" in report
     assert "strengths" in report
+    assert "enneagram" in report
     assert report["plan"]
     assert report["integrations"], "at least one cross-module section should fire"
 
