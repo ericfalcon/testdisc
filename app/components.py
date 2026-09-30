@@ -27,6 +27,11 @@ DOMAIN_COLOURS = {
     "Relier": "#1F8A70",
     "Éclairer": "#2F5D8A",
 }
+TRIAD_COLOURS = {
+    "Corps": "#8A4B3E",
+    "Cœur": "#B23A5E",
+    "Tête": "#4A5FA8",
+}
 CONFIDENCE_COLOURS = {"High": "#2E8B5A", "Moderate": "#C98A16", "Low": FLAG}
 
 CSS = f"""

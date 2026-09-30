@@ -76,6 +76,7 @@ def build_payload(identity: dict[str, str], report: dict[str, Any],
         "mode_sous_pression": "",
         "moteurs_principaux": "",
         "points_forts_principaux": "",
+        "type_enneagramme_principal": "",
     }
 
     if "disc_adaptive" in results:
@@ -96,6 +97,9 @@ def build_payload(identity: dict[str, str], report: dict[str, Any],
 
     if "strengths_core" in results:
         payload["points_forts_principaux"] = and_join(results["strengths_core"].summary.get("top", []))
+
+    if "enneagram" in results:
+        payload["type_enneagramme_principal"] = and_join(results["enneagram"].summary.get("top", [])[:1])
 
     return payload
 

@@ -265,6 +265,87 @@ def _stress_section(report: dict) -> None:
         _likert_evidence(report["stress_evidence"][dominant])
 
 
+def _enneagram_section(report: dict) -> None:
+    enneagram = report["enneagram"]
+    st.markdown("## Vos moteurs profonds (Ennéagramme)")
+    st.caption(
+        "Le DISC décrit votre comportement observable ; l'ennéagramme cherche plutôt ce qui le "
+        "motive en profondeur. Les deux se complètent, mais ne mesurent pas la même chose — ne "
+        "soyez pas surpris si votre style DISC et votre type ici ne semblent pas aller de soi "
+        "ensemble."
+    )
+    st.markdown(f'<div class="panel"><p>{enneagram["tie_note"]}</p></div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="chan">Équilibre entre centres</div>', unsafe_allow_html=True)
+    st.write("")
+    st.markdown(
+        "".join(
+            ui.errorbar(centre, pct, 0, ui.TRIAD_COLOURS[centre], suffix="%")
+            for centre, pct in enneagram["domains"].items()
+        ),
+        unsafe_allow_html=True,
+    )
+    st.write("")
+
+    for rank, theme in enumerate(enneagram["top"], start=1):
+        st.markdown(
+            f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
+              <div class="theme-rank">#{rank} · {html.escape(theme['domain'])} ·
+                <span class="num">choisi {theme['wins']}/{theme['exposure']} fois proposé</span></div>
+              <div class="theme-name">{html.escape(theme['name'])}</div>
+              <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
+              <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
+              <p style="margin:0;font-size:0.94rem;"><b>À essayer :</b> {html.escape(theme['action'])}</p>
+              <div class="theme-cost">
+                <b>Comment ça se voit.</b> {html.escape(theme['shadow'])}<br>
+                <b>Quand ça vous coûte.</b> {html.escape(theme['overuse'])}
+              </div>
+            </div>""",
+            unsafe_allow_html=True,
+        )
+        with st.expander(f"Pourquoi {theme['name']} ? — les choix derrière ce type"):
+            _choice_evidence(theme["evidence"])
+
+    if enneagram["supporting"]:
+        first = len(enneagram["top"]) + 1
+        last = first + len(enneagram["supporting"]) - 1
+        label = f"Types intermédiaires (#{first}–#{last})" if last > first else f"Type intermédiaire (#{first})"
+        with st.expander(label):
+            for rank, theme in enumerate(enneagram["supporting"], start=first):
+                st.markdown(
+                    f"**#{rank} {theme['name']}** *({theme['domain']})* — {theme['tagline']} "
+                    f"`{theme['win_rate']:.0%}`"
+                )
+
+    ui.panel(
+        "Ce qui vous ressemble le moins",
+        f'<p>{html.escape(enneagram["bottom_note"])}</p>'
+        + "".join(
+            f'<p style="margin-bottom:3px;"><b>{html.escape(t["name"])}</b> '
+            f'<span class="chan">{html.escape(t["domain"])}</span> — {html.escape(t["tagline"])} '
+            f'<span class="num" style="color:{ui.SLATE};">{t["win_rate"]:.0%}</span></p>'
+            for t in enneagram["bottom"]
+        ),
+    )
+
+    result = st.session_state.results["enneagram"].summary
+    with st.expander(f"Classement complet des {len(result['ranking'])} types"):
+        for rank, name in enumerate(result["ranking"], start=1):
+            st.markdown(
+                f'<div style="display:flex;justify-content:space-between;font-size:0.92rem;'
+                f'padding:2px 0;border-bottom:1px solid {ui.RULE};">'
+                f'<span><span class="num">{rank:02d}</span> {html.escape(name)}</span>'
+                f'<span class="num" style="color:{ui.SLATE};">{result["win_rates"][name]:.0%} '
+                f'({result["wins"][name]}/{result["exposure"][name]})</span></div>',
+                unsafe_allow_html=True,
+            )
+    st.caption(
+        "Ce type n'a pas la même base de preuves que le DISC : c'est un cadre théorique répandu, "
+        "mais qui n'a jamais été validé scientifiquement de façon aussi solide, même comparé au "
+        "DISC — traitez-le comme une piste de réflexion, pas comme un diagnostic."
+    )
+
+
 def _motivator_section(report: dict) -> None:
     motivators = report["motivators"]
     st.markdown("## Ce qui vous motive")
@@ -436,6 +517,8 @@ def render() -> None:
         _stress_section(report)
     if "motivators" in report:
         _motivator_section(report)
+    if "enneagram" in report:
+        _enneagram_section(report)
 
     if report["integrations"]:
         st.markdown("## Là où les regards se croisent")

@@ -244,6 +244,28 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             " · ".join(f"{d} {motivators['win_rates'][d]:.0%}" for d in motivators["ranking"]),
             s["muted"]))
 
+    if "enneagram" in report:
+        flow.append(PageBreak())
+        enneagram = report["enneagram"]
+        flow.append(Paragraph("Vos moteurs profonds (Ennéagramme)", s["h2"]))
+        flow.append(Paragraph(
+            "Cadre théorique complémentaire au DISC, pas un remplacement — jamais validé "
+            "scientifiquement d'aussi près que le DISC ; à lire comme une piste de réflexion.",
+            s["muted"]))
+        flow.append(Paragraph(_clean(enneagram["tie_note"]), s["muted"]))
+        for rank, theme in enumerate(enneagram["top"], start=1):
+            flow.append(Paragraph(f"#{rank} {_clean(theme['name'])} — {_clean(theme['domain'])}", s["h3"]))
+            flow.append(Paragraph(_clean(theme["description"]), s["body"]))
+            flow.append(Paragraph(f"<b>À essayer.</b> {_clean(theme['action'])}", s["body"]))
+            flow.append(Paragraph(
+                f"<b>Comment c'est perçu.</b> {_clean(theme['shadow'])}<br/>"
+                f"<b>Quand ça vous coûte.</b> {_clean(theme['overuse'])}", s["muted"]))
+        flow.append(Paragraph("Ce qui vous ressemble le moins", s["h3"]))
+        flow.append(Paragraph(_clean(enneagram["bottom_note"]), s["body"]))
+        flow.append(Paragraph(
+            ", ".join(f"{_clean(t['name'])} ({t['win_rate']:.0%})" for t in enneagram["bottom"]),
+            s["muted"]))
+
     if report.get("integrations"):
         flow.append(Paragraph("Là où les regards se croisent", s["h2"]))
         for section in report["integrations"]:
