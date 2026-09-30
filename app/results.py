@@ -268,6 +268,11 @@ def _stress_section(report: dict) -> None:
 
 def _enneagram_section(report: dict) -> None:
     enneagram = report["enneagram"]
+    # "top"/"supporting"/"bottom" reuse the generic strengths narrative, which
+    # carries no type number (Forces themes don't have one) — looked up here
+    # from "all_types" (which does) so every profile name can be shown as
+    # "{number} - {name}".
+    number_by_name = {t["name"]: t["number"] for t in enneagram["all_types"]}
     st.markdown("## Vos moteurs profonds (Ennéagramme)")
     st.caption(
         "Le DISC décrit votre comportement observable ; l'ennéagramme cherche plutôt ce qui le "
@@ -277,7 +282,7 @@ def _enneagram_section(report: dict) -> None:
     )
     st.markdown(f'<div class="panel"><p>{enneagram["tie_note"]}</p></div>', unsafe_allow_html=True)
 
-    with st.expander("Deux repères utiles avant de lire la suite"):
+    with st.expander("Deux repères utiles avant de lire la suite", expanded=True):
         st.markdown(
             "**Un type dominant, pas un seul type possible.** La théorie de l'ennéagramme "
             "considère que chacun a accès, à des degrés divers, aux neuf structures — ce test "
@@ -314,11 +319,12 @@ def _enneagram_section(report: dict) -> None:
     st.write("")
 
     for rank, theme in enumerate(enneagram["top"], start=1):
+        number = number_by_name[theme["name"]]
         st.markdown(
             f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
               <div class="theme-rank">#{rank} · {html.escape(theme['domain'])} ·
                 <span class="num">{theme['wins']:.1f}/{theme['exposure']} — degré de préférence moyen</span></div>
-              <div class="theme-name">{html.escape(theme['name'])}</div>
+              <div class="theme-name">{number} - {html.escape(theme['name'])}</div>
               <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
               <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
               <p style="margin:0;font-size:0.94rem;"><b>À essayer :</b> {html.escape(theme['action'])}</p>
@@ -329,7 +335,7 @@ def _enneagram_section(report: dict) -> None:
             </div>""",
             unsafe_allow_html=True,
         )
-        with st.expander(f"Pourquoi {theme['name']} ? — les choix derrière ce type"):
+        with st.expander(f"Pourquoi {number} - {theme['name']} ? — les choix derrière ce type"):
             _choice_evidence(theme["evidence"])
 
     dominant = enneagram["dominant"]
@@ -359,19 +365,19 @@ def _enneagram_section(report: dict) -> None:
     )
     st.markdown(
         f"""<div class="panel">
-          <p style="margin-bottom:10px;"><b>Type dominant.</b> Type {dominant['number']} —
+          <p style="margin-bottom:10px;"><b>Type dominant.</b> {dominant['number']} -
             {html.escape(dominant['name'])}
             <span class="num" style="color:{ui.SLATE};">({dominant['win_rate']:.0%})</span></p>
           <p style="margin-bottom:10px;"><b>Ses ailes.</b>
-            Type {wing_lo['number']} ({html.escape(wing_lo['name'])}) — {html.escape(wing_lo['tagline'])}<br>
-            Type {wing_hi['number']} ({html.escape(wing_hi['name'])}) — {html.escape(wing_hi['tagline'])}</p>
+            {wing_lo['number']} - {html.escape(wing_lo['name'])} — {html.escape(wing_lo['tagline'])}<br>
+            {wing_hi['number']} - {html.escape(wing_hi['name'])} — {html.escape(wing_hi['tagline'])}</p>
           <p style="margin-bottom:10px;">
-            <b>Désintégration — sous tension, vers le Type {stress['number']}
-            ({html.escape(stress['name'])}).</b>
+            <b>Désintégration — sous tension, vers le type {stress['number']} -
+            {html.escape(stress['name'])}.</b>
             {html.escape(stress['tagline'])}</p>
           <p style="margin-bottom:0;">
-            <b>Intégration — en travail sur soi, vers le Type {growth['number']}
-            ({html.escape(growth['name'])}).</b>
+            <b>Intégration — en travail sur soi, vers le type {growth['number']} -
+            {html.escape(growth['name'])}.</b>
             {html.escape(growth['tagline'])}</p>
         </div>""",
         unsafe_allow_html=True,
@@ -380,7 +386,7 @@ def _enneagram_section(report: dict) -> None:
     def _relation_card(heading: str, r: dict) -> str:
         return f"""<div class="theme-card" style="border-left-color:{r['colour']};">
               <div class="theme-rank">{html.escape(heading)}</div>
-              <div class="theme-name">Type {r['number']} — {html.escape(r['name'])}</div>
+              <div class="theme-name">{r['number']} - {html.escape(r['name'])}</div>
               <p style="margin:4px 0 8px 0;">{html.escape(r['manifestation'])}</p>
               <div class="theme-cost">
                 <b>Ce que ça donne de bien.</b> {html.escape(r['avantage'])}<br>
@@ -388,14 +394,14 @@ def _enneagram_section(report: dict) -> None:
               </div>
             </div>"""
 
-    with st.expander("Comment ces connexions se manifestent concrètement chez vous"):
+    with st.expander("Comment ces connexions se manifestent concrètement chez vous", expanded=True):
         st.caption(
             "Le classement ci-dessus et le disque montrent QUELS types sont vos ailes et vos "
             "points de stress/développement ; ce qui suit décrit COMMENT chacun se manifeste "
             "concrètement au quotidien, avec un bénéfice et un piège identifiés pour chacun."
         )
-        st.markdown(_relation_card(f"Aile — Type {wing_lo['number']}", wing_lo), unsafe_allow_html=True)
-        st.markdown(_relation_card(f"Aile — Type {wing_hi['number']}", wing_hi), unsafe_allow_html=True)
+        st.markdown(_relation_card(f"Aile — {wing_lo['number']} - {wing_lo['name']}", wing_lo), unsafe_allow_html=True)
+        st.markdown(_relation_card(f"Aile — {wing_hi['number']} - {wing_hi['name']}", wing_hi), unsafe_allow_html=True)
         st.markdown(_relation_card("Désintégration — sous tension", stress), unsafe_allow_html=True)
         st.markdown(_relation_card("Intégration — en travail sur soi", growth), unsafe_allow_html=True)
 
@@ -405,8 +411,9 @@ def _enneagram_section(report: dict) -> None:
         label = f"Types intermédiaires (#{first}–#{last})" if last > first else f"Type intermédiaire (#{first})"
         with st.expander(label):
             for rank, theme in enumerate(enneagram["supporting"], start=first):
+                number = number_by_name[theme["name"]]
                 st.markdown(
-                    f"**#{rank} {theme['name']}** *({theme['domain']})* — {theme['tagline']} "
+                    f"**#{rank} {number} - {theme['name']}** *({theme['domain']})* — {theme['tagline']} "
                     f"`{theme['win_rate']:.0%}`"
                 )
 
@@ -414,7 +421,7 @@ def _enneagram_section(report: dict) -> None:
         "Ce qui vous ressemble le moins",
         f'<p>{html.escape(enneagram["bottom_note"])}</p>'
         + "".join(
-            f'<p style="margin-bottom:3px;"><b>{html.escape(t["name"])}</b> '
+            f'<p style="margin-bottom:3px;"><b>{number_by_name[t["name"]]} - {html.escape(t["name"])}</b> '
             f'<span class="chan">{html.escape(t["domain"])}</span> — {html.escape(t["tagline"])} '
             f'<span class="num" style="color:{ui.SLATE};">{t["win_rate"]:.0%}</span></p>'
             for t in enneagram["bottom"]
@@ -422,7 +429,7 @@ def _enneagram_section(report: dict) -> None:
     )
 
     result = st.session_state.results["enneagram"].summary
-    with st.expander(f"Classement complet des {len(result['ranking'])} types"):
+    with st.expander(f"Classement complet des {len(result['ranking'])} types", expanded=True):
         st.caption(
             "Le pourcentage est calculé sur les 8 fois où ce type précis était l'une des deux "
             "options proposées, pas sur les 36 questions du test — un type n'est en jeu que dans "
@@ -438,13 +445,13 @@ def _enneagram_section(report: dict) -> None:
             st.markdown(
                 f'<div style="display:flex;justify-content:space-between;font-size:0.92rem;'
                 f'padding:2px 0;border-bottom:1px solid {ui.RULE};">'
-                f'<span><span class="num">{rank:02d}</span> {html.escape(name)}</span>'
+                f'<span><span class="num">{rank:02d}</span> {number_by_name[name]} - {html.escape(name)}</span>'
                 f'<span class="num" style="color:{ui.SLATE};">{result["win_rates"][name]:.0%} '
                 f'({result["wins"][name]:.1f}/{result["exposure"][name]})</span></div>',
                 unsafe_allow_html=True,
             )
 
-    with st.expander("Pour affiner : lisez les 9 profils complets"):
+    with st.expander("Pour affiner : lisez les 9 profils complets", expanded=True):
         st.caption(
             "Un score par choix forcés donne une hypothèse de départ, pas un verdict — les "
             "instruments de référence sur l'ennéagramme (comme celui de la tradition narrative, "
@@ -457,9 +464,9 @@ def _enneagram_section(report: dict) -> None:
         for theme in enneagram["all_types"]:
             st.markdown(
                 f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
-                  <div class="theme-rank">Type {theme['number']} ·
+                  <div class="theme-rank">
                     <span class="num">{theme['win_rate']:.0%} à ce test</span></div>
-                  <div class="theme-name">{html.escape(theme['name'])}</div>
+                  <div class="theme-name">{theme['number']} - {html.escape(theme['name'])}</div>
                   <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
                   <p style="margin:0 0 8px 0;font-style:italic;color:{ui.SLATE};">
                     {html.escape(theme['vision_du_monde'])}</p>

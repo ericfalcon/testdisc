@@ -250,6 +250,11 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
     if "enneagram" in report:
         flow.append(PageBreak())
         enneagram = report["enneagram"]
+        # "top"/"bottom" reuse the generic strengths narrative, which carries
+        # no type number (Forces themes don't have one) — looked up here from
+        # "all_types" (which does) so every profile name can be shown as
+        # "{number} - {name}".
+        number_by_name = {t["name"]: t["number"] for t in enneagram["all_types"]}
         flow.append(Paragraph("Vos moteurs profonds (Ennéagramme)", s["h2"]))
         flow.append(Paragraph(
             "Cadre théorique complémentaire au DISC, pas un remplacement — jamais validé "
@@ -284,7 +289,9 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
 
         flow.append(Paragraph(_clean(enneagram["tie_note"]), s["muted"]))
         for rank, theme in enumerate(enneagram["top"], start=1):
-            flow.append(Paragraph(f"#{rank} {_clean(theme['name'])} — {_clean(theme['domain'])}", s["h3"]))
+            number = number_by_name[theme["name"]]
+            flow.append(Paragraph(
+                f"#{rank} {number} - {_clean(theme['name'])} — {_clean(theme['domain'])}", s["h3"]))
             flow.append(Paragraph(_clean(theme["description"]), s["body"]))
             flow.append(Paragraph(f"<b>À essayer.</b> {_clean(theme['action'])}", s["body"]))
             flow.append(Paragraph(
@@ -307,25 +314,25 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             "travaillé sur lui-même et montre plutôt, de façon stable, des traits d'intégration.",
             s["muted"]))
         flow.append(Paragraph(
-            f"<b>Type dominant.</b> Type {dominant['number']} — {_clean(dominant['name'])} "
+            f"<b>Type dominant.</b> {dominant['number']} - {_clean(dominant['name'])} "
             f"({dominant['win_rate']:.0%})", s["body"]))
         flow.append(Paragraph(
-            f"<b>Ses ailes.</b> Type {wing_lo['number']} ({_clean(wing_lo['name'])}) — "
-            f"{_clean(wing_lo['tagline'])} · Type {wing_hi['number']} ({_clean(wing_hi['name'])}) "
+            f"<b>Ses ailes.</b> {wing_lo['number']} - {_clean(wing_lo['name'])} — "
+            f"{_clean(wing_lo['tagline'])} · {wing_hi['number']} - {_clean(wing_hi['name'])} "
             f"— {_clean(wing_hi['tagline'])}", s["body"]))
         flow.append(Paragraph(
-            f"<b>Désintégration — sous tension, vers le Type {stress_pt['number']} "
-            f"({_clean(stress_pt['name'])}).</b> {_clean(stress_pt['tagline'])}", s["body"]))
+            f"<b>Désintégration — sous tension, vers le type {stress_pt['number']} - "
+            f"{_clean(stress_pt['name'])}.</b> {_clean(stress_pt['tagline'])}", s["body"]))
         flow.append(Paragraph(
-            f"<b>Intégration — en travail sur soi, vers le Type {growth_pt['number']} "
-            f"({_clean(growth_pt['name'])}).</b> {_clean(growth_pt['tagline'])}", s["body"]))
+            f"<b>Intégration — en travail sur soi, vers le type {growth_pt['number']} - "
+            f"{_clean(growth_pt['name'])}.</b> {_clean(growth_pt['tagline'])}", s["body"]))
 
         flow.append(Paragraph("Comment ces connexions se manifestent concrètement", s["h3"]))
         for heading, rel in (
-            (f"Aile — Type {wing_lo['number']} ({_clean(wing_lo['name'])})", wing_lo),
-            (f"Aile — Type {wing_hi['number']} ({_clean(wing_hi['name'])})", wing_hi),
-            (f"Désintégration — Type {stress_pt['number']} ({_clean(stress_pt['name'])})", stress_pt),
-            (f"Intégration — Type {growth_pt['number']} ({_clean(growth_pt['name'])})", growth_pt),
+            (f"Aile — {wing_lo['number']} - {_clean(wing_lo['name'])}", wing_lo),
+            (f"Aile — {wing_hi['number']} - {_clean(wing_hi['name'])}", wing_hi),
+            (f"Désintégration — {stress_pt['number']} - {_clean(stress_pt['name'])}", stress_pt),
+            (f"Intégration — {growth_pt['number']} - {_clean(growth_pt['name'])}", growth_pt),
         ):
             flow.append(Paragraph(f"<b>{heading}</b>", s["body"]))
             flow.append(Paragraph(_clean(rel["manifestation"]), s["body"]))
@@ -336,7 +343,10 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         flow.append(Paragraph("Ce qui vous ressemble le moins", s["h3"]))
         flow.append(Paragraph(_clean(enneagram["bottom_note"]), s["body"]))
         flow.append(Paragraph(
-            ", ".join(f"{_clean(t['name'])} ({t['win_rate']:.0%})" for t in enneagram["bottom"]),
+            ", ".join(
+                f"{number_by_name[t['name']]} - {_clean(t['name'])} ({t['win_rate']:.0%})"
+                for t in enneagram["bottom"]
+            ),
             s["muted"]))
 
         flow.append(PageBreak())
@@ -352,7 +362,7 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             s["muted"]))
         for theme in enneagram["all_types"]:
             flow.append(Paragraph(
-                f"Type {theme['number']} — {_clean(theme['name'])} "
+                f"{theme['number']} - {_clean(theme['name'])} "
                 f"({theme['win_rate']:.0%} à ce test)", s["h3"]))
             flow.append(Paragraph(f"<i>{_clean(theme['tagline'])}</i>", s["body"]))
             flow.append(Paragraph(f"<i>{_clean(theme['vision_du_monde'])}</i>", s["muted"]))

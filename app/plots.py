@@ -57,22 +57,30 @@ def enneagram_wheel(entries: list[dict], top_names: set[str]):
     ax.add_patch(plt.Circle((0, 0), 1.0, fill=False, edgecolor=ui.RULE, linewidth=1.2, zorder=1))
     for seq in (_HEXAD, _TRIANGLE):
         xs, ys = zip(*[_wheel_xy(n) for n in seq])
-        ax.plot(xs, ys, color=ui.RULE, linewidth=1.0, alpha=0.55, zorder=1)
+        ax.plot(xs, ys, color=ui.SLATE, linewidth=1.4, alpha=0.75, zorder=1)
+
+    # Sized relative to this person's own spread of win rates rather than the
+    # raw 0-1 scale — see the matching comment in components.py's SVG version
+    # — so the dots stay clearly graduated even when the 9 scores cluster in
+    # a narrow band.
+    rates = [e["win_rate"] for e in entries]
+    rate_min, rate_span = min(rates), max(rates) - min(rates) or 1.0
 
     for number in range(1, 10):
         entry = by_number[number]
         x, y = _wheel_xy(number)
         rate = entry["win_rate"]
-        radius = 0.09 + rate * 0.07
+        norm = (rate - rate_min) / rate_span
+        radius = 0.085 + norm * 0.10
         colour = entry["colour"]
         is_top = entry["name"] in top_names
         if is_top:
             ax.add_patch(plt.Circle((x, y), radius + 0.035, fill=False,
                                      edgecolor=colour, linewidth=2.0, zorder=3))
         ax.add_patch(plt.Circle((x, y), radius, facecolor=colour, edgecolor=colour,
-                                 alpha=0.22 + rate * 0.68, linewidth=1.0, zorder=4))
+                                 alpha=0.28 + norm * 0.62, linewidth=1.0, zorder=4))
         ax.text(x, y, str(number), fontsize=9, fontweight="600", ha="center", va="center",
-                color="#FFFFFF" if rate > 0.35 else ui.INK, zorder=5)
+                color="#FFFFFF" if norm > 0.5 else ui.INK, zorder=5)
         if is_top:
             lx, ly = x * 1.32, y * 1.32
             ha = "center" if abs(x) < 0.08 else ("left" if x > 0 else "right")

@@ -317,32 +317,42 @@ def enneagram_wheel(entries: list[dict], top_names: set[str]) -> str:
     viewBox edge simply disappears rather than wrapping or shrinking."""
     cx, cy, r_outer = 170.0, 170.0, 128.0
     by_number = {e["number"]: e for e in entries}
-    # The circle plus the largest possible marker (radius 20) and its
+    # The circle plus the largest possible marker (radius 27) and its
     # highlight ring (+4) and stroke, with a little slack.
-    min_x, min_y = cx - r_outer - 26, cy - r_outer - 26
-    max_x, max_y = cx + r_outer + 26, cy + r_outer + 26
+    min_x, min_y = cx - r_outer - 34, cy - r_outer - 34
+    max_x, max_y = cx + r_outer + 34, cy + r_outer + 34
 
     lines = []
     for seq in (_HEXAD, _TRIANGLE):
         pts = [_wheel_point(n, cx, cy, r_outer) for n in seq]
         d = " ".join(f"{'M' if i == 0 else 'L'}{x:.1f},{y:.1f}" for i, (x, y) in enumerate(pts))
-        lines.append(f'<path d="{d}" fill="none" stroke="{RULE}" stroke-width="1.1" opacity="0.55"/>')
+        lines.append(f'<path d="{d}" fill="none" stroke="{SLATE}" stroke-width="1.6" opacity="0.75"/>')
+
+    # Win rates across 9 types usually cluster in a narrow absolute band (a
+    # dominant type might win 40% of its match-ups, the last-place type 10%),
+    # so sizing markers off the raw 0-1 scale barely moves the radius. Sizing
+    # relative to this person's own spread instead (smallest win rate -> the
+    # floor size, largest -> the ceiling) keeps the dots clearly graduated
+    # regardless of how compressed or spread out the actual scores are.
+    rates = [e["win_rate"] for e in entries]
+    rate_min, rate_span = min(rates), max(rates) - min(rates) or 1.0
 
     markers = []
     for number in range(1, 10):
         e = by_number[number]
         x, y = _wheel_point(number, cx, cy, r_outer)
         rate = e["win_rate"]
-        radius = 8 + rate * 12
+        norm = (rate - rate_min) / rate_span
+        radius = 9 + norm * 18
         is_top = e["name"] in top_names
         ring = f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius + 4:.1f}" fill="none" stroke="{e["colour"]}" stroke-width="2"/>' if is_top else ""
         markers.append(
             f'{ring}'
             f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius:.1f}" fill="{e["colour"]}" '
-            f'fill-opacity="{0.22 + rate * 0.68:.2f}" stroke="{e["colour"]}" stroke-width="1.2"/>'
+            f'fill-opacity="{0.28 + norm * 0.62:.2f}" stroke="{e["colour"]}" stroke-width="1.2"/>'
             f'<text x="{x:.1f}" y="{y + 3.5:.1f}" text-anchor="middle" '
             f'font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" '
-            f'fill="{"#FFFFFF" if rate > 0.35 else INK}">{number}</text>'
+            f'fill="{"#FFFFFF" if norm > 0.5 else INK}">{number}</text>'
         )
         if is_top:
             label_x = cx + (x - cx) * 1.34
