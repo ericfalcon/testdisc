@@ -73,8 +73,19 @@ Aucun compte, aucun serveur, aucune base de données.
     positionnés sur le schéma circulaire traditionnel (les 9 points, le
     triangle 3-9-6 et l'hexagone 1-4-2-8-5-7), pas seulement listés par ordre
     de classement. Référentiel et formulations originaux, pas une reprise
-    d'un test existant comme le RHETI de Riso-Hudson (protégé).
-  
+    d'un test existant comme le RHETI de Riso-Hudson (protégé). Noms des 9
+    types alignés sur la tradition narrative de l'ennéagramme (Helen Palmer &
+    David Daniels, narrativeenneagram.org) : Perfectionniste, Altruiste,
+    Performeur, Individualiste, Observateur, Questionneur, Enthousiaste,
+    Protecteur, Médiateur.
+  - **Votre instinct dominant** : un complément rapide (9 choix forcés) à
+    l'Ennéagramme — lequel des 3 instincts de survie (conservation, social,
+    sexuel/un-à-un) capte le plus l'attention en premier. Cette couche est
+    propre à la tradition narrative citée ci-dessus ; le concept lui-même
+    (Naranjo) n'appartient à aucune école en particulier. Ne s'active que si
+    le module Ennéagramme est aussi pris, la comparaison n'ayant de sens
+    qu'une fois le type de base connu.
+
   Quand plusieurs de ces modules sont pris ensemble, le rapport ajoute des
   sections qui croisent leurs résultats (par exemple : qui vous devenez sous
   charge, au regard de votre style naturel).
@@ -119,7 +130,10 @@ descriptions et les 36 questions de choix forcé (`data/enneagram_types.json`,
 `data/enneagram_items.json`) sont une écriture originale de ce cadre public.
 Le schéma circulaire (9 points, triangle et hexagone) utilisé pour positionner
 les résultats est le symbole public de l'ennéagramme lui-même, pas un visuel
-propre à un test commercial.
+propre à un test commercial. Les 3 instincts de survie (conservation, social,
+sexuel/un-à-un) suivent la même logique : le concept est public (Naranjo),
+seule la formulation des 9 questions (`data/instinct_items.json`) est
+originale.
 
 À noter aussi, pour cadrer avec les stagiaires : l'ennéagramme n'a jamais fait
 l'objet d'une validation scientifique aussi solide que le DISC lui-même (qui
@@ -155,10 +169,10 @@ Sheet est simplement ignoré.
 **Ce qui part vers le Sheet.** Les huit premières colonnes (style, titre,
 intensité, confiance, scores D/I/S/C) partent dès que le module DISC est
 terminé — c'est le seul module obligatoire. Si un·e stagiaire fait aussi l'un
-des cinq modules complémentaires (facultatifs), sept colonnes de plus
+des six modules complémentaires (facultatifs), huit colonnes de plus
 s'ajoutent avec un résumé de chacun (style au travail, indice de tension,
 mode sous pression, moteurs principaux, points forts principaux, type
-Ennéagramme principal) ; elles restent vides sinon. Un·e stagiaire peut voir
+Ennéagramme principal, instinct dominant) ; elles restent vides sinon. Un·e stagiaire peut voir
 ses résultats DISC, puis revenir en ajouter un depuis la même page (« Pour
 aller plus loin ») : l'application renvoie alors une seconde ligne, plus
 complète que la première — pour une même personne, c'est donc la ligne la

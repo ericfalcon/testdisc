@@ -1,0 +1,92 @@
+[
+  {
+    "id": "in001",
+    "question": "Laquelle de ces deux phrases capte le mieux ce à quoi vous faites attention en premier ?",
+    "option_a": "Je remarque vite si mon espace de travail n'est pas confortable, et je corrige ça avant de me concentrer sur autre chose.",
+    "option_b": "Je remarque immédiatement qui fait partie du groupe et qui en est tenu à l'écart.",
+    "alignment": {
+      "option_a": "Conservation",
+      "option_b": "Social"
+    }
+  },
+  {
+    "id": "in002",
+    "question": "Entre ces deux réflexes, lequel est le plus vous ?",
+    "option_a": "Je préfère garder une réserve — de temps, d'argent, de nourriture — plutôt que de tout utiliser jusqu'au bout.",
+    "option_b": "Je cherche l'intensité dans une relation, plus que la stabilité tranquille.",
+    "alignment": {
+      "option_a": "Conservation",
+      "option_b": "Sexuel"
+    }
+  },
+  {
+    "id": "in003",
+    "question": "Si on devait n'en garder qu'une, laquelle vous décrit le mieux ?",
+    "option_a": "Je me sens plus à l'aise une fois que je sais quelle est ma place dans un groupe.",
+    "option_b": "Je remarque immédiatement l'alchimie — ou son absence — avec une personne que je viens de rencontrer.",
+    "alignment": {
+      "option_a": "Social",
+      "option_b": "Sexuel"
+    }
+  },
+  {
+    "id": "in004",
+    "question": "Laquelle de ces deux phrases sonne le plus vrai pour vous ?",
+    "option_a": "Une routine bien réglée me met plus à l'aise qu'une journée pleine d'imprévus.",
+    "option_b": "Je me soucie de la façon dont un groupe entier avance, plus que de ma propre situation individuelle.",
+    "alignment": {
+      "option_a": "Conservation",
+      "option_b": "Social"
+    }
+  },
+  {
+    "id": "in005",
+    "question": "Entre ces deux préoccupations, laquelle vous vient le plus naturellement à l'esprit ?",
+    "option_a": "Je remarque en premier si quelque chose menace mon confort ou ma sécurité matérielle.",
+    "option_b": "Une seule relation forte compte plus pour moi que d'appartenir à un grand groupe.",
+    "alignment": {
+      "option_a": "Conservation",
+      "option_b": "Sexuel"
+    }
+  },
+  {
+    "id": "in006",
+    "question": "Laquelle des deux vous ressemble le plus au quotidien ?",
+    "option_a": "Je remarque vite si je ne suis pas invité à quelque chose, même quand ça n'a pas grande importance.",
+    "option_b": "Je me donne complètement dans ce qui m'attire, au risque de négliger le reste.",
+    "alignment": {
+      "option_a": "Social",
+      "option_b": "Sexuel"
+    }
+  },
+  {
+    "id": "in007",
+    "question": "Si vous deviez choisir, laquelle vous représente le mieux ?",
+    "option_a": "Je préfère m'occuper moi-même de mes besoins de base plutôt que de compter sur quelqu'un d'autre pour ça.",
+    "option_b": "Je préfère contribuer à une cause ou un collectif plutôt que de poursuivre un objectif purement personnel.",
+    "alignment": {
+      "option_a": "Conservation",
+      "option_b": "Social"
+    }
+  },
+  {
+    "id": "in008",
+    "question": "Entre ces deux priorités, laquelle est la plus vous ?",
+    "option_a": "Je me sens mal à l'aise tant que les questions pratiques — santé, budget, logistique — ne sont pas réglées.",
+    "option_b": "Je préfère être choisi par une personne en particulier plutôt qu'accepté par tout un groupe.",
+    "alignment": {
+      "option_a": "Conservation",
+      "option_b": "Sexuel"
+    }
+  },
+  {
+    "id": "in009",
+    "question": "Laquelle de ces deux phrases vous reconnaissez-vous le plus ?",
+    "option_a": "Je m'adapte facilement aux règles non dites d'un groupe que je rejoins.",
+    "option_b": "Je ressens fortement quand une connexion avec quelqu'un s'intensifie, ou au contraire s'éteint.",
+    "alignment": {
+      "option_a": "Social",
+      "option_b": "Sexuel"
+    }
+  }
+]

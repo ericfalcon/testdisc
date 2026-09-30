@@ -429,7 +429,7 @@ const LETTER_NAMES = { D: "Dominance", I: "Influence", S: "Stabilité", C: "Conf
 
 const SAMPLE_ROWS = [
   { horodatage:"2026-11-12T08:14:00Z", prenom:"Camille", nom:"Dubois",   session:"Gestion du temps — 12 novembre 2026", style:"D",  titre:"Style Dominance (D)",              intensite:"Marquée",       confiance:"élevée",  D:82, I:54, S:28, C:41,
-    styleTravail:"Dominance", indiceTension:"9", chargeAdaptation:"faible", modeSousPression:"Contrôle", moteursPrincipaux:"Autonomie, Statut et Variété", pointsFortsPrincipaux:"Lancement, Conviction et Vision", typeEnneagrammePrincipal:"Protecteur" },
+    styleTravail:"Dominance", indiceTension:"9", chargeAdaptation:"faible", modeSousPression:"Contrôle", moteursPrincipaux:"Autonomie, Statut et Variété", pointsFortsPrincipaux:"Lancement, Conviction et Vision", typeEnneagrammePrincipal:"Protecteur", instinctDominant:"Social" },
   { horodatage:"2026-11-12T08:21:00Z", prenom:"Farid",   nom:"Benali",   session:"Gestion du temps — 12 novembre 2026", style:"DI", titre:"Style Dominance + Influence (DI)", intensite:"Modérée",       confiance:"élevée",  D:68, I:61, S:33, C:29 },
   { horodatage:"2026-11-12T08:26:00Z", prenom:"Karim",   nom:"Haddad",   session:"Gestion du temps — 12 novembre 2026", style:"DC", titre:"Style Dominance + Conformité (DC)", intensite:"Modérée",       confiance:"modérée", D:57, I:22, S:26, C:66,
     styleTravail:"Conformité", indiceTension:"22", chargeAdaptation:"élevée", modeSousPression:"Retrait", moteursPrincipaux:"Maîtrise et Sécurité", pointsFortsPrincipaux:"Rigueur, Discernement et Optimisation" },
@@ -450,7 +450,7 @@ const HEADER_MAP = {
   "intensité":"intensite", "intensite":"intensite",
   "confiance":"confiance",
   "score d":"D", "score i":"I", "score s":"S", "score c":"C",
-  // Colonnes des cinq modules complémentaires — vides pour un·e stagiaire
+  // Colonnes des six modules complémentaires — vides pour un·e stagiaire
   // qui n'a fait que le DISC, donc ignorées silencieusement dans la fiche
   // quand la valeur est absente (voir ADDON_FIELDS plus bas).
   "style au travail":"styleTravail",
@@ -460,6 +460,7 @@ const HEADER_MAP = {
   "moteurs principaux":"moteursPrincipaux",
   "points forts principaux":"pointsFortsPrincipaux",
   "type ennéagramme principal":"typeEnneagrammePrincipal",
+  "instinct dominant":"instinctDominant",
 };
 
 // Affichées dans la fiche d'un·e stagiaire uniquement quand renseignées.
@@ -470,6 +471,7 @@ const ADDON_FIELDS = [
   ["moteursPrincipaux", "Moteurs principaux"],
   ["pointsFortsPrincipaux", "Points forts principaux"],
   ["typeEnneagrammePrincipal", "Type Ennéagramme principal"],
+  ["instinctDominant", "Instinct dominant"],
 ];
 
 let state = { rows: SAMPLE_ROWS.slice(), isSample: true, filename: "" };
@@ -694,7 +696,7 @@ function renderApp(){
           fiche.appendChild(field);
         }
       });
-      // Les cinq modules complémentaires sont facultatifs : cette section
+      // Les six modules complémentaires sont facultatifs : cette section
       // n'apparaît que si la personne en a fait au moins un (colonnes vides
       // dans le CSV sinon), donc une fiche DISC seule reste identique à avant.
       const addonLines = [];
@@ -707,6 +709,7 @@ function renderApp(){
       if (r.moteursPrincipaux) addonLines.push(`<b>Moteurs principaux :</b> ${r.moteursPrincipaux}`);
       if (r.pointsFortsPrincipaux) addonLines.push(`<b>Points forts principaux :</b> ${r.pointsFortsPrincipaux}`);
       if (r.typeEnneagrammePrincipal) addonLines.push(`<b>Type Ennéagramme principal :</b> ${r.typeEnneagrammePrincipal}`);
+      if (r.instinctDominant) addonLines.push(`<b>Instinct dominant :</b> ${r.instinctDominant}`);
       if (addonLines.length){
         const addonField = el("div", { class:"field" });
         addonField.appendChild(el("h4", { text:"Modules complémentaires" }));

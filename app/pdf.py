@@ -30,6 +30,7 @@ def _date_fr(dt: datetime) -> str:
     locale installed. The time matters here: a trainer collecting several
     PDFs from the same session needs to tell apart a retake from the original."""
     return f"Généré le {dt.day:02d} {_MOIS_FR[dt.month]} {dt.year} à {dt.hour:02d}:{dt.minute:02d}"
+from assessment.scoring.instincts import INSTINCT_BLURBS, INSTINCT_LABELS
 from assessment.scoring.motivators import DRIVER_BLURBS
 from assessment.scoring.stress import MODE_BLURBS, MODE_LABELS
 
@@ -264,6 +265,16 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         flow.append(Paragraph(_clean(enneagram["bottom_note"]), s["body"]))
         flow.append(Paragraph(
             ", ".join(f"{_clean(t['name'])} ({t['win_rate']:.0%})" for t in enneagram["bottom"]),
+            s["muted"]))
+
+    if "instinct" in report:
+        instinct = report["instinct"]
+        flow.append(Paragraph("Votre instinct dominant", s["h2"]))
+        dominant = instinct["dominant"]
+        flow.append(Paragraph(
+            f"<b>{INSTINCT_LABELS[dominant]}.</b> {_clean(INSTINCT_BLURBS[dominant])}", s["body"]))
+        flow.append(Paragraph(
+            " · ".join(f"{INSTINCT_LABELS[d]} {instinct['win_rates'][d]:.0%}" for d in instinct["ranking"]),
             s["muted"]))
 
     if report.get("integrations"):

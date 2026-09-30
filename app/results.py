@@ -12,6 +12,7 @@ import streamlit as st
 
 from assessment.registry import ADDON_MODULES, REGISTRY
 from assessment.report.build import build_report
+from assessment.scoring import instincts as inst_scoring
 from assessment.scoring.disc import STRAIN_BAND_LABELS, STYLE_NAMES
 from assessment.scoring.motivators import DRIVER_BLURBS
 from assessment.scoring.stress import MODE_BLURBS, MODE_LABELS
@@ -349,10 +350,66 @@ def _enneagram_section(report: dict) -> None:
                 f'({result["wins"][name]}/{result["exposure"][name]})</span></div>',
                 unsafe_allow_html=True,
             )
+
+    with st.expander("Pour affiner : lisez les 9 profils complets"):
+        st.caption(
+            "Un score par choix forcés donne une hypothèse de départ, pas un verdict — les "
+            "instruments de référence sur l'ennéagramme (comme celui de la tradition narrative, "
+            "narrativeenneagram.org) fonctionnent d'ailleurs sur ce principe : lire les 9 "
+            "descriptions complètes et retenir celle qui sonne le plus juste, pas seulement se "
+            "fier au classement calculé. Le vôtre est indiqué à titre de repère."
+        )
+        for theme in enneagram["all_types"]:
+            st.markdown(
+                f"""<div class="theme-card" style="border-left-color:{theme['colour']};">
+                  <div class="theme-rank">Type {theme['number']} ·
+                    <span class="num">{theme['win_rate']:.0%} à ce test</span></div>
+                  <div class="theme-name">{html.escape(theme['name'])}</div>
+                  <p style="color:{ui.SLATE};margin:4px 0 8px 0;">{html.escape(theme['tagline'])}</p>
+                  <p style="margin:0 0 8px 0;">{html.escape(theme['description'])}</p>
+                  <div class="theme-cost">
+                    <b>Comment ça se voit.</b> {html.escape(theme['shadow'])}<br>
+                    <b>Quand ça vous coûte.</b> {html.escape(theme['overuse'])}
+                  </div>
+                </div>""",
+                unsafe_allow_html=True,
+            )
+
     st.caption(
         "Ce résultat n'a pas la même base de preuves que le DISC : l'ennéagramme est un cadre "
         "théorique répandu, mais qui n'a jamais été validé scientifiquement d'aussi près, même "
         "comparé au DISC — traitez-le comme une piste de réflexion, pas comme un diagnostic."
+    )
+
+
+def _instinct_section(report: dict) -> None:
+    instinct = report["instinct"]
+    st.markdown("## Votre instinct dominant")
+    st.caption(
+        "Le type dit ce qui vous motive en profondeur ; l'instinct dit où ça se voit en "
+        "premier au quotidien. Les deux se combinent — un même type s'exprime différemment "
+        "selon l'instinct qui domine."
+    )
+    st.markdown(
+        "".join(
+            ui.errorbar(
+                inst_scoring.INSTINCT_LABELS[name],
+                instinct["win_rates"][name] * 100,
+                instinct["standard_error"][name] * 100,
+                ui.SIGNAL,
+                suffix="%",
+            )
+            for name in instinct["ranking"]
+        ),
+        unsafe_allow_html=True,
+    )
+    dominant = instinct["dominant"]
+    ui.panel(inst_scoring.INSTINCT_LABELS[dominant], f'<p>{html.escape(inst_scoring.INSTINCT_BLURBS[dominant])}</p>')
+    with st.expander("Pourquoi ? — les arbitrages derrière votre instinct dominant"):
+        _choice_evidence([e for e in report["instinct_evidence"][dominant] if e["chosen"]])
+    st.caption(
+        "Seulement 9 questions : de quoi dégager une tendance, pas un profil détaillé. Comme le "
+        "reste de l'ennéagramme, à prendre comme une piste de réflexion."
     )
 
 
@@ -529,6 +586,8 @@ def render() -> None:
         _motivator_section(report)
     if "enneagram" in report:
         _enneagram_section(report)
+    if "instinct" in report:
+        _instinct_section(report)
 
     if report["integrations"]:
         st.markdown("## Là où les regards se croisent")

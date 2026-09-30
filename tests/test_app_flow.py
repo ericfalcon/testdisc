@@ -91,7 +91,10 @@ def test_picker_offers_the_disc_module_and_starts_the_queue():
         "pick_disc_natural", "pick_disc_adaptive", "pick_stress_profile",
         "pick_motivators", "pick_strengths_core", "pick_enneagram",
     }
-    # Only the core DISC module is pre-checked; the five addons default to off,
+    # The sixth addon (enneagram_instinct) depends on enneagram, which is
+    # unchecked here, so it renders as blocked text rather than a checkbox —
+    # see test_instinct_module_unblocks_once_enneagram_is_picked below.
+    # Only the core DISC module is pre-checked; the addons default to off,
     # so leaving them untouched below must still queue disc_natural alone.
     # The identification fields and the submit button live in one st.form, so
     # setting all three and clicking Commencer can be queued together and
@@ -104,6 +107,19 @@ def test_picker_offers_the_disc_module_and_starts_the_queue():
     app.run()
     assert app.session_state.stage == "running"
     assert len(app.session_state.flat) == 40
+
+
+def test_instinct_module_unblocks_once_enneagram_is_picked():
+    """enneagram_instinct depends_on=("enneagram",) — comparing raw win rates
+    across the 3 instincts only means something once the person has also done
+    the 9-type module, so the picker keeps it as inert text until then."""
+    app = _app()
+    assert "pick_enneagram_instinct" not in {c.key for c in app.checkbox}
+    assert any("nécessite d'abord" in m.value for m in app.markdown)
+
+    app.checkbox(key="pick_enneagram").set_value(True)
+    app.run()
+    assert "pick_enneagram_instinct" in {c.key for c in app.checkbox}
 
 
 def test_begin_button_requires_identification_before_advancing():

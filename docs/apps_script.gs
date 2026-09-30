@@ -63,7 +63,7 @@ var EN_TETES = [
   "Score D", "Score I", "Score S", "Score C",
   "Style au travail", "Indice de tension", "Charge d'adaptation",
   "Mode sous pression", "Moteurs principaux", "Points forts principaux",
-  "Type Ennéagramme principal",
+  "Type Ennéagramme principal", "Instinct dominant",
 ];
 
 function doGet(e) {
@@ -115,6 +115,7 @@ function enregistrerResultat(donnees) {
     donnees.moteurs_principaux || "",
     donnees.points_forts_principaux || "",
     donnees.type_enneagramme_principal || "",
+    donnees.instinct_dominant || "",
   ]);
 
   return ContentService

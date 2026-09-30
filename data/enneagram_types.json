@@ -21,8 +21,8 @@
     "shadow": "Les autres apprécient d'être soutenus par vous, mais peuvent aussi ne jamais penser à vous demander comment vous allez, puisque vous ne le demandez jamais pour vous-même.",
     "overuse": "Vous vous rendez indispensable à quelqu'un qui n'a rien demandé, et vous finissez par attendre en retour une reconnaissance que personne ne savait devoir vous donner."
   },
-  "Battant": {
-    "name": "Battant",
+  "Performeur": {
+    "name": "Performeur",
     "number": 3,
     "domain": "Cœur",
     "badge_color": "#C9762B",
@@ -32,8 +32,8 @@
     "shadow": "Les autres vous voient efficace et entraînant, mais peuvent aussi se demander ce que vous pensez vraiment derrière l'image que vous présentez.",
     "overuse": "Vous soignez la présentation d'un résultat plus que le résultat lui-même, et ça finit par se voir."
   },
-  "Romantique": {
-    "name": "Romantique",
+  "Individualiste": {
+    "name": "Individualiste",
     "number": 4,
     "domain": "Cœur",
     "badge_color": "#8A5FB2",
@@ -54,8 +54,8 @@
     "shadow": "Les autres apprécient la profondeur de ce que vous apportez, mais peuvent aussi se sentir tenus à distance, sans savoir ce que vous pensez réellement d'eux.",
     "overuse": "Vous continuez à vous documenter sur un sujet que vous maîtrisez déjà assez pour agir, et le moment d'agir passe."
   },
-  "Loyaliste": {
-    "name": "Loyaliste",
+  "Questionneur": {
+    "name": "Questionneur",
     "number": 6,
     "domain": "Tête",
     "badge_color": "#2F5D8A",
@@ -65,8 +65,8 @@
     "shadow": "Les autres comptent sur votre vigilance pour repérer ce qui pourrait poser problème, mais peuvent aussi se sentir constamment testés avant que vous ne leur accordiez pleinement votre confiance.",
     "overuse": "Vous imaginez tout ce qui pourrait mal tourner sur une décision déjà suffisamment sûre, et le doute retarde une action qui aurait dû être prise."
   },
-  "Épicurien": {
-    "name": "Épicurien",
+  "Enthousiaste": {
+    "name": "Enthousiaste",
     "number": 7,
     "domain": "Tête",
     "badge_color": "#3E9A8A",

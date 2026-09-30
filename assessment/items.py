@@ -66,6 +66,11 @@ def enneagram_types() -> dict:
     return _load("enneagram_types.json")
 
 
+@lru_cache(maxsize=None)
+def instinct_items() -> list[dict]:
+    return _load("instinct_items.json")
+
+
 def option_themes(item: dict, option: str) -> list[str]:
     return item["alignment"].get(option, [])
 
@@ -250,6 +255,7 @@ def rebuild_from_ids(module_id: str, kind: str, ids: list[str], frame: str = "")
         "stress": stress_items(),
         "motivators": motivator_items(),
         "enneagram": enneagram_items(),
+        "instincts": instinct_items(),
     }
     index = {src["id"]: src for src in pools[kind]}
     sources = [index[i] for i in ids if i in index]

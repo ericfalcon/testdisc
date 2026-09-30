@@ -44,6 +44,7 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
     stress_result = results.get("stress_profile")
     motivator_result = results.get("motivators")
     enneagram_result = results.get("enneagram")
+    instinct_result = results.get("enneagram_instinct")
 
     disc_narrative = None
     if disc_result is not None:
@@ -96,6 +97,29 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
             }
             for name, info in enneagram_types.items()
         ]
+        # A forced-choice score is a starting hypothesis, not a verdict — the
+        # reference instruments in this field (e.g. the Narrative Enneagram's
+        # own Stanford inventory) work by having the person read all 9 full
+        # descriptions and pick the one that rings truest, rather than trust a
+        # computed rank alone. All 9 go here, in their traditional order, so
+        # the report can offer that same self-check next to the computed one.
+        report["enneagram"]["all_types"] = [
+            {
+                "name": name,
+                "number": info["number"],
+                "colour": info["badge_color"],
+                "tagline": info["tagline"],
+                "description": info["description"],
+                "shadow": info["shadow"],
+                "overuse": info["overuse"],
+                "win_rate": enneagram_result.summary["win_rates"][name],
+            }
+            for name, info in sorted(enneagram_types.items(), key=lambda kv: kv[1]["number"])
+        ]
+
+    if instinct_result is not None:
+        report["instinct"] = instinct_result.summary
+        report["instinct_evidence"] = instinct_result.detail["evidence"]
 
     sections = []
     if disc_result is not None and strengths_result is not None:

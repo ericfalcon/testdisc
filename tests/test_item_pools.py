@@ -7,6 +7,7 @@ from __future__ import annotations
 import collections
 
 from assessment import items as pools
+from assessment.scoring.instincts import INSTINCTS
 from assessment.scoring.motivators import DRIVERS
 from assessment.scoring.stress import MODES
 
@@ -136,6 +137,33 @@ def test_no_duplicate_enneagram_stems_or_ids():
         item[option].strip().lower()
         for item in pools.enneagram_items()
         for option in ("option_a", "option_b")
+    ]
+    assert len(statements) == len(set(statements)), "a statement is reused across two duels"
+
+
+def test_instinct_round_robin_is_complete():
+    """3 pairs among 3 instincts, each repeated 3 times for stability (9 items
+    total) — every instinct exposed the same number of times."""
+    pairs = set()
+    exposure = collections.Counter()
+    for item in pools.instinct_items():
+        a, b = item["alignment"]["option_a"], item["alignment"]["option_b"]
+        assert a in INSTINCTS and b in INSTINCTS
+        pairs.add(frozenset((a, b)))
+        exposure[a] += 1
+        exposure[b] += 1
+    assert len(pairs) == len(INSTINCTS) * (len(INSTINCTS) - 1) // 2
+    assert len(set(exposure.values())) == 1, f"unequal exposure: {exposure}"
+
+
+def test_no_duplicate_instinct_stems_or_statements():
+    items = pools.instinct_items()
+    stems = [item["question"].strip().lower() for item in items]
+    ids = [item["id"] for item in items]
+    assert len(ids) == len(set(ids))
+    assert len(stems) == len(set(stems)), "a frame is reused across two duels"
+    statements = [
+        item[option].strip().lower() for item in items for option in ("option_a", "option_b")
     ]
     assert len(statements) == len(set(statements)), "a statement is reused across two duels"
 

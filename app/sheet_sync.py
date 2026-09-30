@@ -2,7 +2,7 @@
 
 The DISC module is what triggers the send (see ``_sync_to_trainer`` in
 ``app/results.py``), and its columns are always filled in. If the stagiaire
-has also completed any of the four addon modules by then, a short summary of
+has also completed any of the addon modules by then, a short summary of
 each (mode sous pression, moteurs principaux, ...) rides along in the same
 row — see ``build_payload``. Nothing beyond a compact, presentation-ready
 summary is sent: raw answers, item text and full score breakdowns stay on the
@@ -25,6 +25,7 @@ import requests
 import streamlit as st
 
 from assessment.scoring.disc import STRAIN_BAND_LABELS, STYLE_NAMES
+from assessment.scoring.instincts import INSTINCT_LABELS
 from assessment.scoring.stress import MODE_LABELS
 from assessment.types import and_join
 
@@ -77,6 +78,7 @@ def build_payload(identity: dict[str, str], report: dict[str, Any],
         "moteurs_principaux": "",
         "points_forts_principaux": "",
         "type_enneagramme_principal": "",
+        "instinct_dominant": "",
     }
 
     if "disc_adaptive" in results:
@@ -100,6 +102,10 @@ def build_payload(identity: dict[str, str], report: dict[str, Any],
 
     if "enneagram" in results:
         payload["type_enneagramme_principal"] = and_join(results["enneagram"].summary.get("top", [])[:1])
+
+    if "enneagram_instinct" in results:
+        dominant_instinct = results["enneagram_instinct"].summary.get("dominant")
+        payload["instinct_dominant"] = INSTINCT_LABELS.get(dominant_instinct, "")
 
     return payload
 

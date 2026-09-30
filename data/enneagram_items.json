@@ -23,7 +23,7 @@
         "Altruiste"
       ],
       "option_b": [
-        "Battant"
+        "Performeur"
       ]
     }
   },
@@ -34,10 +34,10 @@
     "option_b": "Je cherche une version plus personnelle d'une tâche que tout le monde ferait de la même façon.",
     "alignment": {
       "option_a": [
-        "Battant"
+        "Performeur"
       ],
       "option_b": [
-        "Romantique"
+        "Individualiste"
       ]
     }
   },
@@ -48,7 +48,7 @@
     "option_b": "Je préfère observer une situation en silence avant d'y participer.",
     "alignment": {
       "option_a": [
-        "Romantique"
+        "Individualiste"
       ],
       "option_b": [
         "Observateur"
@@ -65,7 +65,7 @@
         "Observateur"
       ],
       "option_b": [
-        "Loyaliste"
+        "Questionneur"
       ]
     }
   },
@@ -76,10 +76,10 @@
     "option_b": "Je vois vite plusieurs façons différentes d'aborder une même situation.",
     "alignment": {
       "option_a": [
-        "Loyaliste"
+        "Questionneur"
       ],
       "option_b": [
-        "Épicurien"
+        "Enthousiaste"
       ]
     }
   },
@@ -90,7 +90,7 @@
     "option_b": "Je prends la décision directement plutôt que d'attendre que quelqu'un d'autre s'en charge.",
     "alignment": {
       "option_a": [
-        "Épicurien"
+        "Enthousiaste"
       ],
       "option_b": [
         "Protecteur"
@@ -135,7 +135,7 @@
         "Perfectionniste"
       ],
       "option_b": [
-        "Battant"
+        "Performeur"
       ]
     }
   },
@@ -149,7 +149,7 @@
         "Altruiste"
       ],
       "option_b": [
-        "Romantique"
+        "Individualiste"
       ]
     }
   },
@@ -160,7 +160,7 @@
     "option_b": "Je garde mon énergie pour ce qui compte vraiment pour moi, et je me retire du reste.",
     "alignment": {
       "option_a": [
-        "Battant"
+        "Performeur"
       ],
       "option_b": [
         "Observateur"
@@ -174,10 +174,10 @@
     "option_b": "Je tiens un engagement pris envers quelqu'un, même quand les circonstances ont changé.",
     "alignment": {
       "option_a": [
-        "Romantique"
+        "Individualiste"
       ],
       "option_b": [
-        "Loyaliste"
+        "Questionneur"
       ]
     }
   },
@@ -191,7 +191,7 @@
         "Observateur"
       ],
       "option_b": [
-        "Épicurien"
+        "Enthousiaste"
       ]
     }
   },
@@ -202,7 +202,7 @@
     "option_b": "Je sens rapidement qui a réellement le dernier mot dans une situation.",
     "alignment": {
       "option_a": [
-        "Loyaliste"
+        "Questionneur"
       ],
       "option_b": [
         "Protecteur"
@@ -216,7 +216,7 @@
     "option_b": "Je mets du temps à me décider quand plusieurs options me semblent également acceptables.",
     "alignment": {
       "option_a": [
-        "Épicurien"
+        "Enthousiaste"
       ],
       "option_b": [
         "Médiateur"
@@ -261,7 +261,7 @@
         "Perfectionniste"
       ],
       "option_b": [
-        "Romantique"
+        "Individualiste"
       ]
     }
   },
@@ -286,10 +286,10 @@
     "option_b": "Je remarque une incohérence dans ce qu'on me dit avant même de savoir pourquoi elle me dérange.",
     "alignment": {
       "option_a": [
-        "Battant"
+        "Performeur"
       ],
       "option_b": [
-        "Loyaliste"
+        "Questionneur"
       ]
     }
   },
@@ -300,10 +300,10 @@
     "option_b": "Je dédramatise naturellement une situation qui inquiète les autres autour de moi.",
     "alignment": {
       "option_a": [
-        "Romantique"
+        "Individualiste"
       ],
       "option_b": [
-        "Épicurien"
+        "Enthousiaste"
       ]
     }
   },
@@ -328,7 +328,7 @@
     "option_b": "Je me range facilement à l'avis du groupe, même quand j'avais un avis différent.",
     "alignment": {
       "option_a": [
-        "Loyaliste"
+        "Questionneur"
       ],
       "option_b": [
         "Médiateur"
@@ -342,7 +342,7 @@
     "option_b": "Je préfère refaire une tâche moi-même plutôt que la laisser passer imparfaite.",
     "alignment": {
       "option_a": [
-        "Épicurien"
+        "Enthousiaste"
       ],
       "option_b": [
         "Perfectionniste"
@@ -373,7 +373,7 @@
         "Médiateur"
       ],
       "option_b": [
-        "Battant"
+        "Performeur"
       ]
     }
   },
@@ -401,7 +401,7 @@
         "Altruiste"
       ],
       "option_b": [
-        "Loyaliste"
+        "Questionneur"
       ]
     }
   },
@@ -412,10 +412,10 @@
     "option_b": "Je remplis mon emploi du temps de choses qui m'enthousiasment, quitte à en faire trop.",
     "alignment": {
       "option_a": [
-        "Battant"
+        "Performeur"
       ],
       "option_b": [
-        "Épicurien"
+        "Enthousiaste"
       ]
     }
   },
@@ -426,7 +426,7 @@
     "option_b": "Je préfère qu'on me dise les choses directement, même durement, plutôt qu'on me ménage.",
     "alignment": {
       "option_a": [
-        "Romantique"
+        "Individualiste"
       ],
       "option_b": [
         "Protecteur"
@@ -454,7 +454,7 @@
     "option_b": "Je me sens responsable de corriger ce qui ne va pas, même quand ce n'est pas à moi de le faire.",
     "alignment": {
       "option_a": [
-        "Loyaliste"
+        "Questionneur"
       ],
       "option_b": [
         "Perfectionniste"
@@ -468,7 +468,7 @@
     "option_b": "J'ai du mal à dire non à une demande d'aide, même quand je suis déjà débordé.",
     "alignment": {
       "option_a": [
-        "Épicurien"
+        "Enthousiaste"
       ],
       "option_b": [
         "Altruiste"
@@ -485,7 +485,7 @@
         "Protecteur"
       ],
       "option_b": [
-        "Battant"
+        "Performeur"
       ]
     }
   },
@@ -499,7 +499,7 @@
         "Médiateur"
       ],
       "option_b": [
-        "Romantique"
+        "Individualiste"
       ]
     }
   }

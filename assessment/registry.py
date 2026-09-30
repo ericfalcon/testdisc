@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 from . import items as pools
-from .scoring import disc, motivators, strengths, stress
+from .scoring import disc, instincts, motivators, strengths, stress
 from .types import Item, ModuleResult
 
 # L'ennéagramme n'est pas une évaluation commerciale : ses 9 types et ses trois
@@ -45,6 +45,10 @@ ENNEAGRAM_FRAME = (
     "Les mêmes tendances reviennent plusieurs fois, chaque fois face à une autre : "
     "c'est volontaire, c'est ce qui permet de les classer les unes par rapport aux "
     "autres — pas un bug."
+)
+INSTINCT_FRAME = (
+    "Neuf phrases seulement : de quoi dégager celui des trois instincts qui capte le "
+    "plus votre attention en premier, pas un profil détaillé en soi."
 )
 
 
@@ -135,6 +139,19 @@ def _score_enneagram(items: list[Item], answers: dict[str, Any], context: dict) 
     result = strengths.score([i.source for i in items], _answers_by_source(items, answers), pools.enneagram_types())
     result.module_id = "enneagram"
     return result
+
+
+# --------------------------------------------------------------------- instinct
+
+def _build_instinct(rng: random.Random, variant: str, context: dict) -> list[Item]:
+    # Only 9 items total (a full round robin over 3 instincts, repeated 3
+    # times) — small enough that there is no sampling step, unlike the other
+    # forced-choice modules: the whole pool is always used.
+    return pools.to_choice_items(list(pools.instinct_items()), "enneagram_instinct", INSTINCT_FRAME)
+
+
+def _score_instinct(items: list[Item], answers: dict[str, Any], context: dict) -> ModuleResult:
+    return instincts.score([i.source for i in items], _answers_by_source(items, answers))
 
 
 def _rebuilder(kind: str, module_id: str, frame: str = "") -> Callable[[list[str], str], list[Item]]:
@@ -255,6 +272,31 @@ _register(Module(
     rebuild=_rebuilder("enneagram", "enneagram", ENNEAGRAM_FRAME),
     score=_score_enneagram,
     minutes={"standard": 4},
+))
+
+# Les 3 instincts de survie (conservation, social, sexuel/un-à-un) sont une
+# couche sur le type de base, pas un remplacement — c'est la tradition
+# narrative de l'ennéagramme (Helen Palmer & David Daniels, narrativeenneagram.org)
+# qui y accorde une vraie place aux côtés des 9 types. Le concept lui-même
+# précède toute école en particulier (Naranjo) et n'appartient à personne ;
+# seule la formulation ci-dessous (data/instinct_items.json) est originale.
+_register(Module(
+    id="enneagram_instinct",
+    title="Votre instinct dominant",
+    icon="\U0001f9ec",
+    blurb=(
+        "Un complément rapide (9 questions) à l'Ennéagramme : lequel des 3 instincts de "
+        "survie — conservation, social, ou sexuel (un-à-un) — capte le plus votre "
+        "attention en premier. Le type dit ce qui vous motive ; l'instinct dit où ça se "
+        "voit en premier."
+    ),
+    kind="addon",
+    item_type="forced_choice",
+    build=_build_instinct,
+    rebuild=_rebuilder("instincts", "enneagram_instinct", INSTINCT_FRAME),
+    score=_score_instinct,
+    minutes={"standard": 1},
+    depends_on=("enneagram",),
 ))
 
 CORE_MODULES = tuple(m.id for m in REGISTRY.values() if m.kind == "core")

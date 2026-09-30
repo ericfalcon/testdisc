@@ -39,7 +39,10 @@ _STRENGTHS_RESULT = ModuleResult(
     module_id="strengths", summary={"top": ["Lancement", "Vision"]}
 )
 _ENNEAGRAM_RESULT = ModuleResult(
-    module_id="strengths", summary={"top": ["Observateur", "Loyaliste"]}
+    module_id="strengths", summary={"top": ["Observateur", "Questionneur"]}
+)
+_INSTINCT_RESULT = ModuleResult(
+    module_id="enneagram_instinct", summary={"dominant": "Social"}
 )
 _RESULTS_WITH_ADDONS = {
     "disc_natural": _DISC_RESULT,
@@ -48,6 +51,7 @@ _RESULTS_WITH_ADDONS = {
     "motivators": _MOTIVATORS_RESULT,
     "strengths_core": _STRENGTHS_RESULT,
     "enneagram": _ENNEAGRAM_RESULT,
+    "enneagram_instinct": _INSTINCT_RESULT,
 }
 _REPORT_WITH_ADDONS = {
     **_REPORT,
@@ -90,7 +94,7 @@ def test_build_payload_addon_columns_are_blank_without_those_modules():
     payload = sheet_sync.build_payload(_IDENTITY, _REPORT, _RESULTS)
     for key in ("style_travail", "indice_tension", "charge_adaptation",
                 "mode_sous_pression", "moteurs_principaux", "points_forts_principaux",
-                "type_enneagramme_principal"):
+                "type_enneagramme_principal", "instinct_dominant"):
         assert payload[key] == ""
 
 
@@ -103,6 +107,7 @@ def test_build_payload_includes_completed_addon_modules():
     assert payload["moteurs_principaux"] == "Autonomie, Sens et Maîtrise"
     assert payload["points_forts_principaux"] == "Lancement et Vision"
     assert payload["type_enneagramme_principal"] == "Observateur"
+    assert payload["instinct_dominant"] == "Social"
     # The core columns are unaffected by the addons riding along.
     assert payload["style_code"] == "D"
     assert payload["score_D"] == 70.0
