@@ -298,11 +298,14 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         flow.append(Paragraph(
             "Trois idées traditionnelles de l'ennéagramme, distinctes du classement ci-dessus. Les "
             "« ailes » sont les deux types voisins sur le cercle, qui colorent en permanence le "
-            "type dominant. Le « point de stress » et le « point de développement » sont les deux "
-            "bouts des flèches déjà visibles sur le schéma (le triangle et l'hexagone) : ils "
-            "désignent un type vers lequel on peut glisser sous tension, ou en travaillant sur soi "
-            "— pas un autre classement. Une heuristique répandue, pas plus validée "
-            "scientifiquement que le reste de ce module.", s["muted"]))
+            "type dominant. La « désintégration » (point de stress) et l'« intégration » (point "
+            "de développement) — les termes de Don Riso et Russ Hudson — sont les deux bouts des "
+            "flèches déjà visibles sur le schéma (le triangle et l'hexagone) : elles désignent un "
+            "type vers lequel on peut glisser sous tension, ou vers lequel on tend en travaillant "
+            "sur soi — pas un autre classement. Un test répond à un instant T : il ne distingue "
+            "pas quelqu'un qui vit son type de façon classique de quelqu'un qui a déjà beaucoup "
+            "travaillé sur lui-même et montre plutôt, de façon stable, des traits d'intégration.",
+            s["muted"]))
         flow.append(Paragraph(
             f"<b>Type dominant.</b> Type {dominant['number']} — {_clean(dominant['name'])} "
             f"({dominant['win_rate']:.0%})", s["body"]))
@@ -311,18 +314,18 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             f"{_clean(wing_lo['tagline'])} · Type {wing_hi['number']} ({_clean(wing_hi['name'])}) "
             f"— {_clean(wing_hi['tagline'])}", s["body"]))
         flow.append(Paragraph(
-            f"<b>Sous tension, vers le Type {stress_pt['number']} ({_clean(stress_pt['name'])}).</b> "
-            f"{_clean(stress_pt['tagline'])}", s["body"]))
+            f"<b>Désintégration — sous tension, vers le Type {stress_pt['number']} "
+            f"({_clean(stress_pt['name'])}).</b> {_clean(stress_pt['tagline'])}", s["body"]))
         flow.append(Paragraph(
-            f"<b>En travail sur soi, vers le Type {growth_pt['number']} ({_clean(growth_pt['name'])}).</b> "
-            f"{_clean(growth_pt['tagline'])}", s["body"]))
+            f"<b>Intégration — en travail sur soi, vers le Type {growth_pt['number']} "
+            f"({_clean(growth_pt['name'])}).</b> {_clean(growth_pt['tagline'])}", s["body"]))
 
         flow.append(Paragraph("Comment ces connexions se manifestent concrètement", s["h3"]))
         for heading, rel in (
             (f"Aile — Type {wing_lo['number']} ({_clean(wing_lo['name'])})", wing_lo),
             (f"Aile — Type {wing_hi['number']} ({_clean(wing_hi['name'])})", wing_hi),
-            (f"Sous tension — Type {stress_pt['number']} ({_clean(stress_pt['name'])})", stress_pt),
-            (f"En travail sur soi — Type {growth_pt['number']} ({_clean(growth_pt['name'])})", growth_pt),
+            (f"Désintégration — Type {stress_pt['number']} ({_clean(stress_pt['name'])})", stress_pt),
+            (f"Intégration — Type {growth_pt['number']} ({_clean(growth_pt['name'])})", growth_pt),
         ):
             flow.append(Paragraph(f"<b>{heading}</b>", s["body"]))
             flow.append(Paragraph(_clean(rel["manifestation"]), s["body"]))
@@ -361,6 +364,21 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
                 f"<b>Comment ça se voit.</b> {_clean(theme['shadow'])}<br/>"
                 f"<b>Quand ça vous coûte.</b> {_clean(theme['overuse'])}<br/>"
                 f"<b>Pour progresser.</b> {_clean(theme['developpement'])}", s["muted"]))
+
+        flow.append(Paragraph("Repères et sources sur l'ennéagramme", s["h3"]))
+        flow.append(Paragraph(
+            "Un cadre partagé par plusieurs auteurs, sans nomenclature déposée unique : Óscar "
+            "Ichazo puis Claudio Naranjo ont posé, dans les années 1970, les bases du modèle "
+            "moderne à 9 points (dont les 3 instincts de survie) ; Helen Palmer et David Daniels, "
+            "avec la tradition dite « narrative » (narrativeenneagram.org), ont diffusé la "
+            "description des 9 types sur laquelle s'aligne le nom que nous donnons à chacun ; Don "
+            "Riso et Russ Hudson ont popularisé la lecture du triangle et de l'hexagone comme des "
+            "flèches orientées (intégration/désintégration) ; Ian Cron et Suzanne Stabile ont "
+            "contribué à faire connaître l'ensemble à un public plus large. Comme le rappellent la "
+            "plupart des instruments sérieux sur le sujet, aucun test ne peut déterminer un type "
+            "d'ennéagramme avec une précision ou une validité totales — le vôtre y compris : le "
+            "classement calculé est un point de départ pour votre propre réflexion, pas une "
+            "conclusion.", s["muted"]))
 
     if "instinct" in report:
         instinct = report["instinct"]

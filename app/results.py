@@ -343,11 +343,19 @@ def _enneagram_section(report: dict) -> None:
     st.caption(
         "Trois idées traditionnelles de l'ennéagramme, distinctes du classement ci-dessus. Les "
         "« ailes » sont les deux types voisins sur le cercle, qui colorent en permanence le type "
-        "dominant. Le « point de stress » et le « point de développement » sont les deux bouts des "
-        "flèches déjà visibles sur le disque (le triangle et l'hexagone) : ils désignent un type "
-        "vers lequel on peut glisser sous tension, ou en travaillant sur soi — pas un autre "
-        "classement. Une heuristique répandue, pas plus validée scientifiquement que le reste de "
-        "ce module."
+        "dominant. La « désintégration » (point de stress) et l'« intégration » (point de "
+        "développement) sont les deux bouts des flèches déjà visibles sur le disque (le triangle "
+        "et l'hexagone) — c'est le nom que leur donnent Don Riso et Russ Hudson, les auteurs qui "
+        "ont le plus popularisé cette lecture des flèches : elles désignent un type vers lequel "
+        "on peut glisser sous tension, ou vers lequel on tend en travaillant sur soi — pas un "
+        "autre classement. Une heuristique répandue, pas plus validée scientifiquement que le "
+        "reste de ce module. Ceci dit, un test répond à un instant T : il ne fait pas la "
+        "différence entre quelqu'un qui vit son type de façon classique et quelqu'un qui a déjà "
+        "beaucoup travaillé sur lui-même et montre désormais, de façon stable, des traits plutôt "
+        "associés à son point d'intégration — l'inverse est vrai aussi, personne ne vit "
+        "vraiment en permanence son point de désintégration. Les descriptions ci-dessous décrivent "
+        "des directions et des tendances, pas un état figé ni un jugement sur votre niveau de "
+        "développement personnel."
     )
     st.markdown(
         f"""<div class="panel">
@@ -358,10 +366,12 @@ def _enneagram_section(report: dict) -> None:
             Type {wing_lo['number']} ({html.escape(wing_lo['name'])}) — {html.escape(wing_lo['tagline'])}<br>
             Type {wing_hi['number']} ({html.escape(wing_hi['name'])}) — {html.escape(wing_hi['tagline'])}</p>
           <p style="margin-bottom:10px;">
-            <b>Sous tension, vers le Type {stress['number']} ({html.escape(stress['name'])}).</b>
+            <b>Désintégration — sous tension, vers le Type {stress['number']}
+            ({html.escape(stress['name'])}).</b>
             {html.escape(stress['tagline'])}</p>
           <p style="margin-bottom:0;">
-            <b>En travail sur soi, vers le Type {growth['number']} ({html.escape(growth['name'])}).</b>
+            <b>Intégration — en travail sur soi, vers le Type {growth['number']}
+            ({html.escape(growth['name'])}).</b>
             {html.escape(growth['tagline'])}</p>
         </div>""",
         unsafe_allow_html=True,
@@ -386,8 +396,8 @@ def _enneagram_section(report: dict) -> None:
         )
         st.markdown(_relation_card(f"Aile — Type {wing_lo['number']}", wing_lo), unsafe_allow_html=True)
         st.markdown(_relation_card(f"Aile — Type {wing_hi['number']}", wing_hi), unsafe_allow_html=True)
-        st.markdown(_relation_card("Sous tension", stress), unsafe_allow_html=True)
-        st.markdown(_relation_card("En travail sur soi", growth), unsafe_allow_html=True)
+        st.markdown(_relation_card("Désintégration — sous tension", stress), unsafe_allow_html=True)
+        st.markdown(_relation_card("Intégration — en travail sur soi", growth), unsafe_allow_html=True)
 
     if enneagram["supporting"]:
         first = len(enneagram["top"]) + 1
@@ -472,6 +482,26 @@ def _enneagram_section(report: dict) -> None:
         "théorique répandu, mais qui n'a jamais été validé scientifiquement d'aussi près, même "
         "comparé au DISC — traitez-le comme une piste de réflexion, pas comme un diagnostic."
     )
+    with st.expander("Repères et sources sur l'ennéagramme"):
+        st.markdown(
+            "Ce module s'appuie sur un cadre partagé par plusieurs auteurs, sans nomenclature "
+            "déposée unique — les 9 types, les ailes, le triangle et l'hexagone circulent depuis "
+            "des décennies avant d'apparaître dans un test en particulier :\n\n"
+            "- **Óscar Ichazo puis Claudio Naranjo** ont posé, dans les années 1970, les bases du "
+            "modèle moderne à 9 points, y compris les 3 instincts de survie repris par le module "
+            "« Votre instinct dominant ».\n"
+            "- **Helen Palmer et David Daniels**, avec la tradition dite « narrative » "
+            "(narrativeenneagram.org), ont diffusé la description des 9 types sur laquelle "
+            "s'aligne le nom que nous donnons à chacun.\n"
+            "- **Don Riso et Russ Hudson** ont popularisé la lecture du triangle et de l'hexagone "
+            "comme des flèches orientées — l'intégration et la désintégration décrites plus haut.\n"
+            "- **Ian Cron et Suzanne Stabile** ont contribué à faire connaître l'ensemble à un "
+            "public plus large, en dehors du cadre thérapeutique d'origine.\n\n"
+            "Comme le rappellent la plupart des instruments sérieux sur le sujet, aucun test, "
+            "quel qu'il soit, ne peut déterminer un type d'ennéagramme avec une précision ou une "
+            "validité totales — le vôtre y compris. Le classement calculé est un point de départ "
+            "pour votre propre réflexion, pas une conclusion."
+        )
 
 
 def _instinct_section(report: dict) -> None:
