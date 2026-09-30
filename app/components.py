@@ -271,13 +271,46 @@ def _wheel_point(number: int, cx: float, cy: float, r: float) -> tuple[float, fl
     return cx + r * math.cos(angle), cy - r * math.sin(angle)
 
 
+_LABEL_FONT_SIZE = 12.5
+# Rough advance width for Archivo semibold at this size — no text-measurement
+# API is available server-side, so this trades exactness for a deliberately
+# generous estimate: an overestimate wastes a little margin, an underestimate
+# clips a name, and French type names run long ("Perfectionniste",
+# "Individualiste"), so the estimate errs wide on purpose.
+_LABEL_CHAR_WIDTH = _LABEL_FONT_SIZE * 0.62
+
+
+def _label_bbox(x: float, y: float, anchor: str, text: str) -> tuple[float, float, float, float]:
+    width = len(text) * _LABEL_CHAR_WIDTH
+    if anchor == "start":
+        x0, x1 = x, x + width
+    elif anchor == "end":
+        x0, x1 = x - width, x
+    else:
+        x0, x1 = x - width / 2, x + width / 2
+    # Baseline-relative: most of a cap-height glyph sits above the baseline,
+    # a little (descenders, accents) below it.
+    y0, y1 = y - _LABEL_FONT_SIZE * 0.8, y + _LABEL_FONT_SIZE * 0.3
+    return x0, y0, x1, y1
+
+
 def enneagram_wheel(entries: list[dict], top_names: set[str]) -> str:
     """An SVG rendering of the classic Enneagram circle, with each of the 9
     points sized and shaded by how often that type won when it was offered —
     a positioning, not just a ranked list. ``entries`` is a list of dicts with
-    name / number / domain / colour / win_rate for all 9 types."""
+    name / number / domain / colour / win_rate for all 9 types.
+
+    The viewBox is computed from the actual content rather than hardcoded:
+    a hardcoded box clipped the name label of the winning type whenever it
+    was one of the longer French names ("Questionneur", "Individualiste") —
+    an SVG's default overflow is hidden, so anything placed past a fixed
+    viewBox edge simply disappears rather than wrapping or shrinking."""
     cx, cy, r_outer = 170.0, 170.0, 128.0
     by_number = {e["number"]: e for e in entries}
+    # The circle plus the largest possible marker (radius 20) and its
+    # highlight ring (+4) and stroke, with a little slack.
+    min_x, min_y = cx - r_outer - 26, cy - r_outer - 26
+    max_x, max_y = cx + r_outer + 26, cy + r_outer + 26
 
     lines = []
     for seq in (_HEXAD, _TRIANGLE):
@@ -307,11 +340,19 @@ def enneagram_wheel(entries: list[dict], top_names: set[str]) -> str:
             anchor = "middle" if abs(x - cx) < 8 else ("start" if x > cx else "end")
             markers.append(
                 f'<text x="{label_x:.1f}" y="{label_y:.1f}" text-anchor="{anchor}" '
-                f'font-family="Archivo, sans-serif" font-size="12.5" font-weight="600" '
+                f'font-family="Archivo, sans-serif" font-size="{_LABEL_FONT_SIZE}" font-weight="600" '
                 f'fill="{e["colour"]}">{html.escape(e["name"])}</text>'
             )
+            x0, y0, x1, y1 = _label_bbox(label_x, label_y, anchor, e["name"])
+            min_x, min_y = min(min_x, x0), min(min_y, y0)
+            max_x, max_y = max(max_x, x1), max(max_y, y1)
 
-    return f"""<svg viewBox="0 0 340 340" width="100%" style="max-width:400px;display:block;margin:0 auto;">
+    pad = 8
+    vb_x, vb_y = min_x - pad, min_y - pad
+    vb_w, vb_h = (max_x - min_x) + 2 * pad, (max_y - min_y) + 2 * pad
+
+    return f"""<svg viewBox="{vb_x:.1f} {vb_y:.1f} {vb_w:.1f} {vb_h:.1f}" width="100%" \
+style="max-width:400px;display:block;margin:0 auto;">
       <circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="none" stroke="{RULE}" stroke-width="1.2"/>
       {''.join(lines)}
       {''.join(markers)}

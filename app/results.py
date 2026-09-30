@@ -317,6 +317,41 @@ def _enneagram_section(report: dict) -> None:
         with st.expander(f"Pourquoi {theme['name']} ? — les choix derrière ce type"):
             _choice_evidence(theme["evidence"])
 
+    dominant = enneagram["dominant"]
+    wing_lo, wing_hi = enneagram["wings"]
+    stress = enneagram["stress_point"]
+    growth = enneagram["growth_point"]
+    st.markdown(
+        '<div class="chan" style="margin-top:0.4rem;">Votre type dominant, ses ailes et ses '
+        'connexions</div>', unsafe_allow_html=True,
+    )
+    st.caption(
+        "Trois idées traditionnelles de l'ennéagramme, distinctes du classement ci-dessus. Les "
+        "« ailes » sont les deux types voisins sur le cercle, qui colorent en permanence le type "
+        "dominant. Le « point de stress » et le « point de développement » sont les deux bouts des "
+        "flèches déjà visibles sur le disque (le triangle et l'hexagone) : ils désignent un type "
+        "vers lequel on peut glisser sous tension, ou en travaillant sur soi — pas un autre "
+        "classement. Une heuristique répandue, pas plus validée scientifiquement que le reste de "
+        "ce module."
+    )
+    st.markdown(
+        f"""<div class="panel">
+          <p style="margin-bottom:10px;"><b>Type dominant.</b> Type {dominant['number']} —
+            {html.escape(dominant['name'])}
+            <span class="num" style="color:{ui.SLATE};">({dominant['win_rate']:.0%})</span></p>
+          <p style="margin-bottom:10px;"><b>Ses ailes.</b>
+            Type {wing_lo['number']} ({html.escape(wing_lo['name'])}) — {html.escape(wing_lo['tagline'])}<br>
+            Type {wing_hi['number']} ({html.escape(wing_hi['name'])}) — {html.escape(wing_hi['tagline'])}</p>
+          <p style="margin-bottom:10px;">
+            <b>Sous tension, vers le Type {stress['number']} ({html.escape(stress['name'])}).</b>
+            {html.escape(stress['tagline'])}</p>
+          <p style="margin-bottom:0;">
+            <b>En travail sur soi, vers le Type {growth['number']} ({html.escape(growth['name'])}).</b>
+            {html.escape(growth['tagline'])}</p>
+        </div>""",
+        unsafe_allow_html=True,
+    )
+
     if enneagram["supporting"]:
         first = len(enneagram["top"]) + 1
         last = first + len(enneagram["supporting"]) - 1
@@ -341,6 +376,14 @@ def _enneagram_section(report: dict) -> None:
 
     result = st.session_state.results["enneagram"].summary
     with st.expander(f"Classement complet des {len(result['ranking'])} types"):
+        st.caption(
+            "Le pourcentage est calculé sur les 8 fois où ce type précis était l'une des deux "
+            "options proposées, pas sur les 36 questions du test — un type n'est en jeu que dans "
+            "un tiers d'entre elles, donc le rapporter aux 36 diluerait le score de tout le monde "
+            "par le même facteur sans rien changer au classement. C'est la même logique qu'un "
+            "classement de tournoi : le pourcentage de victoires d'une équipe se calcule sur ses "
+            "propres matchs, pas sur tous les matchs du tournoi."
+        )
         for rank, name in enumerate(result["ranking"], start=1):
             st.markdown(
                 f'<div style="display:flex;justify-content:space-between;font-size:0.92rem;'
@@ -357,7 +400,9 @@ def _enneagram_section(report: dict) -> None:
             "instruments de référence sur l'ennéagramme (comme celui de la tradition narrative, "
             "narrativeenneagram.org) fonctionnent d'ailleurs sur ce principe : lire les 9 "
             "descriptions complètes et retenir celle qui sonne le plus juste, pas seulement se "
-            "fier au classement calculé. Le vôtre est indiqué à titre de repère."
+            "fier au classement calculé. Les 9 sont classées ci-dessous du score le plus haut au "
+            "plus bas pour rester lisibles d'un coup d'œil, mais l'intérêt de la méthode est "
+            "justement de toutes les lire avant de trancher, pas de s'arrêter à la première."
         )
         for theme in enneagram["all_types"]:
             st.markdown(
@@ -409,7 +454,14 @@ def _instinct_section(report: dict) -> None:
         unsafe_allow_html=True,
     )
     dominant = instinct["dominant"]
-    ui.panel(inst_scoring.INSTINCT_LABELS[dominant], f'<p>{html.escape(inst_scoring.INSTINCT_BLURBS[dominant])}</p>')
+    ui.panel(
+        inst_scoring.INSTINCT_LABELS[dominant],
+        f'<p>{html.escape(inst_scoring.INSTINCT_BLURBS[dominant])}</p>'
+        f'<p style="margin-bottom:0;"><b>Ce que ça donne de bien.</b> '
+        f'{html.escape(inst_scoring.INSTINCT_FORCES[dominant])}<br>'
+        f'<b>Quand ça vous coûte.</b> {html.escape(inst_scoring.INSTINCT_OVERUSE[dominant])}<br>'
+        f'<b>Pour progresser.</b> {html.escape(inst_scoring.INSTINCT_DEVELOPPEMENT[dominant])}</p>',
+    )
     with st.expander("Pourquoi ? — les arbitrages derrière votre instinct dominant"):
         _choice_evidence([e for e in report["instinct_evidence"][dominant] if e["chosen"]])
     st.caption(

@@ -31,15 +31,77 @@ INSTINCT_LABELS = {
 INSTINCT_BLURBS = {
     "Conservation": (
         "Votre attention va en premier vers ce qui assure votre confort et votre sécurité "
-        "matérielle au quotidien : le corps, l'espace, les ressources, une routine qui tient."
+        "matérielle au quotidien : le corps, l'espace, les ressources, une routine qui tient. "
+        "Vous remarquez vite ce qui menace cet équilibre — un imprévu, une dépense, une "
+        "fatigue qui s'installe — et vous ajustez votre environnement avant que la gêne ne "
+        "devienne un vrai problème. Cette vigilance discrète passe souvent inaperçue des "
+        "autres, précisément parce qu'elle fonctionne : le confort qu'elle produit semble "
+        "aller de soi."
     ),
     "Social": (
         "Votre attention va en premier vers le groupe : votre place dedans, sa dynamique, "
-        "votre contribution à quelque chose de plus grand que vous."
+        "votre contribution à quelque chose de plus grand que vous. Vous repérez vite qui a "
+        "de l'influence, qui est mis à l'écart, où se situent les alliances — une lecture "
+        "sociale qui vous aide à vous positionner utilement dans presque n'importe quel "
+        "collectif. Le revers, c'est une attention presque permanente à votre statut dans le "
+        "groupe, parfois au détriment d'un lien individuel qui mériterait plus de votre temps."
     ),
     "Sexuel": (
         "Votre attention va en premier vers l'intensité d'un lien en particulier : la "
-        "connexion, l'alchimie, être choisi par quelqu'un plutôt qu'accepté par tous."
+        "connexion, l'alchimie, être choisi par quelqu'un plutôt qu'accepté par tous. Vous "
+        "cherchez naturellement ce qui va créer une intensité entre vous et une personne, une "
+        "idée ou une situation, plus qu'une approbation générale et diffuse. Cette recherche "
+        "d'intensité peut donner à vos relations et à vos engagements une profondeur rare — "
+        "mais aussi les rendre instables dès que l'intensité initiale retombe."
+    ),
+}
+
+# Strengths / cost / growth edge for each instinct — added for the same reason
+# the 9 Enneagram types carry them: a one-line blurb reads as thin once
+# someone has taken the test and wants to actually think about the result.
+INSTINCT_FORCES = {
+    "Conservation": (
+        "Sens pratique, fiabilité au quotidien, capacité à anticiper un besoin matériel avant "
+        "qu'il ne devienne urgent, stabilité qui rassure un entourage moins organisé."
+    ),
+    "Social": (
+        "Sens du collectif, lecture fine des dynamiques de groupe, capacité à fédérer, "
+        "générosité envers une cause ou une communauté."
+    ),
+    "Sexuel": (
+        "Capacité à créer une connexion forte rapidement, intensité et présence dans une "
+        "relation, goût du risque relationnel, charisme dans le tête-à-tête."
+    ),
+}
+
+INSTINCT_OVERUSE = {
+    "Conservation": (
+        "Vous consacrez une énergie disproportionnée à sécuriser un détail matériel mineur, "
+        "au point de perdre de vue ce qui se joue autour de vous sur le plan relationnel ou "
+        "collectif."
+    ),
+    "Social": (
+        "Vous vous investissez dans le rôle que vous jouez au sein du groupe au point de "
+        "négliger une relation individuelle qui compte pourtant réellement pour vous."
+    ),
+    "Sexuel": (
+        "Vous perdez l'intérêt pour une relation ou un projet dès que l'intensité du début "
+        "s'estompe, même quand ce qui reste est solide."
+    ),
+}
+
+INSTINCT_DEVELOPPEMENT = {
+    "Conservation": (
+        "Remarquer, de temps en temps, ce qui se passe dans la pièce ou dans la relation "
+        "avant de vérifier que tout est en ordre autour de vous."
+    ),
+    "Social": (
+        "Accorder à une relation à deux la même attention pleine et entière que celle que "
+        "vous donnez naturellement à la dynamique d'un groupe."
+    ),
+    "Sexuel": (
+        "Rester engagé dans une relation ou un projet une fois l'intensité initiale retombée, "
+        "plutôt que d'en chercher une nouvelle ailleurs."
     ),
 }
 

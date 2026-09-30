@@ -11,6 +11,31 @@ from . import disc as disc_report
 from . import integration, plan
 from . import strengths as strengths_report
 
+# The Enneagram's other two traditional heuristics, layered on top of the
+# 9-type score: "wings" (the two numeric neighbours, which are always taken
+# to flavour the base type) and the stress/security "arrows" — the same
+# hexad (1-4-2-8-5-7-1) and triangle (3-9-6-3) already drawn on the wheel in
+# app/components.py and app/plots.py, read as directed connections rather
+# than a plain shape. The direction below (stress = forward along the
+# arrow, security/growth = backward) is the one most widely reproduced
+# across Enneagram teaching — a public-domain heuristic like the shape
+# itself, not a claim tied to one school, and no more scientifically
+# validated than the rest of this module.
+_HEXAD = (1, 4, 2, 8, 5, 7, 1)
+_TRIANGLE = (3, 9, 6, 3)
+
+
+def _forward_edges(sequence: tuple[int, ...]) -> dict[int, int]:
+    return {sequence[i]: sequence[i + 1] for i in range(len(sequence) - 1)}
+
+
+_STRESS_BY_NUMBER = {**_forward_edges(_HEXAD), **_forward_edges(_TRIANGLE)}
+_GROWTH_BY_NUMBER = {v: k for k, v in _STRESS_BY_NUMBER.items()}
+
+
+def _wing_numbers(number: int) -> tuple[int, int]:
+    return ((number - 2) % 9) + 1, (number % 9) + 1
+
 
 def confidence_for(module_id: str, source_items: list[dict], answers: dict[str, Any]) -> dict | None:
     """Response-quality verdict for the Likert modules, which are the only ones
@@ -101,8 +126,11 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
         # reference instruments in this field (e.g. the Narrative Enneagram's
         # own Stanford inventory) work by having the person read all 9 full
         # descriptions and pick the one that rings truest, rather than trust a
-        # computed rank alone. All 9 go here, in their traditional order, so
-        # the report can offer that same self-check next to the computed one.
+        # computed rank alone. All 9 go here so the report can offer that same
+        # self-check next to the computed one — ordered by score (highest
+        # first) so the list also doubles as the detailed version of the
+        # ranking, rather than a traditional-number order disconnected from it.
+        win_rates = enneagram_result.summary["win_rates"]
         report["enneagram"]["all_types"] = [
             {
                 "name": name,
@@ -116,10 +144,33 @@ def build_report(results: dict[str, Any], sources: dict[str, list[dict]],
                 "shadow": info["shadow"],
                 "overuse": info["overuse"],
                 "developpement": info["developpement"],
-                "win_rate": enneagram_result.summary["win_rates"][name],
+                "win_rate": win_rates[name],
             }
-            for name, info in sorted(enneagram_types.items(), key=lambda kv: kv[1]["number"])
+            for name, info in sorted(
+                enneagram_types.items(), key=lambda kv: (-win_rates[kv[0]], kv[1]["number"])
+            )
         ]
+
+        # The dominant type (highest win rate) plus its two wings and its
+        # stress/growth points — see the heuristic note above the maps.
+        number_to_name = {info["number"]: name for name, info in enneagram_types.items()}
+
+        def _brief(name: str) -> dict:
+            info = enneagram_types[name]
+            return {
+                "name": name, "number": info["number"], "colour": info["badge_color"],
+                "tagline": info["tagline"], "win_rate": win_rates[name],
+            }
+
+        dominant_name = enneagram_result.summary["ranking"][0]
+        dominant_number = enneagram_types[dominant_name]["number"]
+        wing_lo, wing_hi = _wing_numbers(dominant_number)
+        report["enneagram"]["dominant"] = _brief(dominant_name)
+        report["enneagram"]["wings"] = [
+            _brief(number_to_name[wing_lo]), _brief(number_to_name[wing_hi]),
+        ]
+        report["enneagram"]["stress_point"] = _brief(number_to_name[_STRESS_BY_NUMBER[dominant_number]])
+        report["enneagram"]["growth_point"] = _brief(number_to_name[_GROWTH_BY_NUMBER[dominant_number]])
 
     if instinct_result is not None:
         report["instinct"] = instinct_result.summary

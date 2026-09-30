@@ -7,6 +7,7 @@ import re
 from datetime import datetime
 from io import BytesIO
 
+from PIL import Image as PILImage
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
@@ -30,7 +31,8 @@ def _date_fr(dt: datetime) -> str:
     locale installed. The time matters here: a trainer collecting several
     PDFs from the same session needs to tell apart a retake from the original."""
     return f"Généré le {dt.day:02d} {_MOIS_FR[dt.month]} {dt.year} à {dt.hour:02d}:{dt.minute:02d}"
-from assessment.scoring.instincts import INSTINCT_BLURBS, INSTINCT_LABELS
+from assessment.scoring.instincts import (INSTINCT_BLURBS, INSTINCT_DEVELOPPEMENT,
+                                          INSTINCT_FORCES, INSTINCT_LABELS, INSTINCT_OVERUSE)
 from assessment.scoring.motivators import DRIVER_BLURBS
 from assessment.scoring.stress import MODE_BLURBS, MODE_LABELS
 
@@ -260,8 +262,18 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         figure.savefig(image, format="png", dpi=170, bbox_inches="tight",
                        facecolor=figure.get_facecolor())
         image.seek(0)
+        # bbox_inches="tight" crops to the actual ink, which is not reliably
+        # square once a long French name (e.g. "Individualiste") sticks out
+        # further on one side than the others — forcing that crop into an
+        # explicit 70mm x 70mm square used to stretch it. Reading the saved
+        # PNG's real pixel size and deriving the height from it keeps the
+        # picture's true proportions regardless of which side grew.
+        img_w, img_h = PILImage.open(image).size
+        image.seek(0)
+        target_w = 70 * mm
+        target_h = target_w * (img_h / img_w)
         flow.append(Table(
-            [[Image(image, width=70 * mm, height=70 * mm)]],
+            [[Image(image, width=target_w, height=target_h)]],
             colWidths=[doc.width],
             style=TableStyle([("ALIGN", (0, 0), (-1, -1), "CENTER")]),
         ))
@@ -278,6 +290,33 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             flow.append(Paragraph(
                 f"<b>Comment c'est perçu.</b> {_clean(theme['shadow'])}<br/>"
                 f"<b>Quand ça vous coûte.</b> {_clean(theme['overuse'])}", s["muted"]))
+        dominant = enneagram["dominant"]
+        wing_lo, wing_hi = enneagram["wings"]
+        stress_pt = enneagram["stress_point"]
+        growth_pt = enneagram["growth_point"]
+        flow.append(Paragraph("Votre type dominant, ses ailes et ses connexions", s["h3"]))
+        flow.append(Paragraph(
+            "Trois idées traditionnelles de l'ennéagramme, distinctes du classement ci-dessus. Les "
+            "« ailes » sont les deux types voisins sur le cercle, qui colorent en permanence le "
+            "type dominant. Le « point de stress » et le « point de développement » sont les deux "
+            "bouts des flèches déjà visibles sur le schéma (le triangle et l'hexagone) : ils "
+            "désignent un type vers lequel on peut glisser sous tension, ou en travaillant sur soi "
+            "— pas un autre classement. Une heuristique répandue, pas plus validée "
+            "scientifiquement que le reste de ce module.", s["muted"]))
+        flow.append(Paragraph(
+            f"<b>Type dominant.</b> Type {dominant['number']} — {_clean(dominant['name'])} "
+            f"({dominant['win_rate']:.0%})", s["body"]))
+        flow.append(Paragraph(
+            f"<b>Ses ailes.</b> Type {wing_lo['number']} ({_clean(wing_lo['name'])}) — "
+            f"{_clean(wing_lo['tagline'])} · Type {wing_hi['number']} ({_clean(wing_hi['name'])}) "
+            f"— {_clean(wing_hi['tagline'])}", s["body"]))
+        flow.append(Paragraph(
+            f"<b>Sous tension, vers le Type {stress_pt['number']} ({_clean(stress_pt['name'])}).</b> "
+            f"{_clean(stress_pt['tagline'])}", s["body"]))
+        flow.append(Paragraph(
+            f"<b>En travail sur soi, vers le Type {growth_pt['number']} ({_clean(growth_pt['name'])}).</b> "
+            f"{_clean(growth_pt['tagline'])}", s["body"]))
+
         flow.append(Paragraph("Ce qui vous ressemble le moins", s["h3"]))
         flow.append(Paragraph(_clean(enneagram["bottom_note"]), s["body"]))
         flow.append(Paragraph(
@@ -291,7 +330,9 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
             "instruments de référence sur l'ennéagramme (dont celui de la tradition narrative, "
             "narrativeenneagram.org) fonctionnent d'ailleurs sur ce principe : lire les 9 "
             "descriptions complètes et retenir celle qui sonne le plus juste, pas seulement se "
-            "fier au classement calculé. Le vôtre est indiqué à titre de repère.",
+            "fier au classement calculé. Les 9 sont classées ci-dessous du score le plus haut au "
+            "plus bas pour rester lisibles d'un coup d'œil, mais l'intérêt de la méthode est "
+            "justement de toutes les lire avant de trancher, pas de s'arrêter à la première.",
             s["muted"]))
         for theme in enneagram["all_types"]:
             flow.append(Paragraph(
@@ -312,6 +353,11 @@ def build_pdf(report: dict, results: dict, identity: dict | None = None) -> Byte
         dominant = instinct["dominant"]
         flow.append(Paragraph(
             f"<b>{INSTINCT_LABELS[dominant]}.</b> {_clean(INSTINCT_BLURBS[dominant])}", s["body"]))
+        flow.append(Paragraph(
+            f"<b>Ce que ça donne de bien.</b> {_clean(INSTINCT_FORCES[dominant])}", s["body"]))
+        flow.append(Paragraph(
+            f"<b>Quand ça vous coûte.</b> {_clean(INSTINCT_OVERUSE[dominant])}<br/>"
+            f"<b>Pour progresser.</b> {_clean(INSTINCT_DEVELOPPEMENT[dominant])}", s["muted"]))
         flow.append(Paragraph(
             " · ".join(f"{INSTINCT_LABELS[d]} {instinct['win_rates'][d]:.0%}" for d in instinct["ranking"]),
             s["muted"]))

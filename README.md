@@ -83,14 +83,26 @@ Aucun compte, aucun serveur, aucune base de données.
     Protecteur, Médiateur. La description de chaque type (vision du monde,
     moteur profond, forces, ce que ça coûte, piste de progression) est
     nettement plus étoffée que dans les autres modules, et se déploie en
-    entier dans la section « Pour affiner : lisez les 9 profils complets ».
+    entier dans la section « Pour affiner : lisez les 9 profils complets »,
+    classée du score le plus haut au plus bas plutôt que par numéro. Le
+    rapport ajoute aussi, pour le type dominant (le premier du classement),
+    ses deux « ailes » (les types voisins sur le cercle, qui le colorent en
+    permanence) ainsi que son point de stress et son point de développement
+    — les deux bouts des flèches déjà visibles sur le schéma (le triangle et
+    l'hexagone), lus comme des connexions plutôt qu'une simple forme. Cette
+    lecture des flèches (stress dans un sens, développement dans l'autre)
+    est l'heuristique la plus reproduite dans l'enseignement de l'ennéagramme
+    ; comme le reste du module, un cadre public et une écriture originale,
+    pas plus validé scientifiquement que le score lui-même.
   - **Votre instinct dominant** : un complément rapide (9 choix forcés) à
     l'Ennéagramme — lequel des 3 instincts de survie (conservation, social,
     sexuel/un-à-un) capte le plus l'attention en premier. Cette couche est
     propre à la tradition narrative citée ci-dessus ; le concept lui-même
     (Naranjo) n'appartient à aucune école en particulier. Ne s'active que si
     le module Ennéagramme est aussi pris, la comparaison n'ayant de sens
-    qu'une fois le type de base connu.
+    qu'une fois le type de base connu. Chaque instinct a, comme les 9 types,
+    une description étoffée (ce que ça donne de bien, ce que ça coûte, piste
+    de progression), pas seulement une phrase de résumé.
 
   Quand plusieurs de ces modules sont pris ensemble, le rapport ajoute des
   sections qui croisent leurs résultats (par exemple : qui vous devenez sous
