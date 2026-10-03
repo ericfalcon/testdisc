@@ -54,7 +54,7 @@ def enneagram_wheel(entries: list[dict], top_names: set[str]):
 
     by_number = {e["number"]: e for e in entries}
 
-    ax.add_patch(plt.Circle((0, 0), 1.0, fill=False, edgecolor=ui.RULE, linewidth=1.2, zorder=1))
+    ax.add_patch(plt.Circle((0, 0), 1.0, fill=False, edgecolor=ui.SLATE, linewidth=1.3, alpha=0.4, zorder=1))
     for seq in (_HEXAD, _TRIANGLE):
         xs, ys = zip(*[_wheel_xy(n) for n in seq])
         ax.plot(xs, ys, color=ui.SLATE, linewidth=1.4, alpha=0.75, zorder=1)

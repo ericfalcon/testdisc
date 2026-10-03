@@ -113,7 +113,8 @@ Aucun compte, aucun serveur, aucune base de données.
     d'habiter le type qui varie avec le contexte, pas le type lui-même.
   - **Votre instinct dominant** : un complément rapide (9 choix forcés) à
     l'Ennéagramme — lequel des 3 instincts de survie (conservation, social,
-    sexuel/un-à-un) capte le plus l'attention en premier. Cette couche est
+    sexuel/un-à-un — affiché « Intimité » côté stagiaire) capte le plus
+    l'attention en premier. Cette couche est
     propre à la tradition narrative citée ci-dessus ; le concept lui-même
     (Naranjo) n'appartient à aucune école en particulier. Ne s'active que si
     le module Ennéagramme est aussi pris, la comparaison n'ayant de sens

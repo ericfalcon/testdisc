@@ -278,19 +278,21 @@ _register(Module(
     minutes={"standard": 6},
 ))
 
-# Les 3 instincts de survie (conservation, social, sexuel/un-à-un) sont une
-# couche sur le type de base, pas un remplacement — c'est la tradition
-# narrative de l'ennéagramme (Helen Palmer & David Daniels, narrativeenneagram.org)
-# qui y accorde une vraie place aux côtés des 9 types. Le concept lui-même
-# précède toute école en particulier (Naranjo) et n'appartient à personne ;
-# seule la formulation ci-dessous (data/instinct_items.json) est originale.
+# Les 3 instincts de survie (conservation, social, sexuel/un-à-un — affiché
+# "Intimité" côté utilisateur, voir INSTINCT_LABELS dans
+# assessment/scoring/instincts.py) sont une couche sur le type de base, pas
+# un remplacement — c'est la tradition narrative de l'ennéagramme (Helen
+# Palmer & David Daniels, narrativeenneagram.org) qui y accorde une vraie
+# place aux côtés des 9 types. Le concept lui-même précède toute école en
+# particulier (Naranjo) et n'appartient à personne ; seule la formulation
+# ci-dessous (data/instinct_items.json) est originale.
 _register(Module(
     id="enneagram_instinct",
     title="Votre instinct dominant",
     icon="\U0001f9ec",
     blurb=(
         "Un complément rapide (9 questions) à l'Ennéagramme : lequel des 3 instincts de "
-        "survie — conservation, social, ou sexuel (un-à-un) — capte le plus votre "
+        "survie — conservation, social, ou intimité (un-à-un) — capte le plus votre "
         "attention en premier. Le type dit ce qui vous motive ; l'instinct dit où ça se "
         "voit en premier."
     ),

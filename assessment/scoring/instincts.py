@@ -28,7 +28,12 @@ INSTINCTS = ("Conservation", "Social", "Sexuel")
 INSTINCT_LABELS = {
     "Conservation": "Conservation",
     "Social": "Social",
-    "Sexuel": "Sexuel (un-à-un)",
+    # Displayed as "Intimité" rather than the traditional "sexuel" — same
+    # concept (the one-to-one instinct), a label better suited to a
+    # workplace training context. The internal key stays "Sexuel" so this is
+    # purely a display change: no effect on scoring, exports, or the sheet
+    # sync payload.
+    "Sexuel": "Intimité",
 }
 
 INSTINCT_BLURBS = {

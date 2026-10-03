@@ -373,7 +373,7 @@ def enneagram_wheel(entries: list[dict], top_names: set[str]) -> str:
 
     return f"""<svg viewBox="{vb_x:.1f} {vb_y:.1f} {vb_w:.1f} {vb_h:.1f}" width="100%" \
 style="max-width:400px;display:block;margin:0 auto;">
-      <circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="none" stroke="{RULE}" stroke-width="1.2"/>
+      <circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="none" stroke="{SLATE}" stroke-width="1.3" opacity="0.4"/>
       {''.join(lines)}
       {''.join(markers)}
     </svg>"""

@@ -733,7 +733,6 @@ def render() -> None:
 
     _drift_section()
     _plan_section(report)
-    _add_modules()
 
     st.markdown("---")
     st.markdown('<div class="chan">Conservez vos résultats</div>', unsafe_allow_html=True)
@@ -763,3 +762,5 @@ def render() -> None:
         if st.button("Recommencer", key="reset", use_container_width=True):
             state.reset()
             st.rerun()
+
+    _add_modules()
